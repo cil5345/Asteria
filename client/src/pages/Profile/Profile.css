@@ -1,0 +1,19 @@
+.successButton {
+    background-color: red;
+    color: white;
+}
+.dobInput {
+    margin-left: 5px;
+}
+
+.genderInput {
+    margin-left: 5px;
+}
+
+.nameInput {
+    margin-left: 5px;
+}
+
+.prefInput {
+    margin-left: 5px;
+}
