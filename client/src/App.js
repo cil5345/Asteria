@@ -5,7 +5,6 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
 import Profile from "./pages/Profile/Profile";
 import Chat from "./pages/Chat";
-import "./App.css";
 // import Books from "./pages/Books";
 
 function App() {
