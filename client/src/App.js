@@ -5,7 +5,6 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
 import Profile from "./pages/Profile/Profile";
 import Chat from "./pages/Chat";
-import "./App.css";
 import LoginBG from "./components/mainBG/mainBG";
 import mainBG from "./components/mainBG/mainBG";
 
