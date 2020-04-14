@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import FacebookLoginBtn from "react-facebook-login"
+//import LoginBG from "./components/LoginBG/LoginBG";
+
 
 export default class LoginFacebook extends Component {
 
@@ -32,6 +34,7 @@ export default class LoginFacebook extends Component {
         callback={this.responseFacebook} />
         </>
         return <>{facebookData}</>
+
     }
 }
 

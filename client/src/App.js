@@ -7,12 +7,15 @@ import Footer from "./components/Footer";
 import Profile from "./pages/Profile/Profile";
 import Chat from "./pages/Chat";
 import "./App.css";
+import LoginBG from "./components/mainBG/mainBG";
+
 // import Books from "./pages/Books";
 
 function App() {
   return (
     <Router>
       <hr />
+      <mainBG />
       {/* <h1>FB Login</h1> ---This is is for dating app login - Chris added and Mo commented out! */}
       {/* <Facebook /> ----Chris Added this and Mo Commented out.  Talk with Mo */}
       <Header />
