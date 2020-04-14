@@ -22,6 +22,10 @@ const initState = {
     Casey: [
         {from: 'Casey', msg: 'hello'},
 
+    ],
+    Bob: [
+        {from: 'Casey', msg: 'hello'},
+
     ]
 }
 
@@ -53,7 +57,7 @@ function Store(props) {
     
     const [allChats, dispatch] = React.useReducer(reducer, initState)
     if (!socket) {
-        socket = io(':3001')
+        socket = io(':3002')
         socket.on('chat message', function (msg) {
           dispatch({type:'RECIEVE_MESSAGE', payload: msg});
         })
