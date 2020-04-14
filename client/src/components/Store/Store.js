@@ -22,6 +22,10 @@ const initState = {
     Casey: [
         {from: 'Casey', msg: 'hello'},
 
+    ],
+    Bob: [
+        {from: 'Casey', msg: 'hello'},
+
     ]
 }
 
