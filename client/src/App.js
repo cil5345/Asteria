@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard";
 import Store from "./components/Store";
 import { HashRouter, Switch, Route } from  "react-router-dom"
 import "./App.css";
+// import Books from "./pages/Books";
 
 function App() {
   return (
