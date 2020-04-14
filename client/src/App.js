@@ -6,11 +6,15 @@ import Footer from "./components/Footer";
 import Profile from "./pages/Profile/Profile";
 import Chat from "./pages/Chat";
 import "./App.css";
+import LoginBG from "./components/mainBG/mainBG";
+import mainBG from "./components/mainBG/mainBG";
+
 // import Books from "./pages/Books";
 
 function App() {
   return (
     <Router>
+      <mainBG />
       <hr />
       <h1>FB Login</h1> 
       <Facebook /> 
