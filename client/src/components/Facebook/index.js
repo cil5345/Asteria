@@ -26,7 +26,6 @@ class LoginFacebook extends Component {
             name: response.name,
             imageLink: response.picture.data.url
         }})
-        console.log(this.state.fbDetails)
         createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err))
     }
 
