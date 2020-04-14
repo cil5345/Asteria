@@ -2,8 +2,8 @@ import React from "react";
 // import HelloWorld from "./components/HelloWorld"
 import Facebook from "./components/Facebook"//@HACER MOVE TO COMPONENETS
 // import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
-import Store from "./components/Store";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Store from "./components/Store/Store";
 import "./App.css";
 
 function App() {
