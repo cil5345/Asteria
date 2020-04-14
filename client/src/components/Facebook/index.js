@@ -1,21 +1,31 @@
+// app id 519631592082573
 import React, { Component } from "react"
 import FacebookLoginBtn from "react-facebook-login"
+import { createUser } from "../../utils/API"
 
-export default class LoginFacebook extends Component {
+class LoginFacebook extends Component {
 
     state = {
         auth: false,
-        name: "",
-        picture: ""
+        fbDetails: {}
     }
 
-    componentClicked = () => {
+    componentClicked = async () => {
         console.log("clicked")
+        await createUser({name:"bob saget",imageLink:"pl.com",symbol:"libra",gender:"male",prefrence:"dont care"})
     }
 
-    responseFacebook = response => {
+    responseFacebook = async response => {
+
         console.log("facebook is always watching")
-        console.log(response)
+        // console.log(response.id)
+        this.setState({ fbDetails: {
+            fb_ID: response.id,
+            name: response.name,
+            imageLink: response.picture.data.url
+        }})
+        console.log(this.state.fbDetails)
+        createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err))
     }
 
     render = () => {
@@ -27,7 +37,8 @@ export default class LoginFacebook extends Component {
         <FacebookLoginBtn
         appId="519631592082573"
         autoLoad={true}
-        fields="name,picture"
+        // fields="name,picture,user_birthday"
+        fields="name,email,picture"
         onClick={this.componentClicked}
         callback={this.responseFacebook} />
         </>
@@ -35,54 +46,4 @@ export default class LoginFacebook extends Component {
     }
 }
 
-// app id 519631592082573
-
-/* <script> */
-
-/*
-
-FB.getLoginStatus(function (response) {
-    statusChangeCallback(response);
-});
-
-window.fbAsyncInit = function () {
-    FB.init({
-        appId: 519631592082573,
-        cookie: true,
-        xfbml: true,
-        version: "v6.0"
-    });
-    
-    FB.AppEvents.logPageView();
-};
-
-function stuff() {
-
-   FB.getLoginStatus()
-}
-
-function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    if (response.status === 'connected') {
-        // Logged into your app and Facebook.
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function (response) {
-            console.log('Successful login for: ' + response.name);
-            document.getElementById('status').innerHTML =
-              'Thanks for logging in, ' + response.name + '!';
-        });
-    } else {
-        // The person is not logged into your app or we are unable to tell.
-        document.getElementById('status').innerHTML = 'Please log ' +
-          'into this app.';
-    }
-}
-
-// getLoginStatus( response => alert.write(response.status))
-// </script>
-*/
+export default LoginFacebook
