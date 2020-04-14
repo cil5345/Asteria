@@ -1,6 +1,8 @@
 // app id 519631592082573
 import React, { Component } from "react"
 import FacebookLoginBtn from "react-facebook-login"
+//import LoginBG from "./components/LoginBG/LoginBG";
+
 import { createUser } from "../../utils/API"
 
 class LoginFacebook extends Component {
@@ -43,6 +45,7 @@ class LoginFacebook extends Component {
         callback={this.responseFacebook} />
         </>
         return <>{facebookData}</>
+
     }
 }
 
