@@ -1,5 +1,5 @@
 const userController = require("../controllers/userController")
-// import "../matches/comp.json"
+import comp from "../matches/comp.json"
 
 
 module.exports = function(app)  {
