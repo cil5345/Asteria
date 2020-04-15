@@ -9,8 +9,9 @@ module.exports = {
         console.log("hit findall in compController")
         console.log(`${req.params.sign}`)
         console.log(`${req.params.prefrence}`)
-        const { comp } = compJSON.filter(sign => (sign.sign === req.params.sign))
+        const comp = compJSON.filter(sign => (sign.sign === req.params.sign))
         console.log(comp)
+        console.log(comp.comp)
         console.log(`${req.params.sign} >>> ${[comp]}}`)
 
         const pref = req.params.prefrence.split("")
