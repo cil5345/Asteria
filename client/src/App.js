@@ -5,8 +5,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Profile from "./pages/Profile/Profile";
 import Chat from "./pages/Chat";
-import LoginBG from "./components/mainBG/mainBG";
 import mainBG from "./components/mainBG/mainBG";
+import Matches from "./pages/Matches";
 
 // import Books from "./pages/Books";
 
@@ -15,8 +15,8 @@ function App() {
     <Router>
       <mainBG />
       <hr />
-      <h1>FB Login</h1> 
-      <Facebook /> 
+      <h1>FB Login</h1>
+      <Facebook />
       <Header />
       <hr />
       <Route exact path="/Profile" component={Profile} />
@@ -25,6 +25,7 @@ function App() {
       <div className="App">
         <Route exact path="/Chat" component={Chat} />
       </div>
+      <Route exact path="/Matches" component={Matches} />
       <Footer />
     </Router>
 
