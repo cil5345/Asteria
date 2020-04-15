@@ -53,13 +53,16 @@ class LoginFacebook extends Component {
 
     getThisUser = () => {
 
+        let user
         getOneUser(this.state.fbDetails.fb_ID)
                     // .then( data => data.data)
                     .then( data => {
                         console.log(data)
                         console.log(data.data)
+                        user = data.data
                     })
                     .catch( err => console.log(err))
+        return user
     }
 
     render = () => {
