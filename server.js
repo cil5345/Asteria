@@ -25,11 +25,6 @@ app.listen(PORT, function() {
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 
-app.get('/', function(req, res) {
-    res.send('<h1>Hello!!!!</h1>')
-});
-
-
 io.on('connection', function(socket){
   console.log('user is connected');
   socket.on('chat message', function(msg) {
@@ -38,6 +33,6 @@ io.on('connection', function(socket){
   })
 })
 
-http.listen(3002, () => {
-  console.log('listening on *:3002');
-});
+http.listen(3002, function(){
+  console.log('listening on :3002');
+})
