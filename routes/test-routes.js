@@ -22,7 +22,7 @@ module.exports = function(app)  {
         console.log(`${req.params.sign}`)
         console.log(`${req.params.prefrence}`)
         console.log("reached testroutes get comp.")
-
+        compController.findAll(req, res)
         //we will send in BACH's sign and prefrence
 
         //sign will point to 4 compatible signs
