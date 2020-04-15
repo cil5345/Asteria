@@ -24,10 +24,12 @@ function Profile() {
                                 <br></br>
                                 <div className="gender cell">
                                 <label>Gender
+                                    <div>
                                     <select className="genderInput" >
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                     </select>
+                                    </div>
                                 </label>
                                 </div>
                                 <br></br>
@@ -40,11 +42,13 @@ function Profile() {
 
                                 <div className="pref cell">
                                 <label>Select Dating Preference
+                                    <div>
                                     <select className="prefInput" >
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                         <option value="both">Both</option>
                                     </select>
+                                    </div>
                                 </label>
                                 </div>
                                 <br></br>

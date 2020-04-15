@@ -6,3 +6,12 @@
     font-size: x-large;
     color: purple;
 }
+
+.links .chat{
+float:right;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+}
