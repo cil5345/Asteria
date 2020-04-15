@@ -14,7 +14,7 @@ module.exports = {
   findById: function(req, res) {
     console.log("hit user controller get by id")
     db.User
-      .findById(req.params.id)
+      .findOne({ fb_ID: req.params.id})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
