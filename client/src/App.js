@@ -5,9 +5,13 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
 import Profile from "./pages/Profile/Profile";
 import Chat from "./pages/Chat";
+<<<<<<< HEAD
 import LoginBG from "./components/mainBG/mainBG";
 import mainBG from "./components/mainBG/mainBG";
 
+=======
+import "./App.css";
+>>>>>>> parent of 03250574... trying to revert
 // import Books from "./pages/Books";
 
 function App() {
