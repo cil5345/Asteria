@@ -14,9 +14,9 @@ function Header() {
                     <span className="menu-text h1">ASTERIA Dating App</span>
                     <div className="links">
                     <Link to="/Profile">Profile</Link>
+                    <Link to="/Matches">Matches</Link>
                     <div className="chat">
                     <Link to="Chat">Chat</Link>
-
                     </div>
                     </div>
                 </div>

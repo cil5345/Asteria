@@ -1,15 +1,18 @@
 import React from "react";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 import mainBG from "../components/mainBG/mainBG";
 import Swipe from "../components/Swipe/Swipe";
+import "./matches.css"
 
 function Matches() {
     return (
-        <>
+        <div className="page">
             <mainBG />
-            <Swipe />
-            <Footer />
-        </>
+            <div className="m">
+                    <Swipe />
+                </div>
+        <Footer />
+        </div >
 
     );
 }
