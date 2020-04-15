@@ -3,6 +3,7 @@ const comp = require("../matches/comp.json")
 module.exports = {
     findAll: function(req, res) {
 
+        console.log(comp)
         //should filter and return an object and deconstructe comp array
         //{req.sign, [comp signs]}
         console.log("hit findall in compController")
