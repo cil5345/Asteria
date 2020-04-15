@@ -7,9 +7,7 @@ let feedback
 write()
 
 function createJSON(data) {
-    // console.log(feedback.data[0])
-    // for(let sign of feeback) sign.id
-    // sign.compatibility
+    
     for (let i = 0; i <= feedback.data.length + 1; i++) {
         
         const obj = {
