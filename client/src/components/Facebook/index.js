@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import FacebookLoginBtn from "react-facebook-login"
 //import LoginBG from "./components/LoginBG/LoginBG";
 
-import { createUser } from "../../utils/API"
+import { getUsers, createUser } from "../../utils/API"
 
 class LoginFacebook extends Component {
 
@@ -20,14 +20,18 @@ class LoginFacebook extends Component {
     responseFacebook = async response => {
 
         console.log("facebook is always watching")
-        // console.log(response.id)
+
+        console.log(`fb_ID before pass it ${response.id}`)
         this.setState({ fbDetails: {
             fb_ID: response.id,
             name: response.name,
             imageLink: response.picture.data.url
         }})
-        console.log(this.state.fbDetails)
         createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err))
+    }
+
+    getUsers = () => {
+        getUsers().then( data => console.log(data))
     }
 
     render = () => {
@@ -43,6 +47,7 @@ class LoginFacebook extends Component {
         fields="name,email,picture"
         onClick={this.componentClicked}
         callback={this.responseFacebook} />
+        <button onClick={this.getUsers}>testGetUsers</button>
         </>
         return <>{facebookData}</>
 
