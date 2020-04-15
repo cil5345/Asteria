@@ -10,7 +10,7 @@ module.exports = {
     return axios.get(`/api/users/${id}`)
   },
   createUser: user => {
-    console.log("hit axios post")
+    console.log("creating user")
     return axios.post("/api/users", user)
   }
   // // Gets all books
