@@ -15,7 +15,7 @@ module.exports = function(app) {
     app.post("/api/users", (req, res) => {
         
         console.log("hit mongo routes post user")
-        bookController.create(req, res)
+        userController.create(req, res)
     })
 
     // app.delete("/api/books/:id", (req, res) => {
