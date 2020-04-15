@@ -15,8 +15,9 @@ module.exports = {
     console.log("hit user controller get by id")
     console.log("params")
     console.log(req.params.id)
-    console.log("query")
-    console.log(req.query.id)
+    //comes back undefinded \/ \/ \/ \/
+    // console.log("query")
+    // console.log(req.query.id)
     db.User
       .findOne({ fb_ID: req.params.id})
       .then(dbModel => res.json(dbModel))
