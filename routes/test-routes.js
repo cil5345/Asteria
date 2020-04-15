@@ -8,13 +8,11 @@ module.exports = function(app)  {
     app.get("/api/users/:id", (req, res) => {
         
         console.log("hit test routes get by id:" + req.params.id)
-        // console.log("hit test routes get by id:" + req.query.id) try this if above doesnt work
         userController.findById(req, res)
     })
 
 
     app.get("/api/users", (req, res) => {
-
 
         console.log("hit test routes get users")
         userController.findAll(req, res)
