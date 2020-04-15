@@ -42,7 +42,7 @@ function Store(props) {
   if (!socket) {
     socket = io(":3002");
     socket.on("chat message", function (msg) {
-      console.log(msg);
+      console.log({msg});
       dispatch({ type: "RECIEVE_MESSAGE", payload: msg });
     });
   }
