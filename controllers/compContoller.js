@@ -17,15 +17,14 @@ module.exports = {
         // console.log(comp.comp)
         // console.log(comp[0].comp)
         console.log(`${req.params.sign} >>> ${[JSON.stringify(comp)]}}`)
-
-
         const pref = req.params.prefrence.split("")
+        console.log(pref)
         //itll be an array contain any mix of f,m
 //@HACER
 //https://stackoverflow.com/questions/33627238/mongoose-find-with-multiple-conditions
         db.User
         //   .find({ sign: { $in: [...comp]}})//bfore trying two fields
-          .find({ sign: { $in: [...comp]}, gender :{ $regex: pref, $options: "i"}})
+          .find({ sign: { $in: [...comp]}, gender :{ $regex: [pref], $options: "i"}})
 
 
           //{ "authors": { "$regex": "Alex", "$options": "i" } },
