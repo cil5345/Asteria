@@ -20,7 +20,8 @@ class LoginFacebook extends Component {
     responseFacebook = async response => {
 
         console.log("facebook is always watching")
-        // console.log(response.id)
+
+        console.log(`fb_ID before pass it ${response.id}`)
         this.setState({ fbDetails: {
             fb_ID: response.id,
             name: response.name,
