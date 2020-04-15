@@ -16,6 +16,8 @@ function Header() {
                     <Link to="/Profile">Profile</Link>
                     <br></br>
                     <Link to="Chat">Chat</Link>
+                    <br></br>
+                    <Link to="/Matches">Matches</Link>
                     </div>
                 </div>
             </div>
