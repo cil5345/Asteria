@@ -6,6 +6,9 @@ module.exports = {
   getAllUsers: () => {
     return axios.get("/api/users")
   },
+  getOneUser: id => {
+    return axios.get(`/api/users/${id}`)
+  },
   createUser: user => {
     console.log("hit axios post")
     console.log(user)
