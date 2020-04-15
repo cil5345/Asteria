@@ -24,27 +24,46 @@ function Profile() {
                                 <br></br>
                                 <div className="gender cell">
                                 <label>Gender
+                                    <div>
                                     <select className="genderInput" >
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                     </select>
+                                    </div>
                                 </label>
                                 </div>
                                 <br></br>
-                                <div className="dob cell">
+                                <div className="zodiac cell">
                                     <label>Zodiac Sign
-                                    <input type="text" className="dobInput"  placeholder="mmddyyyy" />
+                                    <div>
+                                    <select className="genderInput" >
+                                        <option value="Aries">Aries</option>
+                                        <option value="Taurus">Taurus</option>
+                                        <option value="Gemini">Gemini</option>
+                                        <option value="Cancer">Cancer</option>
+                                        <option value="Leo">Leo</option>
+                                        <option value="Virgo">Libra</option>
+                                        <option value="Scorpio">Scorpio</option>
+                                        <option value="Sagittarius">Sagittarius</option>
+                                        <option value="Capricorn">Capricorn</option>
+                                        <option value="Aquarius">Aquarius</option>
+                                        <option value="Pisces">Pisces</option>
+
+                                    </select>
+                                    </div>
                                     </label>
                                 </div>
                                 <br></br>
 
                                 <div className="pref cell">
                                 <label>Select Dating Preference
+                                    <div>
                                     <select className="prefInput" >
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                         <option value="both">Both</option>
                                     </select>
+                                    </div>
                                 </label>
                                 </div>
                                 <br></br>

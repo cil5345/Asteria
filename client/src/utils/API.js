@@ -3,6 +3,9 @@ const axios = require("axios")
 
 module.exports = {
 
+  getUsers: () => {
+    return axios.get("/api/users")
+  },
   createUser: user => {
     console.log("hit axios post")
     console.log(user)

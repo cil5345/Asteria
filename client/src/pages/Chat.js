@@ -4,11 +4,10 @@ import Dashboard from '../components/Dashboard/Dashboard'
 
 function Chat() {
     return (
-        <>
    <Store>
        <Dashboard />
    </Store>
-      </>
+      
     );
   }
   export default Chat;
