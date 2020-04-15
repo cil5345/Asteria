@@ -18,12 +18,12 @@ module.exports = function(app)  {
         userController.findAll(req, res)
     })
 
-    app.get("/api/comp", (req, res) => {
+    // app.get("/api/comp", (req, res) => {
 
-        console.log("getting compabailties")
-        //
-        
-    })
+    //     console.log("getting compabailties")
+    //     //
+
+    // })
 
     /*
     will need route for userController.findByIdAndUpdate
