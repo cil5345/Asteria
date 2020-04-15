@@ -21,6 +21,8 @@ module.exports = function(app)  {
     app.get("/api/comp", (req, res) => {
 
         console.log("getting compabailties")
+        //
+        
     })
 
     /*
