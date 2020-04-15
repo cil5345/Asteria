@@ -27,7 +27,7 @@ class LoginFacebook extends Component {
             imageLink: response.picture.data.url
         }})
         //get the user from our DB
-        const user = this.getThisUser()
+        const user = await this.getThisUser()
         console.log(user)
         if(!user) {
             console.log("!user")
@@ -51,10 +51,10 @@ class LoginFacebook extends Component {
         getAllUsers().then( data => console.log(data)).catch( err => console.log(err))
     }
 
-    getThisUser = () => {
+    getThisUser = async () => {
 
         let user
-        getOneUser(this.state.fbDetails.fb_ID)
+        await getOneUser(this.state.fbDetails.fb_ID)
                     // .then( data => data.data)
                     .then( data => {
                         console.log(data)
