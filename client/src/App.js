@@ -20,8 +20,6 @@ function App() {
       <Header />
       <Route exact path="/Profile" component={Profile} />
       <hr />
-      {/* Antonio ^^^^^^^^ */}
-      {/* Chris \/ \/ \/ \/ \/ */}
       <div className="App">
         <Route exact path="/Chat" component={Chat} />
       </div>

@@ -2,6 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
+  fb_ID: {
+    type: Number
+  },
   name: {
     type: String
     // required: true

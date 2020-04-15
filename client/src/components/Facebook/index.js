@@ -20,13 +20,13 @@ class LoginFacebook extends Component {
     responseFacebook = async response => {
 
         console.log("facebook is always watching")
-        // console.log(response.id)
+
+        console.log(`fb_ID before pass it ${response.id}`)
         this.setState({ fbDetails: {
             fb_ID: response.id,
             name: response.name,
             imageLink: response.picture.data.url
         }})
-        console.log(this.state.fbDetails)
         createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err))
     }
 
