@@ -40,7 +40,7 @@ class LoginFacebook extends Component {
         }
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
-        !user === null ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) :
+        !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) :
         console.log("already exists")
         //otherwise we already have this user, we dont need to create the user
         //@HACER take to next page?
