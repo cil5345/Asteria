@@ -3,7 +3,7 @@ const axios = require("axios")
 
 module.exports = {
 
-  getUsers: () => {
+  getAllUsers: () => {
     return axios.get("/api/users")
   },
   createUser: user => {

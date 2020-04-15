@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import FacebookLoginBtn from "react-facebook-login"
 //import LoginBG from "./components/LoginBG/LoginBG";
 
-import { getUsers, createUser } from "../../utils/API"
+import { getAllUsers, createUser } from "../../utils/API"
 
 class LoginFacebook extends Component {
 
@@ -31,7 +31,7 @@ class LoginFacebook extends Component {
     }
 
     getUsers = () => {
-        getUsers().then( data => console.log(data)).catch( err => console.log(err))
+        getAllUsers().then( data => console.log(data)).catch( err => console.log(err))
     }
 
     render = () => {
