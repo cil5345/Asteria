@@ -60,6 +60,8 @@ class LoginFacebook extends Component {
                         console.log(data)
                         console.log(data.data)
                         user = data.data
+                        console.log(user)
+                        return user
                     })
                     .catch( err => console.log(err))
         return user
