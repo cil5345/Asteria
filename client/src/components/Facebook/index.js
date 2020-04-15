@@ -2,7 +2,7 @@
 import React, { Component } from "react"
 import FacebookLoginBtn from "react-facebook-login"
 //import LoginBG from "./components/LoginBG/LoginBG";
-
+import "./style.css"
 import { getAllUsers, getOneUser, createUser } from "../../utils/API"
 
 class LoginFacebook extends Component {
@@ -14,20 +14,26 @@ class LoginFacebook extends Component {
 
     componentClicked = async () => {
         console.log("clicked")
-        await createUser({name:"bob saget",imageLink:"pl.com",symbol:"libra",gender:"male",prefrence:"dont care"})
     }
 
     responseFacebook = async response => {
 
         console.log("facebook is always watching")
 
-        console.log(`fb_ID before pass it ${response.id}`)
+        //set state to include user fbID and name
         this.setState({ fbDetails: {
             fb_ID: response.id,
             name: response.name,
             imageLink: response.picture.data.url
         }})
-        createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err))
+        //get the user from our DB
+        const user = this.getThisUser()
+        //if we do not find a user with that id we will create a user
+        //for testing puposes we should make a bs id in order to see if it creates a new user
+        !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) :
+        console.log("already exists")
+        //otherwise we already have this user, we dont need to create the user
+        //@HACER take to next page?
     }
 
     getUsers = () => {
@@ -36,12 +42,9 @@ class LoginFacebook extends Component {
 
     getThisUser = () => {
 
-        getOneUser(this.state.fbDetails.fb_ID).then( data => {
-            console.log(data.data.fb_ID)
-            console.log(data.data.name)
-            // console.log(`${data.fb_ID}
-        ${data.name}`)
-    }).catch( err => console.log(err))
+        getOneUser(this.state.fbDetails.fb_ID)
+                    .then( data => data.data)
+                    .catch( err => console.log(err))
     }
 
     render = () => {
@@ -57,8 +60,8 @@ class LoginFacebook extends Component {
         fields="name,email,picture"
         onClick={this.componentClicked}
         callback={this.responseFacebook} />
-        <button onClick={this.getUsers}>testGetUsers</button>
-        <button onClick={this.getThisUser}>getThisUser</button>
+        <button className="antonios_test_buttons" onClick={this.getUsers}>testGetUsers</button>
+        <button className="antonios_test_buttons" onClick={this.getThisUser}>getThisUser</button>
         </>
         return <>{facebookData}</>
 
