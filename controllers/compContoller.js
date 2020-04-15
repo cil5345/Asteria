@@ -10,15 +10,12 @@ module.exports = {
         console.log("hit findall in compController")
         console.log(`${req.params.sign}`)
         console.log(`${req.params.prefrence}`)
-        const comp = compJSON.filter(sign => (sign.sign === req.params.sign))
-
-
+        const compArr = compJSON.filter(sign => (sign.sign === req.params.sign))
+        const { comp } = compArr[0]
         //find the object with the sign of user
-
-
         console.log(comp)
-        console.log(comp.comp)
-        console.log(comp[0].comp)
+        // console.log(comp.comp)
+        // console.log(comp[0].comp)
         console.log(`${req.params.sign} >>> ${[JSON.stringify(comp)]}}`)
 
 
