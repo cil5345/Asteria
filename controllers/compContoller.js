@@ -1,3 +1,4 @@
+const db = require("../models");
 const compJSON = require("../matches/comp.json")
 
 module.exports = {
