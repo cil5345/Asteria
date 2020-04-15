@@ -1,1 +1,12 @@
-[{"sign":"Aries","comp":["Leo","Sagittarius","Gemini","Aquarius"]},{"sign":"Taurus","comp":["Capricorn","Virgo","Pisces","Cancer"]},{"sign":"Leo","comp":["Aries"," Gemini"," Libra"," Sagittarius"]},{"sign":"Gemini","comp":["Aries"," Leo"," Libra"," Aquarius"]},{"sign":"Virgo","comp":["Taurus"," Cancer"," Scorpio"," Capricorn"]},{"sign":"Libra","comp":["Gemini"," Leo"," Sagittarius"," Aquarius"]},{"sign":"Cancer","comp":["Taurus"," Virgo"," Scorpio"," Pisces"]},{"sign":"Capricorn","comp":["Taurus"," Virgo"," Scorpio"," Pisces"]},{"sign":"Sagittarius","comp":["Aries"," Leo"," Libra"," Aquarius"]},{"sign":"Aquarius","comp":["Aries"," Gemini"," Libra"," Sagittarius"]},{"sign":"Scorpio","comp":["Cancer"," Virgo"," Capricorn"," Pisces"]},{"sign":"Pisces","comp":["aurus"," Cancer"," Scorpio"," Capricorn"]}]
+[{"sign":"Aries","comp":["Leo","Sagittarius","Gemini","Aquarius"]},
+{"sign":"Taurus","comp":["Capricorn","Virgo","Pisces","Cancer"]},
+{"sign":"Leo","comp":["Aries"," Gemini"," Libra"," Sagittarius"]},
+{"sign":"Gemini","comp":["Aries"," Leo"," Libra"," Aquarius"]},
+{"sign":"Virgo","comp":["Taurus"," Cancer"," Scorpio"," Capricorn"]},
+{"sign":"Libra","comp":["Gemini"," Leo"," Sagittarius"," Aquarius"]},
+{"sign":"Cancer","comp":["Taurus"," Virgo"," Scorpio"," Pisces"]},
+{"sign":"Capricorn","comp":["Taurus"," Virgo"," Scorpio"," Pisces"]},
+{"sign":"Sagittarius","comp":["Aries"," Leo"," Libra"," Aquarius"]},
+{"sign":"Aquarius","comp":["Aries"," Gemini"," Libra"," Sagittarius"]},
+{"sign":"Scorpio","comp":["Cancer"," Virgo"," Capricorn"," Pisces"]},
+{"sign":"Pisces","comp":["aurus"," Cancer"," Scorpio"," Capricorn"]}]
