@@ -11,4 +11,10 @@ module.exports = function(app)  {
         console.log("hit test routes get users")
         userController.findAll(req, res)
     })
+
+    /*
+    will need route for userController.findByIdAndUpdate
+    in order to add other essentail details to the user, after they have logged
+    in for the first time
+    */
 }
