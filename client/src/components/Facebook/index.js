@@ -37,8 +37,9 @@ class LoginFacebook extends Component {
     getThisUser = () => {
 
         getOneUser(this.state.fbDetails.fb_ID).then( data => {
-            console.log(data)
-            console.log(`${data.fb_ID}
+            console.log(data.data.fb_ID)
+            console.log(data.data.name)
+            // console.log(`${data.fb_ID}
         ${data.name}`)
     }).catch( err => console.log(err))
     }
