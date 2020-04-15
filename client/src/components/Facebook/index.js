@@ -70,7 +70,7 @@ class LoginFacebook extends Component {
 
     getComp = (sign, prefrence) => {
         console.log("you cant match my style")
-        getCompatible("Aries", "F").then( data => console.log(data)).then( err => console.log(err))
+        getCompatible("Aries", "FM").then( data => console.log(data)).then( err => console.log(err))
     }
 
     render = () => {

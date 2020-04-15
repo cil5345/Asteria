@@ -8,23 +8,20 @@ module.exports = {
         //should filter and return an object and deconstructe comp array
         //{req.sign, [comp signs]}
         console.log("hit findall in compController")
-        console.log(`${req.params.sign}`)
+        console.log(`${req.params.symbol}`)
         console.log(`${req.params.prefrence}`)
-        const compArr = compJSON.filter(sign => (sign.sign === req.params.sign))
+        const compArr = compJSON.filter(symbol => (symbol.symbol === req.params.symbol))
         const { comp } = compArr[0]
-        //find the object with the sign of user
         console.log(comp)
-        // console.log(comp.comp)
-        // console.log(comp[0].comp)
-        console.log(`${req.params.sign} >>> ${[JSON.stringify(comp)]}}`)
+        console.log(`${req.params.symbol} >>> ${[JSON.stringify(comp)]}}`)
         const pref = req.params.prefrence.split("")
         console.log(pref)
         //itll be an array contain any mix of f,m
 //@HACER
 //https://stackoverflow.com/questions/33627238/mongoose-find-with-multiple-conditions
         db.User
-        //   .find({ sign: { $in: [...comp]}})//bfore trying two fields
-          .find({ sign: { $in: [...comp]}, gender :{ $regex: [pref], $options: "i"}})
+        //   .find({ symbol: { $in: [...comp]}})//bfore trying two fields
+          .find({ symbol: { $in: [...comp]}, gender :{ $regex: [pref], $options: "i"}})
 
 
           //{ "authors": { "$regex": "Alex", "$options": "i" } },

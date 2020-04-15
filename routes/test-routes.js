@@ -16,10 +16,10 @@ module.exports = function(app)  {
         userController.findAll(req, res)
     })
 
-    app.get("/api/comp/:sign/:prefrence", (req, res) => {
+    app.get("/api/comp/:symbol/:prefrence", (req, res) => {
 
         console.log("getting compatible users")
-        console.log(`${req.params.sign}`)
+        console.log(`${req.params.symbol}`)
         console.log(`${req.params.prefrence}`)
         console.log("reached testroutes get comp.")
         compController.findAll(req, res)
