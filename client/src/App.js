@@ -2,7 +2,7 @@ import React from "react";
 import Facebook from "./components/Facebook"//@HACER MOVE TO COMPONENETS //Mo commented out.  Talk with Mo
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 import Profile from "./pages/Profile/Profile";
 import Chat from "./pages/Chat";
 import mainBG from "./components/mainBG/mainBG";
@@ -18,8 +18,8 @@ function App() {
       <h1>FB Login</h1>
       <Facebook />
       <Header />
-      <Route exact path="/Profile" component={Profile} />
       <hr />
+      <Route exact path="/Profile" component={Profile} />
       {/* Antonio ^^^^^^^^ */}
       {/* Chris \/ \/ \/ \/ \/ */}
       <div className="App">

@@ -1,19 +1,31 @@
 .successButton {
     background-color: red;
     color: white;
+    margin-left: 45%;
 }
-.dobInput {
+.zodiacInput {
     margin-left: 5px;
+    width: 500px;
+    
 }
 
 .genderInput {
     margin-left: 5px;
+    width: 500px;
 }
 
 .nameInput {
-    margin-left: 5px;
+    width: 500px;
 }
 
 .prefInput {
     margin-left: 5px;
+    width: 500px;
+
 }
+
+@media only screen and (max-width: 600px) {
+    .nameInput {
+    width: 300px;
+    }
+  }
