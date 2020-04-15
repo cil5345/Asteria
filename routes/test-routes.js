@@ -1,4 +1,5 @@
 const userController = require("../controllers/userController")
+import "../matches/comp.json"
 
 module.exports = function(app) {
 

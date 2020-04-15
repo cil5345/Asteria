@@ -31,7 +31,7 @@ class LoginFacebook extends Component {
     }
 
     getUsers = () => {
-        getUsers().then( data => console.log(data))
+        getUsers().then( data => console.log(data)).catch( err => console.log(err))
     }
 
     render = () => {
