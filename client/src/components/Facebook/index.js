@@ -38,6 +38,7 @@ class LoginFacebook extends Component {
         } else if(user == "undefined") {
             console.log("weak ass undefined")
         }
+        console.log()
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
         !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) :
@@ -53,7 +54,11 @@ class LoginFacebook extends Component {
     getThisUser = () => {
 
         getOneUser(this.state.fbDetails.fb_ID)
-                    .then( data => data.data)
+                    // .then( data => data.data)
+                    .then( data => {
+                        console.log(data)
+                        console.log(data.data)
+                    })
                     .catch( err => console.log(err))
     }
 
