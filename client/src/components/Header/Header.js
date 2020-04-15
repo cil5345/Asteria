@@ -6,24 +6,22 @@ import "./Header.css";
 // By importing the Header.css file, it is added to the DOM whenever this component loads
 
 function Header() {
-    return (
-
-        <section className="container">
-            <div className="top-bar">
-                <div className="top-bar-left">
-                    <span className="menu-text h1">ASTERIA Dating App</span>
-                    <div className="links">
-                    <Link to="/Profile">Profile</Link>
-                    <div className="chat">
-                    <Link to="Chat">Chat</Link>
-
-                    </div>
-                    </div>
-                </div>
+  return (
+    <section className="container">
+      <div className="top-bar">
+        <div className="top-bar-left">
+          <span className="menu-text h1">ASTERIA Dating App</span>
+          <div className="links">
+            <Link to="/Profile">Profile</Link>
+            <Link to="/Matches">Matches</Link>
+            <div className="chat">
+              <Link to="Chat">Chat</Link>
             </div>
-            {/* <h1>ASTERIA Dating App</h1> */}
-        </section>
-    )
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default Header;
