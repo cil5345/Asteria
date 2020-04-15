@@ -21,8 +21,10 @@ module.exports = {
 //https://stackoverflow.com/questions/33627238/mongoose-find-with-multiple-conditions
         db.User
         //   .find({ symbol: { $in: [...comp]}})//bfore trying two fields
-          .find({ symbol: { $in: [...comp]}, gender :{ $regex: [pref], $options: "i"}})
+        //   .find({ symbol: { $in: [...comp]}, gender :{ $regex: [pref], $options: "i"}})
 
+        .find({ symbol: { $in: [comp]}})
+        // .find({ gender: { $regex: [pref], $options: "i"}})
 
           //{ "authors": { "$regex": "Alex", "$options": "i" } },
           //https://stackoverflow.com/questions/26814456/how-to-get-all-the-values-that-contains-part-of-a-string-using-mongoose-find
