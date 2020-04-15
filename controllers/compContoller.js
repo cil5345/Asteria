@@ -1,13 +1,13 @@
-const comp = require("../matches/comp.json")
+const compJSON = require("../matches/comp.json")
 
 module.exports = {
     findAll: function(req, res) {
 
-        console.log(comp)
+        console.log(compJSON)
         //should filter and return an object and deconstructe comp array
         //{req.sign, [comp signs]}
         console.log("hit findall in compController")
-        const { comp } = comp.filter(sign => (sign.sign === req.params.sign))
+        const { comp } = compJSON.filter(sign => (sign.sign === req.params.sign))
         console.log(`${req.params.sign} >>> ${[...comp]}}`)
         console.log(comp)
 
