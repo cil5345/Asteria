@@ -27,7 +27,7 @@ class LoginFacebook extends Component {
             imageLink: response.picture.data.url
         }})
         //get the user from our DB
-        const user = this.getThisUser(this.state.fbDetails.fb_ID)
+        const user = this.getThisUser()
         console.log(user)
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
