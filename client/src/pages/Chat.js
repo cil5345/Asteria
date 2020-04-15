@@ -1,7 +1,6 @@
 import React from "react";
-import Store from "../components/Store";
-import Dashboard from "../components/Dashboard";
-
+import Store from "../components/Store/Store";
+import Dashboard from '../components/Dashboard/Dashboard'
 
 function Chat() {
     return (
