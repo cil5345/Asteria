@@ -40,13 +40,13 @@ class LoginFacebook extends Component {
         this.state.auth ? facebookData = <>yeer logged in</>
         :
         facebookData = <>
-        {/* <FacebookLoginBtn
+        <FacebookLoginBtn
         appId="519631592082573"
         autoLoad={true}
         // fields="name,picture,user_birthday"
         fields="name,email,picture"
         onClick={this.componentClicked}
-        callback={this.responseFacebook} /> */}
+        callback={this.responseFacebook} />
         <button onClick={this.getUsers}>testGetUsers</button>
         </>
         return <>{facebookData}</>
