@@ -1,0 +1,449 @@
+{
+  fb_ID: 89,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Brent Howard',
+  symbol: 'Capricorn',
+  gender: 'M',
+  prefrence: 'F'
+}
+,
+{
+  fb_ID: 750,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Genesis Gutierrez',
+  symbol: 'Sagittarius',
+  gender: 'F',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 588,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Cameron Ruiz',
+  symbol: 'Pisces',
+  gender: 'M',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 103,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Carlos Murphy',
+  symbol: 'Pisces',
+  gender: 'F',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 482,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Byron Morgan',
+  symbol: 'Taurus',
+  gender: 'M',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 695,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Byron Campbell',
+  symbol: 'Libra',
+  gender: 'F',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 801,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Victoria Simpson',
+  symbol: 'Leo',
+  gender: 'F',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 63,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Rita Ramirez',
+  symbol: 'Aquarius',
+  gender: 'M',
+  prefrence: 'F'
+}
+,
+{
+  fb_ID: 816,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Dana Austin',
+  symbol: 'Sagittarius',
+  gender: 'M',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 730,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Bobbie Ramos',
+  symbol: 'Sagittarius',
+  gender: 'F',
+  prefrence: 'F'
+}
+,
+{
+  fb_ID: 793,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Tim Hernandez',
+  symbol: 'Capricorn',
+  gender: 'F',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 776,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Neil Diaz',
+  symbol: 'Pisces',
+  gender: 'M',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 152,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Steve Brown',
+  symbol: 'Aquarius',
+  gender: 'M',
+  prefrence: 'F'
+}
+,
+{
+  fb_ID: 124,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Andrea Duncan',
+  symbol: 'Sagittarius',
+  gender: 'F',
+  prefrence: 'F'
+}
+,
+{
+  fb_ID: 26,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Diane Castillo',
+  symbol: 'Aries',
+  gender: 'F',
+  prefrence: 'F'
+}
+,
+{
+  fb_ID: 773,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Jeanne Murray',
+  symbol: 'Scorpio',
+  gender: 'M',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 49,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Hannah Prescott',
+  symbol: 'Taurus',
+  gender: 'F',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 718,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Ritthy Fernandez',
+  symbol: 'Taurus',
+  gender: 'M',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 592,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Johnni Weaver',
+  symbol: 'Cancer',
+  gender: 'F',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 504,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Tracy Pierce',
+  symbol: 'Aries',
+  gender: 'M',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 366,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Kay Morales',
+  symbol: 'Scorpio',
+  gender: 'M',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 562,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Crystal Arnold',
+  symbol: 'Pisces',
+  gender: 'F',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 336,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Albert Grant',
+  symbol: 'Virgo',
+  gender: 'F',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 98,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Randy Harvey',
+  symbol: 'Aries',
+  gender: 'M',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 779,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Greg Terry',
+  symbol: 'Leo',
+  gender: 'F',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 474,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Gene Thomas',
+  symbol: 'Aquarius',
+  gender: 'M',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 13,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Lois Neal',
+  symbol: 'Taurus',
+  gender: 'M',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 51,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Charlene Pena',
+  symbol: 'Cancer',
+  gender: 'F',
+  prefrence: 'F'
+}
+,
+{
+  fb_ID: 157,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Owen Frazier',
+  symbol: 'Aries',
+  gender: 'F',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 929,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Troy Rose',
+  symbol: 'Pisces',
+  gender: 'F',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 388,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Chad Lambert',
+  symbol: 'Virgo',
+  gender: 'M',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 208,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Bob Ross',
+  symbol: 'Libra',
+  gender: 'M',
+  prefrence: 'F'
+}
+,
+{
+  fb_ID: 938,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Reginald Johnson',
+  symbol: 'Pisces',
+  gender: 'M',
+  prefrence: 'F'
+}
+,
+{
+  fb_ID: 846,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Sherry Barnett',
+  symbol: 'Libra',
+  gender: 'F',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 146,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Sherry Hoffman',
+  symbol: 'Sagittarius',
+  gender: 'F',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 790,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Seth Diaz',
+  symbol: 'Sagittarius',
+  gender: 'M',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 716,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Amy Gutierrez',
+  symbol: 'Libra',
+  gender: 'M',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 78,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Gerald Wade',
+  symbol: 'Leo',
+  gender: 'F',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 548,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Tracy Douglas',
+  symbol: 'Aquarius',
+  gender: 'F',
+  prefrence: 'F'
+}
+,
+{
+  fb_ID: 842,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Leroy Kelley',
+  symbol: 'Libra',
+  gender: 'F',
+  prefrence: 'F'
+}
+,
+{
+  fb_ID: 798,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Charlene Henderson',
+  symbol: 'Capricorn',
+  gender: 'M',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 898,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Jacqueline Gray',
+  symbol: 'Gemini',
+  gender: 'F',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 231,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Roland James',
+  symbol: 'Pisces',
+  gender: 'F',
+  prefrence: 'F'
+}
+,
+{
+  fb_ID: 522,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Amy Martinez',
+  symbol: 'Taurus',
+  gender: 'M',
+  prefrence: 'F'
+}
+,
+{
+  fb_ID: 167,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Stanley George',
+  symbol: 'Aries',
+  gender: 'F',
+  prefrence: 'F'
+}
+,
+{
+  fb_ID: 434,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Dwight Lee',
+  symbol: 'Cancer',
+  gender: 'M',
+  prefrence: 'M'
+}
+,
+{
+  fb_ID: 73,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Benjamin Jones',
+  symbol: 'Sagittarius',
+  gender: 'F',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 833,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Carrie Daniels',
+  symbol: 'Virgo',
+  gender: 'F',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 264,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Chester Miller',
+  symbol: 'Leo',
+  gender: 'M',
+  prefrence: 'FM'
+}
+,
+{
+  fb_ID: 796,
+  imageLink: 'https://m.media-amazon.com/images/M/MV5BMTE5MjM5MzM3M15BMl5BanBnXkFtZTYwOTEzOTY0._V1_UY317_CR6,0,214,317_AL_.jpg',
+  name: 'Marion Ross',
+  symbol: 'Virgo',
+  gender: 'F',
+  prefrence: 'M'
+}

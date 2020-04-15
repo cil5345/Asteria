@@ -12,7 +12,6 @@ module.exports = function(app) {
     //     bookController.findAll
     // })
 
-    // app.post("/#/api/books", (req, res) => {
     app.post("/api/users", (req, res) => {
         
         console.log("hit mongo routes post user")
