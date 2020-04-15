@@ -11,9 +11,16 @@ module.exports = {
         console.log(`${req.params.sign}`)
         console.log(`${req.params.prefrence}`)
         const comp = compJSON.filter(sign => (sign.sign === req.params.sign))
+
+
+        //find the object with the sign of user
+
+
         console.log(comp)
         console.log(comp.comp)
-        console.log(`${req.params.sign} >>> ${[comp]}}`)
+        console.log(comp[0].comp)
+        console.log(`${req.params.sign} >>> ${[JSON.stringify(comp)]}}`)
+
 
         const pref = req.params.prefrence.split("")
         //itll be an array contain any mix of f,m

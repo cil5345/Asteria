@@ -11,8 +11,6 @@ module.exports = function(app) {
 
     //     bookController.findAll
     // })
-    
-
     app.post("/api/users", (req, res) => {
         
         console.log("creating user")
