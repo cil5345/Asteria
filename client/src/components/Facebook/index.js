@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import FacebookLoginBtn from "react-facebook-login"
 //import LoginBG from "./components/LoginBG/LoginBG";
 import "./style.css"
-import { getAllUsers, getOneUser, createUser } from "../../utils/API"
+import { getAllUsers, getOneUser, createUser, getCompatible } from "../../utils/API"
 
 class LoginFacebook extends Component {
 
@@ -27,6 +27,7 @@ class LoginFacebook extends Component {
             imageLink: response.picture.data.url
         }})
         //get the user from our DB
+        //@HACER cleanup/get rid of console.log()'s
         const user = await this.getThisUser()
         console.log(user)
         if(!user) {
@@ -67,6 +68,11 @@ class LoginFacebook extends Component {
         return user
     }
 
+    getComp = (sign, prefrence) => {
+        console.log("you cant match my style")
+        getCompatible("Aries", "F").then( data => console.log(data)).then( err => console.log(err))
+    }
+
     render = () => {
         let facebookData
 
@@ -82,6 +88,7 @@ class LoginFacebook extends Component {
         callback={this.responseFacebook} />
         <button className="antonios_test_buttons" onClick={this.getUsers}>testGetUsers</button>
         <button className="antonios_test_buttons" onClick={this.getThisUser}>getThisUser</button>
+        <button className="antonios_test_buttons" onClick={this.getComp}>get Comps</button>
         </>
         return <>{facebookData}</>
 

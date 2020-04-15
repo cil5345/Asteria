@@ -1,9 +1,7 @@
 const userController = require("../controllers/userController")
-const comp = require("../matches/comp.json")
-
+const compController = require("../controllers/compContoller")
 
 module.exports = function(app)  {
-
 
     app.get("/api/users/:id", (req, res) => {
         
@@ -18,12 +16,22 @@ module.exports = function(app)  {
         userController.findAll(req, res)
     })
 
-    // app.get("/api/comp", (req, res) => {
+    app.get("/api/comp/:sign/:prefrence", (req, res) => {
 
-    //     console.log("getting compabailties")
-    //     //
+        console.log("getting compatible users")
+        console.log(`${req.params.sign}`)
+        console.log(`${req.params.prefrence}`)
+        console.log("reached testroutes get comp.")
 
-    // })
+        //we will send in BACH's sign and prefrence
+
+        //sign will point to 4 compatible signs
+
+        //we will get those users with those signs
+
+        //afterwards we will narrow done to those of the prefrence of the BACH
+
+    })
 
     /*
     will need route for userController.findByIdAndUpdate
