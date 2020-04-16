@@ -54,10 +54,12 @@ module.exports = {
 
         const symbolComp = []
 
+        let hit = 0
         for (let i = 0; i < data.length; i++) {
           for (let inner = 0; inner < comp.length; inner++) {
             if (data[i].symbol === comp[inner]) {
               symbolComp.push(data[i])
+              hit++
             }
           }
         }
