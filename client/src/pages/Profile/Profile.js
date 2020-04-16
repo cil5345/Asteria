@@ -9,6 +9,7 @@ import { getCompatible, updateUser } from "../../utils/API"
 const dk = "debugging"
 
 class Profile extends Component {
+
     state = {
         fb_ID: "10158279544377148",
         symbol: "",
@@ -16,8 +17,6 @@ class Profile extends Component {
         pref: "",
         redirect: null
     }
-    
-    
 
     getComp = async (sign, prefrence) => {
         console.log("you cant match my style")
@@ -122,12 +121,7 @@ class Profile extends Component {
                                         </label>
                                     </div>
                                     <br></br>
-                                    <button type="submit" className="successButton" onClick={this.getValues}>get matches</button>
-                                    <div className="bs">
-
-                                    {/* <Redirect className="successButton" to="/Profile">Test</Redirect> */}
-
-                                    </div>
+                                    <button type="submit" className="successButton" onClick={this.getValues}>Get you're matches</button>
                                 </div>
                             </div>
                         </form>

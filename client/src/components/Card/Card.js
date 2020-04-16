@@ -6,8 +6,6 @@ function Card(props) {
         <section className="card2">
 
     <h4 className="card-title"><strong>{props.title}</strong></h4>
-    
- 
 
 </section >
         );
