@@ -1,7 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
+import { getCompatible } from "../../utils/API"
 import "./style.css";
 
 function Swipe() {
+
+    async function getComps() {
+        console.log("yo")
+        const comp = await getCompatible("Leo", "F").then(data => console.log(data))
+                                 .catch(err => console.log(err))
+
+
+    }
+    
+    getComps()
+
     return (
         <div class="cardcontainer list"
             style={{
