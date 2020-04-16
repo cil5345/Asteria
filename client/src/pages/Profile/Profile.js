@@ -66,10 +66,6 @@ class Profile extends Component {
             console.log(`FB ID_PIC: ${sessionStorage.getItem("fid_pic")}`)
         }
     }
-
-    saveinsession() {
-
-    }
     componentWillMount = async () => {
 
 
