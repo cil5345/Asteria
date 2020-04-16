@@ -58,9 +58,9 @@ class LoginFacebook extends Component {
         return user
     }
 
-    getComp = (sign, prefrence) => {
+    getComp = async (sign, prefrence) => {
         console.log("you cant match my style")
-        getCompatible("Aries", "FM").then( data => console.log(data)).then( err => console.log(err))
+        await getCompatible("Aries", "FM").then( data => console.log(data)).then( err => console.log(err))
     }
 
     render = () => {

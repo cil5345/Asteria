@@ -1,7 +1,6 @@
 const db = require("../models");
 const compJSON = require("../matches/comp.json")
 
-
 // Defining methods for the booksController
 module.exports = {
   findAll: function (req, res) {
@@ -17,9 +16,6 @@ module.exports = {
     console.log("hit user controller get by id")
     console.log("params")
     console.log(req.params.id)
-    //comes back undefinded \/ \/ \/ \/
-    // console.log("query")
-    // console.log(req.query.id)
     db.User
       .findOne({ fb_ID: req.params.id })
       .then(dbModel => res.json(dbModel))
@@ -31,7 +27,7 @@ module.exports = {
       .create(req.body)
       .then(dbModel => res.json(dbModel))
   },
-  findComp: function (req, res) {
+  findComp: async function (req, res) {
     console.log("usar find comps")
     db.User
       .find({})
@@ -41,9 +37,10 @@ module.exports = {
         console.log("we are finding trying to find comps in the user controller")
         const symbol = req.params.symbol
         const prefrence = req.params.prefrence
-        console.log(symbol + " " + prefrence)
+        console.log(symbol + " " + prefrence)//
 
-        const compArr = compJSON.filter(symbol => (symbol.symbol === symbol))
+        const compArr = await compJSON.filter(symbol => (symbol.symbol === symbol))
+        console.log(compArr)
         const { comp } = compArr[0]
 
         console.log(comp)
@@ -70,4 +67,8 @@ module.exports = {
       .catch(err => res.status(422).json(err));
     //Last push
   }
+  /*
+  updateProf: (id, symbol, prefrence)
+
+  */
 }

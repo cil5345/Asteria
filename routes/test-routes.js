@@ -23,10 +23,6 @@ module.exports = function(app)  {
         console.log(`${req.params.prefrence}`)
         console.log("reached testroutes get comp.")
         userController.findComp(req, res)
-        //we will send in BACH's sign and prefrence
-        //sign will point to 4 compatible signs
-        //we will get those users with those signs
-        //afterwards we will narrow done to those of the prefrence of the BACH
     })
 
     /*
