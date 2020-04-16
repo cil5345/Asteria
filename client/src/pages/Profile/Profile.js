@@ -11,7 +11,7 @@ const dk = "debugging"
 class Profile extends Component {
 
     state = {
-        fb_ID: "10158279544377148",
+        fb_ID: sessionStorage.getItem("fb_ID"),
         symbol: "",
         gender: "",
         pref: "",
