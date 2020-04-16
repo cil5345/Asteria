@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Card from "../../components/Card/Card";
+import Header from "../../components/Header/Header"
 import Mo from "./mo.jpeg";
 import "./Profile.css";
 import { getCompatible, updateUser } from "../../utils/API"
@@ -51,7 +52,8 @@ class Profile extends Component {
     }
 
     render() {
-        return (
+        return (<>
+            <Header />
             <section className="container">
                 <div className="row">
                     <div className="col-4">
@@ -120,6 +122,7 @@ class Profile extends Component {
                     </div>
                 </div>
             </section >
+            </>
         )
     }
 }

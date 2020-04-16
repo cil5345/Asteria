@@ -1,19 +1,16 @@
-import React, { Component } from "react";
-import {
-  Route,
-  BrowserRouter as Router,
-  Switch,
-  Redirect
-} from "react-router-dom";
-import Facebook from "./components/Facebook"//@HACER MOVE TO COMPONENETS //Mo commented out.  Talk with Mo
+import React from "react";
+import Facebook from "./components/Facebook"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Logo from "./components/Logo/Logo";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Profile from "./pages/Profile/Profile";
 import Chat from "./pages/Chat";
 import Login from "./pages/Login"
-import Matches from "./pages/Matches"
 // import mainBG from "./components/mainBG/mainBG";
+import Matches from "./pages/Matches";
+import "./style.css"
+
 // import Books from "./pages/Books";
 
 function App() {
@@ -24,14 +21,12 @@ function App() {
 
       {/* <Header /> for profile matches  */}
 
-
-      <Route exact path="/Profile" component={Profile} />
-      
       <div className="App">
       <Route exact path="/Chat" component={Chat} />
       </div>
-
       <Route exact path="/Matches" component={Matches} />
+
+      <Route exact path="/Profile" component={Profile} />
       {/* login is default/fallback */}
       <Route exact path="*" component={Login} />
       <Footer />
