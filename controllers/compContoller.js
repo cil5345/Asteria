@@ -1,30 +1,27 @@
-const db = require("../models");
-const compJSON = require("../matches/comp.json")
-const userController = require("./userController")
+// const db = require("../models");
+// const compJSON = require("../matches/comp.json")
+// const userController = require("./userController")
 
-module.exports = {
-    findAll: async function(req, res) {
+// module.exports = {
+//     findAll: async function(req, res) {
 
-        //should filter and return an object and deconstructe comp array
-        //{req.sign, [comp signs]}
-        console.log("hit findall in compController")
-        console.log(`${req.params.symbol}`)
-        console.log(`${req.params.prefrence}`)
-        const compArr = compJSON.filter(symbol => (symbol.symbol === req.params.symbol))
-        const { comp } = compArr[0]
-        console.log(comp)
-        console.log(`${req.params.symbol} >>> ${[JSON.stringify(comp)]}}`)
-        //[ 'Leo', 'Sagittarius', 'Gemini', 'Aquarius' ]
-        //Aries >>> ["Leo","Sagittarius","Gemini","Aquarius"]}
-        const pref = req.params.prefrence.split("")
-        console.log(pref)
+//         //should filter and return an object and deconstructe comp array
+ 
+//         const compArr = compJSON.filter(symbol => (symbol.symbol === req.params.symbol))
+//         const { comp } = compArr[0]
+//         console.log(comp)
+//         console.log(`${req.params.symbol} >>> ${[JSON.stringify(comp)]}}`)
+//         //[ 'Leo', 'Sagittarius', 'Gemini', 'Aquarius' ]
+//         //Aries >>> ["Leo","Sagittarius","Gemini","Aquarius"]}
+//         const pref = req.params.prefrence.split("")
+//         console.log(pref)
 
-        //Last push
-        const allUsers = await userController.findAll(req, res)
-        console.log(allUsers)
-        //Last push
+//         //Last push
+//         const allUsers = await userController.findAll(req, res)
+//         console.log(allUsers)
+//         //Last push
 
-        const symbolCompUsers =  comp.some(symbol => allUsers.symbol)
+//         const symbolCompUsers =  comp.some(symbol => allUsers.symbol)
 
         //some(..) checks each element of the array against a test function and returns true if any element of the array passes the test function, otherwise, it returns false
         //look for all users that have a 
@@ -48,5 +45,5 @@ module.exports = {
         //sign will point to 4 compatible signs
         //we will get those users with those signs
         //afterwards we will narrow done to those of the prefrence of the BACH 
-      }
-}
+//       }
+// }
