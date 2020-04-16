@@ -25,7 +25,7 @@ function App() {
       <div className="App">
       <Route exact path="/Chat" component={Chat} />
       </div>
-      <Route exact path="*" component={} />
+      {/* <Route exact path="*" component={} /> */}
       <Footer />
     </Router>
 
