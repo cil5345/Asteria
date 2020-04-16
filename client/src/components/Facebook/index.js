@@ -36,8 +36,7 @@ class LoginFacebook extends Component {
         console.log("already exists")
         //otherwise we already have this user, we dont need to create the user
         //@HACER take to next page?
-        
-
+        document.location.href("/Profile")
     }
 
     getUsers = () => {
@@ -83,7 +82,6 @@ class LoginFacebook extends Component {
         <button className="antonios_test_buttons" onClick={this.updateUser}>yeet</button>
         </>
         return <>{facebookData}</>
-
     }
 }
 

@@ -16,8 +16,6 @@ const UserSchema = new Schema({
   symbol: {
     type: String,
     required: false
-    // @HACER maybe change to true when
-    //we see if we can pull DOB from FB
   },
   //@HACER implement if there is time
   // searchOrder: [
