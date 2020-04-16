@@ -45,8 +45,8 @@ async function createPerson() {
 
             const user= {
                 fb_ID: getID,
-                imageLink: imageLink,
-                name: names[i],
+                imageLink: names[i].imageLink,
+                name: names[i].name,
                 symbol: symbols[random(symbols.length)],
                 gender: genders[random(genders.length)],
                 prefrence: prefrences[random(prefrences.length)]
@@ -71,13 +71,13 @@ function isUnique(id) {
 }
 
 function idGenerator() {
-    return (Math.floor(Math.random() * 1000) + 1)
+    return (Math.floor(Math.random() * 1000) + 1).toString()
 }
 
 async function getRandomNames() {
 
     const userFeedback = await axiosCall()
-    for(let user of userFeedback.data.results) names.push(`${user.name.first} ${user.name.last}`)
+    for(let user of userFeedback.data.results) names.push({name: `${user.name.first} ${user.name.last}`, imageLink: `${user.picture.large}`})
 }
 
 function axiosCall() {
