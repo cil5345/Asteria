@@ -1,5 +1,7 @@
 .container {
-    padding-top: 20pt;
     font-family: 'Montserrat', sans-serif;
     color: white;
+    position:fixed;
+    bottom:0;
+    text-align: center;
 }
