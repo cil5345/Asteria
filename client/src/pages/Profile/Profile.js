@@ -89,10 +89,11 @@ class Profile extends Component {
                                                     <option value="Gemini">Gemini</option>
                                                     <option value="Cancer">Cancer</option>
                                                     <option value="Leo">Leo</option>
-                                                    <option value="Virgo">Libra</option>
+                                                    <option value="Libra">Libra</option>
                                                     <option value="Scorpio">Scorpio</option>
                                                     <option value="Sagittarius">Sagittarius</option>
                                                     <option value="Capricorn">Capricorn</option>
+                                                    <option value="Virgo">Virgo</option>
                                                     <option value="Aquarius">Aquarius</option>
                                                     <option value="Pisces">Pisces</option>
                                                 </select>

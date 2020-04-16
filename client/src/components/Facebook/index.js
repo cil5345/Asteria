@@ -11,7 +11,7 @@ class LoginFacebook extends Component {
         auth: false,
         fbDetails: {}
     }
-
+    //@MVP save fbID to localstorage/session
     componentClicked = async () => {
         console.log("clicked")
     }
@@ -36,6 +36,7 @@ class LoginFacebook extends Component {
         console.log("already exists")
         //otherwise we already have this user, we dont need to create the user
         //@HACER take to next page?
+
     }
 
     getUsers = () => {
