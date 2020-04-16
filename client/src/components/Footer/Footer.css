@@ -1,7 +1,7 @@
 .container {
     font-family: 'Montserrat', sans-serif;
     color: white;
-    position:fixed;
+    /* position:fixed; */
     bottom:0;
     text-align: center;
 }
