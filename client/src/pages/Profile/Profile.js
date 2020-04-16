@@ -3,7 +3,6 @@ import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header"
 import Mo from "./mo.jpeg";
 import "./Profile.css";
-import { useHistory } from "react-router-dom"
 import { getCompatible, updateUser } from "../../utils/API"
 
 const dk = "debugging"
@@ -16,7 +15,7 @@ class Profile extends Component {
         pref: ""
     }
     
-    history = useHistory();
+    
 
     getComp = async (sign, prefrence) => {
         console.log("you cant match my style")
