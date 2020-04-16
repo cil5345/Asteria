@@ -31,12 +31,15 @@ module.exports = {
       .create(req.body)
       .then(dbModel => res.json(dbModel))
   },
-  findComp: function (symbol, prefrence) {
+  findComp: function (req, res) {
     console.log("usar find comps")
     db.User
       .find({})
       .then(data => {
-//Last push
+        //Last push
+        const symbol = req.params.symbol
+        const prefrence = req.params.prefrence
+
         const compArr = compJSON.filter(symbol => (symbol.symbol === symbol))
         const { comp } = compArr[0]
 
@@ -60,6 +63,6 @@ module.exports = {
         res.json(finalComp)
       })
       .catch(err => res.status(422).json(err));
-      //Last push
+    //Last push
   }
 }
