@@ -37,11 +37,16 @@ module.exports = {
       .find({})
       .then(data => {
         //Last push
+
+        console.log("we are finding trying to find comps in the user controller")
         const symbol = req.params.symbol
         const prefrence = req.params.prefrence
+        console.log(symbol + " " + prefrence)
 
         const compArr = compJSON.filter(symbol => (symbol.symbol === symbol))
         const { comp } = compArr[0]
+
+        console.log(comp)
 
         const prefArr = prefrence.split("")
 
