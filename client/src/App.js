@@ -1,5 +1,5 @@
 import React from "react";
-import Facebook from "./components/Facebook"//@HACER MOVE TO COMPONENETS //Mo commented out.  Talk with Mo
+import Facebook from "./components/Facebook"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Logo from "./components/Logo/Logo";
 import Header from "./components/Header/Header";
@@ -15,6 +15,21 @@ import "./style.css"
 function App() {
   return (
     <>
+      <Logo />
+
+
+
+    {/* might have to be put into login page/comp */}
+      <Facebook />
+    {/* might have to be put into login page/comp */}
+
+    <Router>
+      {/* <mainBG /> */}
+      {/* <Route exact path="*" component={Login} /> */}
+      {/* need to compose ^^ */}
+      <h1>FB Login</h1>
+
+      <Route exact path="*">
     <div id='stars'></div>
     <div id='stars2'></div>
     <div id='stars3'></div>
@@ -27,20 +42,19 @@ function App() {
                 PARALLAX PIXEL STARS
     </span>
             <div />
-    <Router>
-      {/* <mainBG /> */}
-      <h1>FB Login</h1>
-      <Logo />
-      <Facebook />
+
+      </Route>
+
+
       <Header />
       <hr />
       <Route exact path="/Profile" component={Profile} />
+      
       {/* Antonio ^^^^^^^^ */}
       {/* Chris \/ \/ \/ \/ \/ */}
       <div className="App">
       <Route exact path="/Chat" component={Chat} />
       </div>
-      {/* <Route exact path="*" component={} /> */}
       <Route exact path="/Matches" component={Matches} />
       <Footer />
     </Router>
