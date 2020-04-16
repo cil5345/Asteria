@@ -2,16 +2,26 @@ import React from "react";
 import { getCompatible } from "../../utils/API"
 import "./style.css";
 
+const comp = []
+
 function Swipe() {
 
     async function getComps() {
         console.log("yo")
-        const comp = await getCompatible("Leo", "F").then(data => console.log(data))
+        
+        await getCompatible("Leo", "F").then(data => comp.push(data))
                                  .catch(err => console.log(err))
+        console.log(comp[0].data[1].imageLink)
 
+        const data = comp.filter( c => c.data)
+        console.log(data)
+        console.log(data[0].data)
+        for(let d of data[0].data) console.log(`you are compatible with ${d.name} see what they look like here:
+        
+        ${d.imageLink}`)
 
     }
-    
+
     getComps()
 
     return (
