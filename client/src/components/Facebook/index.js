@@ -42,14 +42,10 @@ class LoginFacebook extends Component {
       
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
-        !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) : console.log("already exists")
+        !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) : sessionStorage.setItem("fid_pic", `${user.fb_ID}|${user.imageLink}`)
+        //sessionStorage.setItem("fb_ID", JSON.stringify(user.fb_ID))
 
         this.setState({ auth: true })
-
-        //sessionStorage.setItem("fb_ID", this.state.fbDeatails.fb_ID)
-
-        //otherwise we already have this user, we dont need to create the user
-        //@HACER take to next page?
     }
 
     getUsers = () => {
@@ -73,8 +69,15 @@ class LoginFacebook extends Component {
     }
 
     render = () => {
-        if (this.state.auth) {
-                 return <Redirect to="/Profile"/>
+        if (this.state.auth && this.state.fbDetails.fb_ID) {
+                return <Redirect to="/Profile"/>
+        } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
+                const user = this.getThisUser()
+                // this.setState({})
+                console.log("need to sess")
+                sessionStorage.setItem("fb_ID", JSON.stringify(user.fb_ID))
+                
+
         }
 
         let facebookData
