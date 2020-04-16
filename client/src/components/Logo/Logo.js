@@ -5,7 +5,12 @@ import "./logo.css"
 function Logo() {
     return (
         <>
-        <p><i class="fad fa-stars"></i>Asteria</p>
+            <div className="asteria">
+                <p>Asteria</p>
+            </div>
+            <div className="tagLine">
+                <h5>It's written in the stars!</h5>
+            </div>
         </>
     )
 }
