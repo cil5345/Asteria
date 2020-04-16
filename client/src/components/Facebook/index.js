@@ -29,17 +29,7 @@ class LoginFacebook extends Component {
         //get the user from our DB
         //@HACER cleanup/get rid of console.log()'s
         const user = await this.getThisUser()
-        console.log(user)
-        if(!user) {
-            console.log("!user")
-        } else if(user === null) {
-            console.log("its a null")
-        } else if(user === "undefined") {
-            console.log("undefined string")
-        } else if(user == "undefined") {
-            console.log("weak ass undefined")
-        }
-        console.log()
+      
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
         !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) :
