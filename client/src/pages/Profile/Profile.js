@@ -84,6 +84,7 @@ class Profile extends Component {
         await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1)})
         console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
         probablyNotMo = this.state.imageLink
+        console.log("cl: probablynot")
         console.log(probablyNotMo)
     }
 
