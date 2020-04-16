@@ -67,15 +67,24 @@ class Profile extends Component {
         }
     }
 
-    componentWillMount = () => {
+    saveinsession() {
 
-        const leedle = JSON.stringify(sessionStorage.getItem("fid_pic"))
+    }
+    componentWillMount = async () => {
+
+
+        // saveinsession() {
+        //     sessionStorage.setItem()
+        // }
+
+        const leedle = await JSON.stringify(sessionStorage.getItem("fid_pic"))
         console.log(leedle.indexOf("|"))
-        const pipe = leedle.indexOf("|")
-        this.setState({ fb_ID: leedle.substring(0, pipe) })
-        this.setState({ imageLink: leedle.substring(pipe, leedle.length)})
+        const pipe = await leedle.indexOf("|")
+        await this.setState({ fb_ID: leedle.substring(0, pipe) })
+        await this.setState({ imageLink: leedle.substring(pipe, leedle.length)})
         console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
         probablyNotMo = this.state.imageLink
+        console.log(probablyNotMo)
     }
 
     render = () => {
