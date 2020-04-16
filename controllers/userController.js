@@ -51,7 +51,7 @@ module.exports = {
         console.log(comp)
 
         const prefArr = prefrence.split("")
-
+        console.log(prefArr)
         const symbolComp = []
 
         let hit = 0
@@ -59,17 +59,13 @@ module.exports = {
           for (let inner = 0; inner < comp.length; inner++) {
             if (data[i].symbol === comp[inner]) {
               symbolComp.push(data[i])
-              hit++
             }
           }
         }
-        console.log(hit)
         console.log("comp matches")
         console.log(symbolComp)
-        const finalComp = symbolComp.filter(user => {
-
-          (prefArr.indexOf(user.gender) !== -1)
-        })
+        const finalComp = symbolComp.filter(user => prefArr.indexOf(user.gender) !== -1)
+        
         console.log(finalComp)
         res.json(finalComp)
       })
