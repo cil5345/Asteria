@@ -7,11 +7,13 @@ import "./Profile.css";
 import { getCompatible, updateUser } from "../../utils/API"
 
 const dk = "debugging"
+var probablyNotMo
 
 class Profile extends Component {
 
     state = {
-        fb_ID: "10158279544377148",
+        fb_ID: "",
+        imageLink: "",
         symbol: "",
         gender: "",
         pref: "",
@@ -59,20 +61,45 @@ class Profile extends Component {
 
 
     componentDidMount = () => {
-        if(sessionStorage.getItem("fb_ID")) {
+        if(sessionStorage.getItem("fid_pic")) {
 
-            console.log(`this IS MAYBE YOUR FB ID${sessionStorage.getItem("fb_ID")}`)
+            console.log(`FB ID_PIC: ${sessionStorage.getItem("fid_pic")}`)
         }
     }
 
+    saveinsession() {
+
+    }
+    componentWillMount = async () => {
+
+
+        // saveinsession() {
+        //     sessionStorage.setItem()
+        // }
+
+        const leedle = await JSON.stringify(sessionStorage.getItem("fid_pic"))
+        console.log(leedle.indexOf("|"))
+        const pipe = await leedle.indexOf("|")
+        await this.setState({ fb_ID: leedle.substring(0, pipe) })
+        await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1)})
+        console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
+        probablyNotMo = this.state.imageLink
+        console.log("cl: probablynot")
+        console.log(`|${probablyNotMo}|`)
+    }
+
     render = () => {
+        console.log("render this")
+        console.log(this.state.imageLink)
+        console.log(probablyNotMo)
+        console.log("forgot")
         return <>
             <Header />
             <section className="container">
                 <div className="row">
                     <div className="col-4">
                         <Card title="User Profile" desc="Employee Directory" />
-                        <img src={Mo} id="my-pic" alt="Mo's pic" width="150" height="200" />
+                        <img src={this.state.imageLink} id="my-pic" alt="Mo's pic" width="150" height="200" />
                     </div>
                     <br></br>
                     <div className="row">
