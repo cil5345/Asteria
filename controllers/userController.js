@@ -63,6 +63,7 @@ module.exports = {
             }
           }
         }
+        console.log(hit)
         console.log("comp matches")
         console.log(symbolComp)
         const finalComp = symbolComp.filter(user => {
