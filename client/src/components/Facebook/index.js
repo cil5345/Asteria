@@ -46,7 +46,7 @@ class LoginFacebook extends Component {
 
         this.setState({ auth: true })
 
-        //sessionStorage.setItem("fb_ID", this.state.fbDeatails.fb_ID)
+        sessionStorage.setItem("fb_ID", JSON.stringify(this.state.fbDeatails.fb_ID))
 
         //otherwise we already have this user, we dont need to create the user
         //@HACER take to next page?
@@ -78,7 +78,8 @@ class LoginFacebook extends Component {
         } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
                 const user = this.getThisUser()
                 // this.setState({})
-                sessionStorage.setItem("fb_ID", user.fb_ID)
+                console.log("need to sess")
+                sessionStorage.setItem("fb_ID", JSON.stringify(user.fb_ID))
                 
 
         }
