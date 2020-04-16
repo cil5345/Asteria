@@ -32,26 +32,16 @@ module.exports = {
     db.User
       .find({})
       .then(data => {
-        //Last push
 
-        console.log("we are finding trying to find comps in the user controller")
         const symbol = req.params.symbol
         const prefrence = req.params.prefrence
-        console.log(symbol + " " + prefrence)//
 
         const compArr = compJSON.filter(sign => (sign.symbol === symbol))
-        // const compArr = compJSON.filter(symbol => (symbol.symbol === symbol))
-        console.log("here comes jason")
-        // console.log(compJSON)  THIS WORKS
-        console.log(compArr)
-        console.log("stringify")
-        console.log(JSON.stringify(compArr))
+
         const { comp } = compArr[0]
 
-        console.log(comp)
-
         const prefArr = prefrence.split("")
-        console.log(prefArr)
+        
         const symbolComp = []
 
         let hit = 0
@@ -62,12 +52,9 @@ module.exports = {
             }
           }
         }
-        console.log("comp matches")
-        console.log(symbolComp)
+        
         const finalComp = symbolComp.filter(user => prefArr.indexOf(user.gender) !== -1)
-        // const jawn = symbolComp.filter(user => (user.gender.includes()))
-        console.log(finalComp)
-        // console.log(jawn)
+        
         res.json(finalComp)
       })
       .catch(err => res.status(422).json(err));
