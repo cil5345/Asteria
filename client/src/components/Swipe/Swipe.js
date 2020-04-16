@@ -1,9 +1,13 @@
-import React, { Component } from "react"
-import "./style.css"
+import React, { Component } from "react";
+import "./style.css";
 
 function Swipe() {
     return (
-        <div class="cardcontainer list">
+        <div class="cardcontainer list"
+            style={{
+                textAlign: "center",
+            }}
+        >
             <ul class="cardlist">
                 <li class="card current">#1</li>
                 <li class="card">#2</li>
