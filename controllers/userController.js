@@ -65,8 +65,9 @@ module.exports = {
         console.log("comp matches")
         console.log(symbolComp)
         const finalComp = symbolComp.filter(user => prefArr.indexOf(user.gender) !== -1)
-        
+        // const jawn = symbolComp.filter(user => (user.gender.includes()))
         console.log(finalComp)
+        // console.log(jawn)
         res.json(finalComp)
       })
       .catch(err => res.status(422).json(err));

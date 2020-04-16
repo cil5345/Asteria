@@ -60,7 +60,11 @@ class LoginFacebook extends Component {
 
     getComp = async (sign, prefrence) => {
         console.log("you cant match my style")
-        await getCompatible("Aries", "FM").then( data => console.log(data)).then( err => console.log(err))
+        await getCompatible("Aries", "FM").then( data => {
+        
+            console.log(data.data[0])
+            for(let user of data.data) console.log(user)
+        }).then( err => console.log("company " + err))
     }
 
     updateUser = async (id, symbol, gender, prefrence) => {
