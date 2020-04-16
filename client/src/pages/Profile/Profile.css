@@ -31,6 +31,10 @@
 
 }
 
+.label{
+    color:white;
+}
+
 @media only screen and (max-width: 600px) {
     .nameInput {
     width: 300px;
