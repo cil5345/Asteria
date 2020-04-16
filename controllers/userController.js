@@ -7,15 +7,10 @@ module.exports = {
     console.log("hit get users / user controller")
     db.User
       .find({})
-      // .findAll({})
-      // .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function (req, res) {
-    console.log("hit user controller get by id")
-    console.log("params")
-    console.log(req.params.id)
     db.User
       .findOne({ fb_ID: req.params.id })
       .then(dbModel => res.json(dbModel))
@@ -58,7 +53,6 @@ module.exports = {
         res.json(finalComp)
       })
       .catch(err => res.status(422).json(err));
-    //Last push
   },
   updateProf: (req, res) => {
     db.User.findOneAndUpdate({ fb_ID: id }, {symbol: req.params.symbol, gender: req.params.gender, prefrence: req.params.prefrence})
