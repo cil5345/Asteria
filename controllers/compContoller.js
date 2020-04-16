@@ -1,3 +1,4 @@
+//To be revisited when I learn mongoose :/
 // const db = require("../models");
 // const compJSON = require("../matches/comp.json")
 // const userController = require("./userController")
