@@ -3,7 +3,9 @@ import Card from "../../components/Card/Card";
 import Mo from "./mo.jpeg";
 import "./Profile.css";
 import { getCompatible, updateUser } from "../../utils/API"
+
 const dk = "debugging"
+
 class Profile extends Component {
     state = {
         fb_ID: "10158279544377148",
@@ -11,13 +13,16 @@ class Profile extends Component {
         gender: "",
         pref: ""
     }
+
     getComp = async (sign, prefrence) => {
         console.log("you cant match my style")
         await getCompatible("Aries", "FM").then(data => {
+
             console.log(data.data[0])
             for (let user of data.data) console.log(user)
         }).then(err => console.log("company " + err))
-    }
+    }   
+
     updateUser = async () => {
         console.log("update")
         // await getAndUpdate()
@@ -25,21 +30,26 @@ class Profile extends Component {
                 .then(data => console.log(data))
                 .catch(err => console.log(err))
     }
+
     getValues = async () => {
+
         // const fields = 
         // this.setState()
         const gender = document.querySelector(".genderInput")
         const prefrences = document.querySelector(".prefInput")
         const symbol = document.querySelector(".zodiacInput")
+
         console.log(dk)
         console.log(dk + " " + prefrences.value)
         console.log(dk + " " + gender.value)
         console.log(dk + " " + symbol.value)
+
         this.setState({ symbol: await symbol.value })
         this.setState({ gender: await gender.value })
         this.setState({ prefrences: await prefrences.value })
         this.updateUser()
     }
+
     render() {
         return (
             <section className="container">
@@ -83,6 +93,7 @@ class Profile extends Component {
                                                     <option value="Scorpio">Scorpio</option>
                                                     <option value="Sagittarius">Sagittarius</option>
                                                     <option value="Capricorn">Capricorn</option>
+                                                    <option value="Virgo">Virgo</option>
                                                     <option value="Aquarius">Aquarius</option>
                                                     <option value="Pisces">Pisces</option>
                                                 </select>
@@ -113,6 +124,3 @@ class Profile extends Component {
     }
 }
 export default Profile;
-
-
-
