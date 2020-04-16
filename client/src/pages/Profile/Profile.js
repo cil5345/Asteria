@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { Redirect } from "react-router-dom"
 import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header"
 import Mo from "./mo.jpeg";
@@ -12,7 +13,8 @@ class Profile extends Component {
         fb_ID: "10158279544377148",
         symbol: "",
         gender: "",
-        pref: ""
+        pref: "",
+        redirect: null
     }
     
     
@@ -51,6 +53,8 @@ class Profile extends Component {
         this.setState({ gender: await gender.value })
         this.setState({ prefrences: await prefrences.value })
         this.updateUser()
+
+        return <Redirect to="/Matches"/>
     }
 
     render = () => {
@@ -117,7 +121,12 @@ class Profile extends Component {
                                         </label>
                                     </div>
                                     <br></br>
-                                    <button type="submit" className="successButton" onClick={this.getValues}>Get some matches</button>
+                                    <button type="submit" className="successButton" onClick={this.getValues}>get matches</button>
+                                    <div className="bs">
+
+                                    {/* <Redirect className="successButton" to="/Profile">Test</Redirect> */}
+
+                                    </div>
                                 </div>
                             </div>
                         </form>
