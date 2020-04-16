@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import FacebookLoginBtn from "react-facebook-login"
 //import LoginBG from "./components/LoginBG/LoginBG";
 import "./style.css"
-import { getAllUsers, getOneUser, createUser, getCompatible } from "../../utils/API"
+import { getAllUsers, getOneUser, createUser } from "../../utils/API"
 
 class LoginFacebook extends Component {
 
@@ -58,19 +58,9 @@ class LoginFacebook extends Component {
         return user
     }
 
-    getComp = async (sign, prefrence) => {
-        console.log("you cant match my style")
-        await getCompatible("Aries", "FM").then( data => {
-        
-            console.log(data.data[0])
-            for(let user of data.data) console.log(user)
-        }).then( err => console.log("company " + err))
-    }
+    
 
-    updateUser = async (id, symbol, gender, prefrence) => {
-        console.log("update")
-        // await getAndUpdate()
-    }
+    
 
     render = () => {
         let facebookData
