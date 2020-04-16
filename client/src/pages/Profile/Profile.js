@@ -3,7 +3,6 @@ import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header"
 import Mo from "./mo.jpeg";
 import "./Profile.css";
-import { Link } from "react-router-dom"
 import { getCompatible, updateUser } from "../../utils/API"
 
 const dk = "debugging"
@@ -15,6 +14,8 @@ class Profile extends Component {
         gender: "",
         pref: ""
     }
+    
+    
 
     getComp = async (sign, prefrence) => {
         console.log("you cant match my style")
@@ -52,8 +53,8 @@ class Profile extends Component {
         this.updateUser()
     }
 
-    render() {
-        return (<>
+    render = () => {
+        return <>
             <Header />
             <section className="container">
                 <div className="row">
@@ -66,12 +67,12 @@ class Profile extends Component {
                         <form>
                             <div className="grid-container">
                                 <div className="grid-x grid-padding-x">
-                                    <div className="userName cell">
+                                    {/* <div className="userName cell">
                                         <label>User Name
                                             <input type="text" value={this.state.userName} className="nameInput" placeholder="John Doe" />
                                         </label>
                                     </div>
-                                    <br></br>
+                                    <br></br> */}
                                     <div className="gender cell">
                                         <label>Gender
                                             <div>
@@ -116,7 +117,7 @@ class Profile extends Component {
                                         </label>
                                     </div>
                                     <br></br>
-                                    <input type="submit" className="successButton" value="Get some matches" onClick={this.getValues}><Link to="/Profile" /></input>
+                                    <button type="submit" className="successButton" onClick={this.getValues}>Get some matches</button>
                                 </div>
                             </div>
                         </form>
@@ -124,7 +125,6 @@ class Profile extends Component {
                 </div>
             </section >
             </>
-        )
     }
 }
 export default Profile;
