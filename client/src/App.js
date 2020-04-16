@@ -20,7 +20,7 @@ function App() {
     <Router>
 
       {/* <Header /> for profile matches  */}
-      <hr />
+
 
       <Route exact path="/Profile" component={Profile} />
       
