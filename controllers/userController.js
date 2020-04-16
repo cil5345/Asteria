@@ -39,10 +39,13 @@ module.exports = {
         const prefrence = req.params.prefrence
         console.log(symbol + " " + prefrence)//
 
-        const compArr = compJSON.filter(symbol => (symbol.symbol === symbol))
+        const compArr = compJSON.filter(sign => (sign.symbol === symbol))
+        // const compArr = compJSON.filter(symbol => (symbol.symbol === symbol))
         console.log("here comes jason")
-        console.log(compJSON)
+        // console.log(compJSON)  THIS WORKS
         console.log(compArr)
+        console.log("stringify")
+        console.log(JSON.stringify(compArr))
         const { comp } = compArr[0]
 
         console.log(comp)
