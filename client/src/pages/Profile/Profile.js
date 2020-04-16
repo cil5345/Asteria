@@ -7,11 +7,13 @@ import "./Profile.css";
 import { getCompatible, updateUser } from "../../utils/API"
 
 const dk = "debugging"
+var probablyNotMo
 
 class Profile extends Component {
 
     state = {
-        fb_ID: sessionStorage.getItem("fb_ID"),
+        fb_ID: "",
+        imageLink: "",
         symbol: "",
         gender: "",
         pref: "",
@@ -59,10 +61,21 @@ class Profile extends Component {
 
 
     componentDidMount = () => {
-        if(sessionStorage.getItem("fb_ID")) {
+        if(sessionStorage.getItem("fid_pic")) {
 
-            console.log(`this IS MAYBE YOUR FB ID${sessionStorage.getItem("fb_ID")}`)
+            console.log(`FB ID_PIC: ${sessionStorage.getItem("fid_pic")}`)
         }
+    }
+
+    componentWillMount = () => {
+
+        const leedle = sessionStorage.getItem("fid_pic")
+        console.log(leedle.indxOf("|"))
+        const pipe = leedle.indxOf("|")
+        this.setState({ fb_ID: leedle.substring(0, pipe) })
+        this.setState({ imageLink: leedle.substring(pipe, leedle.length)})
+        console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
+        probablyNotMo = this.state.imageLink
     }
 
     render = () => {
@@ -72,7 +85,7 @@ class Profile extends Component {
                 <div className="row">
                     <div className="col-4">
                         <Card title="User Profile" desc="Employee Directory" />
-                        <img src={Mo} id="my-pic" alt="Mo's pic" width="150" height="200" />
+                        <img src={probablyNotMo} id="my-pic" alt="Mo's pic" width="150" height="200" />
                     </div>
                     <br></br>
                     <div className="row">
