@@ -3,7 +3,7 @@ import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header"
 import Mo from "./mo.jpeg";
 import "./Profile.css";
-import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import { getCompatible, updateUser } from "../../utils/API"
 
 const dk = "debugging"
@@ -15,6 +15,8 @@ class Profile extends Component {
         gender: "",
         pref: ""
     }
+    
+    history = useHistory();
 
     getComp = async (sign, prefrence) => {
         console.log("you cant match my style")
@@ -116,7 +118,7 @@ class Profile extends Component {
                                         </label>
                                     </div>
                                     <br></br>
-                                    <button type="submit" className="successButton" onClick={this.getValues}>Get some matches<Link to="/Profile" /></button>
+                                    <button type="submit" className="successButton" onClick={this.getValues}>Get some matches</button>
                                 </div>
                             </div>
                         </form>
