@@ -3,6 +3,13 @@ import { getCompatible } from "../../utils/API"
 import "./style.css";
 
 function Swipe() {
+
+    async function getComps() {
+        console.log("yo")
+        getCompatible()
+    }
+    getComps()
+
     return (
         <div class="cardcontainer list"
             style={{

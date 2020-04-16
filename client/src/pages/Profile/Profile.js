@@ -85,7 +85,7 @@ class Profile extends Component {
         console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
         probablyNotMo = this.state.imageLink
         console.log("cl: probablynot")
-        console.log(probablyNotMo)
+        console.log(`|${probablyNotMo}|`)
     }
 
     render = () => {
