@@ -14,6 +14,13 @@
 ## Description
 
 ## Installation
+To install the necessary dependencies, run the following commands:
+```sh
+npm i
+```
+```sh
+npm start
+```
 
 ## Usage
 
@@ -25,10 +32,10 @@
 ## License
 
 ## Contributions
-[Antonio Alvarado](https://github.com/antonio36alv)
-[Mo Civers-Davis](https://github.com/MoCivers-Davis)
-[Chris Lee](https://github.com/cil5345)
-[Casey Zacney](https://github.com/czacney)
+* [Antonio Alvarado](https://github.com/antonio36alv)
+* [Mo Civers-Davis](https://github.com/MoCivers-Davis)
+* [Chris Lee](https://github.com/cil5345)
+* [Casey Zacney](https://github.com/czacney)
 
 ## Credits
 
