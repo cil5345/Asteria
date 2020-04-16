@@ -40,6 +40,8 @@ module.exports = {
         console.log(symbol + " " + prefrence)//
 
         const compArr = compJSON.filter(symbol => (symbol.symbol === symbol))
+        console.log("here comes jason")
+        console.log(compJSON)
         console.log(compArr)
         const { comp } = compArr[0]
 

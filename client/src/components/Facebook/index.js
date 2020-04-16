@@ -63,6 +63,11 @@ class LoginFacebook extends Component {
         await getCompatible("Aries", "FM").then( data => console.log(data)).then( err => console.log(err))
     }
 
+    updateUser = async (id, symbol, gender, prefrence) => {
+        console.log("update")
+        // await getAndUpdate()
+    }
+
     render = () => {
         let facebookData
 
@@ -79,6 +84,7 @@ class LoginFacebook extends Component {
         <button className="antonios_test_buttons" onClick={this.getUsers}>testGetUsers</button>
         <button className="antonios_test_buttons" onClick={this.getThisUser}>getThisUser</button>
         <button className="antonios_test_buttons" onClick={this.getComp}>get Comps</button>
+        <button className="antonios_test_buttons" onClick={this.updateUser}>yeet</button>
         </>
         return <>{facebookData}</>
 
