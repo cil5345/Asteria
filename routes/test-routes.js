@@ -24,13 +24,9 @@ module.exports = function(app)  {
         console.log("reached testroutes get comp.")
         compController.findAll(req, res)
         //we will send in BACH's sign and prefrence
-
         //sign will point to 4 compatible signs
-
         //we will get those users with those signs
-
         //afterwards we will narrow done to those of the prefrence of the BACH
-
     })
 
     /*
