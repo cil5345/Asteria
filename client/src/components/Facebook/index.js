@@ -23,7 +23,7 @@ class LoginFacebook extends Component {
  
     componentWillUnmount = () => {
         console.log("bye world")
-        sessionStorage.setItem("fb_ID", this.state.fbDeatails.fb_ID)
+        // sessionStorage.setItem("fb_ID", this.state.fbDeatails.fb_ID)
     }
     
     responseFacebook = async response => {
@@ -89,10 +89,6 @@ class LoginFacebook extends Component {
         fields="name,email,picture"
         onClick={this.componentClicked}
         callback={this.responseFacebook} />
-        {/* <button className="antonios_test_buttons" onClick={this.getUsers}>testGetUsers</button>
-        <button className="antonios_test_buttons" onClick={this.getThisUser}>getThisUser</button>
-        <button className="antonios_test_buttons" onClick={this.getComp}>get Comps</button>
-        <button className="antonios_test_buttons" onClick={this.updateUser}>yeet</button> */}
         </>
         return <>{facebookData}</>
     }
