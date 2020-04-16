@@ -17,7 +17,7 @@ function App() {
   return (
     <>
 
-    <Router>
+    <Router basename="/">
 
       {/* <Header /> for profile matches  */}
 
