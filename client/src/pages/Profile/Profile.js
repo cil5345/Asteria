@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { Redirect } from "react-router-dom"
 import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header"
 import Mo from "./mo.jpeg";
@@ -8,14 +9,14 @@ import { getCompatible, updateUser } from "../../utils/API"
 const dk = "debugging"
 
 class Profile extends Component {
+
     state = {
         fb_ID: "10158279544377148",
         symbol: "",
         gender: "",
-        pref: ""
+        pref: "",
+        redirect: null
     }
-    
-    
 
     getComp = async (sign, prefrence) => {
         console.log("you cant match my style")
@@ -51,6 +52,9 @@ class Profile extends Component {
         this.setState({ gender: await gender.value })
         this.setState({ prefrences: await prefrences.value })
         this.updateUser()
+
+        console.log("going to matches")
+        return <Redirect to="/Matches"/>
     }
 
     render = () => {
@@ -117,7 +121,7 @@ class Profile extends Component {
                                         </label>
                                     </div>
                                     <br></br>
-                                    <button type="submit" className="successButton" onClick={this.getValues}>Get some matches</button>
+                                    <button type="submit" className="successButton" onClick={this.getValues}>Get you're matches</button>
                                 </div>
                             </div>
                         </form>

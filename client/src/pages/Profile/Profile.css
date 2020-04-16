@@ -8,6 +8,8 @@
     margin-right: auto;
 
 }
+
+
 .zodiacInput {
     margin-left: 5px;
     width: 500px;
@@ -27,6 +29,10 @@
     margin-left: 5px;
     width: 500px;
 
+}
+
+.label{
+    color:white;
 }
 
 @media only screen and (max-width: 600px) {
