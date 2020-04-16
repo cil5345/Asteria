@@ -39,13 +39,13 @@ module.exports = {
         const prefrence = req.params.prefrence
         console.log(symbol + " " + prefrence)//
 
-        const compArr = await compJSON.filter(symbol => (symbol.symbol === symbol))
+        const compArr = compJSON.filter(symbol => (symbol.symbol === symbol))
         console.log(compArr)
         const { comp } = compArr[0]
 
         console.log(comp)
 
-        const prefArr = prefrence.split("")
+        const prefArr = await prefrence.split("")
 
         const symbolComp = []
 
@@ -68,7 +68,9 @@ module.exports = {
     //Last push
   }
   /*
-  updateProf: (id, symbol, prefrence)
+  updateProf: (id, symbol, gender, prefrence) => {
+    db.User.findOneAndUpdate({ fb_ID: id }, {})
+  }
 
   */
 }
