@@ -1,6 +1,9 @@
 // app id 519631592082573
 import React, { Component } from "react"
 import FacebookLoginBtn from "react-facebook-login"
+import "./style.css";
+
+
 //import LoginBG from "./components/LoginBG/LoginBG";
 
 import { getUsers, createUser } from "../../utils/API"
