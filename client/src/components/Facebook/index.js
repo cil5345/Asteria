@@ -73,8 +73,14 @@ class LoginFacebook extends Component {
     }
 
     render = () => {
-        if (this.state.auth) {
-                 return <Redirect to="/Profile"/>
+        if (this.state.auth && this.state.fbDetails.fb_ID) {
+                return <Redirect to="/Profile"/>
+        } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
+                const user = this.getThisUser()
+                // this.setState({})
+                sessionStorage.setItem("fb_ID", user.fb_ID)
+                
+
         }
 
         let facebookData
