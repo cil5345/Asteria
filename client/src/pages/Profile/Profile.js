@@ -57,6 +57,14 @@ class Profile extends Component {
         return <Redirect to="/Matches"/>
     }
 
+
+    componentDidMount = () => {
+        if(sessionStorage.getItem("fb_ID")) {
+
+            console.log(`this IS MAYBE YOUR FB ID${sessionStorage.getItem("fb_ID")}`)
+        }
+    }
+
     render = () => {
         return <>
             <Header />
