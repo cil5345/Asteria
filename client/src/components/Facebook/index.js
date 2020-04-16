@@ -35,8 +35,9 @@ class LoginFacebook extends Component {
       
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
-        !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) :
-        document.location.href("/Profile")
+        !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) : console.log("already exists")
+        
+        //document.location.href("/Profile")
 
         //sessionStorage.setItem("fb_ID", this.state.fbDeatails.fb_ID)
 
