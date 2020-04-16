@@ -6,8 +6,12 @@ function Swipe() {
 
     async function getComps() {
         console.log("yo")
-        getCompatible()
+        const comp = await getCompatible("Leo", "F").then(data => console.log(data))
+                                 .catch(err => console.log(err))
+
+
     }
+    
     getComps()
 
     return (

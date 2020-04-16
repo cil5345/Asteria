@@ -89,13 +89,17 @@ class Profile extends Component {
     }
 
     render = () => {
+        console.log("render this")
+        console.log(this.state.imageLink)
+        console.log(probablyNotMo)
+        console.log("forgot")
         return <>
             <Header />
             <section className="container">
                 <div className="row">
                     <div className="col-4">
                         <Card title="User Profile" desc="Employee Directory" />
-                        <img src={probablyNotMo} id="my-pic" alt="Mo's pic" width="150" height="200" />
+                        <img src={this.state.imageLink} id="my-pic" alt="Mo's pic" width="150" height="200" />
                     </div>
                     <br></br>
                     <div className="row">
