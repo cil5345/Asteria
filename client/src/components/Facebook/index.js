@@ -23,7 +23,7 @@ class LoginFacebook extends Component {
  
     componentWillUnmount = () => {
         console.log("bye world")
-        sessionStorage.setItem("fb_ID", JSON.stringify(this.state.fbDeatails.fb_ID))
+        localStorage.setItem("fb_ID", JSON.stringify(this.state.fbDeatails.fb_ID))
     }
     
     responseFacebook = async response => {
