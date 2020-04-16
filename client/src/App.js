@@ -23,8 +23,9 @@ function App() {
       {/* Antonio ^^^^^^^^ */}
       {/* Chris \/ \/ \/ \/ \/ */}
       <div className="App">
-        <Route exact path="/Chat" component={Chat} />
+      <Route exact path="/Chat" component={Chat} />
       </div>
+      <Route exact path="*" component={} />
       <Footer />
     </Router>
 
