@@ -129,7 +129,7 @@ class Profile extends Component {
                                         </label>
                                     </div>
                                     <br></br>
-                                    <button type="submit" className="successButton" onClick={this.getValues}>Get you're matches</button>
+                                    <button type="submit" className="successButton" onClick={this.getValues}>Get your matches</button>
                                 </div>
                             </div>
                         </form>
