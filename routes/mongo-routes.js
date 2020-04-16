@@ -11,10 +11,9 @@ module.exports = function(app) {
 
     //     bookController.findAll
     // })
-
     app.post("/api/users", (req, res) => {
         
-        console.log("hit mongo routes post user")
+        console.log("creating user")
         userController.create(req, res)
     })
 

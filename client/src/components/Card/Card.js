@@ -3,7 +3,7 @@ import "./Card.css";
 
 function Card(props) {
     return (
-        <section className="card">
+        <section className="card2">
 
     <h4 className="card-title"><strong>{props.title}</strong></h4>
     

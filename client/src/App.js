@@ -11,6 +11,13 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import { auth } from "./services/firebase";
 import './styles.css';
+import Facebook from "./components/Facebook"//@HACER MOVE TO COMPONENETS //Mo commented out.  Talk with Mo
+import Logo from "./components/Logo/Logo";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Profile from "./pages/Profile/Profile";
+// import mainBG from "./components/mainBG/mainBG";
+
 
 function PrivateRoute({ component: Component, authenticated, ...rest }) {
   return (

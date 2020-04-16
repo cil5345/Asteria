@@ -1,26 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-
-// import { Link } from "react-router-dom";
-// By importing the Header.css file, it is added to the DOM whenever this component loads
+import { auth } from '../../services/firebase';
 
 function Header() {
   return (
-    <section className="container">
-      <div className="top-bar">
-        <div className="top-bar-left">
-          <span className="menu-text h1">ASTERIA Dating App</span>
-          <div className="links">
-            <Link to="/Profile">Profile</Link>
-            <Link to="/Matches">Matches</Link>
-            <div className="chat">
-              <Link to="Chat">Chat</Link>
+    <header>
+      <nav className="navbar navbar-expand-sm fixed-top navbar-light bg-light">
+        <Link className="navbar-brand" to="/">Asteria</Link>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          {auth().currentUser
+            ? <div className="navbar-nav">
+              <Link className="nav-item nav-link mr-3" to="/chat">Profile</Link>
+              <button className="btn btn-primary mr-3" onClick={() => auth().signOut()}>Logout</button>
             </div>
-          </div>
+            : <div className="navbar-nav">
+              <Link className="nav-item nav-link mr-3" to="/login">Sign In</Link>
+              <Link className="nav-item nav-link mr-3" to="/signup">Sign Up</Link>
+            </div>}
         </div>
-      </div>
-    </section>
+      </nav>
+    </header>
   );
 }
 

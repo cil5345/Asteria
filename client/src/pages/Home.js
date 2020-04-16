@@ -20,7 +20,7 @@ export default class HomePage extends Component {
             </div>
           </div>
         </section>
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
       </div>
     )
   }
