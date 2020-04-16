@@ -26,9 +26,9 @@ function App() {
       </div>
       <Route exact path="/Matches" component={Matches} />
 
-      <Route exact path="/Profile" component={Profile} />
+      {/* <Route exact path="/Profile" component={Profile} /> */}
       {/* login is default/fallback */}
-      <Route exact path="*" component={Login} />
+      <Route exact path="*" component={Profile} />
       <Footer />
     </Router>
     </>

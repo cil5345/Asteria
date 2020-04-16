@@ -52,8 +52,8 @@ class Profile extends Component {
         this.updateUser()
     }
 
-    render() {
-        return (<>
+    render = () => {
+        return <>
             <Header />
             <section className="container">
                 <div className="row">
@@ -66,12 +66,12 @@ class Profile extends Component {
                         <form>
                             <div className="grid-container">
                                 <div className="grid-x grid-padding-x">
-                                    <div className="userName cell">
+                                    {/* <div className="userName cell">
                                         <label>User Name
                                             <input type="text" value={this.state.userName} className="nameInput" placeholder="John Doe" />
                                         </label>
                                     </div>
-                                    <br></br>
+                                    <br></br> */}
                                     <div className="gender cell">
                                         <label>Gender
                                             <div>
@@ -124,7 +124,6 @@ class Profile extends Component {
                 </div>
             </section >
             </>
-        )
     }
 }
 export default Profile;
