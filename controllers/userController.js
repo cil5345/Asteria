@@ -55,7 +55,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   updateProf: (req, res) => {
-    db.User.findOneAndUpdate({ fb_ID: id }, {symbol: req.params.symbol, gender: req.params.gender, prefrence: req.params.prefrence})
+    db.User.findOneAndUpdate({ fb_ID: req.params.id }, {symbol: req.params.symbol, gender: req.params.gender, prefrence: req.params.prefrence})
             .then(data => console.log(data))
             .catch(err => console.log(err))
   }
