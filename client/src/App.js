@@ -21,14 +21,12 @@ function App() {
 
       {/* <Header /> for profile matches  */}
 
-
-      <Route exact path="/Profile" component={Profile} />
-      
       <div className="App">
       <Route exact path="/Chat" component={Chat} />
       </div>
-
       <Route exact path="/Matches" component={Matches} />
+
+      <Route exact path="/Profile" component={Profile} />
       {/* login is default/fallback */}
       <Route exact path="*" component={Login} />
       <Footer />
