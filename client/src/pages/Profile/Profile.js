@@ -69,9 +69,9 @@ class Profile extends Component {
 
     componentWillMount = () => {
 
-        const leedle = sessionStorage.getItem("fid_pic")
-        console.log(leedle.indxOf("|"))
-        const pipe = leedle.indxOf("|")
+        const leedle = JSON.stringify(sessionStorage.getItem("fid_pic"))
+        console.log(leedle.indexOf("|"))
+        const pipe = leedle.indexOf("|")
         this.setState({ fb_ID: leedle.substring(0, pipe) })
         this.setState({ imageLink: leedle.substring(pipe, leedle.length)})
         console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
