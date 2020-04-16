@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
+import { getCompatible } from "../../utils/API"
 import "./style.css";
 
 function Swipe() {
