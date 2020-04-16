@@ -1,6 +1,6 @@
 // app id 519631592082573
 import React, { Component } from "react"
-import { useHistory, Redirect } from "react-router-dom"
+import { Redirect } from "react-router-dom"
 import FacebookLoginBtn from "react-facebook-login"
 //import LoginBG from "./components/LoginBG/LoginBG";
 import "./style.css"
@@ -21,6 +21,11 @@ class LoginFacebook extends Component {
         console.log("clicked")
     }
  
+    componentWillUnmount = () => {
+        console.log("bye world")
+        sessionStorage.setItem("fb_ID", this.state.fbDeatails.fb_ID)
+    }
+    
     responseFacebook = async response => {
 
         console.log("facebook is always watching")
@@ -39,7 +44,7 @@ class LoginFacebook extends Component {
         //for testing puposes we should make a bs id in order to see if it creates a new user
         !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) : console.log("already exists")
 
-        this.setState({ auth: true})
+        this.setState({ auth: true })
 
         //sessionStorage.setItem("fb_ID", this.state.fbDeatails.fb_ID)
 
