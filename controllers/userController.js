@@ -67,6 +67,7 @@ module.exports = {
 
           (prefArr.indexOf(user.gender) !== -1)
         })
+        console.log(finalComp)
         res.json(finalComp)
       })
       .catch(err => res.status(422).json(err));

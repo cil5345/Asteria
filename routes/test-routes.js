@@ -27,6 +27,7 @@ module.exports = function(app)  {
 
     app.post("/api/:id/:symbol/:gender/:prefrence", (req, res) => {
         console.log("hit find update in test routes")
+        userController.updateProf(req, res)
     })
 
     /*
