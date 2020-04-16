@@ -7,11 +7,16 @@
     color: purple;
 }
 
-.links .chat{
-float:right;
+.links .chat  .matches{
+float:left;
 }
 
 .cell {
     display: flex;
     justify-content: center;
+}
+
+.allLinks {
+    display: flex;
+    justify-content: space-evenly;
 }
