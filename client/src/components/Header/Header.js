@@ -12,11 +12,15 @@ function Header() {
             <div className="top-bar">
                 <div className="top-bar-left">
                     <span className="menu-text h1">ASTERIA Dating App</span>
+                    <div className="allLinks">
                     <div className="links">
                     <Link to="/Profile">Profile</Link>
+                    </div>
+                    <div className="matches">
+                    <Link to="/Matches">Matches</Link>
+                    </div>
                     <div className="chat">
                     <Link to="Chat">Chat</Link>
-
                     </div>
                     </div>
                 </div>

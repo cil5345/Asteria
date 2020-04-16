@@ -8,7 +8,7 @@ function Footer() {
             <div id='layout_footer'>
             </div>
             <div id='footer'>
-                ASTERIA Copyright 2020
+                ASTERIA <i class="fal fa-copyright"></i> Copyright 2020
             </div>
         </section>
 

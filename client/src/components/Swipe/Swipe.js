@@ -1,142 +1,116 @@
-import React, { Component } from "react"
-import "./style.css"
+import React, { Component } from "react";
+import "./style.css";
 
-'use strict';
-
-var tinderContainer = document.querySelector('.tinder');
-var allCards = document.querySelectorAll('.tinder--card');
-var nope = document.getElementById('nope');
-var love = document.getElementById('love');
-
-function initCards(card, index) {
-    var newCards = document.querySelectorAll('.tinder--card:not(.removed)');
-
-    newCards.forEach(function (card, index) {
-        card.style.zIndex = allCards.length - index;
-        card.style.transform = 'scale(' + (20 - index) / 20 + ') translateY(-' + 30 * index + 'px)';
-        card.style.opacity = (10 - index) / 10;
-    });
-
-    tinderContainer.classList.add('loaded');
+function Swipe() {
+    return (
+        <div class="cardcontainer list"
+            style={{
+                textAlign: "center",
+            }}
+        >
+            <ul class="cardlist">
+                <li class="card current">#1</li>
+                <li class="card">#2</li>
+                <li class="card">#3</li>
+                <li class="card">#4</li>
+                <li class="card">#5</li>
+                <li class="card">#6</li>
+            </ul>
+            <button class="but-nope">X</button>
+            <button class="but-yay">✔</button>
+        </div>
+    )
 }
 
-initCards();
 
-allCards.forEach(function (el) {
-    var hammertime = new Hammer(el);
+(function () {
+    var animating = false;
 
-    hammertime.on('pan', function (event) {
-        el.classList.add('moving');
-    });
+    function animatecard(ev) {
+        if (animating === false) {
+            var t = ev.target;
 
-    hammertime.on('pan', function (event) {
-        if (event.deltaX === 0) return;
-        if (event.center.x === 0 && event.center.y === 0) return;
+            if (t.className === 'but-nope') {
+                t.parentNode.classList.add('nope');
+                animating = true;
+                fireCustomEvent('nopecard', {
+                    origin: t,
+                    container: t.parentNode,
+                    card: t.parentNode.querySelector('.card')
+                });
+            }
 
-        tinderContainer.classList.toggle('tinder_love', event.deltaX > 0);
-        tinderContainer.classList.toggle('tinder_nope', event.deltaX < 0);
+            if (t.className === 'but-yay') {
+                t.parentNode.classList.add('yes');
+                animating = true;
+                fireCustomEvent('yepcard', {
+                    origin: t,
+                    container: t.parentNode,
+                    card: t.parentNode.querySelector('.card')
+                });
+            }
 
-        var xMulti = event.deltaX * 0.03;
-        var yMulti = event.deltaY / 80;
-        var rotate = xMulti * yMulti;
-
-        event.target.style.transform = 'translate(' + event.deltaX + 'px, ' + event.deltaY + 'px) rotate(' + rotate + 'deg)';
-    });
-
-    hammertime.on('panend', function (event) {
-        el.classList.remove('moving');
-        tinderContainer.classList.remove('tinder_love');
-        tinderContainer.classList.remove('tinder_nope');
-
-        var moveOutWidth = document.body.clientWidth;
-        var keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
-
-        event.target.classList.toggle('removed', !keep);
-
-        if (keep) {
-            event.target.style.transform = '';
-        } else {
-            var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
-            var toX = event.deltaX > 0 ? endX : -endX;
-            var endY = Math.abs(event.velocityY) * moveOutWidth;
-            var toY = event.deltaY > 0 ? endY : -endY;
-            var xMulti = event.deltaX * 0.03;
-            var yMulti = event.deltaY / 80;
-            var rotate = xMulti * yMulti;
-
-            event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
-            initCards();
+            if (t.classList.contains('current')) {
+                fireCustomEvent('cardchosen', {
+                    container: getContainer(t),
+                    card: t
+                });
+            }
         }
-    });
-});
+    }
 
-function createButtonListener(love) {
-    return function (event) {
-        var cards = document.querySelectorAll('.tinder--card:not(.removed)');
-        var moveOutWidth = document.body.clientWidth * 1.5;
+    function fireCustomEvent(name, payload) {
+        var newevent = new CustomEvent(name, {
+            detail: payload
+        });
+        document.body.dispatchEvent(newevent);
+    }
 
-        if (!cards.length) return false;
+    function getContainer(elm) {
+        var origin = elm.parentNode;
 
-        var card = cards[0];
-
-        card.classList.add('removed');
-
-        if (love) {
-            card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
-        } else {
-            card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
+        if (!origin.classList.contains('cardcontainer')) {
+            origin = origin.parentNode;
         }
 
-        initCards();
+        return origin;
+    }
 
-        event.preventDefault();
-    };
-}
+    function animationdone(ev) {
+        animating = false;
+        var origin = getContainer(ev.target);
 
-var nopeListener = createButtonListener(false);
-var loveListener = createButtonListener(true);
+        if (ev.animationName === 'yay') {
+            origin.classList.remove('yes');
+        }
 
-nope.addEventListener('click', nopeListener);
-love.addEventListener('click', loveListener);
+        if (ev.animationName === 'nope') {
+            origin.classList.remove('nope');
+        }
 
-<div class="tinder">
-  <div class="tinder--status">
-    <i class="fa fa-remove"></i>
-    <i class="fa fa-heart"></i>
-  </div>
+        if (origin.classList.contains('list')) {
+            if (ev.animationName === 'nope' || ev.animationName === 'yay') {
+                origin.querySelector('.current').remove();
 
-  <div class="tinder--cards">
-    <div class="tinder--card">
-      <img src="https://placeimg.com/600/300/people">
-      <h3>Demo card 1</h3>
-      <p>This is a demo for Tinder like swipe cards</p>
-    </div>
-    <div class="tinder--card">
-      <img src="https://placeimg.com/600/300/animals">
-      <h3>Demo card 2</h3>
-      <p>This is a demo for Tinder like swipe cards</p>
-    </div>
-    <div class="tinder--card">
-      <img src="https://placeimg.com/600/300/nature">
-      <h3>Demo card 3</h3>
-      <p>This is a demo for Tinder like swipe cards</p>
-    </div>
-    <div class="tinder--card">
-      <img src="https://placeimg.com/600/300/tech">
-      <h3>Demo card 4</h3>
-      <p>This is a demo for Tinder like swipe cards</p>
-    </div>
-    <div class="tinder--card">
-      <img src="https://placeimg.com/600/300/arch">
-      <h3>Demo card 5</h3>
-      <p>This is a demo for Tinder like swipe cards</p>
-    </div>
-  </div>
+                if (!origin.querySelector('.card')) {
+                    fireCustomEvent('deckempty', {
+                        origin: origin.querySelector('button'),
+                        container: origin,
+                        card: null
+                    });
+                } else {
+                    origin.querySelector('.card').classList.add('current');
+                }
+            }
+        }
+    }
 
-  <div class="tinder--buttons">
-    <button id="nope"><i class="fa fa-remove"></i></button>
-    <button id="love"><i class="fa fa-heart"></i></button>
-  </div>
-</div>
+    document.body.addEventListener('animationend', animationdone);
+    document.body.addEventListener('webkitAnimationEnd', animationdone);
+    document.body.addEventListener('click', animatecard);
+    window.addEventListener('DOMContentLoaded', function () {
+        document.body.classList.add('tinderesque');
+    });
+})();
 
 export default Swipe;

@@ -1,5 +1,5 @@
-.antonios_test_buttons {
-     border: solid thick green;
-     margin: 4px;
-     padding: 10px;
+.kep-login-facebook.metro {
+    border-radius: 30px !important;
+    font-family: 'Montserrat', sans-serif;
+    background-color: midnightblue;
 }

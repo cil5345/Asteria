@@ -21,7 +21,7 @@ class Profile extends Component {
             console.log(data.data[0])
             for (let user of data.data) console.log(user)
         }).then(err => console.log("company " + err))
-    }
+    }   
 
     updateUser = async () => {
         console.log("update")
