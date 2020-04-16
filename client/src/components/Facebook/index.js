@@ -15,8 +15,6 @@ class LoginFacebook extends Component {
         fbDetails: {},
         redirect: null
     }
-
-    history = useHistory();
     
     //@MVP save fbID to localstorage/session
     componentClicked = async () => {
@@ -73,7 +71,7 @@ class LoginFacebook extends Component {
         if (this.state.auth) {
                  return <Redirect to="/Profile"/>
         }
-        
+
         let facebookData
 
         this.state.auth ? facebookData = <>yeer logged in</>
