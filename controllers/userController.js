@@ -27,7 +27,7 @@ module.exports = {
       .create(req.body)
       .then(dbModel => res.json(dbModel))
   },
-  findComp: async function (req, res) {
+  findComp: function (req, res) {
     console.log("usar find comps")
     db.User
       .find({})
@@ -45,7 +45,7 @@ module.exports = {
 
         console.log(comp)
 
-        const prefArr = await prefrence.split("")
+        const prefArr = prefrence.split("")
 
         const symbolComp = []
 
@@ -66,11 +66,10 @@ module.exports = {
       })
       .catch(err => res.status(422).json(err));
     //Last push
+  },
+  updateProf: (req, res) => {
+    db.User.findOneAndUpdate({ fb_ID: id }, {symbol: req.params.symbol, gender: req.params.gender, prefrence: req.params.prefrence})
+            .then(data => console.log(data))
+            .catch(err => console.log(err))
   }
-  /*
-  updateProf: (id, symbol, gender, prefrence) => {
-    db.User.findOneAndUpdate({ fb_ID: id }, {})
-  }
-
-  */
 }

@@ -25,6 +25,10 @@ module.exports = function(app)  {
         userController.findComp(req, res)
     })
 
+    app.post("/api/:id/:symbol/:gender/:prefrence", (req, res) => {
+        console.log("hit find update in test routes")
+    })
+
     /*
     will need route for userController.findByIdAndUpdate
     in order to add other essentail details to the user, after they have logged
