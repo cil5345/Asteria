@@ -15,7 +15,7 @@ class LoginFacebook extends Component {
     componentClicked = async () => {
         console.log("clicked")
     }
-
+ 
     responseFacebook = async response => {
 
         console.log("facebook is always watching")
@@ -33,10 +33,10 @@ class LoginFacebook extends Component {
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
         !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) :
-        console.log("already exists")
+        document.location.href("/Profile")
         //otherwise we already have this user, we dont need to create the user
         //@HACER take to next page?
-        document.location.href("/Profile")
+        
     }
 
     getUsers = () => {
@@ -58,10 +58,6 @@ class LoginFacebook extends Component {
                     .catch( err => console.log(err))
         return user
     }
-
-    
-
-    
 
     render = () => {
         let facebookData
