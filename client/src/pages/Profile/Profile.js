@@ -3,6 +3,7 @@ import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header"
 import Mo from "./mo.jpeg";
 import "./Profile.css";
+import { Link } from "react-router-dom"
 import { getCompatible, updateUser } from "../../utils/API"
 
 const dk = "debugging"
@@ -115,7 +116,7 @@ class Profile extends Component {
                                         </label>
                                     </div>
                                     <br></br>
-                                    <input type="submit" className="successButton" value="Get some matches" onClick={this.getValues}></input>
+                                    <input type="submit" className="successButton" value="Get some matches" onClick={this.getValues}><Link to="/Profile" /></input>
                                 </div>
                             </div>
                         </form>

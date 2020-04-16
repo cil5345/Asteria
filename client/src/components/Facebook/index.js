@@ -7,10 +7,13 @@ import { getAllUsers, getOneUser, createUser } from "../../utils/API"
 
 class LoginFacebook extends Component {
 
+    
+
     state = {
         auth: false,
         fbDetails: {}
     }
+    
     //@MVP save fbID to localstorage/session
     componentClicked = async () => {
         console.log("clicked")
@@ -34,10 +37,11 @@ class LoginFacebook extends Component {
         //for testing puposes we should make a bs id in order to see if it creates a new user
         !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) :
         document.location.href("/Profile")
-        
+
+        //sessionStorage.setItem("fb_ID", this.state.fbDeatails.fb_ID)
+
         //otherwise we already have this user, we dont need to create the user
         //@HACER take to next page?
-        
     }
 
     getUsers = () => {
