@@ -20,7 +20,9 @@ body {
     height: 100%;
     -webkit-transform: rotateZ(45deg);
     -ms-transform: rotate(45deg);
-    transform: rotateZ(45deg); }
+    transform: rotateZ(45deg);
+    z-index: -10;
+   }
   
   .shooting_star {
     position: absolute;

@@ -1,5 +1,19 @@
 p {
     font-family: 'Katibeh', cursive !important;
-    font-size: 84px;
-    color: midnightblue;
+    font-size: 120px;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 3px #7ea1ff;
+    margin-top: 1rem;
+    line-height: 0;
+}
+h5 {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-style: italic;
+    margin-bottom: 2rem;
+    font-size: 16px;
+    text-align: center;
+    text-shadow: 1px 1px 3px #7ea1ff;
+
 }
