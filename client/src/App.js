@@ -24,7 +24,6 @@ function App() {
       <div className="App">
       <Route exact path="/Chat" component={Chat} />
       </div>
-      
       <Route exact path="/Matches" component={Matches} />
 
       <Route exact path="/Profile" component={Profile} />

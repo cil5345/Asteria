@@ -116,7 +116,7 @@ class Profile extends Component {
                                         </label>
                                     </div>
                                     <br></br>
-                                    <input type="submit" className="successButton" value="Get some matches" onClick={this.getValues}><Link to="/Profile" /></input>
+                                    <button type="submit" className="successButton" value="Get some matches" onClick={this.getValues}><Link to="/Profile" /></button>
                                 </div>
                             </div>
                         </form>
