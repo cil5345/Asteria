@@ -17,6 +17,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Profile from "./pages/Profile/Profile";
 // import mainBG from "./components/mainBG/mainBG";
+import "./style.css"
+
 
 
 function PrivateRoute({ component: Component, authenticated, ...rest }) {
