@@ -3,15 +3,11 @@ import "./Footer.css";
 
 function Footer() {
     return (
-
-        <section className="container">
-            <div id='layout_footer'>
-            </div>
-            <div id='footer'>
-                ASTERIA <i class="fal fa-copyright">Copyright 2020</i>
-            </div>
-        </section>
-
+        <>
+        <footer>
+            ASTERIA Copyright 2020
+        </footer>
+        </>
     )
 }
 export default Footer;

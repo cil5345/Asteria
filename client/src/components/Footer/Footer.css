@@ -1,6 +1,7 @@
-.container {
+footer {
     font-family: 'Montserrat', sans-serif;
     color: white;
     bottom:0;
     text-align: center;
+    padding-bottom: 5px;
 }
