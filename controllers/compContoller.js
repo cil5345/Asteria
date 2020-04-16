@@ -3,7 +3,7 @@ const compJSON = require("../matches/comp.json")
 const userController = require("./userController")
 
 module.exports = {
-    findAll: function(req, res) {
+    findAll: async function(req, res) {
 
         //should filter and return an object and deconstructe comp array
         //{req.sign, [comp signs]}
@@ -19,8 +19,14 @@ module.exports = {
         const pref = req.params.prefrence.split("")
         console.log(pref)
 
-        const allUsers = userController.findAll(req, res)
+        //Last push
+        const allUsers = await userController.findAll(req, res)
         console.log(allUsers)
+        //Last push
+
+        const symbolCompUsers =  comp.some(symbol => allUsers.symbol)
+
+        //some(..) checks each element of the array against a test function and returns true if any element of the array passes the test function, otherwise, it returns false
         //look for all users that have a 
 
         //itll be an array contain any mix of f,m
