@@ -54,6 +54,7 @@ class Profile extends Component {
         this.setState({ prefrences: await prefrences.value })
         this.updateUser()
 
+        console.log("going to matches")
         return <Redirect to="/Matches"/>
     }
 
