@@ -63,7 +63,7 @@ class Profile extends Component {
     componentDidMount = () => {
         if(sessionStorage.getItem("fid_pic")) {
 
-            console.log(`${db}: FB ID_PIC: ${sessionStorage.getItem("fid_pic")}`)
+            console.log(`${dk}: FB ID_PIC: ${sessionStorage.getItem("fid_pic")}`)
         }
     }
 
