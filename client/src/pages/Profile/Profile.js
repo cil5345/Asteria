@@ -9,31 +9,24 @@ import LoginBG from "../../components/LoginBG/LoginBG";
 //@HACER get rid of
 const dk = "debugging"
 
-export default class Profile extends Component {
+class Profile extends Component {
 
-   
     state = {
         fb_ID: "",
         imageLink: "",
         redirect: null
     }
 
-
-
-
-
-    
-
     updateUser = async () => {
 
-        // await getAndUpdate()
-        await updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
+        // og without await
+        updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
                 .then(data => console.log(data))
                 .catch(err => console.log(err))
     }
 
     getValues = async () => {
-        console.log("=============going to matches=============")
+
         // const fields = 
         // this.setState()
         const gender = document.querySelector(".genderInput")
@@ -44,7 +37,7 @@ export default class Profile extends Component {
         sessionStorage.setItem("gender", gender.value)
         sessionStorage.setItem("prefrences", prefrences.value)
 
-        await this.updateUser()
+        this.updateUser()
         console.log("going to matches")
     }
 
@@ -139,3 +132,4 @@ export default class Profile extends Component {
             </>
     }
 }
+export default Profile;

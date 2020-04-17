@@ -12,7 +12,7 @@ function Header() {
         <section className="container">
             <div className="top-bar">
                 <div className="top-bar-left">
-                    <img src="../../../../images/ASTERIA.png" alt="Girl in a jacket"></img>
+               <Logo />
                     <div className="allLinks">
                     <div className="links">
                     <Link to="/Profile">Profile</Link>
