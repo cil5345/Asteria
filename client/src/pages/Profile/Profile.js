@@ -50,6 +50,9 @@ class Profile extends Component {
         console.log(dk + " " + prefrences.value)
         console.log(dk + " " + gender.value)
         console.log(dk + " " + symbol.value)
+        console.log(dk + " " + sessionStorage.getItem("symbol"))
+        console.log(dk + " " + sessionStorage.getItem("gender"))
+        console.log(dk + " " + sessionStorage.getItem("prefrences"))
 
         sessionStorage.setItem("symbol", symbol.value)
         sessionStorage.setItem("gender", gender.value)
@@ -70,7 +73,7 @@ class Profile extends Component {
     componentDidMount = () => {
         if(sessionStorage.getItem("fid_pic")) {
 
-            console.log(`FB ID_PIC: ${sessionStorage.getItem("fid_pic")}`)
+            console.log(`FB ID_PIC:${sessionStorage.getItem("fid_pic")}`)
         }
     }
     componentWillMount = async () => {
@@ -152,8 +155,8 @@ class Profile extends Component {
                                     {/* <button className="successButton" onClick={this.getValues}>Get you're matches</button> */}
       {/* <button onClick={this.getValues}>colleeeeerado</button> */}
       
-<Link to="/Matches">
-<button className="successButton" onClick={this.getValues}>Get you’re matches</button>
+<Link onClick={this.getValues} to={`/api/users/${this.state.id}/${this.state.symbol}/${this.state.gender}/${this.state.prefrence}`}>
+<button className="successButton">Get you’re matches</button>
 </Link>
                                 </div>
                             </div>

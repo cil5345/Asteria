@@ -56,10 +56,7 @@ class LoginFacebook extends Component {
         await getOneUser(this.state.fbDetails.fb_ID)
                     // .then( data => data.data)
                     .then( data => {
-                        console.log(data)
-                        console.log(data.data)
                         user = data.data
-                        console.log(user)
                         return user
                     })
                     .catch( err => console.log(err))
