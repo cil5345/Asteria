@@ -29,6 +29,7 @@ function App() {
       {/* <Route component={Login} /> */}
       <Footer />
     </Router>
+    
     </>
   );
 }
