@@ -50,6 +50,9 @@ class Profile extends Component {
         console.log(dk + " " + prefrences.value)
         console.log(dk + " " + gender.value)
         console.log(dk + " " + symbol.value)
+        console.log(dk + " " + sessionStorage.getItem("symbol"))
+        console.log(dk + " " + sessionStorage.getItem("gender"))
+        console.log(dk + " " + sessionStorage.getItem("prefrences"))
 
         sessionStorage.setItem("symbol", symbol.value)
         sessionStorage.setItem("gender", gender.value)
@@ -70,7 +73,7 @@ class Profile extends Component {
     componentDidMount = () => {
         if(sessionStorage.getItem("fid_pic")) {
 
-            console.log(`FB ID_PIC: ${sessionStorage.getItem("fid_pic")}`)
+            console.log(`FB ID_PIC:${sessionStorage.getItem("fid_pic")}`)
         }
     }
     componentWillMount = async () => {

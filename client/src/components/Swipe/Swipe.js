@@ -3,7 +3,7 @@ import { getCompatible } from "../../utils/API"
 import "./style.css";
 
 const comp = []
-
+var it = 0
 function Swipe() {
 
     async function getComps() {
@@ -88,7 +88,12 @@ function Swipe() {
         var newevent = new CustomEvent(name, {
             detail: payload
         });
-        alert("the sky is falling")
+
+        it++
+
+        if(it === comp.length) it = 0  
+        alert(`${it}`)
+
         document.body.dispatchEvent(newevent);
     }
 
