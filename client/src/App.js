@@ -1,6 +1,6 @@
 import React from "react";
 // import Facebook from "./components/Facebook"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 // import Logo from "./components/Logo/Logo";
 // import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";

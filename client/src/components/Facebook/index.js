@@ -14,14 +14,8 @@ class LoginFacebook extends Component {
         redirect: null
     }
     
-    //@MVP save fbID to localstorage/session
     componentClicked = async () => {
         console.log("clicked")
-    }
- 
-    componentWillUnmount = () => {
-        console.log("bye world")
-        // sessionStorage.setItem("fb_ID", this.state.fbDeatails.fb_ID)
     }
     
     responseFacebook = async response => {
@@ -35,13 +29,11 @@ class LoginFacebook extends Component {
             imageLink: response.picture.data.url
         }})
         //get the user from our DB
-        //@HACER cleanup/get rid of console.log()'s
         const user = await this.getThisUser()
       
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
         !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) : sessionStorage.setItem("fid_pic", `${user.fb_ID}|${user.imageLink}`)
-        //sessionStorage.setItem("fb_ID", JSON.stringify(user.fb_ID))
 
         this.setState({ auth: true })
     }
@@ -54,7 +46,6 @@ class LoginFacebook extends Component {
 
         let user
         await getOneUser(this.state.fbDetails.fb_ID)
-                    // .then( data => data.data)
                     .then( data => {
                         user = data.data
                         return user
@@ -68,11 +59,7 @@ class LoginFacebook extends Component {
                 return <Redirect to="/Profile"/>
         } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
                 const user = this.getThisUser()
-                // this.setState({})
-                console.log("need to sess")
                 sessionStorage.setItem("fb_ID", JSON.stringify(user.fb_ID))
-                
-
         }
 
         let facebookData

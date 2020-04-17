@@ -45,6 +45,10 @@ class Profile extends Component {
         const prefrences = document.querySelector(".prefInput")
         const symbol = document.querySelector(".zodiacInput")
 
+        sessionStorage.setItem("symbol", await symbol.value)
+        sessionStorage.setItem("gender", await gender.value)
+        sessionStorage.setItem("prefrences", await prefrences.value)
+
         console.log(dk)
         console.log("within getValues" + dk + ` ${sessionStorage.getItem("fb_ID")}`)
 
