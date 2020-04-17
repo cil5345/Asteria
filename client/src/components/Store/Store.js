@@ -49,7 +49,7 @@ function Store(props) {
     });
   }
 
-  let user = "Justin"
+  let user = "users"
 
   return (
     <CTX.Provider value={{ allChats, sendChatAction, user}}>
