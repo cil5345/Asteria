@@ -7,7 +7,6 @@ import "./Profile.css";
 import { getCompatible, updateUser } from "../../utils/API"
 
 const dk = "debugging"
-var probablyNotMo
 
 class Profile extends Component {
 
@@ -50,9 +49,15 @@ class Profile extends Component {
         console.log(dk + " " + gender.value)
         console.log(dk + " " + symbol.value)
 
-        this.setState({ symbol: await symbol.value })
-        this.setState({ gender: await gender.value })
-        this.setState({ prefrences: await prefrences.value })
+        sessionStorage.setItem("symbol", symbol.value)
+        sessionStorage.setItem("gender", gender.value)
+        sessionStorage.setItem("prefrences", prefrences.value)
+
+        this.setState({ symbol: sessionStorage.getItem("symbol")})
+        this.setState({ gender: sessionStorage.getItem("gender")})
+        this.setState({ pref: sessionStorage.getItem("prefrences")})
+
+
         this.updateUser()
 
         console.log("going to matches")
@@ -73,7 +78,6 @@ class Profile extends Component {
         const pipe = await leedle.indexOf("|")
         await this.setState({ fb_ID: leedle.substring(0, pipe) })
         await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1)})
-        probablyNotMo = this.state.imageLink
     }
 
     render = () => {
