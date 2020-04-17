@@ -19,7 +19,7 @@ function Swipe() {
         console.log(`sym: ${symbol} prefrences:${prefrences}`)
         await getCompatible(symbol, prefrences).then(data => comp = data.data)
                                  .catch(err => console.log(err))
-    
+        console.log(comp[0])
         
         // console.log(comp[0].data[1].imageLink)
         // const data = comp.filter( c => c.data)
@@ -28,7 +28,7 @@ function Swipe() {
         // // console.log(comp)
         // for(let d of data[0].data) console.log(`you are compatible with ${d.name} see what they look like here:
         // // ${d.imageLink}`)
-        // antonio()
+        antonio()
     }
 
     getComps()
@@ -57,13 +57,13 @@ function antonio() {
     if(it === comp.length) it = 0
 
     let card = document.querySelector(".card")
-    let currentC = document.querySelector(".current")
+    // let currentC = document.querySelector(".card")
     // for(let c of card) c.style.backgroundImage = `url('${comp[it]}')`
     console.log(dk + " jdfls")
     console.log(card)
     
     card.style.backgroundImage = `url('${comp[it].imageLink}')`
-    currentC.textContent = `${comp[it].name}`
+    card.textContent = `${comp[it].name}`
     it++
 
     // alert(`${it}`)
