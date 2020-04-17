@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Redirect } from "react-router-dom"
+import { Redirect, Link } from "react-router-dom"
 import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header"
 import Mo from "./mo.jpeg";
@@ -101,7 +101,7 @@ class Profile extends Component {
             <section className="container">
                 <div className="row">
                     <div className="col-4">
-                        <Card title="User Profile" desc="Employee Directory" />
+                        <Card title="My Profile" desc="Employee Directory" />
                         <img src={this.state.imageLink} id="my-pic" alt="Mo's pic" width="150" height="200" />
                     </div>
                     <br></br>
@@ -159,7 +159,9 @@ class Profile extends Component {
                                         </label>
                                     </div>
                                     <br></br>
-                                    <button type="submit" className="successButton" onClick={this.getValues}>Get your matches</button>
+                                    <Link to="/Matches">
+                                        <button className="successButton" onClick={this.getValues}>Get you’re matches</button>
+                                    </Link>                                
                                 </div>
                             </div>
                         </form>
