@@ -66,10 +66,6 @@ class Profile extends Component {
             console.log(`FB ID_PIC: ${sessionStorage.getItem("fid_pic")}`)
         }
     }
-
-    saveinsession() {
-
-    }
     componentWillMount = async () => {
 
 
@@ -84,17 +80,22 @@ class Profile extends Component {
         await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1)})
         console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
         probablyNotMo = this.state.imageLink
-        console.log(probablyNotMo)
+        console.log("cl: probablynot")
+        console.log(`|${probablyNotMo}|`)
     }
 
     render = () => {
+        console.log("render this")
+        console.log(this.state.imageLink)
+        console.log(probablyNotMo)
+        console.log("forgot")
         return <>
             <Header />
             <section className="container">
                 <div className="row">
                     <div className="col-4">
                         <Card title="User Profile" desc="Employee Directory" />
-                        <img src={probablyNotMo} id="my-pic" alt="Mo's pic" width="150" height="200" />
+                        <img src={this.state.imageLink} id="my-pic" alt="Mo's pic" width="150" height="200" />
                     </div>
                     <br></br>
                     <div className="row">
@@ -151,7 +152,9 @@ class Profile extends Component {
                                         </label>
                                     </div>
                                     <br></br>
-                                    <button type="submit" className="successButton" onClick={this.getValues}>Get you're matches</button>
+
+                                    <button className="successButton" onClick={this.getValues}>Get you're matches</button>
+      
                                 </div>
                             </div>
                         </form>
