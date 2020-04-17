@@ -1,12 +1,10 @@
 .card {
-    width: 250px;
-    height: 350px;
+    width: 150px;
+    height: 200px;
     display: block;
-    background: #7ea1ff;
+    background: #666;
     transform-origin: 50% 99%;
     text-align: center;
-    border-color: #7ea1ff;
-    border-radius: 25px;
   }
 
 

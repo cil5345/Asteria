@@ -8,8 +8,6 @@ import { getAllUsers, getOneUser, createUser } from "../../utils/API"
 
 class LoginFacebook extends Component {
 
-    
-
     state = {
         auth: false,
         fbDetails: {},

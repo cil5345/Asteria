@@ -18,9 +18,9 @@ function Matches() {
                         alignItems: "center",
                     }}
                 >
-                    <Swipe />
-                </div>
-            </div >
+                <Swipe />
+            </div>
+        </div >
         </>
 
     );
