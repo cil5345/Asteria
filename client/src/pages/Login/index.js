@@ -1,7 +1,7 @@
 import React from "react";
 import Facebook from "../../components/Facebook";
 import LoginEl from "../../components/LoginEl/LoginEl";
-import "./style.css";
+import "./style.css"
 
 export default function Login() {
     return (

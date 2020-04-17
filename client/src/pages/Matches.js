@@ -1,22 +1,22 @@
 import React from "react";
-// import mainBG from "../components/mainBG/mainBG";
-import Swipe from "../components/Swipe/Swipe";
+import LoginBG from "../components/LoginBG/LoginBG";
 import "./matches.css"
-// import "../components/mainBG/mainBG"
+import Swipe from "../components/Swipe/Swipe";
+// import "../components/mainLoginBG/mainLoginBG"
 
 
 function Matches() {
     return (
         <>
-        {/* <mainBG /> */}
-        <div className="page">
-            {/* <mainBG /> */}
-            <div 
-                style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}
+            <LoginBG />
+            <div className="page">
+                {/* <mainBG /> */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                    }}
                 >
                 <Swipe />
             </div>
