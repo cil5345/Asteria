@@ -13,6 +13,12 @@
 
 ## Description
 
+
+![Screenshot1](./screenshot.png)
+![Screenshot2](./screenshot2.png)
+![Screenshot3](./screenshot3.png)
+
+
 ## Installation
 To install the necessary dependencies, run the following commands:
 ```sh
@@ -27,17 +33,22 @@ npm start
 ## Technologies
 * React
 * MongoDB/Mongoose
+* Material UI
+* Socket.io
 * Foundation by Zurb
 
 ## License
 
-## Contributions
+## Developers
 * [Antonio Alvarado](https://github.com/antonio36alv)
 * [Mo Civers-Davis](https://github.com/MoCivers-Davis)
 * [Chris Lee](https://github.com/cil5345)
 * [Casey Zacney](https://github.com/czacney)
 
 ## Credits
+
+* [Tinderesque](https://christianheilmann.com/2015/09/06/tinderesque-building-a-tinder-like-interface-with-css-animations-and-vanilla-js-justcode/)
+* [Codepen Shooting Stars by Yusuke Nakaya](https://codepen.io/YusukeNakaya/pen/XyOaBj)
 
 ## Tests
 To run tests, run the following command:
@@ -46,3 +57,4 @@ npm run test
 ```
 
 ## Questions
+If you have any questions or comments feel free to contact the developers.
