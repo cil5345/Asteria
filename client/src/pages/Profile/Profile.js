@@ -71,7 +71,7 @@ class Profile extends Component {
         const leedle = await JSON.stringify(sessionStorage.getItem("fid_pic"))
         console.log(leedle.indexOf("|"))
         const pipe = await leedle.indexOf("|")
-        sessionStorage.setItem("fb_ID", leedle.substring(0, pipe).trim())
+        sessionStorage.setItem("fb_ID", leedle.substring(, pipe).trim())
         await this.setState({ fb_ID: leedle.substring(0, pipe) })
         await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1).trim()})
         // console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
