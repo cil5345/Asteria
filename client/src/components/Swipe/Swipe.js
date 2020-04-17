@@ -19,7 +19,7 @@ function Swipe() {
         console.log(`sym: ${symbol} prefrences:${prefrences}`)
         await getCompatible(symbol, prefrences).then(data => comp = data.data)
                                  .catch(err => console.log(err))
-        console.log(comp[comp.length-1])
+    
         
         // console.log(comp[0].data[1].imageLink)
         // const data = comp.filter( c => c.data)
@@ -28,7 +28,7 @@ function Swipe() {
         // // console.log(comp)
         // for(let d of data[0].data) console.log(`you are compatible with ${d.name} see what they look like here:
         // // ${d.imageLink}`)
-        antonio()
+        // antonio()
     }
 
     getComps()
