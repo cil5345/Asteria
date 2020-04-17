@@ -4,21 +4,23 @@ import "./style.css";
 
 const dk = "DEBUG KEY"
 
-const comp = ["https://static01.nyt.com/images/2016/09/09/arts/09DEVITO/09DEVITO-articleLarge.jpg?quality=75&auto=webp&disable=upscale", "https://thenypost.files.wordpress.com/2019/05/danny-devito.jpg?quality=80&strip=all", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRBbpTA8PAXFaVlrI2sy8kYQY1LGDLGyXxgthhuiNMxEdzkvSmT&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSE0kgImJUPeKJN8swoyloaGVx_5nvJ2spN4x1dUJbyzqvuEB7e&usqp=CAU"]
+// const comp = ["https://static01.nyt.com/images/2016/09/09/arts/09DEVITO/09DEVITO-articleLarge.jpg?quality=75&auto=webp&disable=upscale", "https://thenypost.files.wordpress.com/2019/05/danny-devito.jpg?quality=80&strip=all", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRBbpTA8PAXFaVlrI2sy8kYQY1LGDLGyXxgthhuiNMxEdzkvSmT&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSE0kgImJUPeKJN8swoyloaGVx_5nvJ2spN4x1dUJbyzqvuEB7e&usqp=CAU"]
 
+var comp
 var it = 0
 
 function Swipe() {
 
     async function getComps() {
-        console.log("yo")
 
         const symbol = sessionStorage.getItem("symbol")
         const prefrences = sessionStorage.getItem("prefrences")
-        
+
         console.log(`sym: ${symbol} prefrences:${prefrences}`)
-        await getCompatible(symbol, prefrences).then(data => comp.push(data))
+        await getCompatible(symbol, prefrences).then(data => comp = data)
                                  .catch(err => console.log(err))
+        console.log(comp)
+        
         // console.log(comp[0].data[1].imageLink)
         // const data = comp.filter( c => c.data)
         // console.log(data)

@@ -7,7 +7,7 @@ import "./Profile.css";
 import { getCompatible, updateUser } from "../../utils/API"
 import LoginBG from "../../components/LoginBG/LoginBG";
 
-
+//@HACER get rid of
 const dk = "debugging"
 
 class Profile extends Component {
@@ -15,23 +15,11 @@ class Profile extends Component {
     state = {
         fb_ID: "",
         imageLink: "",
-        symbol: "",
-        gender: "",
-        pref: "",
         redirect: null
     }
 
-    getComp = async (sign, prefrence) => {
-        console.log("you cant match my style")
-        await getCompatible("Aries", "FM").then(data => {
-
-            console.log(data.data[0])
-            for (let user of data.data) console.log(user)
-        }).then(err => console.log("company " + err))
-    }   
-
     updateUser = async () => {
-        console.log("update")
+
         // await getAndUpdate()
         updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
                 .then(data => console.log(data))
@@ -46,36 +34,14 @@ class Profile extends Component {
         const prefrences = document.querySelector(".prefInput")
         const symbol = document.querySelector(".zodiacInput")
 
-        console.log(dk)
-        console.log(dk + " " + prefrences.value)
-        console.log(dk + " " + gender.value)
-        console.log(dk + " " + symbol.value)
-        console.log(dk + " " + sessionStorage.getItem("symbol"))
-        console.log(dk + " " + sessionStorage.getItem("gender"))
-        console.log(dk + " " + sessionStorage.getItem("prefrences"))
-
         sessionStorage.setItem("symbol", symbol.value)
         sessionStorage.setItem("gender", gender.value)
         sessionStorage.setItem("prefrences", prefrences.value)
 
-        this.setState({ symbol: sessionStorage.getItem("symbol")})
-        this.setState({ gender: sessionStorage.getItem("gender")})
-        this.setState({ pref: sessionStorage.getItem("prefrences")})
-
-
         this.updateUser()
-
         console.log("going to matches")
-        // return <Redirect to="/Matches"/>
     }
 
-
-    componentDidMount = () => {
-        if(sessionStorage.getItem("fid_pic")) {
-
-            console.log(`FB ID_PIC:${sessionStorage.getItem("fid_pic")}`)
-        }
-    }
     componentWillMount = async () => {
 
         const leedle = await JSON.stringify(sessionStorage.getItem("fid_pic"))
