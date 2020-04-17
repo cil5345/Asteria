@@ -46,10 +46,7 @@ class Profile extends Component {
         const symbol = document.querySelector(".zodiacInput")
 
         console.log(dk)
-        console.log(dk + ` ${sessionStorage.getItem("")}`)
-        console.log(dk + " " + prefrences.value)
-        console.log(dk + " " + gender.value)
-        console.log(dk + " " + symbol.value)
+        console.log("within getValues" + dk + ` ${sessionStorage.getItem("fb_ID")}`)
 
         this.setState({ symbol: await symbol.value })
         this.setState({ gender: await gender.value })
@@ -77,7 +74,8 @@ class Profile extends Component {
         sessionStorage.setItem("fb_ID", leedle.substring(pipe + 1, leedle.length - 1).trim())
         await this.setState({ fb_ID: leedle.substring(0, pipe) })
         await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1).trim()})
-        console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
+        // console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
+        console.log(`${dk} ssid:${sessionStorage.getItem("fb_ID")}`)
         await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1).trim()})
     }
 
