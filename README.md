@@ -12,7 +12,9 @@
 9. [Questions](#Questions)
 
 ## Description
+<a href ='https://asteria-app.herokuapp.com/'>Test Asteria Here</a>
 
+Asteria is a full stack dating application that matches  users to other users based on zodiac signs. The user gets authorization to Asteria using Facebook, which creates the users Name and Profile picture. *(Facebook account is required)* Once the user gets access, they are refrenced to the profile page, where they input their sex, sexual preference, and most importantly their zodiac symbol. The main algorithm lies within the "Get your matches" button, which goes through the database and selects other users based on sexual preference and zodiac compatiability *i.e Libras are compatible with Gemini, Leo, Sagittarius, and Aquarius*. From there the user plays a swipe left or right game with their matches and will have the ability to chat. 
 
 ![Screenshot1](./screenshot.png)
 ![Screenshot2](./screenshot2.png)
@@ -28,15 +30,19 @@ npm i
 npm start
 ```
 
+Authorization 
+```sh
+Facebook Account Required
+```
 ## Usage
 
 ## Technologies
-* React
-* MongoDB/Mongoose
-* Material UI
-* Socket.io
-* Foundation by Zurb
-
+ ![React](https://img.shields.io/badge/Framwork-React-blue) 
+ ![Mongoose](https://img.shields.io/badge/Database-Mongoose-green) 
+![Materalize-ui](https://img.shields.io/badge/Library-Materialui-blue) 
+![Socket io](https://img.shields.io/badge/Chat-Socketio-yellow) 
+![Foundation](https://img.shields.io/badge/Library-Foundation-orange) 
+ ![Heroku](https://img.shields.io/badge/Deployed-Heroku-purple) 
 ## License
 
 ## Developers

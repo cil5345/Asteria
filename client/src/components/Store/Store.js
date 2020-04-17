@@ -4,11 +4,9 @@ import io from "socket.io-client";
 export const CTX = React.createContext();
 
 const initState = {
-  Room1: [{ from: "Ira", msg: "Hey Cutie" }],
-  Antonio: [{ from: "Antonio", msg: "hello" }],
-  Moe: [{ from: "Moe", msg: "hello" }],
-  Casey: [{ from: "Casey", msg: "hello" }],
-  Bob: [{ from: "Casey", msg: "hello" }],
+  Ira: [{ from: "Ira", msg: "Hey Cutie" }],
+  Pamela: [{ from: "Pamela", msg: "Hi" }],
+
 };
 
 function reducer(state, action) {
