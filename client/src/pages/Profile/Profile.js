@@ -38,7 +38,7 @@ class Profile extends Component {
     }
 
     getValues = async () => {
-
+        console.log("=============going to matches=============")
         // const fields = 
         // this.setState()
         const gender = document.querySelector(".genderInput")
@@ -55,7 +55,7 @@ class Profile extends Component {
         this.setState({ prefrences: await prefrences.value })
         this.updateUser()
 
-        console.log("going to matches")
+        console.log("=============going to matches=============")
         return <Redirect to="/Matches"/>
     }
 

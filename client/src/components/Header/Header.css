@@ -1,5 +1,6 @@
 .container {
     text-align: center;
+    
 }
 .menu-text {
     font-weight: bold;
@@ -20,3 +21,8 @@ float:left;
     display: flex;
     justify-content: space-evenly;
 }
+
+.top-bar {
+    width: 100%;
+}
+
