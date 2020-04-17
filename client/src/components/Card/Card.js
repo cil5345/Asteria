@@ -7,7 +7,7 @@ function Card(props) {
 
     <h4 className="card-title"><strong>{props.title}</strong></h4>
 
-</section >
+</section>
         );
     }
 export default Card;

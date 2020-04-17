@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Redirect } from "react-router-dom"
+import { Redirect, Link } from "react-router-dom"
 import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header"
 import Mo from "./mo.jpeg";
@@ -56,7 +56,7 @@ class Profile extends Component {
         this.updateUser()
 
         console.log("going to matches")
-        return <Redirect to="/Matches"/>
+        // return <Redirect to="/Matches"/>
     }
 
 
@@ -68,27 +68,16 @@ class Profile extends Component {
     }
     componentWillMount = async () => {
 
-
-        // saveinsession() {
-        //     sessionStorage.setItem()
-        // }
-
         const leedle = await JSON.stringify(sessionStorage.getItem("fid_pic"))
         console.log(leedle.indexOf("|"))
         const pipe = await leedle.indexOf("|")
         await this.setState({ fb_ID: leedle.substring(0, pipe) })
         await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1)})
-        console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
         probablyNotMo = this.state.imageLink
-        console.log("cl: probablynot")
-        console.log(`|${probablyNotMo}|`)
     }
 
     render = () => {
-        console.log("render this")
-        console.log(this.state.imageLink)
-        console.log(probablyNotMo)
-        console.log("forgot")
+
         return <>
             <Header />
             <section className="container">
@@ -153,8 +142,12 @@ class Profile extends Component {
                                     </div>
                                     <br></br>
 
-                                    <button className="successButton" onClick={this.getValues}>Get you're matches</button>
+                                    {/* <button className="successButton" onClick={this.getValues}>Get you're matches</button> */}
+      {/* <button onClick={this.getValues}>colleeeeerado</button> */}
       
+<Link to="/Matches">
+<button className="successButton" onClick={this.getValues}>Get you’re matches</button>
+</Link>
                                 </div>
                             </div>
                         </form>
