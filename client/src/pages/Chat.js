@@ -1,9 +1,9 @@
 import React from "react";
 import Dashboard from "../components/Dashboard/Dashboard";
 import Store from "../components/Store/Store";
-// import "./App.css";
+import "./Chat.css";
 
-function App() {
+function Chat() {
   return (
     <div className="App">
       <Store>
@@ -13,4 +13,4 @@ function App() {
   );
 }
 
-export default App;
+export default Chat;
