@@ -17,7 +17,7 @@ function Swipe() {
         const prefrences = sessionStorage.getItem("prefrences")
 
         console.log(`sym: ${symbol} prefrences:${prefrences}`)
-        await getCompatible(symbol, prefrences).then(data => comp = data)
+        await getCompatible(symbol, prefrences).then(data => comp = data.data)
                                  .catch(err => console.log(err))
         console.log(comp)
         
