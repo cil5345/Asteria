@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Redirect, Link } from "react-router-dom"
+import { Redirect } from "react-router-dom"
 import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header"
 import Mo from "./mo.jpeg";
@@ -9,6 +9,7 @@ import LoginBG from "../../components/LoginBG/LoginBG";
 
 
 const dk = "debugging"
+var probablyNotMo
 
 class Profile extends Component {
 
@@ -50,43 +51,50 @@ class Profile extends Component {
         console.log(dk + " " + prefrences.value)
         console.log(dk + " " + gender.value)
         console.log(dk + " " + symbol.value)
-        console.log(dk + " " + sessionStorage.getItem("symbol"))
-        console.log(dk + " " + sessionStorage.getItem("gender"))
-        console.log(dk + " " + sessionStorage.getItem("prefrences"))
 
-        sessionStorage.setItem("symbol", symbol.value)
-        sessionStorage.setItem("gender", gender.value)
-        sessionStorage.setItem("prefrences", prefrences.value)
-
-        this.setState({ symbol: sessionStorage.getItem("symbol")})
-        this.setState({ gender: sessionStorage.getItem("gender")})
-        this.setState({ pref: sessionStorage.getItem("prefrences")})
-
-
+        this.setState({ symbol: await symbol.value })
+        this.setState({ gender: await gender.value })
+        this.setState({ prefrences: await prefrences.value })
         this.updateUser()
 
         console.log("going to matches")
-        // return <Redirect to="/Matches"/>
+        return <Redirect to="/Matches"/>
     }
 
 
     componentDidMount = () => {
         if(sessionStorage.getItem("fid_pic")) {
 
-            console.log(`FB ID_PIC:${sessionStorage.getItem("fid_pic")}`)
+            console.log(`FB ID_PIC: ${sessionStorage.getItem("fid_pic")}`)
         }
     }
+
+    saveinsession() {
+
+    }
     componentWillMount = async () => {
+
+
+        // saveinsession() {
+        //     sessionStorage.setItem()
+        // }
 
         const leedle = await JSON.stringify(sessionStorage.getItem("fid_pic"))
         console.log(leedle.indexOf("|"))
         const pipe = await leedle.indexOf("|")
         await this.setState({ fb_ID: leedle.substring(0, pipe) })
         await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1)})
+        console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
+        probablyNotMo = this.state.imageLink
+        console.log("cl: probablynot")
+        console.log(`|${probablyNotMo}|`)
     }
 
     render = () => {
-
+        console.log("render this")
+        console.log(this.state.imageLink)
+        console.log(probablyNotMo)
+        console.log("forgot")
         return <>
             <LoginBG />
             <Header />
@@ -151,13 +159,7 @@ class Profile extends Component {
                                         </label>
                                     </div>
                                     <br></br>
-
-                                    {/* <button className="successButton" onClick={this.getValues}>Get you're matches</button> */}
-      {/* <button onClick={this.getValues}>colleeeeerado</button> */}
-      
-<Link to="/Matches">
-<button className="successButton" onClick={this.getValues}>Get you’re matches</button>
-</Link>
+                                    <button type="submit" className="successButton" onClick={this.getValues}>Get your matches</button>
                                 </div>
                             </div>
                         </form>

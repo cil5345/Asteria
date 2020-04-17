@@ -1,12 +1,14 @@
 import React from "react";
+import Dashboard from "../components/Dashboard/Dashboard";
 import Store from "../components/Store/Store";
-import Dashboard from '../components/Dashboard/Dashboard'
 import Header from "../components/Header/Header"
+import LoginBG from "../components/LoginBG/LoginBG"
 
 
 function Chat() {
     return (
         <>
+            <LoginBG />
             <Header />
             <Store>
                 <Dashboard />
@@ -14,4 +16,5 @@ function Chat() {
         </>
     );
 }
+
 export default Chat;

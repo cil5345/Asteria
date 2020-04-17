@@ -9,6 +9,7 @@ import Header from "../components/Header/Header";
 function Matches() {
     return (
         <>
+        <Header />
             <LoginBG />
             <Header />
             <br />

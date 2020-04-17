@@ -26,7 +26,6 @@ function Header() {
                     </div>
                 </div>
             </div>
-            {/* <h1>ASTERIA Dating App</h1> */}
         </section>
     )
 }
