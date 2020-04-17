@@ -2,8 +2,10 @@ import React from "react";
 import { getCompatible } from "../../utils/API"
 import "./style.css";
 
-const comp = []
+const comp = ["https://static01.nyt.com/images/2016/09/09/arts/09DEVITO/09DEVITO-articleLarge.jpg?quality=75&auto=webp&disable=upscale", "https://thenypost.files.wordpress.com/2019/05/danny-devito.jpg?quality=80&strip=all", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRBbpTA8PAXFaVlrI2sy8kYQY1LGDLGyXxgthhuiNMxEdzkvSmT&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSE0kgImJUPeKJN8swoyloaGVx_5nvJ2spN4x1dUJbyzqvuEB7e&usqp=CAU"]
+
 var it = 0
+
 function Swipe() {
 
     async function getComps() {
@@ -89,10 +91,15 @@ function Swipe() {
             detail: payload
         });
 
+        if(it === comp.length) it = 0  
+        let card = document.querySelector(".card")
+        // for(let c of card) c.style.backgroundImage = `url('${comp[it]}')`
+        console.log("jdfls")
+        console.log(card)
+        card.style.backgroundImage = `url('${comp[it]}')`
         it++
 
-        if(it === comp.length) it = 0  
-        alert(`${it}`)
+        // alert(`${it}`)
 
         document.body.dispatchEvent(newevent);
     }
