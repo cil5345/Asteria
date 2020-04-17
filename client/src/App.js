@@ -18,7 +18,7 @@ function App() {
     <>
 
     <Router basename="/">
-      {/* <Header /> for profile matches  */}
+      
       <div className="App">
       <Route exact path="/Chat" component={Chat} />
       </div>

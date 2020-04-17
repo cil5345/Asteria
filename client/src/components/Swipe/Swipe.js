@@ -11,14 +11,13 @@ function Swipe() {
         
         await getCompatible("Leo", "F").then(data => comp.push(data))
                                  .catch(err => console.log(err))
-        console.log(comp[0].data[1].imageLink)
+        // console.log(comp[0].data[1].imageLink)
 
-        const data = comp.filter( c => c.data)
-        console.log(data)
-        console.log(data[0].data)
-        for(let d of data[0].data) console.log(`you are compatible with ${d.name} see what they look like here:
-        
-        ${d.imageLink}`)
+        // const data = comp.filter( c => c.data)
+        // console.log(data)
+        // console.log(data[0].data)
+        // for(let d of data[0].data) console.log(`you are compatible with ${d.name} see what they look like here:
+        // ${d.imageLink}`)
 
     }
 
@@ -85,6 +84,7 @@ function Swipe() {
         var newevent = new CustomEvent(name, {
             detail: payload
         });
+        alert("the sky is falling")
         document.body.dispatchEvent(newevent);
     }
 

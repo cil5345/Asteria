@@ -1,32 +1,29 @@
-import React, { Component } from "react";
+import React from "react";
 // import mainBG from "../components/mainBG/mainBG";
-// import Bg from "../components/Bg/Bg";
-import "./matches.css"
 import Swipe from "../components/Swipe/Swipe";
+import "./matches.css"
 // import "../components/mainBG/mainBG"
 
 
-class Matches extends Component {
-   
-   
-   render = () => 
+function Matches() {
+    return (
         <>
-            {/* <Bg /> */}
-            <div className="page">
-                {/* <mainBG /> */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                    }}
+        {/* <mainBG /> */}
+        <div className="page">
+            {/* <mainBG /> */}
+            <div 
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
                 >
-                    <Swipe />
-                </div>
-            </div >
+                <Swipe />
+            </div>
+        </div >
         </>
 
-  
+    );
 }
 
 export default Matches;
