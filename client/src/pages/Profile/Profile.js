@@ -11,23 +11,18 @@ import LoginBG from "../../components/LoginBG/LoginBG";
 const dk = "debugging"
 
 export default class Profile extends Component {
-constructor() {
-     super();
-    this.state = {
+
+   
+    state = {
         fb_ID: "",
         imageLink: "",
         redirect: null
     }
-this.getComp=this.getComp.bind(this)
-this.updateUser=this.updateUser.bind(this)
-this.getValues=this.getValues.bind(this)
-this.componentDidMount=this.componentDidMount.bind(this)
-this.componentWillMount=this.componentWillMount.bind(this)
 
 
 
 
-}
+
     
 
     updateUser = async () => {

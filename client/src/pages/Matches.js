@@ -11,7 +11,6 @@ function Matches() {
         <>
         <Header />
             <LoginBG />
-            <Header />
             <div className="page">
                 {/* <mainBG /> */}
                 <div
