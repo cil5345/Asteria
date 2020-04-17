@@ -23,17 +23,13 @@ class Profile extends Component {
 
     updateUser = async () => {
         console.log("update")
-
         // updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
         //         .then(data => console.log(data))
         //         .catch(err => console.log(err))
-
         const id = sessionStorage.getItem("fb_ID")
         const sym = sessionStorage.getItem("symbol")
         const gn = sessionStorage.getItem("gender")
         const pr = sessionStorage.getItem("prefrences")
-
-
         // og without await
         // await updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
         //     .then(data => console.log(data))
