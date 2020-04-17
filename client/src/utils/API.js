@@ -19,6 +19,7 @@ module.exports = {
   },
   updateUser: (id, symbol, gender, prefrence) => {
     console.log("updating user in axios")
+    console.log(`ROUTE:/api/${id}/${symbol}/${gender}/${prefrence}`)
     return axios.post(`/api/${id}/${symbol}/${gender}/${prefrence}`)
   }
 }

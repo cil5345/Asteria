@@ -9,7 +9,12 @@
 
 }
 
-
+.SEEME {
+    border: solid thick black;
+    height: 400px;
+    width: 400px;
+    background-color: aquamarine;
+}
 .zodiacInput {
     margin-left: 5px;
     width: 350px;

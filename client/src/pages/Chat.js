@@ -6,14 +6,13 @@ import Header from "../components/Header/Header";
 
 function Chat() {
   return (
-    <div className="container">
-    
+      <>
         <Header />
         <Store>
           <Dashboard />
         </Store>
-
-    </div>
+    
+    </>
   );
 }
 

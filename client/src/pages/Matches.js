@@ -1,6 +1,5 @@
-import React, { Component } from "react";
-// import mainBG from "../components/mainBG/mainBG";
-// import Bg from "../components/Bg/Bg";
+import React from "react";
+import LoginBG from "../components/LoginBG/LoginBG";
 import "./matches.css"
 import Swipe from "../components/Swipe/Swipe";
 import Header from "../components/Header/Header"
@@ -8,13 +7,11 @@ import Header from "../components/Header/Header"
 // import "../components/mainBG/mainBG"
 
 
-class Matches extends Component {
-   
-   
-   render = () => 
+function Matches() {
+    return (
         <>
         <Header />
-            {/* <Bg /> */}
+            <LoginBG />
             <div className="page">
                 {/* <mainBG /> */}
                 <div
@@ -24,12 +21,12 @@ class Matches extends Component {
                         alignItems: "center",
                     }}
                 >
-                    <Swipe />
-                </div>
-            </div >
+                <Swipe />
+            </div>
+        </div >
         </>
 
-  
+    );
 }
 
 export default Matches;
