@@ -9,8 +9,9 @@ import Header from "../components/Header/Header";
 function Matches() {
     return (
         <>
-        <Header />
             <LoginBG />
+            <Header />
+            <br />
             <div className="page">
                 {/* <mainBG /> */}
                 <div
@@ -20,9 +21,9 @@ function Matches() {
                         alignItems: "center",
                     }}
                 >
-                <Swipe />
-            </div>
-        </div >
+                    <Swipe />
+                </div>
+            </div >
         </>
 
     );
