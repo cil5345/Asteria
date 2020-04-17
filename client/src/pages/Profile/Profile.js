@@ -58,7 +58,7 @@ class Profile extends Component {
         this.updateUser()
 
         console.log("going to matches")
-        return <Redirect to="/Matches"/>
+        // return <Redirect to="/Matches"/>
     }
 
 

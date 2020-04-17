@@ -8,6 +8,14 @@
     margin-right: auto;
 }
 
+.container {
+    margin-bottom: 50px;
+}
+
+button {
+    margin-bottom: -5px;
+}
+
 .SEEME {
     border: solid thick black;
     height: 400px;
