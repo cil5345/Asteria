@@ -1,11 +1,12 @@
 .card {
-    width: 150px;
-    height: 200px;
-    display: block;
-    background: #666;
-    transform-origin: 50% 99%;
-    text-align: center;
-  }
+  width: 150px;
+  height: 200px;
+  display: block;
+  background: #666;
+  transform-origin: 50% 99%;
+  text-align: center;
+}
+
 
 
   @keyframes yay {
