@@ -1,10 +1,19 @@
 .container {
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: larger;
+    padding-top: 3rem;
 }
 .menu-text {
     font-weight: bold;
     font-size: x-large;
     color: purple;
+}
+
+div.top-bar{
+    background-color: transparent;
 }
 
 .links .chat  .matches{
@@ -20,3 +29,20 @@ float:left;
     display: flex;
     justify-content: space-evenly;
 }
+
+a, a.text {
+    color:white;
+    border-bottom: #5f91ff;
+    border-style: solid;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-color: #5f91ff;
+    background-color: #5f91ff;
+    border-radius: 30px;
+}
+
+a:hover {
+    color: midnightblue;
+  }

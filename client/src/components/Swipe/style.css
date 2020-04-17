@@ -1,12 +1,15 @@
 .card {
-  width: 150px;
-  height: 200px;
-  display: block;
-  background: #666;
-  transform-origin: 50% 99%;
-  text-align: center;
-}
-
+    width: 150px;
+    height: 200px;
+    display: block;
+    /* background: #666; */
+    /* https://static01.nyt.com/images/2016/09/09/arts/09DEVITO/09DEVITO-articleLarge.jpg?quality=75&auto=webp&disable=upscale */
+    transform-origin: 50% 99%;
+    text-align: center;
+    background-image: url();
+    background-position: center;
+    background-size: cover;
+  }
 
 
   @keyframes yay {
