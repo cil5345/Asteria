@@ -10,9 +10,10 @@ import LoginBG from "../../components/LoginBG/LoginBG";
 
 const dk = "debugging"
 
-class Profile extends Component {
-
-    state = {
+export default class Profile extends Component {
+constructor() {
+     super();
+    this.state = {
         fb_ID: "",
         imageLink: "",
         symbol: "",
@@ -20,6 +21,17 @@ class Profile extends Component {
         pref: "",
         redirect: null
     }
+this.getComp=this.getComp.bind(this)
+this.updateUser=this.updateUser.bind(this)
+this.getValues=this.getValues.bind(this)
+this.componentDidMount=this.componentDidMount.bind(this)
+this.componentWillMount=this.componentWillMount.bind(this)
+
+
+
+
+}
+    
 
     getComp = async (sign, prefrence) => {
         console.log("you cant match my style")
@@ -62,13 +74,8 @@ class Profile extends Component {
 
         this.updateUser()
 
-<<<<<<< HEAD
-        console.log("=============going to matches=============")
-        return <Redirect to="/Matches"/>
-=======
         console.log("going to matches")
         // return <Redirect to="/Matches"/>
->>>>>>> eacf0173f006fd098b8933197be2c876ff36f840
     }
 
 
@@ -169,4 +176,3 @@ class Profile extends Component {
             </>
     }
 }
-export default Profile;

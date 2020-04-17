@@ -2,6 +2,8 @@ import React from "react";
 import { getCompatible } from "../../utils/API"
 import "./style.css";
 
+const dk = "DEBUG KEY"
+
 const comp = ["https://static01.nyt.com/images/2016/09/09/arts/09DEVITO/09DEVITO-articleLarge.jpg?quality=75&auto=webp&disable=upscale", "https://thenypost.files.wordpress.com/2019/05/danny-devito.jpg?quality=80&strip=all", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRBbpTA8PAXFaVlrI2sy8kYQY1LGDLGyXxgthhuiNMxEdzkvSmT&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSE0kgImJUPeKJN8swoyloaGVx_5nvJ2spN4x1dUJbyzqvuEB7e&usqp=CAU"]
 
 var it = 0
@@ -18,13 +20,13 @@ function Swipe() {
         await getCompatible(symbol, prefrences).then(data => comp.push(data))
                                  .catch(err => console.log(err))
         // console.log(comp[0].data[1].imageLink)
-
         // const data = comp.filter( c => c.data)
         // console.log(data)
         // console.log(data[0].data)
         // // console.log(comp)
         // for(let d of data[0].data) console.log(`you are compatible with ${d.name} see what they look like here:
         // // ${d.imageLink}`)
+        antonio()
     }
 
     getComps()
@@ -49,6 +51,18 @@ function Swipe() {
     )
 }
 
+function antonio() {
+    if(it === comp.length) it = 0  
+    let card = document.querySelector(".card")
+    // for(let c of card) c.style.backgroundImage = `url('${comp[it]}')`
+    console.log(dk + " jdfls")
+    console.log(card)
+    card.style.backgroundImage = `url('${comp[it]}')`
+    it++
+
+    // alert(`${it}`)
+}
+
 
 (function () {
     var animating = false;
@@ -69,6 +83,7 @@ function Swipe() {
 
             if (t.className === 'but-yay') {
                 t.parentNode.classList.add('yes');
+                // antonio()
                 animating = true;
                 fireCustomEvent('yepcard', {
                     origin: t,
@@ -91,16 +106,6 @@ function Swipe() {
             detail: payload
         });
 
-        if(it === comp.length) it = 0  
-        let card = document.querySelector(".card")
-        // for(let c of card) c.style.backgroundImage = `url('${comp[it]}')`
-        console.log("jdfls")
-        console.log(card)
-        card.style.backgroundImage = `url('${comp[it]}')`
-        it++
-
-        // alert(`${it}`)
-
         document.body.dispatchEvent(newevent);
     }
 
@@ -117,7 +122,7 @@ function Swipe() {
     function animationdone(ev) {
         animating = false;
         var origin = getContainer(ev.target);
-
+        
         if (ev.animationName === 'yay') {
             origin.classList.remove('yes');
         }
@@ -137,7 +142,9 @@ function Swipe() {
                         card: null
                     });
                 } else {
-                    origin.querySelector('.card').classList.add('current');
+                    antonio()
+                    origin.querySelector('.card').
+                    classList.add('current');
                 }
             }
         }
