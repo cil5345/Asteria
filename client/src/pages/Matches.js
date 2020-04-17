@@ -1,14 +1,14 @@
 import React from "react";
-// import Bg from "../components/Bg/Bg";
+import LoginBG from "../components/LoginBG/LoginBG";
 import "./matches.css"
 import Swipe from "../components/Swipe/Swipe";
-// import "../components/mainBG/mainBG"
+// import "../components/mainLoginBG/mainLoginBG"
 
 
 function Matches() {
     return (
         <>
-            {/* <Bg /> */}
+            <LoginBG />
             <div className="page">
                 {/* <mainBG /> */}
                 <div
