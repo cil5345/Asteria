@@ -46,3 +46,8 @@ a, a.text {
 a:hover {
     color: midnightblue;
   }
+
+img {
+    width: 150px;
+    position: relative;
+}

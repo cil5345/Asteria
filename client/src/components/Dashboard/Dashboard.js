@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   chatWindow: {
     padding: '20px',
-    width: "70%",
+    width: "%",
     height: "300px",
   },
   chatBox: {
@@ -110,7 +110,7 @@ const [textValue, changeTextValue] = React.useState('')
         color="primary" 
         className={classes.button} 
         onClick={() => {
-            sendChatAction({from: user, msg: textValue, topic: activeTopic });
+            sendChatAction({from: user, msg: textValue, room: activeTopic });
             changeTextValue('');
         }}
         >

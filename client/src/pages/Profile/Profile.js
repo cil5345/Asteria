@@ -9,13 +9,25 @@ import LoginBG from "../../components/LoginBG/LoginBG";
 //@HACER get rid of
 const dk = "debugging"
 
-class Profile extends Component {
-
-    state = {
+export default class Profile extends Component {
+constructor() {
+     super();
+    this.state = {
         fb_ID: "",
         imageLink: "",
         redirect: null
     }
+this.getComp=this.getComp.bind(this)
+this.updateUser=this.updateUser.bind(this)
+this.getValues=this.getValues.bind(this)
+this.componentDidMount=this.componentDidMount.bind(this)
+this.componentWillMount=this.componentWillMount.bind(this)
+
+
+
+
+}
+    
 
     updateUser = async () => {
 
@@ -26,7 +38,7 @@ class Profile extends Component {
     }
 
     getValues = async () => {
-
+        console.log("=============going to matches=============")
         // const fields = 
         // this.setState()
         const gender = document.querySelector(".genderInput")
@@ -132,4 +144,3 @@ class Profile extends Component {
             </>
     }
 }
-export default Profile;
