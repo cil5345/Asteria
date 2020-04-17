@@ -4,12 +4,12 @@ import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header"
 import Mo from "./mo.jpeg";
 import "./Profile.css";
-import { getCompatible, updateUser } from "../../utils/API"
+// import { getCompatible, updateUser } from "../../utils/API"
+import { updateUser } from "../../utils/API"
 import LoginBG from "../../components/LoginBG/LoginBG";
 
 
 const dk = "debugging"
-var probablyNotMo
 
 class Profile extends Component {
     state = {
@@ -21,29 +21,15 @@ class Profile extends Component {
         redirect: null
     }
 
-    getComp = async (sign, prefrence) => {
-        console.log("you cant match my style")
-        await getCompatible("Aries", "FM").then(data => {
-            console.log(data.data[0])
-            for (let user of data.data) console.log(user)
-        }).then(err => console.log("company " + err))
-    }   
-
     updateUser = async () => {
         console.log("update")
-        // await getAndUpdate()
-        // og without await
-
-        updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
-                .then(data => console.log(data))
-                .catch(err => console.log(err))
-
+        // updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
+        //         .then(data => console.log(data))
+        //         .catch(err => console.log(err))
         const id = sessionStorage.getItem("fb_ID")
         const sym = sessionStorage.getItem("symbol")
         const gn = sessionStorage.getItem("gender")
         const pr = sessionStorage.getItem("prefrences")
-
-
         // og without await
         // await updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
         //     .then(data => console.log(data))
@@ -84,15 +70,7 @@ class Profile extends Component {
         }
     }
 
-    saveinsession() {
-
-    }
     componentWillMount = async () => {
-
-
-        // saveinsession() {
-        //     sessionStorage.setItem()
-        // }
 
         const leedle = await JSON.stringify(sessionStorage.getItem("fid_pic"))
         console.log(leedle.indexOf("|"))
@@ -100,17 +78,11 @@ class Profile extends Component {
         await this.setState({ fb_ID: leedle.substring(0, pipe) })
         await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1)})
         console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
-        probablyNotMo = this.state.imageLink
-        console.log("cl: probablynot")
-        console.log(`|${probablyNotMo}|`)
         await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1) })
     }
 
     render = () => {
-        console.log("render this")
-        console.log(this.state.imageLink)
-        console.log(probablyNotMo)
-        console.log("forgot")
+        
         return <>
             <LoginBG />
             <Header />
