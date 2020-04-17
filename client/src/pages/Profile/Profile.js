@@ -155,8 +155,8 @@ class Profile extends Component {
                                     {/* <button className="successButton" onClick={this.getValues}>Get you're matches</button> */}
       {/* <button onClick={this.getValues}>colleeeeerado</button> */}
       
-<Link to="/Matches">
-<button className="successButton" onClick={this.getValues}>Get you’re matches</button>
+<Link onClick={this.getValues} to={`/api/users/${this.state.id}/${this.state.symbol}/${this.state.gender}/${this.state.prefrence}`}>
+<button className="successButton">Get you’re matches</button>
 </Link>
                                 </div>
                             </div>
