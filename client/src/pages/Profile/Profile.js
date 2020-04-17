@@ -2,9 +2,8 @@ import React, { Component } from "react"
 import { Redirect, Link } from "react-router-dom"
 import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header"
-import Mo from "./mo.jpeg";
 import "./Profile.css";
-import { getCompatible, updateUser } from "../../utils/API"
+import { updateUser } from "../../utils/API"
 import LoginBG from "../../components/LoginBG/LoginBG";
 
 //@HACER get rid of
@@ -33,7 +32,7 @@ this.componentWillMount=this.componentWillMount.bind(this)
     updateUser = async () => {
 
         // await getAndUpdate()
-        updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
+        await updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
                 .then(data => console.log(data))
                 .catch(err => console.log(err))
     }
@@ -50,7 +49,7 @@ this.componentWillMount=this.componentWillMount.bind(this)
         sessionStorage.setItem("gender", gender.value)
         sessionStorage.setItem("prefrences", prefrences.value)
 
-        this.updateUser()
+        await this.updateUser()
         console.log("going to matches")
     }
 
