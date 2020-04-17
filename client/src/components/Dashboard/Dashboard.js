@@ -27,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
     borderRight: "1px solid grey",
   },
   chatWindow: {
-    padding: '20px',
-    width: "%",
+    padding: '150px',
+    width: "70%",
     height: "300px",
   },
   chatBox: {
@@ -55,7 +55,7 @@ const [textValue, changeTextValue] = React.useState('')
     <>
       <Paper className={classes.root}>
         <Typography variant="h4" component="h4">
-          Chat Room
+          Chat App
         </Typography>
         <Typography variant="h5" component="h5">
           {activeTopic}
