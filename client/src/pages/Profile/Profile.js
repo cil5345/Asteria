@@ -40,7 +40,7 @@ class Profile extends Component {
 
         const id = sessionStorage.getItem("fb_ID")
         const sym = sessionStorage.getItem("symbol")
-        const gn = sessionStorage.etItem("gender")
+        const gn = sessionStorage.getItem("gender")
         const pr = sessionStorage.getItem("prefrences")
 
 
