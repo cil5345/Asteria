@@ -19,10 +19,20 @@ class Profile extends Component {
 
     updateUser = async () => {
 
+        const id = sessionStorage.getItem("fb_ID")
+        const sym = sessionStorage.getItem("symbol")
+        const gn = sessionStorage.etItem("gender")
+        const pr = sessionStorage.getItem("prefrences")
+
+
         // og without await
-        updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
-                .then(data => console.log(data))
-                .catch(err => console.log(err))
+        // await updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
+        //     .then(data => console.log(data))
+        //     .catch(err => console.log(err))
+
+        await updateUser(id, sym, gn, pr)
+            .then(data => console.log(data))
+            .catch(err => console.log(err))
     }
 
     getValues = async () => {
@@ -47,7 +57,7 @@ class Profile extends Component {
         console.log(leedle.indexOf("|"))
         const pipe = await leedle.indexOf("|")
         await this.setState({ fb_ID: leedle.substring(0, pipe) })
-        await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1)})
+        await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1) })
     }
 
     render = () => {
@@ -118,18 +128,18 @@ class Profile extends Component {
                                     <br></br>
 
                                     {/* <button className="successButton" onClick={this.getValues}>Get you're matches</button> */}
-      {/* <button onClick={this.getValues}>colleeeeerado</button> */}
-      
-<Link to="/Matches">
-<button className="successButton" onClick={this.getValues}>Get you’re matches</button>
-</Link>
+                                    {/* <button onClick={this.getValues}>colleeeeerado</button> */}
+
+                                    <Link to="/Matches">
+                                        <button className="successButton" onClick={this.getValues}>Get you’re matches</button>
+                                    </Link>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </section >
-            </>
+        </>
     }
 }
 export default Profile;
