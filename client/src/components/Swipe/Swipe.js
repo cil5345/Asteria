@@ -59,7 +59,7 @@ function antonio() {
     // for(let c of card) c.style.backgroundImage = `url('${comp[it]}')`
     console.log(dk + " jdfls")
     console.log(card)
-    card.style.backgroundImage = `url('${comp[it]}')`
+    card.style.backgroundImage = `url('${comp[it].imageLink}')`
     it++
 
     // alert(`${it}`)
