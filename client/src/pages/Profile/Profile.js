@@ -19,8 +19,8 @@ class Profile extends Component {
 
     updateUser = async () => {
 
-        // await getAndUpdate()
-        await updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
+        // og without await
+        updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
                 .then(data => console.log(data))
                 .catch(err => console.log(err))
     }
