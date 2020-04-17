@@ -1,23 +1,42 @@
 import React, { Component } from "react"
-import { Redirect, Link } from "react-router-dom"
+import { Redirect } from "react-router-dom"
 import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header"
+import Mo from "./mo.jpeg";
 import "./Profile.css";
-import { updateUser } from "../../utils/API"
+import { getCompatible, updateUser } from "../../utils/API"
 import LoginBG from "../../components/LoginBG/LoginBG";
 
-//@HACER get rid of
+
 const dk = "debugging"
+var probablyNotMo
 
 class Profile extends Component {
-
     state = {
         fb_ID: "",
         imageLink: "",
+        symbol: "",
+        gender: "",
+        pref: "",
         redirect: null
     }
 
+    getComp = async (sign, prefrence) => {
+        console.log("you cant match my style")
+        await getCompatible("Aries", "FM").then(data => {
+            console.log(data.data[0])
+            for (let user of data.data) console.log(user)
+        }).then(err => console.log("company " + err))
+    }   
+
     updateUser = async () => {
+        console.log("update")
+        // await getAndUpdate()
+        // og without await
+
+        updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
+                .then(data => console.log(data))
+                .catch(err => console.log(err))
 
         const id = sessionStorage.getItem("fb_ID")
         const sym = sessionStorage.getItem("symbol")
@@ -43,25 +62,55 @@ class Profile extends Component {
         const prefrences = document.querySelector(".prefInput")
         const symbol = document.querySelector(".zodiacInput")
 
-        sessionStorage.setItem("symbol", symbol.value)
-        sessionStorage.setItem("gender", gender.value)
-        sessionStorage.setItem("prefrences", prefrences.value)
+        console.log(dk)
+        console.log(dk + " " + prefrences.value)
+        console.log(dk + " " + gender.value)
+        console.log(dk + " " + symbol.value)
 
+        this.setState({ symbol: await symbol.value })
+        this.setState({ gender: await gender.value })
+        this.setState({ prefrences: await prefrences.value })
         this.updateUser()
+
         console.log("going to matches")
+        return <Redirect to="/Matches"/>
     }
 
+
+    componentDidMount = () => {
+        if(sessionStorage.getItem("fid_pic")) {
+
+            console.log(`FB ID_PIC: ${sessionStorage.getItem("fid_pic")}`)
+        }
+    }
+
+    saveinsession() {
+
+    }
     componentWillMount = async () => {
+
+
+        // saveinsession() {
+        //     sessionStorage.setItem()
+        // }
 
         const leedle = await JSON.stringify(sessionStorage.getItem("fid_pic"))
         console.log(leedle.indexOf("|"))
         const pipe = await leedle.indexOf("|")
         await this.setState({ fb_ID: leedle.substring(0, pipe) })
+        await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1)})
+        console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
+        probablyNotMo = this.state.imageLink
+        console.log("cl: probablynot")
+        console.log(`|${probablyNotMo}|`)
         await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1) })
     }
 
     render = () => {
-
+        console.log("render this")
+        console.log(this.state.imageLink)
+        console.log(probablyNotMo)
+        console.log("forgot")
         return <>
             <LoginBG />
             <Header />

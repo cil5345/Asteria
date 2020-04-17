@@ -1,11 +1,19 @@
 .container {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
     color: white;
     font-size: larger;
     padding-top: 3rem;
 }
+
+#header {
+    position: fixed;
+  }
+  
+  #content {
+    margin-top: 100px;
+  }
+
 .menu-text {
     font-weight: bold;
     font-size: x-large;

@@ -12,7 +12,7 @@ function Header() {
         <section className="container">
             <div className="top-bar">
                 <div className="top-bar-left">
-                    <img src="../../../../images/ASTERIA.png" alt="Girl in a jacket"></img>
+                    <header><Logo /></header>
                     <div className="allLinks">
                     <div className="links">
                     <Link to="/Profile">Profile</Link>
@@ -26,7 +26,6 @@ function Header() {
                     </div>
                 </div>
             </div>
-            {/* <h1>ASTERIA Dating App</h1> */}
         </section>
     )
 }
