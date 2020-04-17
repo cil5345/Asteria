@@ -9,7 +9,7 @@ import Chat from "./pages/Chat";
 import Login from "./pages/Login";
 // import mainBG from "./components/mainBG/mainBG";
 import Matches from "./pages/Matches";
-import "./style.css"
+import "./style.css";
 
 // import Books from "./pages/Books";
 

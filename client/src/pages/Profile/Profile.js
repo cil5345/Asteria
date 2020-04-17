@@ -5,6 +5,8 @@ import Header from "../../components/Header/Header"
 import Mo from "./mo.jpeg";
 import "./Profile.css";
 import { getCompatible, updateUser } from "../../utils/API"
+import LoginBG from "../../components/LoginBG/LoginBG";
+
 
 const dk = "debugging"
 
@@ -83,6 +85,7 @@ class Profile extends Component {
     render = () => {
 
         return <>
+            <LoginBG />
             <Header />
             <section className="container">
                 <div className="row">
