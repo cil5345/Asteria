@@ -180,7 +180,7 @@ class Profile extends Component {
                                     {/* <button onClick={this.getValues}>colleeeeerado</button> */}
 
                                     <Link to="/Matches">
-                                        <button className="successButton" onClick={this.getValues}>Get you’re matches</button>
+                                        <button className="successButton" onClick={this.getValues}>Get your matches</button>
                                     </Link>
                                 </div>
                             </div>
