@@ -1,12 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
+// import mainBG from "../components/mainBG/mainBG";
 // import Bg from "../components/Bg/Bg";
 import "./matches.css"
 import Swipe from "../components/Swipe/Swipe";
 // import "../components/mainBG/mainBG"
 
 
-function Matches() {
-    return (
+class Matches extends Component {
+   
+   
+   render = () => 
         <>
             {/* <Bg /> */}
             <div className="page">
@@ -23,7 +26,7 @@ function Matches() {
             </div >
         </>
 
-    );
+  
 }
 
 export default Matches;
