@@ -57,7 +57,7 @@ function antonio() {
     if(it === comp.length) it = 0
 
     let card = document.querySelector(".card")
-    let currentC = document.querySelector(".card")
+    // let currentC = document.querySelector(".card")
     // for(let c of card) c.style.backgroundImage = `url('${comp[it]}')`
     console.log(dk + " jdfls")
     console.log(card)
