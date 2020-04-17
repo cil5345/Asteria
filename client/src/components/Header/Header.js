@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import Logo from "../../components/Logo/Logo";
 
 // import { Link } from "react-router-dom";
 // By importing the Header.css file, it is added to the DOM whenever this component loads
@@ -11,7 +12,7 @@ function Header() {
         <section className="container">
             <div className="top-bar">
                 <div className="top-bar-left">
-                    <span className="menu-text h1">ASTERIA Dating App</span>
+                    <img src="../../../../images/ASTERIA.png" alt="Girl in a jacket"></img>
                     <div className="allLinks">
                     <div className="links">
                     <Link to="/Profile">Profile</Link>
