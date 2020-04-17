@@ -12,7 +12,6 @@ const dk = "debugging"
 var probablyNotMo
 
 class Profile extends Component {
-
     state = {
         fb_ID: "",
         imageLink: "",
@@ -25,7 +24,6 @@ class Profile extends Component {
     getComp = async (sign, prefrence) => {
         console.log("you cant match my style")
         await getCompatible("Aries", "FM").then(data => {
-
             console.log(data.data[0])
             for (let user of data.data) console.log(user)
         }).then(err => console.log("company " + err))
@@ -34,9 +32,26 @@ class Profile extends Component {
     updateUser = async () => {
         console.log("update")
         // await getAndUpdate()
+        // og without await
+
         updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
                 .then(data => console.log(data))
                 .catch(err => console.log(err))
+
+        const id = sessionStorage.getItem("fb_ID")
+        const sym = sessionStorage.getItem("symbol")
+        const gn = sessionStorage.getItem("gender")
+        const pr = sessionStorage.getItem("prefrences")
+
+
+        // og without await
+        // await updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
+        //     .then(data => console.log(data))
+        //     .catch(err => console.log(err))
+
+        await updateUser(id, sym, gn, pr)
+            .then(data => console.log(data))
+            .catch(err => console.log(err))
     }
 
     getValues = async () => {
@@ -88,6 +103,7 @@ class Profile extends Component {
         probablyNotMo = this.state.imageLink
         console.log("cl: probablynot")
         console.log(`|${probablyNotMo}|`)
+        await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1) })
     }
 
     render = () => {
@@ -159,16 +175,20 @@ class Profile extends Component {
                                         </label>
                                     </div>
                                     <br></br>
+
+                                    {/* <button className="successButton" onClick={this.getValues}>Get you're matches</button> */}
+                                    {/* <button onClick={this.getValues}>colleeeeerado</button> */}
+
                                     <Link to="/Matches">
                                         <button className="successButton" onClick={this.getValues}>Get you’re matches</button>
-                                    </Link>                                
+                                    </Link>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </section >
-            </>
+        </>
     }
 }
 export default Profile;

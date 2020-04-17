@@ -17,9 +17,9 @@ function Swipe() {
         const prefrences = sessionStorage.getItem("prefrences")
 
         console.log(`sym: ${symbol} prefrences:${prefrences}`)
-        await getCompatible(symbol, prefrences).then(data => comp = data)
+        await getCompatible(symbol, prefrences).then(data => comp = data.data)
                                  .catch(err => console.log(err))
-        console.log(comp)
+        console.log(comp[0])
         
         // console.log(comp[0].data[1].imageLink)
         // const data = comp.filter( c => c.data)
@@ -59,7 +59,7 @@ function antonio() {
     // for(let c of card) c.style.backgroundImage = `url('${comp[it]}')`
     console.log(dk + " jdfls")
     console.log(card)
-    card.style.backgroundImage = `url('${comp[it]}')`
+    card.style.backgroundImage = `url('${comp[it].imageLink}')`
     it++
 
     // alert(`${it}`)
