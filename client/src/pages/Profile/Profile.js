@@ -152,7 +152,9 @@ class Profile extends Component {
                                         </label>
                                     </div>
                                     <br></br>
+
                                     <button className="successButton" onClick={this.getValues}>Get you're matches</button>
+      
                                 </div>
                             </div>
                         </form>

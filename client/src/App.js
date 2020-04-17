@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Profile from "./pages/Profile/Profile";
 import Chat from "./pages/Chat";
-import Login from "./pages/Login"
+import Login from "./pages/Login";
 // import mainBG from "./components/mainBG/mainBG";
 import Matches from "./pages/Matches";
 import "./style.css"
