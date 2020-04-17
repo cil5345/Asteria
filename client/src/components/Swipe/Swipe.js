@@ -40,12 +40,12 @@ function Swipe() {
             }}
         >
             <ul class="cardlist">
-                <li class="card current">#1</li>
-                <li class="card">#2</li>
-                <li class="card">#3</li>
-                <li class="card">#4</li>
-                <li class="card">#5</li>
-                <li class="card">#6</li>
+                <li class="card current"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
             </ul>
             <button class="but-nope">X</button>
             <button class="but-yay">✔</button>
@@ -54,12 +54,16 @@ function Swipe() {
 }
 
 function antonio() {
-    if(it === comp.length) it = 0  
+    if(it === comp.length) it = 0
+
     let card = document.querySelector(".card")
+    let currentC = document.querySelector(".current")
     // for(let c of card) c.style.backgroundImage = `url('${comp[it]}')`
     console.log(dk + " jdfls")
     console.log(card)
+    
     card.style.backgroundImage = `url('${comp[it].imageLink}')`
+    currentC.textContent = `${comp[it].name}`
     it++
 
     // alert(`${it}`)
