@@ -2,14 +2,13 @@ import React, { Component } from "react"
 import { Redirect, Link } from "react-router-dom"
 import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header"
-import Mo from "./mo.jpeg";
 import "./Profile.css";
 // import { getCompatible, updateUser } from "../../utils/API"
 import { updateUser } from "../../utils/API"
 import LoginBG from "../../components/LoginBG/LoginBG";
 
 
-const dk = "debugging"
+const dk = "DEBUG_KEY"
 
 class Profile extends Component {
     state = {
@@ -42,16 +41,12 @@ class Profile extends Component {
 
     getValues = async () => {
 
-        // const fields = 
-        // this.setState()
         const gender = document.querySelector(".genderInput")
         const prefrences = document.querySelector(".prefInput")
         const symbol = document.querySelector(".zodiacInput")
 
         console.log(dk)
-        console.log(dk + " " + prefrences.value)
-        console.log(dk + " " + gender.value)
-        console.log(dk + " " + symbol.value)
+        console.log("within getValues" + dk + ` ${sessionStorage.getItem("fb_ID")}`)
 
         this.setState({ symbol: await symbol.value })
         this.setState({ gender: await gender.value })
@@ -66,19 +61,22 @@ class Profile extends Component {
     componentDidMount = () => {
         if(sessionStorage.getItem("fid_pic")) {
 
-            console.log(`FB ID_PIC: ${sessionStorage.getItem("fid_pic")}`)
+            console.log(`${dk}: FB ID_PIC: ${sessionStorage.getItem("fid_pic")}`)
         }
     }
 
     componentWillMount = async () => {
 
+        // console.log(dk + " " + sessionStorage.getItem())
         const leedle = await JSON.stringify(sessionStorage.getItem("fid_pic"))
         console.log(leedle.indexOf("|"))
         const pipe = await leedle.indexOf("|")
+        sessionStorage.setItem("fb_ID", leedle.substring(pipe + 1, leedle.length - 1).trim())
         await this.setState({ fb_ID: leedle.substring(0, pipe) })
-        await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1)})
-        console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
-        await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1) })
+        await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1).trim()})
+        // console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
+        console.log(`${dk} ssid:${sessionStorage.getItem("fb_ID")}`)
+        await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1).trim()})
     }
 
     render = () => {
