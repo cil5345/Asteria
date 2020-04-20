@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Redirect, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header"
 import "./Profile.css";
@@ -12,27 +12,21 @@ const dk = "DEBUG_KEY"
 
 class Profile extends Component {
     state = {
-        fb_ID: "",
-        imageLink: "",
-        symbol: "",
-        gender: "",
-        pref: "",
-        redirect: null
+        user: {}
+        // fb_ID: "",
+        // imageLink: ""
+        // symbol: "",
+        // gender: "",
+        // pref: "",
+        // redirect: null
     }
 
     updateUser = async () => {
-        console.log("update")
-        // updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
-        //         .then(data => console.log(data))
-        //         .catch(err => console.log(err))
+        
         const id = sessionStorage.getItem("fb_ID")
         const sym = sessionStorage.getItem("symbol")
         const gn = sessionStorage.getItem("gender")
         const pr = sessionStorage.getItem("prefrences")
-        // og without await
-        // await updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
-        //     .then(data => console.log(data))
-        //     .catch(err => console.log(err))
 
         await updateUser(id, sym, gn, pr)
             .then(data => console.log(data))
@@ -58,16 +52,19 @@ class Profile extends Component {
 
     componentWillMount = async () => {
 
+        console.log(sessionStorage.getItem("user"))
+
+        this.setState({ user: JSON.parse(sessionStorage.getItem("user"))})
         // console.log(dk + " " + sessionStorage.getItem())
-        const leedle = await JSON.stringify(sessionStorage.getItem("fid_pic"))
-        console.log(leedle.indexOf("|"))
-        const pipe = await leedle.indexOf("|")
-        sessionStorage.setItem("fb_ID", leedle.substring(1, pipe).trim())
-        await this.setState({ fb_ID: leedle.substring(0, pipe) })
-        await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1).trim()})
-        // console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
-        console.log(`${dk} ssid:${sessionStorage.getItem("fb_ID")}`)
-        await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1).trim()})
+        // const leedle = await JSON.stringify(sessionStorage.getItem("fid_pic"))
+        // console.log(leedle.indexOf("|"))
+        // const pipe = await leedle.indexOf("|")
+        // sessionStorage.setItem("fb_ID", leedle.substring(1, pipe).trim())
+        // await this.setState({ fb_ID: leedle.substring(0, pipe) })
+        // await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1).trim()})
+        // // console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
+        // console.log(`${dk} ssid:${sessionStorage.getItem("fb_ID")}`)
+        // await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1).trim()})
     }
 
     render = () => {
