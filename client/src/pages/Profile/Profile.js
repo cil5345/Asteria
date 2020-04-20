@@ -49,24 +49,11 @@ class Profile extends Component {
         sessionStorage.setItem("gender", await gender.value)
         sessionStorage.setItem("prefrences", await prefrences.value)
 
-        console.log(dk)
-        console.log("within getValues" + dk + ` ${sessionStorage.getItem("fb_ID")}`)
-
         this.setState({ symbol: await symbol.value })
         this.setState({ gender: await gender.value })
         this.setState({ prefrences: await prefrences.value })
         this.updateUser()
-
-        console.log("going to matches")
         // return <Redirect to="/Matches"/>
-    }
-
-
-    componentDidMount = () => {
-        if(sessionStorage.getItem("fid_pic")) {
-
-            console.log(`${dk}: FB ID_PIC: ${sessionStorage.getItem("fid_pic")}`)
-        }
     }
 
     componentWillMount = async () => {
