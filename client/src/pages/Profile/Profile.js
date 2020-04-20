@@ -53,9 +53,10 @@ class Profile extends Component {
     componentWillMount = async () => {
 
         console.log(sessionStorage.getItem("user"))
-        let user = sessionStorage.getItem("user")
+        let user = JSON.parse(sessionStorage.getItem("user"))
 
         console.log(user.name)
+        console.log(user.imageLink)
 
         this.setState({ user: JSON.parse(sessionStorage.getItem("user"))})
         // console.log(dk + " " + sessionStorage.getItem())
