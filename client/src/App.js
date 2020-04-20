@@ -1,17 +1,13 @@
 import React from "react";
-// import Facebook from "./components/Facebook"
 import { BrowserRouter as Router, Route } from "react-router-dom";
-// import Logo from "./components/Logo/Logo";
-// import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Profile from "./pages/Profile/Profile";
+import Leedle from "./pages/Leedle"
 import Chat from "./pages/Chat";
 import Login from "./pages/Login";
-// import mainBG from "./components/mainBG/mainBG";
 import Matches from "./pages/Matches";
 import "./style.css";
 
-// import Books from "./pages/Books";
 
 function App() {
   return (
@@ -24,6 +20,7 @@ function App() {
       </div>
       <Route exact path="/Matches" component={Matches} />
       <Route exact path="/Profile" component={Profile} />
+      <Route exact path="/leedle" component={Leedle} />
       {/* login is default/fallback */}
       <Route exact path="/" component={Login} />
       {/* <Route component={Login} /> */}

@@ -30,11 +30,14 @@ class LoginFacebook extends Component {
         }})
         //get the user from our DB
         const user = await this.getThisUser()
-      
+
+        
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
         !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) : sessionStorage.setItem("fid_pic", `${user.fb_ID}|${user.imageLink}`)
-
+        
+        !user.gender ? this.setState({redirect: "/Profile"}) : this.setState({redirect: "/leedle"})
+        
         this.setState({ auth: true })
     }
 
@@ -58,7 +61,7 @@ class LoginFacebook extends Component {
 
     render = () => {
         if (this.state.auth && this.state.fbDetails.fb_ID) {
-                return <Redirect to="/Profile"/>
+                return <Redirect to={this.state.redirect}/>
         } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
                 const user = this.getThisUser()
                 sessionStorage.setItem("fb_ID", JSON.stringify(user.fb_ID))
