@@ -12,9 +12,9 @@ const dk = "DEBUG_KEY"
 
 class Profile extends Component {
     state = {
-        user: {}
+
         // fb_ID: "",
-        // imageLink: ""
+        imageLink: ""
         // symbol: "",
         // gender: "",
         // pref: "",
@@ -58,7 +58,7 @@ class Profile extends Component {
         console.log(user.name)
         console.log(user.imageLink)
 
-        this.setState({ user: JSON.parse(sessionStorage.getItem("user"))})
+        this.setState({ imageLink: user.imageLink})
         // console.log(dk + " " + sessionStorage.getItem())
         // const leedle = await JSON.stringify(sessionStorage.getItem("fid_pic"))
         // console.log(leedle.indexOf("|"))
