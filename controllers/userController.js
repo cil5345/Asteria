@@ -30,10 +30,16 @@ module.exports = {
 
     const prefArr = prefrence.split("")
 
-    db.User
 
+    const compArr = compJSON.filter(sign => (sign.symbol === symbol))
+
+    const comps = compArr.comp
+    console.log("dey take err jebs")
+    console.log(comps)
+    
+    db.User
     // PSquery FIND SYMBOL : [X Y Z W], PREFRENCE : [X0]
-    .find({ symbol: { $in: [prefArr] }})
+    .find({ symbol: { $in: comps }})
       .then(data => res.json(data))
 
 
