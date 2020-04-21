@@ -38,20 +38,21 @@ module.exports = {
     
     console.log("dey take err jebs")
     console.log(comp)
-    
+    console.log(prefArr)
     
     db.User
     // PSquery FIND SYMBOL : [X Y Z W], PREFRENCE : [X]
     // /[{"symbol":"Aries","comp":["Leo","Sagittarius","Gemini","Aquarius"]},
     // .find({ symbol: { $in: comp }, gender: { $in: prefArr} })
     // .find({ symbol: { $in: [comp] }, gender: { $in: [prefArr] }})
-    .find({ symbol: { $in: [...comp] }, gender: { $in: [...prefArr] }})
+    // .find({ symbol: { $in: [...comp] }, gender: { $in: [...prefArr] } })
+    .find({ symbol: { $in: [...comp] }, gender: { $in: prefArr } })
       
       .then(data =>{
 
         console.log(data)
         res.json(data)
-      } )
+      })
 //, gender: { $in: [...prefArr]}
 
             // db.User
