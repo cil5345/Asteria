@@ -13,20 +13,29 @@ class LoginFacebook extends Component {
         fbDetails: {},
         redirect: null
     }
-    
+
     componentClicked = async () => {
         console.log("clicked")
+        if (this.state.auth && this.state.fbDetails.fb_ID) {
+            return <Redirect to={this.state.redirect} />
+        } else if (this.state.auth && !this.state.fbDetails.fb_ID) {
+            const user = this.getThisUser()
+            console.log("54")
+            storeInSession(user)
+        }
     }
-    
+
     responseFacebook = async response => {
 
         console.log("facebook is always watching")
 
-        this.setState({ fbDetails: {
-            fb_ID: response.id,
-            name: response.name,
-            imageLink: response.picture.data.url
-        }})
+        this.setState({
+            fbDetails: {
+                fb_ID: response.id,
+                name: response.name,
+                imageLink: response.picture.data.url
+            }
+        })
         //get the user from our DB
         const user = await this.getThisUser()
         console.log(user)
@@ -36,37 +45,30 @@ class LoginFacebook extends Component {
             .then(res => console.log(res))
             .catch(err => console.log(err)) : storeInSession(user)
         //if the user we got back has a gender we can assume they have set their profile previously, we will direct them to the dashboard/leedle
-        !user.gender ? this.setState({redirect: "/Profile"}) : this.setState({redirect: "/leedle"})
+        !user.gender ? this.setState({ redirect: "/Profile" }) : this.setState({ redirect: "/leedle" })
         //set auth to true and proceed to re-render
         this.setState({ auth: true })
         console.log(this.state.auth)
     }
 
     getThisUser = async () => await getOneUser(this.state.fbDetails.fb_ID)
-                                        .then(data => data.data)
-                                        .catch(err => console.log(err))
+        .then(data => data.data)
+        .catch(err => console.log(err))
 
     render = () => {
-        if (this.state.auth && this.state.fbDetails.fb_ID) {
-                return <Redirect to={this.state.redirect}/>
-        } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
-                const user = this.getThisUser()
-                console.log("54")
-                storeInSession(user)
-        }
 
         let facebookData
 
         this.state.auth ? facebookData = <>yeer logged in</>
-        :
-        facebookData = <>
-        <FacebookLoginBtn
-        appId="519631592082573"
-        autoLoad={true}
-        fields="name,email,picture"
-        onClick={this.componentClicked}
-        callback={this.responseFacebook} />
-        </>
+            :
+            facebookData = <>
+                <FacebookLoginBtn
+                    appId="519631592082573"
+                    autoLoad={true}
+                    fields="name,email,picture"
+                    onClick={this.componentClicked}
+                    callback={this.responseFacebook} />
+            </>
         return <>{facebookData}</>
     }
 }
