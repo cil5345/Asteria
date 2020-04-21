@@ -5,8 +5,7 @@ import "./style.css"
 
 export default function Leedle() {
 
-    console.log(sessionStorage.getItem("fb_ID"))
-    // const [ imageLink, setImageLink ] = useState("")
+    const [ imageLink, setImageLink ] = useState("")
     const [ user, setUser ] = useState({})
     const [ newMatches, setNewMatches ] = useState([])
 
@@ -14,7 +13,8 @@ export default function Leedle() {
         alert("fkalf")
     }
 
-    // useEffect(() => {
+    useEffect(() => {
+        setImageLink(sessionStorage.getItem("imageLink"))
     //     console.log(sessionStorage.getItem("fb_ID"))
     //     getOneUser(sessionStorage.getItem("fb_ID"))
     //         .then(user => setUser(user))
@@ -27,13 +27,13 @@ export default function Leedle() {
     //         .catch(err => console.log(err))
     //     console.log("matches")
     //     console.log(newMatches)
-    // })
+    })
 
     return  <>
                 <Link to="/Matches"><button>Go to matches</button></Link>
                 {/* need a way to get details to matches */}
                 <div id="div-pic">
-                    <img alt="You" src={user.imageLink}/>
+                    <img alt="You" src={imageLink}/>
                     <button onClick={change}>Change</button>
                 </div>
                 <h1>High Horse</h1>
