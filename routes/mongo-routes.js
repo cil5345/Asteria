@@ -7,10 +7,6 @@ const PUB_DIR = path.resolve(__dirname, "../client/build")
 
 module.exports = function(app) {
 
-    // app.get("/api/books", (req, res) => {
-
-    //     bookController.findAll
-    // })
     app.post("/api/users", (req, res) => {
         
         console.log("creating user")
@@ -18,7 +14,7 @@ module.exports = function(app) {
     })
 
     app.get('/*', function(req, res) {
-        res.sendFile(path.join(__dirname, 'public/build/index.html'), function(err) {
+        res.sendFile(path.join(__dirname, '../client/public/build/index.html'), function(err) {
           if (err) {
             res.status(500).send(err)
           }
@@ -28,14 +24,6 @@ module.exports = function(app) {
     // app.get("*", (req, res) => {
 
     //     res.redirect(path.join(PUB_DIR, "index.html"))
-    // })
-
-    // app.delete("/api/books/:id", (req, res) => {
-
-    //     const id = req.params.id
-
-    //     // bookController.create()
-
     // })
 
     // app.get("*", (req, res) => {

@@ -22,11 +22,11 @@ export default function Leedle() {
     //     console.log("retrived this user")
     //     console.log(user)
 
-    //     getNewMatches(user.fb_ID)
-    //         .then(matches => setNewMatches([...matches]))
-    //         .catch(err => console.log(err))
-    //     console.log("matches")
-    //     console.log(newMatches)
+        getNewMatches(user.fb_ID)
+            .then(matches => setNewMatches([...matches]))
+            .catch(err => console.log(err))
+        console.log("matches")
+        console.log(newMatches)
     })
 
     return  <>
