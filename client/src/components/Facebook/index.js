@@ -21,6 +21,7 @@ class LoginFacebook extends Component {
 
         console.log("facebook is always watching")
 
+        console.log(response)
         //get the user from our DB
         const user = await this.getThisUser(response.id)
 
