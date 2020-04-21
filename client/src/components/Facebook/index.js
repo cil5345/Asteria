@@ -16,6 +16,13 @@ class LoginFacebook extends Component {
     
     componentClicked = async () => {
         console.log("clicked")
+        return <Redirect to={this.state.redirect} />
+        //// if (this.state.auth && this.state.fbDetails.fb_ID) {
+        //         return <Redirect to={this.state.redirect}/>
+        // } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
+        //         const user = this.getThisUser()
+        //         storeInSession(user)
+        // }
     }
     
     responseFacebook = async response => {
@@ -29,6 +36,7 @@ class LoginFacebook extends Component {
         }})
         //get the user from our DB
         const user = await this.getThisUser()
+        console.log(user)
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
         !user ? await createUser(this.state.fbDetails)
@@ -38,19 +46,20 @@ class LoginFacebook extends Component {
         !user.gender ? this.setState({redirect: "/Profile"}) : this.setState({redirect: "/leedle"})
         //set auth to true and proceed to re-render
         this.setState({ auth: true })
+        console.log(this.state.auth)
     }
 
     getThisUser = async () => await getOneUser(this.state.fbDetails.fb_ID)
-                                        .then( data => data.data)
-                                        .catch( err => console.log(err))
+                                        .then(data => data.data)
+                                        .catch(err => console.log(err))
 
     render = () => {
-        if (this.state.auth && this.state.fbDetails.fb_ID) {
-                return <Redirect to={this.state.redirect}/>
-        } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
-                const user = this.getThisUser()
-                storeInSession(user)
-        }
+        // if (this.state.auth && this.state.fbDetails.fb_ID) {
+        //         return <Redirect to={this.state.redirect}/>
+        // } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
+        //         const user = this.getThisUser()
+        //         storeInSession(user)
+        // }
 
         let facebookData
 

@@ -16,7 +16,7 @@ export default async function Leedle() {
     await useEffect(() => {
         console.log(sessionStorage.getItem("fb_ID"))
         getOneUser(sessionStorage.getItem("fb_ID"))
-            .then(user => setUser({ user }))
+            .then(user => setUser(user))
             .catch(err => console.log(err))
         console.log("retrived this user")
         console.log(user)
