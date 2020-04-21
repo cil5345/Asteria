@@ -34,9 +34,12 @@ module.exports = {
 
     console.log(compArr)
 
-    const comp = compArr.comp
+    const { comp } = compArr[0].comp
+    const compbutno = compArr[0].comp
     console.log("dey take err jebs")
     console.log(comp)
+    console.log(compbutno)
+    console.log("butt")
     // /[{"symbol":"Aries","comp":["Leo","Sagittarius","Gemini","Aquarius"]},
     db.User
     // PSquery FIND SYMBOL : [X Y Z W], PREFRENCE : [X0]
