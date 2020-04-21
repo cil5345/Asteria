@@ -5,6 +5,7 @@ import "./style.css"
 
 export default async function Leedle() {
 
+    console.log(sessionStorage.getItem("fb_ID"))
     // const [ imageLink, setImageLink ] = useState("")
     const [ user, setUser ] = useState({})
     const [ newMatches, setNewMatches ] = useState([])
