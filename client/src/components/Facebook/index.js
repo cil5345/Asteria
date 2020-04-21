@@ -16,13 +16,6 @@ class LoginFacebook extends Component {
     
     componentClicked = async () => {
         console.log("clicked")
-        return <Redirect to={this.state.redirect} />
-        //// if (this.state.auth && this.state.fbDetails.fb_ID) {
-        //         return <Redirect to={this.state.redirect}/>
-        // } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
-        //         const user = this.getThisUser()
-        //         storeInSession(user)
-        // }
     }
     
     responseFacebook = async response => {
@@ -54,12 +47,12 @@ class LoginFacebook extends Component {
                                         .catch(err => console.log(err))
 
     render = () => {
-        // if (this.state.auth && this.state.fbDetails.fb_ID) {
-        //         return <Redirect to={this.state.redirect}/>
-        // } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
-        //         const user = this.getThisUser()
-        //         storeInSession(user)
-        // }
+        if (this.state.auth && this.state.fbDetails.fb_ID) {
+                return <Redirect to={this.state.redirect}/>
+        } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
+                const user = this.getThisUser()
+                storeInSession(user)
+        }
 
         let facebookData
 
