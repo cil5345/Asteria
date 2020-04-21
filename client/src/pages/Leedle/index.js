@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { Link } from "react-router-dom"
+import { getOneUser } from "../../utils/API"
 import "./style.css"
 
 export default function Leedle() {
@@ -12,7 +14,8 @@ export default function Leedle() {
 
     return  <>
 
-                <button>Go to matches</button>
+                <Link to="/Matches"><button>Go to matches</button></Link>
+                {/* need a way to get details to matches */}
                 <div id="div-pic">
                     <img alt="You" src={imageLink}/>
                     <button onClick={change}>Change</button>

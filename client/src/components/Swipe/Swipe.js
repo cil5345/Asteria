@@ -34,6 +34,18 @@ function Swipe() {
                 <li class="card"></li>
                 <li class="card"></li>
                 <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
             </ul>
             <button class="but-nope">X</button>
             <button class="but-yay">✔</button>
