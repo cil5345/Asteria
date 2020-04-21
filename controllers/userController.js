@@ -43,7 +43,8 @@ module.exports = {
     // /[{"symbol":"Aries","comp":["Leo","Sagittarius","Gemini","Aquarius"]},
     db.User
     // PSquery FIND SYMBOL : [X Y Z W], PREFRENCE : [X0]
-    .find({ symbol: { $in: [...comp] }})//tried comp [comp] ...comp
+    .find({ symbol: { $in: [...comp] }, gender: { $in: [...prefArr]} })
+      
       .then(data => res.json(data))
 //, gender: { $in: [...prefArr]}
 
