@@ -40,10 +40,6 @@ class Profile extends Component {
     componentWillMount = async () => {
 
         this.setState({ imageLink: sessionStorage.getItem("imageLink")})
-        
-        // const user = JSON.parse(sessionStorage.getItem("user"))
-        // sessionStorage.setItem("fb_ID", user.fb_ID)
-        //@HACER do we want to display 'welcome user's name' or just my profile
         // this.setState({ name: user.name })
     }
 
