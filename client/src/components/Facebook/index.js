@@ -21,28 +21,38 @@ class LoginFacebook extends Component {
 
         console.log("facebook is always watching")
 
-        console.log(response.id)
-
-        sessionStorage.setItem("fb_ID", response.id)
         //get the user from our DB
-        const user = await this.getThisUser(response.id)
+        const user = await this.getThisUser()
 
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
-        !user ? createUser({fb_ID: response.id, name: response.name, imageLink: response.picture}).then( res => console.log(res)).catch( err => console.log(err)) : storeInSession(user)
+        !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) : storeInSession(user)
         //if the user we got back has a gender we can assume they have set their profile previously, we will direct them to the dashboard/leedle
         !user.gender ? this.setState({redirect: "/Profile"}) : this.setState({redirect: "/leedle"})
         //set auth to true and proceed to re-render
         this.setState({ auth: true })
     }
 
-    getThisUser = async id => await getOneUser(id)
-                                .then( data => data.data)
-                                .catch( err => console.log(err))
+    getThisUser = async () => {
+
+        let user
+        await getOneUser(this.state.fbDetails.fb_ID)
+                    .then( data => {
+                        user = data.data
+                        console.log("images")
+                        console.log(user)
+                        return user
+                    })
+                    .catch( err => console.log(err))
+        return user
+    }
 
     render = () => {
-        if (this.state.auth) {
+        if (this.state.auth && this.state.fbDetails.fb_ID) {
                 return <Redirect to={this.state.redirect}/>
+        } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
+                const user = this.getThisUser()
+                sessionStorage.setItem("fb_ID", user.fb_ID)
         }
 
         let facebookData
