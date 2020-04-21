@@ -32,7 +32,7 @@ class LoginFacebook extends Component {
 
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
-        !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) : sessionStorage.setItem("user", JSON.stringify({fb_ID: user.fb_ID, name: user.name, imageLink: user.imageLink}))
+        !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) : sessionStorage.setItem("user", JSON.stringify({name: user.name, imageLink: user.imageLink}))
         
         !user.gender ? this.setState({redirect: "/Profile"}) : this.setState({redirect: "/leedle"})
         

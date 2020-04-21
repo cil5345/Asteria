@@ -1,24 +1,32 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { getOneUser } from "../../utils/API"
 import "./style.css"
 
 export default function Leedle() {
 
-    const [ imageLink, setImageLink ] = useState("")
+    // const [ imageLink, setImageLink ] = useState("")
+    const [ user, setUser ] = useState({})
     const [ newMatches, setNewMatches ] = useState([])
 
     function change() {
         alert("fkalf")
     }
 
-
+    useEffect(() => {
+        getOneUser(sessionStorage.getItem("fb_ID")).then(user => setUser(user))
+        console.log(user)
+    })
+    
+    function saveTheTrees() {
+    
+    }
 
     return  <>
                 <Link to="/Matches"><button>Go to matches</button></Link>
                 {/* need a way to get details to matches */}
                 <div id="div-pic">
-                    <img alt="You" src={imageLink}/>
+                    <img alt="You" src={user.imageLink}/>
                     <button onClick={change}>Change</button>
                 </div>
                 <h1>High Horse</h1>
