@@ -50,7 +50,7 @@ class LoginFacebook extends Component {
                 return <Redirect to={this.state.redirect}/>
         } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
                 const user = this.getThisUser()
-                sessionStorage.setItem("fb_ID", user.fb_ID)
+                storeInSession(user)
         }
 
         let facebookData
@@ -61,7 +61,6 @@ class LoginFacebook extends Component {
         <FacebookLoginBtn
         appId="519631592082573"
         autoLoad={true}
-        // fields="name,picture,user_birthday"
         fields="name,email,picture"
         onClick={this.componentClicked}
         callback={this.responseFacebook} />
