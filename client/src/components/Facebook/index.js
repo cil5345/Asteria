@@ -27,9 +27,6 @@ class LoginFacebook extends Component {
         //get the user from our DB
         const user = await this.getThisUser(response.id)
 
-
-
-
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
         !user ? createUser(response.id).then( res => console.log(res)).catch( err => console.log(err)) : storeInSession(user)
@@ -41,16 +38,9 @@ class LoginFacebook extends Component {
 
     getThisUser = async id => {
 
-        let user
         await getOneUser(id)
-                    .then( data => {
-                        user = data.data
-                        console.log("images")
-                        console.log(user)
-                        return user
-                    })
+                    .then( data => data.data)
                     .catch( err => console.log(err))
-        return user
     }
 
     render = () => {
