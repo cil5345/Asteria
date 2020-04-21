@@ -14,7 +14,7 @@ export default function Leedle() {
         alert("fkalf")
     }
 
-    await useEffect(() => {
+    useEffect(() => {
         console.log(sessionStorage.getItem("fb_ID"))
         getOneUser(sessionStorage.getItem("fb_ID"))
             .then(user => setUser(user))
