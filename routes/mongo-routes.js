@@ -19,7 +19,7 @@ module.exports = function(app) {
 
     app.get("*", (req, res) => {
 
-        res.sendFile(path.join(PUB_DIR, "index.html"))
+        res.redirect(path.join(PUB_DIR, "index.html"))
     })
 
     // app.delete("/api/books/:id", (req, res) => {
