@@ -41,20 +41,9 @@ class LoginFacebook extends Component {
         this.setState({ auth: true })
     }
 
-    getThisUser = async () => {
-
-        // let user
-        // await getOneUser(this.state.fbDetails.fb_ID)
-        //             .then( data => user = data.data)
-        //             .catch( err => console.log(err))
-        // return user
-//working^^^^^^^^^^^^^^
-
-        //then try return await
-        return await getOneUser(this.state.fbDetails.fb_ID)
-                    .then( data => data.data)
-                    .catch( err => console.log(err))
-    }
+    getThisUser = async () => await getOneUser(this.state.fbDetails.fb_ID)
+                                        .then( data => data.data)
+                                        .catch( err => console.log(err))
 
     render = () => {
         if (this.state.auth && this.state.fbDetails.fb_ID) {
