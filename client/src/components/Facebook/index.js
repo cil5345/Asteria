@@ -59,7 +59,6 @@ class LoginFacebook extends Component {
 
         let facebookData
 
-        
         facebookData = <>
         <FacebookLoginBtn
         appId="519631592082573"

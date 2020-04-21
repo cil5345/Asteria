@@ -17,6 +17,11 @@ module.exports = function(app) {
         userController.create(req, res)
     })
 
+    app.get("*", (req, res) => {
+
+        res.sendFile("client/public/index.html")
+    })
+
     // app.delete("/api/books/:id", (req, res) => {
 
     //     const id = req.params.id

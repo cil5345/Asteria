@@ -1,5 +1,5 @@
 const userController = require("../controllers/userController")
-const compController = require("../controllers/compContoller")
+// const compController = require("../controllers/compContoller")
 
 module.exports = function(app)  {
 
