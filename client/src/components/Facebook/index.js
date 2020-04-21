@@ -59,8 +59,7 @@ class LoginFacebook extends Component {
 
         let facebookData
 
-        this.state.auth ? facebookData = <>yeer logged in</>
-        :
+        
         facebookData = <>
         <FacebookLoginBtn
         appId="519631592082573"
