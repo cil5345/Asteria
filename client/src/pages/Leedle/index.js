@@ -26,10 +26,6 @@ export default function Leedle() {
         console.log("matches")
         console.log(newMatches)
     })
-    
-    function saveTheTrees() {
-    
-    }
 
     return  <>
                 <Link to="/Matches"><button>Go to matches</button></Link>
@@ -42,7 +38,7 @@ export default function Leedle() {
                     <div id="matchesDiv">
                         {newMatches.map( match => (
                             <div className="match">
-                                {/* symbol */}
+                                <p>{match.symbol}</p>
                                 <img alt={match.name} src={match.imageLink} />
                                 <p>{match.name}</p>
                             </div>
