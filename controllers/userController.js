@@ -45,7 +45,7 @@ module.exports = {
     // /[{"symbol":"Aries","comp":["Leo","Sagittarius","Gemini","Aquarius"]},
     // .find({ symbol: { $in: comp }, gender: { $in: prefArr} })
     // .find({ symbol: { $in: [comp] }, gender: { $in: [prefArr] }})
-    .find({ symbol: { $in: [...comp] }, gender: { $in: [prefArr] }})
+    .find({ symbol: { $in: [...comp] }, gender: { $in: [...prefArr] }})
       
       .then(data =>{
 

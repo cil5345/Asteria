@@ -48,10 +48,10 @@ class LoginFacebook extends Component {
 
     render = () => {
         if (this.state.auth && this.state.fbDetails.fb_ID) {
-            console.log(sessionStorage.getItem("fb_ID"))
                 return <Redirect to={this.state.redirect}/>
         } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
                 const user = this.getThisUser()
+                console.log("54")
                 storeInSession(user)
         }
 
