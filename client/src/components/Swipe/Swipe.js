@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { getCompatible } from "../../utils/API"
 import "./style.css";
 
@@ -7,6 +7,8 @@ var it = 0
 
 function Swipe() {
 
+    const [ compatbiles, setCompatbiles ] = useState([{}])
+    
     async function getComps() {
 
         const symbol = sessionStorage.getItem("symbol")
