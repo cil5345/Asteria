@@ -30,7 +30,7 @@ export default async function Leedle() {
     })
 
     return  <>
-                <Link to="/Matches"><button>Go to matches</button></Link>
+                {/* <Link to="/Matches"><button>Go to matches</button></Link> */}
                 {/* need a way to get details to matches */}
                 <div id="div-pic">
                     <img alt="You" src={user.imageLink}/>
