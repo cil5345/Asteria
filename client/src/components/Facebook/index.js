@@ -2,9 +2,8 @@
 import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
 import FacebookLoginBtn from "react-facebook-login"
-//import LoginBG from "./components/LoginBG/LoginBG";
 import "./style.css"
-import { getAllUsers, getOneUser, createUser } from "../../utils/API"
+import { getOneUser, createUser } from "../../utils/API"
 
 class LoginFacebook extends Component {
 
@@ -31,18 +30,13 @@ class LoginFacebook extends Component {
         //get the user from our DB
         const user = await this.getThisUser()
 
-        
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
-        !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) : sessionStorage.setItem("user", JSON.stringify({name: user.name, imageLink: user.imageLink}))
+        !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) : sessionStorage.setItem("user", JSON.stringify({fb_ID: user.fb_ID, name: user.name, imageLink: user.imageLink}))
         
         !user.gender ? this.setState({redirect: "/Profile"}) : this.setState({redirect: "/leedle"})
         
         this.setState({ auth: true })
-    }
-
-    getUsers = () => {
-        getAllUsers().then( data => console.log(data)).catch( err => console.log(err))
     }
 
     getThisUser = async () => {

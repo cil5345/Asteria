@@ -24,8 +24,37 @@ module.exports = {
   },
   findComp: function (req, res) {
     console.log("usar find comps")
+    
+    const symbol = req.params.symbol
+    const prefrence = req.params.prefrence
+
+    const prefArr = prefrence.split("")
+
     db.User
-      .find({})
+
+    // PSquery FIND SYMBOL : [X Y Z W], PREFRENCE : [X0]
+    .find({ symbol: { $in: prefArr }})
+      .then(data => res.json(data))
+
+
+            // db.User
+        //   .find({ symbol: { $in: [...comp]}})//bfore trying two fields
+        //   .find({ symbol: { $in: [...comp]}, gender :{ $regex: [pref], $options: "i"}})
+        // .find({ symbol: { $in: [comp]}})
+        // .find({ gender: { $regex: [pref], $options: "i"}})
+        //{ "authors": { "$regex": "Alex", "$options": "i" } },
+        
+        //@HACER
+        //https://stackoverflow.com/questions/33627238/mongoose-find-with-multiple-conditions
+          //https://stackoverflow.com/questions/26814456/how-to-get-all-the-values-that-contains-part-of-a-string-using-mongoose-find
+        //   .then(dbModel => res.json(dbModel))
+          //@HACER https://stackoverflow.com/questions/43146716/mongoose-query-same-field-with-different-values
+        //   .catch(err => res.status(422).json(err));
+
+
+
+
+      /*.find({})
       .then(data => {
 
         const symbol = req.params.symbol
@@ -51,7 +80,7 @@ module.exports = {
         const finalComp = symbolComp.filter(user => prefArr.indexOf(user.gender) !== -1)
         
         res.json(finalComp)
-      })
+      })*/
       .catch(err => res.status(422).json(err));
   },
   updateProf: (req, res) => {
