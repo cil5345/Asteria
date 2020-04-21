@@ -13,18 +13,18 @@ module.exports = function(app) {
         userController.create(req, res)
     })
 
-    app.get('/*', function(req, res) {
-        res.sendFile(path.join(__dirname, '../client/public/build/index.html'), function(err) {
-          if (err) {
-            res.status(500).send(err)
-          }
-        })
-      })
+    // app.get('/*', function(req, res) {
+    //     res.sendFile(path.join(__dirname, '../client/public/build/index.html'), function(err) {
+    //       if (err) {
+    //         res.status(500).send(err)
+    //       }
+    //     })
+    //   })
 
-    // app.get("*", (req, res) => {
+    app.get("*", (req, res) => {
 
-    //     res.redirect(path.join(PUB_DIR, "index.html"))
-    // })
+        res.sendFile(path.join(PUB_DIR, "index.html"))
+    })
 
     // app.get("*", (req, res) => {
     //     res.sendFile(path.join(PUB_DIR, "index.html"))
