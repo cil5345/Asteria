@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { getOneUser, getNewMatches } from "../../utils/API"
 import "./style.css"
 
-export default async function Leedle() {
+export default function Leedle() {
 
     console.log(sessionStorage.getItem("fb_ID"))
     // const [ imageLink, setImageLink ] = useState("")
