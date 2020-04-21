@@ -34,7 +34,7 @@ class LoginFacebook extends Component {
         //for testing puposes we should make a bs id in order to see if it creates a new user
         !user ? createUser(this.state.fbDetails)
             .then(res => console.log(res))
-            .catch(err => console.log(err)) : storeInSession(this.state.fbDetails)
+            .catch(err => console.log(err)) : storeInSession(user)
         //if the user we got back has a gender we can assume they have set their profile previously, we will direct them to the dashboard/leedle
         !user.gender ? this.setState({redirect: "/Profile"}) : this.setState({redirect: "/leedle"})
         //set auth to true and proceed to re-render
@@ -43,16 +43,15 @@ class LoginFacebook extends Component {
 
     getThisUser = async () => {
 
-        let user
+        // let user
+        // await getOneUser(this.state.fbDetails.fb_ID)
+        //             .then( data => user = data.data)
+        //             .catch( err => console.log(err))
+        // return user
+        //then try return await
         await getOneUser(this.state.fbDetails.fb_ID)
-                    .then( data => {
-                        user = data.data
-                        console.log("images")
-                        console.log(user)
-                        return user
-                    })
+                    .then( data => data.data)
                     .catch( err => console.log(err))
-        return user
     }
 
     render = () => {
