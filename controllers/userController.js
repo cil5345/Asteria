@@ -30,18 +30,17 @@ module.exports = {
 
     const prefArr = prefrence.split("")
 
-
     const compArr = compJSON.filter(sign => (sign.symbol === symbol))
 
     console.log(compArr)
 
-    const { comp } = compArr.comp
+    const comp = compArr.comp
     console.log("dey take err jebs")
-    console.log(comps)
+    console.log(comp)
     // /[{"symbol":"Aries","comp":["Leo","Sagittarius","Gemini","Aquarius"]},
     db.User
     // PSquery FIND SYMBOL : [X Y Z W], PREFRENCE : [X0]
-    .find({ symbol: { $in: comps }})
+    .find({ symbol: { $in: comp }})
       .then(data => res.json(data))
 
 
