@@ -4,12 +4,12 @@ import { Redirect } from "react-router-dom"
 import FacebookLoginBtn from "react-facebook-login"
 import "./style.css"
 import { getOneUser, createUser } from "../../utils/API"
+import { storeInSession } from "../../utils/sessionController"
 
 class LoginFacebook extends Component {
 
     state = {
         auth: false,
-        fbDetails: {},
         redirect: null
     }
     
@@ -21,21 +21,15 @@ class LoginFacebook extends Component {
 
         console.log("facebook is always watching")
 
-        //set state to include user fbID and name
-        this.setState({ fbDetails: {
-            fb_ID: response.id,
-            name: response.name,
-            imageLink: response.picture.data.url
-        }})
         //get the user from our DB
         const user = await this.getThisUser()
 
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
-        !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) : sessionStorage.setItem("user", JSON.stringify({name: user.name, imageLink: user.imageLink}))
-        
+        !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) : storeInSession(user)
+        //if the user we got back has a gender we can assume they have set their profile previously, we will direct them to the dashboard/leedle
         !user.gender ? this.setState({redirect: "/Profile"}) : this.setState({redirect: "/leedle"})
-        
+        //set auth to true and proceed to re-render
         this.setState({ auth: true })
     }
 
@@ -54,11 +48,8 @@ class LoginFacebook extends Component {
     }
 
     render = () => {
-        if (this.state.auth && this.state.fbDetails.fb_ID) {
+        if (this.state.auth) {
                 return <Redirect to={this.state.redirect}/>
-        } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
-                const user = this.getThisUser()
-                sessionStorage.setItem("fb_ID", JSON.stringify(user.fb_ID))
         }
 
         let facebookData
