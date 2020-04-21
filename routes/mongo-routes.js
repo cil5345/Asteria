@@ -21,10 +21,10 @@ module.exports = function(app) {
     //     })
     //   })
 
-    app.get("*", (req, res) => {
+    // app.get("*", (req, res) => {
 
-        res.sendFile(path.join(PUB_DIR, "index.html"))
-    })
+    //     res.sendFile(path.join(PUB_DIR, "index.html"))
+    // })
 
     // app.get("*", (req, res) => {
     //     res.sendFile(path.join(PUB_DIR, "index.html"))
