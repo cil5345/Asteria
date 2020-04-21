@@ -22,21 +22,21 @@ class LoginFacebook extends Component {
         console.log("facebook is always watching")
 
         //get the user from our DB
-        const user = await this.getThisUser()
+        const user = await this.getThisUser(response.id)
 
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
-        !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) : storeInSession(user)
+        !user ? createUser(response.id).then( res => console.log(res)).catch( err => console.log(err)) : storeInSession(user)
         //if the user we got back has a gender we can assume they have set their profile previously, we will direct them to the dashboard/leedle
         !user.gender ? this.setState({redirect: "/Profile"}) : this.setState({redirect: "/leedle"})
         //set auth to true and proceed to re-render
         this.setState({ auth: true })
     }
 
-    getThisUser = async () => {
+    getThisUser = async id => {
 
         let user
-        await getOneUser(this.state.fbDetails.fb_ID)
+        await getOneUser(id)
                     .then( data => {
                         user = data.data
                         console.log("images")
