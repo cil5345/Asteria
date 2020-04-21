@@ -27,13 +27,11 @@ class LoginFacebook extends Component {
             name: response.name,
             imageLink: response.picture.data.url
         }})
-        
         //get the user from our DB
         const user = await this.getThisUser()
-
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
-        !user ? createUser(this.state.fbDetails)
+        !user ? await createUser(this.state.fbDetails)
             .then(res => console.log(res))
             .catch(err => console.log(err)) : storeInSession(user)
         //if the user we got back has a gender we can assume they have set their profile previously, we will direct them to the dashboard/leedle

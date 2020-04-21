@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { getOneUser, getNewMatches } from "../../utils/API"
 import "./style.css"
 
-export default function Leedle() {
+export default async function Leedle() {
 
     // const [ imageLink, setImageLink ] = useState("")
     const [ user, setUser ] = useState({})
@@ -13,10 +13,10 @@ export default function Leedle() {
         alert("fkalf")
     }
 
-    useEffect(() => {
+    await useEffect(() => {
         console.log(sessionStorage.getItem("fb_ID"))
         getOneUser(sessionStorage.getItem("fb_ID"))
-            .then(user => setUser(user))
+            .then(user => setUser({ user }))
             .catch(err => console.log(err))
         console.log("retrived this user")
         console.log(user)
