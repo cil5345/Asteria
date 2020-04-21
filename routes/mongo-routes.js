@@ -17,10 +17,10 @@ module.exports = function(app) {
         userController.create(req, res)
     })
 
-    app.get("*", (req, res) => {
+    // app.get("*", (req, res) => {
 
-        res.redirect(path.join(PUB_DIR, "index.html"))
-    })
+    //     res.redirect(path.join(PUB_DIR, "index.html"))
+    // })
 
     // app.delete("/api/books/:id", (req, res) => {
 
