@@ -34,7 +34,7 @@ export default function Leedle() {
                 {/* need a way to get details to matches */}
                 <div id="div-pic">
                     <img alt="You" src={imageLink}/>
-                    <button onClick={change}>Change</button>
+                    <button id="btn" onClick={change}>Change</button>
                 </div>
                 <h1>High Horse</h1>
                     <div id="matchesDiv">

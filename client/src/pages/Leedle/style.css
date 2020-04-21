@@ -3,6 +3,9 @@
     text-align: center;
 }
 
+#btn {
+    border: green solid thick;
+}
 #matchesDiv {
     display: flex;
     flex-direction: column;
