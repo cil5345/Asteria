@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { getOneUser } from "../../utils/API"
+import { getOneUser, getNewMatches } from "../../utils/API"
 import "./style.css"
 
 export default function Leedle() {
@@ -14,8 +14,17 @@ export default function Leedle() {
     }
 
     useEffect(() => {
-        getOneUser(sessionStorage.getItem("fb_ID")).then(user => setUser(user))
+        getOneUser(sessionStorage.getItem("fb_ID"))
+            .then(user => setUser(user))
+            .catch(err => console.log(err))
+        console.log("retrived this user")
         console.log(user)
+
+        getNewMatches(user.fb_ID)
+            .then(matches => setNewMatches([...matches]))
+            .catch(err => console.log(err))
+        console.log("matches")
+        console.log(newMatches)
     })
     
     function saveTheTrees() {
