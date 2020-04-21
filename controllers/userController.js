@@ -40,11 +40,12 @@ module.exports = {
     console.log(comp)
     
     
-    // /[{"symbol":"Aries","comp":["Leo","Sagittarius","Gemini","Aquarius"]},
     db.User
-    // PSquery FIND SYMBOL : [X Y Z W], PREFRENCE : [X0]
+    // PSquery FIND SYMBOL : [X Y Z W], PREFRENCE : [X]
+    // /[{"symbol":"Aries","comp":["Leo","Sagittarius","Gemini","Aquarius"]},
     // .find({ symbol: { $in: comp }, gender: { $in: prefArr} })
-    .find({ symbol: { $in: [comp] }, gender: { $in: [prefArr]} })
+    // .find({ symbol: { $in: [comp] }, gender: { $in: [prefArr] }})
+    .find({ symbol: { $in: [...comp] }, gender: { $in: [prefArr] }})
       
       .then(data =>{
 
