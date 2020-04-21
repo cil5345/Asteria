@@ -22,8 +22,13 @@ class LoginFacebook extends Component {
         console.log("facebook is always watching")
 
         console.log(response.id)
+
+        sessionStorage.setItem("fb_ID", response.id)
         //get the user from our DB
         const user = await this.getThisUser(response.id)
+
+
+
 
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
