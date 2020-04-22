@@ -61,7 +61,7 @@ function antonio() {
     let card = document.querySelector(".card")
     
     card.style.backgroundImage = `url('${comp[it].imageLink}')`
-    card.textContent = `${comp[it].symbol} ${comp[it].gender} ID:${comp[it].id}`
+    card.textContent = `${comp[it].symbol} ${comp[it].gender} ID:${comp[it].__id} ${comp[it]._id}`
     it++
 }
 
