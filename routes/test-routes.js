@@ -25,4 +25,9 @@ module.exports = function(app)  {
         console.log("hit find update in test routes")
         userController.updateProf(req, res)
     })
+
+    app.post("/api/:bachID/:fishID/:outcome", (req, res) => {
+        console.log(`${req.params.bachID} ${req.params.fishID} ${req.params.outcome}`)
+        userController.addInteraction(req, res)
+    })
 }

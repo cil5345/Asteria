@@ -1,14 +1,17 @@
 import React, { useState } from "react";
-import { getCompatible } from "../../utils/API"
+import { getCompatible, addInteraction } from "../../utils/API"
 import "./style.css";
 
 var comp
 var it = 0
+var fishID
 
 function Swipe() {
 
     const [ compatbiles, setCompatbiles ] = useState([{}])
-    
+
+    // const [ id, setID ] = useState(0)
+
     async function getComps() {
 
         const symbol = sessionStorage.getItem("symbol")
@@ -61,7 +64,8 @@ function antonio() {
     let card = document.querySelector(".card")
     
     card.style.backgroundImage = `url('${comp[it].imageLink}')`
-    card.textContent = `${comp[it].symbol} ${comp[it].gender} ID:${comp[it].__id} ${comp[it]._id}`
+    card.textContent = `${comp[it].symbol} ${comp[it].gender} ID:${comp[it].fb_ID}`
+    fishID = comp[it].fb_ID
     it++
 }
 
@@ -75,6 +79,7 @@ function antonio() {
 
             if (t.className === 'but-nope') {
                 t.parentNode.classList.add('nope');
+                addInteraction(sessionStorage.getItem("fb_ID"), fishID, "no")
                 animating = true;
                 fireCustomEvent('nopecard', {
                     origin: t,
@@ -85,7 +90,10 @@ function antonio() {
 
             if (t.className === 'but-yay') {
                 t.parentNode.classList.add('yes');
-                alert("the muffins are beefy")
+/*************************************************************************************/
+/*************************************************************************************/
+/*************************************************************************************/
+                addInteraction(sessionStorage.getItem("fb_ID"), fishID, "yes")
                 animating = true;
                 fireCustomEvent('yepcard', {
                     origin: t,
@@ -93,7 +101,9 @@ function antonio() {
                     card: t.parentNode.querySelector('.card')
                 });
             }
-
+/*************************************************************************************/
+/*************************************************************************************/
+/*************************************************************************************/
             if (t.classList.contains('current')) {
                 fireCustomEvent('cardchosen', {
                     container: getContainer(t),

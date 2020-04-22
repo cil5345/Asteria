@@ -38,7 +38,9 @@ class LoginFacebook extends Component {
             .then(res => console.log(res))
             .catch(err => console.log(err)) : storeInSession(user)
         //if the user we got back has a gender we can assume they have set their profile previously, we will direct them to the dashboard/leedle
-        !user.gender ? this.setState({redirect: "/Profile"}) : this.setState({redirect: "/leedle"})
+        if(user) {
+            !user.gender ? this.setState({redirect: "/Profile"}) : this.setState({redirect: "/leedle"})
+        }
         //set auth to true and proceed to re-render
         this.setState({ auth: true })
         console.log(this.state.auth)

@@ -44,5 +44,10 @@ module.exports = {
     db.User.findOneAndUpdate({ fb_ID: req.params.id }, { symbol: req.params.symbol, gender: req.params.gender, prefrence: req.params.prefrence })
       .then(data => console.log(data))
       .catch(err => console.log(err))
+  },
+  addInteraction: (req, res) => {
+    db.User.findOneAndUpdate({ fb_ID: req.params.bachID }, { $push: { interactions: { fb_ID: req.params.fishID, outcome: req.params.outcome }}})
+      .then(data => console.log(data))
+      .catch(err => console.log(err))
   }
 }
