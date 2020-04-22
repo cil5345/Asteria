@@ -20,12 +20,12 @@ export default function Leedle() {
             .then(user => setUser(user))
             .catch(err => console.log(err))
 
-        setNewMatches([...getNewMatches(user.fb_ID)])
+        // setNewMatches([...getNewMatches(user.fb_ID)])
             // .then(matches => setNewMatches())
             // .catch(err => console.log(err))
-        // getNewMatches(user.fb_ID)
-        //     .then(matches => setNewMatches([...matches]))
-        //     .catch(err => console.log(err))
+        getNewMatches(user.fb_ID)
+            .then(matches => setNewMatches([...matches]))
+            .catch(err => console.log(err))
     }, [])
 
     return  <>
