@@ -13,21 +13,21 @@ export default function Leedle() {
         alert("fkalf")
     }
 
-    useEffect(() => {
-        setImageLink(sessionStorage.getItem("imageLink"))
-    //     console.log(sessionStorage.getItem("fb_ID"))
-    //     getOneUser(sessionStorage.getItem("fb_ID"))
-    //         .then(user => setUser(user))
-    //         .catch(err => console.log(err))
-    //     console.log("retrived this user")
-    //     console.log(user)
+    // useEffect(() => {
+    //     setImageLink(sessionStorage.getItem("imageLink"))
+    // //     console.log(sessionStorage.getItem("fb_ID"))
+    // //     getOneUser(sessionStorage.getItem("fb_ID"))
+    // //         .then(user => setUser(user))
+    // //         .catch(err => console.log(err))
+    // //     console.log("retrived this user")
+    // //     console.log(user)
 
-        setNewMatches([...getNewMatches(user.fb_ID)])
-            // .then(matches => setNewMatches())
-            // .catch(err => console.log(err))
-        console.log("matches")
-        console.log(newMatches)
-    })
+    //     setNewMatches([...getNewMatches(user.fb_ID)])
+    //         // .then(matches => setNewMatches())
+    //         // .catch(err => console.log(err))
+    //     console.log("matches")
+    //     console.log(newMatches)
+    // })
 
     return  <>
                 <Link to="/Matches"><button>Go to matches</button></Link>

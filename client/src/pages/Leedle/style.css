@@ -11,6 +11,16 @@
     flex-direction: column;
 }
 
+#fuckshit {
+    border: solid thick gray;
+    background-color: blue;
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+}
+button {
+    color: green;
+}
 .match {
     display: flex;
     flex-direction: row;
