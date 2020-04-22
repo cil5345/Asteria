@@ -59,16 +59,16 @@ module.exports = {
             // }
             let cnt = 0
             for (const i of user.interactions) {
-              if (i.fb_ID === bachID && i.like && cnt < 2) {
+              if (i.fb_ID === req.params.bachID && i.like && cnt < 2) {
 
-                db.User.findOneAndUpdate({ fb_ID: bachID }, { $push: { matches: { fb_ID: fishID } } })
+                db.User.findOneAndUpdate({ fb_ID: req.params.bachID }, { $push: { matches: { fb_ID: req.params.fishID } } })
                   .then(dbModel => {
                     console.log("sucess")
                     cnt++
                   })
                   .catch(err => console.log(err))
 
-                db.User.findOneAndUpdate({ fb_ID: fishID }, { $push: { matches: { fb_ID: bachID } } })
+                db.User.findOneAndUpdate({ fb_ID: req.params.fishID }, { $push: { matches: { fb_ID: req.params.bachID } } })
                   .then(dbModel => {
                     console.log("sucess")
                     cnt++
