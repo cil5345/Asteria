@@ -27,7 +27,7 @@ export default function Leedle() {
         setNewMatches([...getNewMatches(user.fb_ID)])
             // .then(matches => setNewMatches())
             // .catch(err => console.log(err))
-    }, [user])
+    }, [])
 
     return  <>
                 <Link to="/Matches"><button>Go to matches</button></Link>
