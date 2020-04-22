@@ -15,10 +15,10 @@ function Swipe() {
     async function getComps() {
 
         const symbol = sessionStorage.getItem("symbol")
-        const prefrences = sessionStorage.getItem("prefrences")
+        const prefrence = sessionStorage.getItem("prefrence")
 
-        console.log(`sym: ${symbol} prefrences:${prefrences}`)
-        await getCompatible(symbol, prefrences).then(data => comp = data.data)
+        console.log(`sym: ${symbol} prefrence:${prefrence}`)
+        await getCompatible(symbol, prefrence).then(data => comp = data.data)
                                  .catch(err => console.log(err))
         
         antonio()
