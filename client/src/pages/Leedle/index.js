@@ -23,6 +23,7 @@ export default function Leedle() {
         // setNewMatches([...getNewMatches(user.fb_ID)])
             // .then(matches => setNewMatches())
             // .catch(err => console.log(err))
+            console.log("tool")
         getNewMatches(user.fb_ID)
             // .then(matches => setNewMatches([...matches]))
             .then(matches => console.log(matches))
