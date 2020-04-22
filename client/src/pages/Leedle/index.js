@@ -14,15 +14,15 @@ export default function Leedle() {
     }
 
     useEffect(() => {
-    //     setImageLink(sessionStorage.getItem("imageLink"))
+        setImageLink(sessionStorage.getItem("imageLink"))
 
     
-    // // //     console.log(sessionStorage.getItem("fb_ID"))
-    // // //     getOneUser(sessionStorage.getItem("fb_ID"))
-    // // //         .then(user => setUser(user))
-    // // //         .catch(err => console.log(err))
-    // // //     console.log("retrived this user")
-    // // //     console.log(user)
+        console.log(sessionStorage.getItem("fb_ID"))
+        getOneUser(sessionStorage.getItem("fb_ID"))
+            .then(user => setUser(user))
+            .catch(err => console.log(err))
+        console.log("retrived this user")
+        console.log(user)
 
         setNewMatches([...getNewMatches(user.fb_ID)])
             .then(matches => setNewMatches())
