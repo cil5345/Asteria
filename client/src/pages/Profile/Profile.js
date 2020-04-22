@@ -27,12 +27,12 @@ class Profile extends Component {
     getValues = async () => {
 
         const gender = document.querySelector(".genderInput")
-        const prefrences = document.querySelector(".prefInput")
+        const prefrence = document.querySelector(".prefInput")
         const symbol = document.querySelector(".zodiacInput")
 
         sessionStorage.setItem("symbol", await symbol.value)
         sessionStorage.setItem("gender", await gender.value)
-        sessionStorage.setItem("prefrence", await prefrences.value)
+        sessionStorage.setItem("prefrence", await prefrence.value)
 
         this.updateUser()
     }

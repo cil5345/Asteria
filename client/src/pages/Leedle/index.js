@@ -13,8 +13,10 @@ export default function Leedle() {
         alert("fkalf")
     }
 
-    // useEffect(() => {
-    //     setImageLink(sessionStorage.getItem("imageLink"))
+    useEffect(() => {
+        setImageLink(sessionStorage.getItem("imageLink"))
+    })
+    
     // //     console.log(sessionStorage.getItem("fb_ID"))
     // //     getOneUser(sessionStorage.getItem("fb_ID"))
     // //         .then(user => setUser(user))
