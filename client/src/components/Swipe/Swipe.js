@@ -61,7 +61,7 @@ function antonio() {
     let card = document.querySelector(".card")
     
     card.style.backgroundImage = `url('${comp[it].imageLink}')`
-    card.textContent = `${comp[it].symbol} ${comp[it].gender}`
+    card.textContent = `${comp[it].symbol} ${comp[it].gender} ID:${comp[it].id}`
     it++
 }
 
@@ -85,6 +85,7 @@ function antonio() {
 
             if (t.className === 'but-yay') {
                 t.parentNode.classList.add('yes');
+                alert("the muffins are beefy")
                 animating = true;
                 fireCustomEvent('yepcard', {
                     origin: t,
