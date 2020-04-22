@@ -17,7 +17,7 @@ class Profile extends Component {
         const id = sessionStorage.getItem("fb_ID")
         const sym = sessionStorage.getItem("symbol")
         const gn = sessionStorage.getItem("gender")
-        const pr = sessionStorage.getItem("prefrences")
+        const pr = sessionStorage.getItem("prefrence")
 
         await updateUser(id, sym, gn, pr)
             .then(data => console.log(data))
@@ -32,7 +32,7 @@ class Profile extends Component {
 
         sessionStorage.setItem("symbol", await symbol.value)
         sessionStorage.setItem("gender", await gender.value)
-        sessionStorage.setItem("prefrences", await prefrences.value)
+        sessionStorage.setItem("prefrence", await prefrences.value)
 
         this.updateUser()
     }
