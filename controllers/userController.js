@@ -46,8 +46,54 @@ module.exports = {
       .catch(err => console.log(err))
   },
   addInteraction: (req, res) => {
-    db.User.findOneAndUpdate({ fb_ID: req.params.bachID }, { $push: { interactions: { fb_ID: req.params.fishID, like: req.params.like }}})
-      .then(data => console.log(data))
+    db.User.findOneAndUpdate({ fb_ID: req.params.bachID }, { $push: { interactions: { fb_ID: req.params.fishID, like: req.params.like } } })
+      .then(data => {
+
+        //look into the person that was just liked
+        //see if they have an interaction that has current liker's
+        //id and that is true
+        db.User.findOne({ fb_ID: req.params.fishID })
+          .then(user => {
+            // if(data.interactions.fb_ID === req.params.bachID && ) {
+
+            // }
+            let cnt = 0
+            for (const i of user.interactions) {
+              if (i.fb_ID === bachID && i.like && cnt < 2) {
+
+                db.User.findOneAndUpdate({ fb_ID: bachID }, { $push: { matches: { fb_ID: fishID } } })
+                  .then(dbModel => {
+                    console.log("sucess")
+                    cnt++
+                  })
+                  .catch(err => console.log(err))
+
+                db.User.findOneAndUpdate({ fb_ID: fishID }, { $push: { matches: { fb_ID: bachID } } })
+                  .then(dbModel => {
+                    console.log("sucess")
+                    cnt++
+                  })
+                  .catch(err => console.log(err))
+              }
+            }
+          })
+        console.log(data)
+      })
       .catch(err => console.log(err))
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

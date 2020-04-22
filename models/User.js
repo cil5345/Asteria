@@ -23,8 +23,8 @@ const UserSchema = new Schema({
   //     type: Number,
   //     required: false
   //   }
-    // @HACER maybe change to true if we are 
-    // able to initilize user with a DOB from FB
+  // @HACER maybe change to true if we are 
+  // able to initilize user with a DOB from FB
   // ]
   gender: {
     type: String
@@ -40,6 +40,19 @@ const UserSchema = new Schema({
       like: {
         type: Boolean
       }
+    }
+  ],
+  matches: [
+    {
+      fb_ID: {
+        type: String
+      },
+      fresh: {
+        type: Boolean,
+        default: true
+      },
+      unique: true,
+      dropDups: true
     }
   ]
 })
