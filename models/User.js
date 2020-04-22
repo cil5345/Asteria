@@ -31,7 +31,17 @@ const UserSchema = new Schema({
   },
   prefrence: {
     type: String
-  }
+  },
+  interactions: [
+    {
+      fb_ID: {
+        type: String
+      },
+      like: {
+        type: Boolean
+      }
+    }
+  ]
 })
 
 const User = mongoose.model("User", UserSchema)

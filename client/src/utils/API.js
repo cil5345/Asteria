@@ -48,7 +48,7 @@ module.exports = {
   updateUser: (id, symbol, gender, prefrence) => {
     return axios.post(`/api/${id}/${symbol}/${gender}/${prefrence}`)
   },
-  addInteraction: (bachID, fishID, outcome) => {
-    return axios.post(`/api/${bachID}/${fishID}/${outcome}`)
+  addInteraction: (bachID, fishID, like) => {
+    return axios.post(`/api/${bachID}/${fishID}/${like}`)
   }
 }

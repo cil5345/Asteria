@@ -46,7 +46,7 @@ module.exports = {
       .catch(err => console.log(err))
   },
   addInteraction: (req, res) => {
-    db.User.findOneAndUpdate({ fb_ID: req.params.bachID }, { $push: { interactions: { fb_ID: req.params.fishID, outcome: req.params.outcome }}})
+    db.User.findOneAndUpdate({ fb_ID: req.params.bachID }, { $push: { interactions: { fb_ID: req.params.fishID, like: req.params.like }}})
       .then(data => console.log(data))
       .catch(err => console.log(err))
   }

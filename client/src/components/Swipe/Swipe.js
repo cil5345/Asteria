@@ -79,7 +79,7 @@ function antonio() {
 
             if (t.className === 'but-nope') {
                 t.parentNode.classList.add('nope');
-                addInteraction(sessionStorage.getItem("fb_ID"), fishID, "no")
+                addInteraction(sessionStorage.getItem("fb_ID"), fishID, false)
                 animating = true;
                 fireCustomEvent('nopecard', {
                     origin: t,
@@ -93,7 +93,7 @@ function antonio() {
 /*************************************************************************************/
 /*************************************************************************************/
 /*************************************************************************************/
-                addInteraction(sessionStorage.getItem("fb_ID"), fishID, "yes")
+                addInteraction(sessionStorage.getItem("fb_ID"), fishID, true)
                 animating = true;
                 fireCustomEvent('yepcard', {
                     origin: t,
