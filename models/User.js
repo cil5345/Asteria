@@ -41,20 +41,21 @@ const UserSchema = new Schema({
         type: Boolean
       }
     }
-  ],
-  matches: [
-    {
-      fb_ID: {
-        type: String
-      },
-      fresh: {
-        type: Boolean,
-        default: true
-      },
-      unique: true,
-      dropDups: true
-    }
   ]
+  //,
+  // matches: [
+  //   {
+  //     fb_ID: {
+  //       type: String
+  //     },
+  //     fresh: {
+  //       type: Boolean,
+  //       default: true
+  //     },
+  //     unique: true,
+  //     dropDups: true
+  //   }
+  // ]
 })
 
 const User = mongoose.model("User", UserSchema)
