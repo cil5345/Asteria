@@ -26,8 +26,8 @@ module.exports = function(app)  {
         userController.updateProf(req, res)
     })
 
-    app.post("/api/:bachID/:fishID/:outcome", (req, res) => {
-        console.log(`${req.params.bachID} ${req.params.fishID} ${req.params.outcome}`)
+    app.post("/api/:bachID/:fishID/:like", (req, res) => {
+        console.log(`${req.params.bachID} ${req.params.fishID} ${req.params.like}`)
         userController.addInteraction(req, res)
     })
 }
