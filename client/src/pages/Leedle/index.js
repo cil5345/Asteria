@@ -24,8 +24,10 @@ export default function Leedle() {
             // .then(matches => setNewMatches())
             // .catch(err => console.log(err))
         getNewMatches(user.fb_ID)
-            .then(matches => setNewMatches([...matches]))
+            // .then(matches => setNewMatches([...matches]))
+            .then(matches => console.log(matches))
             .catch(err => console.log(err))
+
     }, [])
 
     return  <>
