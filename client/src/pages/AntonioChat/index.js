@@ -12,13 +12,15 @@ class Chat extends Component {
             messages: []
         }
 
-        this.socket = io('localhost:8080')
+        this.socket = io('localhost:3001')
 
         this.socket.on('RECEIVE_MESSAGE', function (data) {
+            console.log("trig'd socket")
             addMessage(data);
         })
 
         const addMessage = data => {
+            console.log("trig'd addmess")
             console.log(data);
             this.setState({ messages: [...this.state.messages, data] })
             console.log(this.state.messages)
@@ -26,6 +28,7 @@ class Chat extends Component {
 
         this.sendMessage = ev => {
             ev.preventDefault()
+            console.log("trig'd sendmess")
             this.socket.emit('SEND_MESSAGE', {
                 author: this.state.username,
                 message: this.state.message

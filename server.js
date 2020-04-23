@@ -1,7 +1,8 @@
 const express = require("express")
+const app = express()
+
 const socket = require('socket.io')
 const mongoose = require("mongoose")
-const app = express()
 // var app = require('express')();
 // var server = require('http').Server(app);
 
@@ -30,11 +31,12 @@ server = app.listen(PORT, function () {
 
 io = socket(server)
 io.on('connection', socket => {
-    console.log('user is connected');
+    // console.log('user is connected');
+    console.log(`${socket.id}`);
 
-    socket.on('chat message', function (msg) {
+    socket.on('SEND_MESSAGE', function (msg) {
         console.log('message: ' + JSON.stringify(msg));
-        io.emit('chat message', msg)
+        io.emit('RECEIVE_MESSAGE', msg)
         // Mongo.conversation.push(msg)
     })
-})
+})  
