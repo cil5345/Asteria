@@ -17,7 +17,7 @@ export default function Leedle() {
         setImageLink(sessionStorage.getItem("imageLink"))
 
         getOneUser(sessionStorage.getItem("fb_ID"))
-            .then(u => setUser(u))
+            .then(u => console.log(u))
             .catch(err => console.log(err))
         console.log(user)
         // setNewMatches([...getNewMatches(user.fb_ID)])
