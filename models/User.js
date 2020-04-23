@@ -53,6 +53,9 @@ const UserSchema = new Schema({
         type: Boolean,
         default: true
       },
+      name: {
+        type: String
+      },
       imageLink: {
         type: String
       },
