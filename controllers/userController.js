@@ -61,33 +61,37 @@ module.exports = {
         //id and that is true
 
         if (req.params.like) {
-
+          //find the person who just got liked - the fish
           db.User.findOne({ fb_ID: req.params.fishID })
             .then(user => {
-              // if(data.interactions.fb_ID === req.params.bachID && ) {
-
-              // }
+              
               let cnt = 0
               for (const i of user.interactions) {
+                //go through the person that was just liked (user) and look through their interactions
+                //if we find that they interacted with the bach and liked them
+                //we have a match
                 if (i.fb_ID === req.params.bachID && i.like && cnt < 2) {
 
-                  db.User.findOneAndUpdate({ fb_ID: req.params.bachID }, { $push: { matches: { fb_ID: req.params.fishID } } })
+
+                  db.User.findOneAndUpdate({ fb_ID: req.params.bachID }, { $push: { matches: { fb_ID: req.params.fishID, name: user.name, imageLink: user.imageLink, symbol: user.symbol } } })
                     .then(dbModel => {
                       console.log("sucess")
                       cnt++
                     })
                     .catch(err => console.log(err))
 
-                  db.User.findOneAndUpdate({ fb_ID: req.params.fishID }, { $push: { matches: { fb_ID: req.params.bachID } } })
+                  db.User.findOneAndUpdate({ fb_ID: req.params.fishID }, { $push: { matches: { fb_ID: req.params.bachID, name: data.name, imageLink: data.imageLink, symbol: data.symbol } } })
                     .then(dbModel => {
+
                       console.log("sucess")
                       cnt++
                     })
                     .catch(err => console.log(err))
                 }
               }
+              //end of then
             })
-          // console.log(data)
+        //end of if
         }
       })
       .catch(err => console.log(err))
