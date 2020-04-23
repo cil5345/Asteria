@@ -21,7 +21,7 @@ export default function Leedle() {
                 console.log(u.data)
                 console.log(u.data.fb_ID)
                 const thing = u.data
-                setUser({ fb_ID: thing.fb_ID, name: thing.name, imageLink: thing.imageLink})
+                setUser({ fb_ID: thing.fb_ID, name: thing.name, imageLink: thing.imageLink })
             })
             .catch(err => console.log(err))
         console.log(user)
@@ -31,7 +31,10 @@ export default function Leedle() {
         console.log("tool")
         getNewMatches(sessionStorage.getItem("fb_ID"))
             // .then(matches => setNewMatches([matches]))
-            .then(matches => setNewMatches([matches.data]))
+            .then(matches => {
+                console.log(matches.data)
+                setNewMatches([...matches.data])
+            })
             .catch(err => console.log(err))
         console.log(newMatches)
     }, [])
