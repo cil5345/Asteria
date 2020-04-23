@@ -1,6 +1,6 @@
 module.exports = {
     storeInSession: user => {
-        console.log("hit store in session")
+        // console.log("hit store in session")
         if(user.fb_ID) sessionStorage.setItem("fb_ID", user.fb_ID)
         if(user.name) sessionStorage.setItem("name", user.name)
         if(user.imageLink) sessionStorage.setItem("imageLink", user.imageLink)
