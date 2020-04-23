@@ -4,6 +4,7 @@ import "./style.css";
 
 var comp
 var it = 0
+let jawn = 0
 var fishID
 
 function Swipe() {
@@ -33,7 +34,9 @@ function Swipe() {
             }}
         >
             <ul class="cardlist">
-                <li class="card current"></li>
+                
+                {compatbiles.map(e => <li className="card current"></li>)}
+                {/* <li class="card current"></li>
                 <li class="card"></li>
                 <li class="card"></li>
                 <li class="card"></li>
@@ -50,7 +53,7 @@ function Swipe() {
                 <li class="card"></li>
                 <li class="card"></li>
                 <li class="card"></li>
-                <li class="card"></li>
+                <li class="card"></li> */}
             </ul>
             <button class="but-nope">X</button>
             <button class="but-yay">✔</button>
