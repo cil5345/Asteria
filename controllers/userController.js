@@ -96,8 +96,8 @@ module.exports = {
     console.log("hit user controller get new matches")
     db.User.findOne({ fb_ID: req.params.id })
       .then(data => {
-        console.log(data.interactions)
-        res.json(data.interactions)
+        console.log(data.matches)
+        res.json(data.matches)
       })
       .catch(err => console.log(err))
   }
