@@ -33,7 +33,7 @@ export default function Leedle() {
             .then(matches => setNewMatches([...matches]))
             // .then(matches => console.log(matches))
             .catch(err => console.log(err))
-
+        console.log(newMatches)
     }, [])
 
     return <>
