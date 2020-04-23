@@ -31,7 +31,11 @@ export default function Leedle() {
         console.log("tool")
         getNewMatches(sessionStorage.getItem("fb_ID"))
             // .then(matches => setNewMatches([matches]))
-            .then(matches => console.log(matches))
+            .then(matches => {
+                console.log(matches)
+                console.log(matches.data)
+                console.log(matches.data[0].fb_ID)
+            })
             .catch(err => console.log(err))
         console.log(newMatches)
     }, [])
