@@ -18,7 +18,8 @@ export default function Leedle() {
 
         getOneUser(sessionStorage.getItem("fb_ID"))
             .then(u => {
-                console.log(u.data.fb_ID)
+                console.log(u.data)
+                console.log(u)
                 setUser(u.data)
             })
             .catch(err => console.log(err))
