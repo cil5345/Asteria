@@ -13,13 +13,17 @@ module.exports = {
   getCompatible: (sign, prefrence) => {
     return axios.get(`/api/comp/${sign}/${prefrence}`)
   },
+  getNewMatches: id => {
+    return axios.get(`/api/users/${id}/matches`)
+  },
   //POST ROUTES
   createUser: user => {
     return axios.post("/api/users", user)
   },
   updateUser: (id, symbol, gender, prefrence) => {
-    console.log(dk + " updating user in axios")
-    console.log(`${dk} ROUTE:/api/${id}/${symbol}/${gender}/${prefrence}`)
     return axios.post(`/api/${id}/${symbol}/${gender}/${prefrence}`)
+  },
+  addInteraction: (bachID, fishID, like) => {
+    return axios.post(`/api/${bachID}/${fishID}/${like}`)
   }
 }

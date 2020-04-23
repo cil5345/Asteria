@@ -2,19 +2,21 @@
 import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
 import FacebookLoginBtn from "react-facebook-login"
-//import LoginBG from "./components/LoginBG/LoginBG";
 import "./style.css"
-import { getAllUsers, getOneUser, createUser } from "../../utils/API"
+import { getOneUser, createUser } from "../../utils/API"
+import { storeInSession } from "../../utils/sessionController"
 
 class LoginFacebook extends Component {
 
     state = {
         auth: false,
         fbDetails: {},
+        clicked: false,
         redirect: null
     }
     
     componentClicked = async () => {
+        this.setState({clicked: true})
         console.log("clicked")
     }
     
@@ -22,7 +24,6 @@ class LoginFacebook extends Component {
 
         console.log("facebook is always watching")
 
-        //set state to include user fbID and name
         this.setState({ fbDetails: {
             fb_ID: response.id,
             name: response.name,
@@ -30,47 +31,40 @@ class LoginFacebook extends Component {
         }})
         //get the user from our DB
         const user = await this.getThisUser()
-      
+        console.log(user)
         //if we do not find a user with that id we will create a user
         //for testing puposes we should make a bs id in order to see if it creates a new user
-        !user ? createUser(this.state.fbDetails).then( res => console.log(res)).catch( err => console.log(err)) : sessionStorage.setItem("fid_pic", `${user.fb_ID}|${user.imageLink}`)
-
+        !user ? await createUser(this.state.fbDetails)
+            .then(res => console.log(res))
+            .catch(err => console.log(err)) : storeInSession(user)
+        //if the user we got back has a gender we can assume they have set their profile previously, we will direct them to the dashboard/leedle
+        if(user) {
+            !user.gender ? this.setState({redirect: "/Profile"}) : this.setState({redirect: "/leedle"})
+        }
+        //set auth to true and proceed to re-render
         this.setState({ auth: true })
+        console.log(this.state.auth)
     }
 
-    getUsers = () => {
-        getAllUsers().then( data => console.log(data)).catch( err => console.log(err))
-    }
-
-    getThisUser = async () => {
-
-        let user
-        await getOneUser(this.state.fbDetails.fb_ID)
-                    .then( data => {
-                        user = data.data
-                        return user
-                    })
-                    .catch( err => console.log(err))
-        return user
-    }
+    getThisUser = async () => await getOneUser(this.state.fbDetails.fb_ID)
+                                        .then(data => data.data)
+                                        .catch(err => console.log(err))
 
     render = () => {
-        if (this.state.auth && this.state.fbDetails.fb_ID) {
-                return <Redirect to="/Profile"/>
+        if (this.state.auth && this.state.fbDetails.fb_ID && this.state.clicked) {
+                return <Redirect to={this.state.redirect}/>
         } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
                 const user = this.getThisUser()
-                sessionStorage.setItem("fb_ID", JSON.stringify(user.fb_ID))
+                console.log("54")
+                storeInSession(user)
         }
 
         let facebookData
 
-        this.state.auth ? facebookData = <>yeer logged in</>
-        :
         facebookData = <>
         <FacebookLoginBtn
         appId="519631592082573"
         autoLoad={true}
-        // fields="name,picture,user_birthday"
         fields="name,email,picture"
         onClick={this.componentClicked}
         callback={this.responseFacebook} />

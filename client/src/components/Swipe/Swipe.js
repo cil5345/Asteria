@@ -1,19 +1,24 @@
-import React from "react";
-import { getCompatible } from "../../utils/API"
+import React, { useState } from "react";
+import { getCompatible, addInteraction } from "../../utils/API"
 import "./style.css";
 
 var comp
 var it = 0
+var fishID
 
 function Swipe() {
+
+    const [ compatbiles, setCompatbiles ] = useState([{}])
+
+    // const [ id, setID ] = useState(0)
 
     async function getComps() {
 
         const symbol = sessionStorage.getItem("symbol")
-        const prefrences = sessionStorage.getItem("prefrences")
+        const prefrence = sessionStorage.getItem("prefrence")
 
-        console.log(`sym: ${symbol} prefrences:${prefrences}`)
-        await getCompatible(symbol, prefrences).then(data => comp = data.data)
+        console.log(`sym: ${symbol} prefrence:${prefrence}`)
+        await getCompatible(symbol, prefrence).then(data => comp = data.data)
                                  .catch(err => console.log(err))
         
         antonio()
@@ -34,6 +39,18 @@ function Swipe() {
                 <li class="card"></li>
                 <li class="card"></li>
                 <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
             </ul>
             <button class="but-nope">X</button>
             <button class="but-yay">✔</button>
@@ -47,7 +64,8 @@ function antonio() {
     let card = document.querySelector(".card")
     
     card.style.backgroundImage = `url('${comp[it].imageLink}')`
-    card.textContent = `${comp[it].name}`
+    card.textContent = `${comp[it].symbol} ${comp[it].gender} ID:${comp[it].fb_ID}`
+    fishID = comp[it].fb_ID
     it++
 }
 
@@ -61,6 +79,7 @@ function antonio() {
 
             if (t.className === 'but-nope') {
                 t.parentNode.classList.add('nope');
+                addInteraction(sessionStorage.getItem("fb_ID"), fishID, false)
                 animating = true;
                 fireCustomEvent('nopecard', {
                     origin: t,
@@ -71,6 +90,10 @@ function antonio() {
 
             if (t.className === 'but-yay') {
                 t.parentNode.classList.add('yes');
+/*************************************************************************************/
+/*************************************************************************************/
+/*************************************************************************************/
+                addInteraction(sessionStorage.getItem("fb_ID"), fishID, true)
                 animating = true;
                 fireCustomEvent('yepcard', {
                     origin: t,
@@ -78,7 +101,9 @@ function antonio() {
                     card: t.parentNode.querySelector('.card')
                 });
             }
-
+/*************************************************************************************/
+/*************************************************************************************/
+/*************************************************************************************/
             if (t.classList.contains('current')) {
                 fireCustomEvent('cardchosen', {
                     container: getContainer(t),

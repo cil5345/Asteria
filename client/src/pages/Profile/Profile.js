@@ -1,86 +1,46 @@
 import React, { Component } from "react"
-import { Redirect, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header"
 import "./Profile.css";
-// import { getCompatible, updateUser } from "../../utils/API"
 import { updateUser } from "../../utils/API"
 import LoginBG from "../../components/LoginBG/LoginBG";
 
 
-const dk = "DEBUG_KEY"
-
 class Profile extends Component {
     state = {
-        fb_ID: "",
-        imageLink: "",
-        symbol: "",
-        gender: "",
-        pref: "",
-        redirect: null
+        imageLink: ""
     }
-
+    // hit axios create route, finds and updates user by fb_ID
     updateUser = async () => {
-        console.log("update")
-        // updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
-        //         .then(data => console.log(data))
-        //         .catch(err => console.log(err))
+        
         const id = sessionStorage.getItem("fb_ID")
         const sym = sessionStorage.getItem("symbol")
         const gn = sessionStorage.getItem("gender")
-        const pr = sessionStorage.getItem("prefrences")
-        // og without await
-        // await updateUser(this.state.fb_ID, this.state.symbol, this.state.gender, this.state.prefrence)
-        //     .then(data => console.log(data))
-        //     .catch(err => console.log(err))
+        const pr = sessionStorage.getItem("prefrence")
 
         await updateUser(id, sym, gn, pr)
             .then(data => console.log(data))
             .catch(err => console.log(err))
     }
-
+    // strips values from DOM, used to fill in user details
     getValues = async () => {
 
         const gender = document.querySelector(".genderInput")
-        const prefrences = document.querySelector(".prefInput")
+        const prefrence = document.querySelector(".prefInput")
         const symbol = document.querySelector(".zodiacInput")
 
         sessionStorage.setItem("symbol", await symbol.value)
         sessionStorage.setItem("gender", await gender.value)
-        sessionStorage.setItem("prefrences", await prefrences.value)
+        sessionStorage.setItem("prefrence", await prefrence.value)
 
-        console.log(dk)
-        console.log("within getValues" + dk + ` ${sessionStorage.getItem("fb_ID")}`)
-
-        this.setState({ symbol: await symbol.value })
-        this.setState({ gender: await gender.value })
-        this.setState({ prefrences: await prefrences.value })
         this.updateUser()
-
-        console.log("going to matches")
-        // return <Redirect to="/Matches"/>
     }
-
-
-    componentDidMount = () => {
-        if(sessionStorage.getItem("fid_pic")) {
-
-            console.log(`${dk}: FB ID_PIC: ${sessionStorage.getItem("fid_pic")}`)
-        }
-    }
-
+    // will be used to get imageLink from user
     componentWillMount = async () => {
 
-        // console.log(dk + " " + sessionStorage.getItem())
-        const leedle = await JSON.stringify(sessionStorage.getItem("fid_pic"))
-        console.log(leedle.indexOf("|"))
-        const pipe = await leedle.indexOf("|")
-        sessionStorage.setItem("fb_ID", leedle.substring(1, pipe).trim())
-        await this.setState({ fb_ID: leedle.substring(0, pipe) })
-        await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1).trim()})
-        // console.log(`will ${this.state.fb_ID}  ${this.state.imageLink}`)
-        console.log(`${dk} ssid:${sessionStorage.getItem("fb_ID")}`)
-        await this.setState({ imageLink: leedle.substring(pipe + 1, leedle.length - 1).trim()})
+        this.setState({ imageLink: sessionStorage.getItem("imageLink")})
+        // this.setState({ name: user.name })
     }
 
     render = () => {
@@ -136,7 +96,7 @@ class Profile extends Component {
                                             </div>
                                         </label>
                                     </div>
-                                    <br></br>
+                                    <br />
                                     <div className="pref cell">
                                         <label>Select Dating Preference
                                             <div>
@@ -148,10 +108,7 @@ class Profile extends Component {
                                             </div>
                                         </label>
                                     </div>
-                                    <br></br>
-
-                                    {/* <button className="successButton" onClick={this.getValues}>Get you're matches</button> */}
-                                    {/* <button onClick={this.getValues}>colleeeeerado</button> */}
+                                    <br />
 
                                     <Link to="/Matches">
                                         <button className="successButton" onClick={this.getValues}>Get your matches</button>
