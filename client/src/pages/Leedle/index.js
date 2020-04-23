@@ -19,8 +19,9 @@ export default function Leedle() {
         getOneUser(sessionStorage.getItem("fb_ID"))
             .then(u => {
                 console.log(u.data)
-                console.log(u)
-                setUser(u.data)
+                console.log(u.data.fb_ID)
+                const thing = u.data
+                setUser({ fb_ID: thing.fb_ID, name: thing.name, imageLink: thing.imageLink})
             })
             .catch(err => console.log(err))
         console.log(user)
@@ -28,7 +29,7 @@ export default function Leedle() {
         // .then(matches => setNewMatches())
         // .catch(err => console.log(err))
         console.log("tool")
-        getNewMatches(user.fb_ID)
+        getNewMatches(sessionStorage.getItem("fb_ID"))
             // .then(matches => setNewMatches([...matches]))
             .then(matches => console.log(matches))
             .catch(err => console.log(err))
