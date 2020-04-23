@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { getCompatible, addInteraction } from "../../utils/API"
 import "./style.css";
 
@@ -13,19 +13,31 @@ function Swipe() {
 
     // const [ id, setID ] = useState(0)
 
-    async function getComps() {
+    // async function getComps() {
 
-        const symbol = sessionStorage.getItem("symbol")
-        const prefrence = sessionStorage.getItem("prefrence")
+    //     const symbol = sessionStorage.getItem("symbol")
+    //     const prefrence = sessionStorage.getItem("prefrence")
 
-        // await getCompatible(symbol, prefrence).then(data => comp = data.data)
-        await getCompatible(symbol, prefrence).then(data => setCompatbiles([...data.data]))
-                                 .catch(err => console.log(err))
+    //     // await getCompatible(symbol, prefrence).then(data => comp = data.data)
+    //     await getCompatible(symbol, prefrence).then(data => setCompatbiles([...data.data]))
+    //                              .catch(err => console.log(err))
         
-        antonio()
-    }
+    //     antonio()
+    // }
 
-    getComps()
+    // getComps()
+
+
+    useEffect(() => {
+        const symbol = sessionStorage.getItem("symbol")
+            const prefrence = sessionStorage.getItem("prefrence")
+    
+            // await getCompatible(symbol, prefrence).then(data => comp = data.data)
+            getCompatible(symbol, prefrence).then(data => setCompatbiles([...data.data]))
+                                     .catch(err => console.log(err))
+            
+            antonio()
+    })
 
     return (
         <div class="cardcontainer list"
@@ -35,7 +47,7 @@ function Swipe() {
         >
             <ul class="cardlist">
                 
-                {compatbiles.map(e => <li className="card current"></li>)}
+                {compatbiles.map(e => <li className="card"></li>)}
                 {/* <li class="card current"></li>
                 <li class="card"></li>
                 <li class="card"></li>
