@@ -20,7 +20,6 @@ class Profile extends Component {
         const pr = sessionStorage.getItem("prefrence")
 
         await updateUser(id, sym, gn, pr)
-            // .then(data => console.log(data))
             .catch(err => console.log(err))
     }
     // strips values from DOM, used to fill in user details
