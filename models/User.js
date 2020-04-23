@@ -52,6 +52,12 @@ const UserSchema = new Schema({
       fresh: {
         type: Boolean,
         default: true
+      },
+      imageLink: {
+        type: String
+      },
+      symbol: {
+        type: String
       }
     }
   ]
