@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { getCompatible, addInteraction } from "../../utils/API"
 import "./style.css";
 
 var comp
 var it = 0
-let jawn = 0
 var fishID
 
 function Swipe() {
@@ -13,31 +12,18 @@ function Swipe() {
 
     // const [ id, setID ] = useState(0)
 
-    // async function getComps() {
+    async function getComps() {
 
-    //     const symbol = sessionStorage.getItem("symbol")
-    //     const prefrence = sessionStorage.getItem("prefrence")
-
-    //     // await getCompatible(symbol, prefrence).then(data => comp = data.data)
-    //     await getCompatible(symbol, prefrence).then(data => setCompatbiles([...data.data]))
-    //                              .catch(err => console.log(err))
-        
-    //     antonio()
-    // }
-
-    // getComps()
-
-
-    useEffect(() => {
         const symbol = sessionStorage.getItem("symbol")
-            const prefrence = sessionStorage.getItem("prefrence")
-    
-            // await getCompatible(symbol, prefrence).then(data => comp = data.data)
-            getCompatible(symbol, prefrence).then(data => setCompatbiles([...data.data]))
-                                     .catch(err => console.log(err))
-            
-            antonio()
-    })
+        const prefrence = sessionStorage.getItem("prefrence")
+
+        await getCompatible(symbol, prefrence).then(data => comp = data.data)
+                                 .catch(err => console.log(err))
+        
+        antonio()
+    }
+
+    getComps()
 
     return (
         <div class="cardcontainer list"
@@ -46,9 +32,7 @@ function Swipe() {
             }}
         >
             <ul class="cardlist">
-                
-                {compatbiles.map(e => <li className="card"></li>)}
-                {/* <li class="card current"></li>
+                <li class="card current"></li>
                 <li class="card"></li>
                 <li class="card"></li>
                 <li class="card"></li>
@@ -65,7 +49,7 @@ function Swipe() {
                 <li class="card"></li>
                 <li class="card"></li>
                 <li class="card"></li>
-                <li class="card"></li> */}
+                <li class="card"></li>
             </ul>
             <button class="but-nope">X</button>
             <button class="but-yay">✔</button>
