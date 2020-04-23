@@ -47,7 +47,7 @@ module.exports = {
   //fill details for a user - gender symbol prefrence
   updateProf: (req, res) => {
     db.User.findOneAndUpdate({ fb_ID: req.params.id }, { symbol: req.params.symbol, gender: req.params.gender, prefrence: req.params.prefrence })
-      .then(data => console.log(data))
+      .then(data => res.json(data))
       .catch(err => console.log(err))
   },
   //add interaction, a user said yes or no to another user
@@ -93,6 +93,7 @@ module.exports = {
             })
         //end of if
         }
+      res.json(data)
       })
       .catch(err => console.log(err))
   },
