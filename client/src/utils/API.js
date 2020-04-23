@@ -14,7 +14,6 @@ module.exports = {
     return axios.get(`/api/comp/${sign}/${prefrence}`)
   },
   getNewMatches: id => {
-    console.log(id)
     return axios.get(`/api/users/${id}/matches`)
   },
   //POST ROUTES
