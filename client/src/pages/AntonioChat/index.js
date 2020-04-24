@@ -12,7 +12,7 @@ class Chat extends Component {
             messages: []
         }
 
-        this.socket = io('localhost:3001')
+        this.socket = io('108.16.92.181:3001')
 
         this.socket.on('RECEIVE_MESSAGE', function (data) {
             console.log("trig'd socket")

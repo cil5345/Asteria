@@ -57,4 +57,3 @@ function Store(props) {
 }
 
 export default Store;
-//comment a fucking line
