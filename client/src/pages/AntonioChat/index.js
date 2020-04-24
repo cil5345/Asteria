@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import io from "socket.io-client"
 import "./style.css"
-
+require("dotenv").config()
 class Chat extends Component {
     constructor(props) {
         super(props);
@@ -13,7 +13,7 @@ class Chat extends Component {
         }
 
         this.socket = io('108.16.92.181')
-
+console.log(process.env.PORT)
         this.socket.on('RECEIVE_MESSAGE', function (data) {
             console.log("trig'd socket")
             addMessage(data);
