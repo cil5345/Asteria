@@ -23,7 +23,7 @@ function App() {
       <Route exact path="/Profile" component={Profile} />
       <Route exact path="/leedle" component={Leedle} />
       {/* login is default/fallback */}
-      <Route exact path="/Antonio" component={AntonioChat} />
+      <Route path="/Antonio" component={AntonioChat} />
       <Route exact path="/" component={Login} />
       {/* <Route component={Login} /> */}
       <Footer />

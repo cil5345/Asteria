@@ -13,8 +13,8 @@ class Chat extends Component {
         }
 
         console.log(process.env.PORT)
-        
-        this.socket = io('108.16.92.181')
+
+        this.socket = io('127.0.0.1:3001')
 
         this.socket.on('RECEIVE_MESSAGE', function (data) {
             console.log("trig'd socket")

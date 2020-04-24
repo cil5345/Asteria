@@ -1,11 +1,10 @@
 const express = require("express")
 const app = express()
 
-const mongoose = require("mongoose")
-// var app = require('express')();
-// var server = require('http').Server(app);
+const server = require("http").createServer(app)
+const io = require('socket.io').listen(server)
 
-//diff medium has without (server)
+const mongoose = require("mongoose")
 
 const PORT = process.env.PORT || 3001
 
@@ -24,13 +23,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/asteriaDB", { u
 
 
 // Start the API server
-server = app.listen(PORT, function () {
+server.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
 
-const socket = require('socket.io')
 
-io = socket(server)
 
 io.on('connection', socket => {
     // console.log('user is connected');
