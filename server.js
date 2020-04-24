@@ -3,6 +3,8 @@ const mongoose = require("mongoose")
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+const multer = require("multer")
+const upload = multer({ dest: "uploads/" })
 
 const PORT = process.env.PORT || 3001
 
@@ -15,6 +17,15 @@ if(process.env.NODE_ENV === "production") {
 
 require("./routes/mongo-routes")(app)
 require("./routes/test-routes")(app)
+
+app.post("/photo/upload/:id", upload.single("photo"), (req, res, next) => {
+
+    console.log(`hit server route for photo upload`)
+    console.log(`${req.file}`)
+    console.log(`${req.file.fieldname}`)
+    console.log(`${req.file.path}`)
+    console.log(`${req.params.id}`)
+})
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/asteriaDB", { useNewUrlParser: true });
