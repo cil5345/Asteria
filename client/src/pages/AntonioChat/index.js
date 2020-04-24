@@ -12,6 +12,8 @@ class Chat extends Component {
             messages: []
         }
 
+        console.log(process.env.PORT)
+        
         this.socket = io('108.16.92.181')
 
         this.socket.on('RECEIVE_MESSAGE', function (data) {
