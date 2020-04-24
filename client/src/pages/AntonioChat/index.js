@@ -12,9 +12,7 @@ class Chat extends Component {
             messages: []
         }
 
-        console.log(process.env.PORT)
-
-        this.socket = io('127.0.0.1:3001')
+        this.socket = io('https://https://asteria-app.herokuapp.com/')
 
         this.socket.on('RECEIVE_MESSAGE', function (data) {
             console.log("trig'd socket")
