@@ -1,10 +1,8 @@
 const express = require("express")
 const app = express()
 
-const socket = require('socket.io')
 const mongoose = require("mongoose")
 // var app = require('express')();
-// var server = require('http').Server(app);
 
 //diff medium has without (server)
 
@@ -29,7 +27,12 @@ server = app.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
 
-io = socket(server)
+// const socket = require('socket.io')
+
+// io = socket(server)
+
+const io = require('socket.io').listen(server)
+
 io.on('connection', socket => {
     // console.log('user is connected');
     console.log(`${socket.id}`);
