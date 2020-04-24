@@ -28,7 +28,7 @@ function reducer(state, action) {
 }
 
 function sendChatAction(value) {
-  socket.emit("SEND_MESSAGES", value);
+  socket.emit("chat message", value);
 }
 
 //

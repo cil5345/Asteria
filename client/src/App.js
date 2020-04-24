@@ -23,7 +23,7 @@ function App() {
       <Route exact path="/Profile" component={Profile} />
       <Route exact path="/leedle" component={Leedle} />
       
-      <Route exact path="*" component={Login} />
+      <Route exact path="/" component={Login} />
       
       <Footer />
     </Router>
