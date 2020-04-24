@@ -36,6 +36,7 @@ io.on('connection', socket => {
 
     socket.on('SEND_MESSAGE', function (msg) {
         console.log('message: ' + JSON.stringify(msg));
+        console.log("leedle")
         io.emit('RECEIVE_MESSAGE', msg)
         // Mongo.conversation.push(msg)
     })

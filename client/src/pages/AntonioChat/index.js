@@ -12,7 +12,7 @@ class Chat extends Component {
             messages: []
         }
 
-        this.socket = io(`108.16.92.181:3000`)
+        this.socket = io(`108.16.92.181:8080`)
 
         this.socket.on('RECEIVE_MESSAGE', function (data) {
             console.log("trig'd socket")
