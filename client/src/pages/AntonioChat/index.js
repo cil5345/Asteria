@@ -28,7 +28,6 @@ class Chat extends Component {
         this.sendMessage = ev => {
             ev.preventDefault()
             console.log("trig'd sendmess")
-            console.log(process.env.PORT)
             this.socket.emit('SEND_MESSAGE', {
                 author: this.state.username,
                 message: this.state.message
