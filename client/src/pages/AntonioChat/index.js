@@ -11,24 +11,24 @@ class Chat extends Component {
             message: "",
             messages: []
         }
-
+        
         this.socket = io('108.16.92.181')
-console.log(process.env.PORT)
         this.socket.on('RECEIVE_MESSAGE', function (data) {
             console.log("trig'd socket")
             addMessage(data);
         })
-
+        
         const addMessage = data => {
             console.log("trig'd addmess")
             console.log(data);
             this.setState({ messages: [...this.state.messages, data] })
             console.log(this.state.messages)
         }
-
+        
         this.sendMessage = ev => {
             ev.preventDefault()
             console.log("trig'd sendmess")
+            console.log(process.env.PORT)
             this.socket.emit('SEND_MESSAGE', {
                 author: this.state.username,
                 message: this.state.message
