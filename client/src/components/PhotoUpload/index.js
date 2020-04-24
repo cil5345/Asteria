@@ -8,5 +8,6 @@ export default function PhotoUpload() {
 
     return <form method="POST" action="/photo/upload" enctype="multipart/form-data">>
                 <input type="file" name="photo" />
+                <button type="submit">Submit</button>
             </form>
 }
