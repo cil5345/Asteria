@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { getOneUser, getNewMatches } from "../../utils/API"
+import PhotoUpload from "../../components/PhotoUpload"
 import "./style.css"
 
 export default function Leedle() {
@@ -44,7 +45,7 @@ export default function Leedle() {
         {/* need a way to get details to matches */}
         <div id="div-pic">
             <img alt="You" src={imageLink} />
-            <button id="btn" onClick={change}>Change</button>
+            <PhotoUpload />
         </div>
         <h1>High Horse</h1>
         <div id="matchesDiv">

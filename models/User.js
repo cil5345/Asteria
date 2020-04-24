@@ -46,8 +46,7 @@ const UserSchema = new Schema({
     {
       fb_ID: {
         type: String,
-        unique: true,
-        dropDups: true
+        index: true
       },
       fresh: {
         type: Boolean,
