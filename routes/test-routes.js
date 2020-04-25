@@ -1,9 +1,6 @@
 const userController = require("../controllers/userController")
-// const compController = require("../controllers/compContoller")
-const multer = require("multer")
-const upload = multer({ dest: "uploads/" })
 
-module.exports = function(app)  {
+module.exports = function (app) {
     // get a user by their id
     app.get("/api/users/:id", (req, res) => {
 
@@ -34,13 +31,4 @@ module.exports = function(app)  {
 
         userController.addInteraction(req, res)
     })
-    
-    app.post("/photo/upload/:id", upload.single("photo"), (req, res, next) => {
-
-    console.log(`hit server route for photo upload`)
-    console.log(`${req.file}`)
-    console.log(`${req.file.fieldname}`)
-    console.log(`${req.file.path}`)
-    console.log(`${req.params.id}`)
-})
 }
