@@ -13,7 +13,7 @@ const upload = multer({
 }).single("photo")
 
 //dest: "../uploads/" })
-module.exports = app => {
+module.exports = function(app) {
     
     app.post("/photo/upload/:id", upload.single("photo"), (req, res, next) => {
 
