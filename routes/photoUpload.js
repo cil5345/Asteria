@@ -1,6 +1,8 @@
 const multer = require("multer")
 const path = require("path")
 
+module.exports = function(app) {
+
 const storage = multer.diskStorage({
     destination: "../uploads",
     filename: (req, file, cb) => {
@@ -13,9 +15,8 @@ const upload = multer({
 }).single("photo")
 
 //dest: "../uploads/" })
-module.exports = function(app) {
     
-    app.post("/photo/upload/:id", upload.single("photo"), (req, res, next) => {
+    app.post("/photo/upload/:id", upload, (req, res, next) => {
 
         upload(req, res, (err) => {
             if(err) return console.log(err)
