@@ -33,7 +33,7 @@ module.exports = function (app) {
         // console.log(`${req.file.fieldname}`)
         // console.log(`${req.file.path}`)
         console.log(`${req.params.file}`)
-        console.log(`${req.params}`)
+        console.log(`${JSON.stringify(req.params)}`)
         res.send("ok")
     })
 }
