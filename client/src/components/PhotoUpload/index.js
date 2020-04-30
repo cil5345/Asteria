@@ -47,6 +47,7 @@ export default function PhotoUpload(props) {
         let it = 0
         for(const file of acceptedFiles) {
             fd.append(`image${it}`, file)
+            console.log("crazy or excititing")
             it++
         }
 
