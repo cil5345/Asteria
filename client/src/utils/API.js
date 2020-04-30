@@ -28,6 +28,9 @@ module.exports = {
   },
   uploadPhoto: (id, data) => {
     console.log("being greedy")
-    return axios.post(`/photo/upload/${id}`, data)
+    const config = {
+      headers: { 'content-type': 'multipart/form-data' }
+    }
+    return axios.post(`/photo/upload/${id}`, data, config)
   }
 }

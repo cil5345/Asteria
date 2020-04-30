@@ -44,7 +44,11 @@ export default function PhotoUpload(props) {
 
         const fd = new FormData()
 
-        for(const file of acceptedFiles) fd.append(file)
+        let it = 0
+        for(const file of acceptedFiles) {
+            fd.append(`image${it}`, file)
+            it++
+        }
 
         uploadPhoto(sessionStorage.getItem("fb_ID"), fd)
     }
