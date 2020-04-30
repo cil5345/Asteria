@@ -9,10 +9,11 @@ class Chat extends Component {
         this.state = {
             username: "",
             message: "",
-            messages: []
+            messages: [],
+            port: ""
         }
         
-        // this.socket = io(`108.16.92.181${this.state.port}`)
+        this.socket = io(`108.16.92.181${this.state.port}`)
         this.socket.on('RECEIVE_MESSAGE', function (data) {
             console.log("trig'd socket")
             addMessage(data);
@@ -38,9 +39,9 @@ class Chat extends Component {
 
     jawn = () => {
 
-        const port = prompt("port number")
-        // this.setState({ port: j })
-        this.socket = io(`108.16.92.181${port}`)
+        const j = prompt("port number")
+        this.setState({ port: j })
+        this.socket = io(`108.16.92.181${this.state.port}`)
     }
 
     render = () => (
