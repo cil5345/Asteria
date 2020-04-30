@@ -7,3 +7,12 @@
     flex-direction: column;
     text-align: center;
 }
+
+.hi {
+    border: green solid thin;
+}
+
+.photoUpload * {
+    margin-bottom: 14px;
+    text-align: center;
+}

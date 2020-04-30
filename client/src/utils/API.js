@@ -26,8 +26,8 @@ module.exports = {
   addInteraction: (bachID, fishID, like) => {
     return axios.post(`/api/${bachID}/${fishID}/${like}`)
   },
-  uploadPhoto: id => {
+  uploadPhoto: (id, data) => {
     console.log("being greedy")
-    return axios.post(`/photo/upload/${id}`)
+    return axios.post(`/photo/upload/${id}`, data)
   }
 }

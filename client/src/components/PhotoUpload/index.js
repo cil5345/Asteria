@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useDropzone } from 'react-dropzone';
 import "./style.css"
 import { uploadPhoto } from "../../utils/API"
@@ -35,22 +35,34 @@ export default function PhotoUpload(props) {
         </li>
     ));
 
+
+    const handleUpload = () => {
+
+        console.log("uh hi")
+
+        console.log(acceptedFiles)
+    }
+
+    const [ formData, setFormData ] = useState({})
+
+    const handleChange = () => {
+        console.log("im going through changes")
+    }
+
     return (
-        <form action={(`/photo/upload/${sessionStorage.getItem("fb_ID")}`)} method="post" enctype="multipart/form-data">
             <div className="photoUpload">
-                <div {...getRootProps({ className: 'dropzone' })}>
+                <div onChange={handleChange} {...getRootProps({ className: 'dropzone' })}>
                     <input {...getInputProps()} />
                 Drag 'n' drop some files here
-                <button onClick={open}>
+                <button className="hi" onClick={open}>
                         Open File Dialog
                 </button>
-                <button type="submit">Upload</button>
+                <button onClick={handleUpload}>Upload</button>
                 </div>
                 <aside>
                     <h4>Files</h4>
                     <ul>{files}</ul>
                 </aside>
             </div>
-        </form>
     )
 }
