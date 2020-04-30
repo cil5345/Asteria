@@ -46,7 +46,7 @@ export default function Activity() {
         {/* need a way to get details to matches */}
         <div id="div-pic">
             <img alt="You" src={imageLink} />
-            <PhotoUpload />
+            {/* <PhotoUpload /> */}
         </div>
         <h1>High Horse</h1>
         <div id="matchesDiv">
