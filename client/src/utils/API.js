@@ -27,6 +27,7 @@ module.exports = {
     return axios.post(`/api/${bachID}/${fishID}/${like}`)
   },
   uploadPhoto: id => {
+    console.log("being greedy")
     return axios.post(`/photo/upload/${id}`)
   }
 }
