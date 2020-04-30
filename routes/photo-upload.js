@@ -15,7 +15,7 @@
 //dest: "../uploads/" })
 module.exports = function (app) {
     
-    app.post("/photo/upload/:id", upload.single("photo"), (req, res, next) => {
+    app.post("/photo/upload/:id", (req, res) => {
 
         upload(req, res, (err) => {
             if(err) return console.log(err)
