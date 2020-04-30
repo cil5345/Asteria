@@ -28,6 +28,7 @@ module.exports = {
   },
   uploadPhoto: (id, data) => {
     console.log("being greedy")
+    console.log(data)
     const config = {
       headers: { 'content-type': 'multipart/form-data' }
     }

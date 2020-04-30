@@ -50,6 +50,8 @@ export default function PhotoUpload(props) {
             it++
         }
 
+        console.log(fd)
+
         uploadPhoto(sessionStorage.getItem("fb_ID"), fd)
     }
 
