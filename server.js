@@ -15,7 +15,7 @@ if(process.env.NODE_ENV === "production") {
 
 require("./routes/mongo-routes")(app)
 require("./routes/test-routes")(app)
-require("./routes/photo-uwpload")(app)
+require("./routes/photo-upload")(app)
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/asteriaDB", { useNewUrlParser: true });
