@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { getOneUser, getNewMatches } from "../../utils/API"
+import Header from "../../components/Header/Header"
 import PhotoUpload from "../../components/PhotoUpload"
 import "./style.css"
 
-export default function Leedle() {
+export default function Activity() {
 
     const [imageLink, setImageLink] = useState("")
     const [user, setUser] = useState({})
@@ -33,7 +34,6 @@ export default function Leedle() {
         getNewMatches(sessionStorage.getItem("fb_ID"))
             // .then(matches => setNewMatches([matches]))
             .then(matches => {
-                console.log(matches.data)
                 setNewMatches([...matches.data])
             })
             .catch(err => console.log(err))
@@ -41,6 +41,7 @@ export default function Leedle() {
     }, [])
 
     return <>
+        <Header />
         <Link to="/Matches"><button>Go to matches</button></Link>
         {/* need a way to get details to matches */}
         <div id="div-pic">

@@ -1,6 +1,7 @@
 #div-pic {
     flex-direction: column;
     text-align: center;
+    border: solid thick green;
 }
 
 #btn {
