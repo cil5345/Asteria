@@ -44,29 +44,29 @@ export default function PhotoUpload() {
     }
 
 
-    // function uploadFile(file) {
-    //     let url = 'YOUR URL HERE'
-    //     let formData = new FormData()
+    function uploadFile(file) {
+        let url = 'YOUR URL HERE'
+        let formData = new FormData()
 
-    //     formData.append('file', file)
+        formData.append('file', file)
 
-    //     fetch(url, {
-    //         method: 'POST',
-    //         body: formData
-    //     })
-    //         .then(() => { /* Done. Inform the user */ })
-    //         .catch(() => { /* Error. Inform the user */ })
-    // }
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+            .then(() => { /* Done. Inform the user */ })
+            .catch(() => { /* Error. Inform the user */ })
+    }
 
-    // const handleFiles = (files) => {
+    const handleFiles = (files) => {
         
-    //     ([...files]).forEach(uploadFile)
-    // }
+        ([...files]).forEach(uploadFile)
+    }
 
     //want to fancy this up
 
     return <div id="drop-area">
-        <form className="my-form" enctype="multipart/form-data" method="POST" action={`photo/upload/${sessionStorage.getItem("fb_ID")}`} >
+        <form className="my-form" method="POST" action={`photo/upload/${sessionStorage.getItem("fb_ID")}`} >
             <p>upload</p>
             <input type="file" id="fileElem" name="photo" multiple accept="image/*" onChange={handleFiles} />
             <label className="button" for="fileElem">Select some files</label>
