@@ -36,7 +36,7 @@ export default function PhotoUpload(props) {
     ));
 
 
-    const handleUpload = () => {
+    const handleUpload = async () => {
 
         console.log("uh hi")
 
@@ -48,7 +48,7 @@ export default function PhotoUpload(props) {
         let it = 0
         for(const file of acceptedFiles) {
             console.log(file)
-            fd.append(`image${it}`, file, file.name)
+        await    fd.append(`image${it}`, file, file.name)
             console.log("crazy or excititing")
             it++
         }
