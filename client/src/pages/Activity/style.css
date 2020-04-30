@@ -27,3 +27,7 @@ button {
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+#drop-photo-div {
+    background-color: white;
+}
