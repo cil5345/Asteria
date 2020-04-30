@@ -44,9 +44,11 @@ export default function PhotoUpload(props) {
 
         const fd = new FormData()
 
+        console.log(acceptedFiles[0])
         let it = 0
         for(const file of acceptedFiles) {
-            fd.append(`image${it}`, file)
+            console.log(file)
+            fd.append(`image${it}`, file, file.name)
             console.log("crazy or excititing")
             it++
         }
