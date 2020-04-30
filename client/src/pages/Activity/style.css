@@ -1,3 +1,9 @@
 .photoUpload {
     border: green solid thick;
 }
+
+.dropzone {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
