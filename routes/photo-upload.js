@@ -1,5 +1,5 @@
-const multer = require("multer")
-const path = require("path")
+// const multer = require("multer")
+// const path = require("path")
 
 // const storage = multer.diskStorage({
 //     destination: "../uploads",
@@ -13,7 +13,7 @@ const path = require("path")
 // }).single("photo")
 
 //dest: "../uploads/" })
-module.exports = function(app) {
+module.exports = function (app) {
     
     app.post("/photo/upload/:id", upload.single("photo"), (req, res, next) => {
 
