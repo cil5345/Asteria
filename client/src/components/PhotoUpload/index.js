@@ -41,6 +41,12 @@ export default function PhotoUpload(props) {
         console.log("uh hi")
 
         console.log(acceptedFiles)
+
+        const fd = new FormData()
+
+        for(const file of acceptedFiles) fd.append(file)
+
+        uploadPhoto(sessionStorage.getItem("fb_ID"), fd)
     }
 
     const [ formData, setFormData ] = useState({})
