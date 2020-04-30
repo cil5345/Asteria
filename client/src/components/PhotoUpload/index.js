@@ -64,14 +64,12 @@ export default function PhotoUpload() {
         ([...files]).forEach(uploadFile)
     }
 
-    //want to fancy this up
-
     return <div id="drop-area">
         <form className="my-form" method="POST" action={`photo/upload/${sessionStorage.getItem("fb_ID")}`} >
             <p>upload</p>
             <input type="file" id="fileElem" name="photo" multiple accept="image/*" onChange={handleFiles} />
             <label className="button" for="fileElem">Select some files</label>
-            <button onClick={uploadFile} type="submit">upload the jawns</button>
+            <button type="submit">upload the jawns</button>
         </form>
     </div>
 }
