@@ -29,7 +29,8 @@ module.exports = function (app) {
         // })
 
 
-        // console.log(`${req.file}`)
+        console.log(`${req.file}`)
+        console.log(`${req.files}`)
         // console.log(`${req.file.fieldname}`)
         // console.log(`${req.file.path}`)
         console.log(req)
