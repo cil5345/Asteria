@@ -15,7 +15,7 @@ export default function PhotoUpload() {
         dropArea.addEventListener(eventName, preventDefaults, false)
     })
 
-    function preventDefaults(e) {
+    const preventDefaults = e => {
         e.preventDefault()
         e.stopPropagation()
     }
@@ -27,25 +27,25 @@ export default function PhotoUpload() {
         dropArea.addEventListener(eventName, unhighlight, false)
     })
 
-    function highlight(e) {
+    const highlight = e => {
         dropArea.classList.add('highlight')
     }
 
-    function unhighlight(e) {
+    const unhighlight = e => {
         dropArea.classList.remove('highlight')
     }
 
-    dropArea.addEventListener('drop', handleDrop, false)
-
-    function handleDrop(e) {
+    
+    const handleDrop = e => {
         let dt = e.dataTransfer
         let files = dt.files
-
+        
         handleFiles(files)
     }
+    
+    dropArea.addEventListener('drop', handleDrop, false)
 
-
-    function uploadFile(file) {
+    const uploadFile = file => {
         let url = 'YOUR URL HERE'
         let formData = new FormData()
 
