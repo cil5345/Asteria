@@ -1,5 +1,6 @@
 import React from "react"
 import "./style.css"
+import { uploadPhoto } from "../../utils/API"
 
 export default function PhotoUpload() {
 

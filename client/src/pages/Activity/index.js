@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
 import { getOneUser, getNewMatches } from "../../utils/API"
 import Header from "../../components/Header/Header"
 import PhotoUpload from "../../components/PhotoUpload"
@@ -42,11 +41,10 @@ export default function Activity() {
 
     return <>
         <Header />
-        <Link to="/Matches"><button>Go to matches</button></Link>
         {/* need a way to get details to matches */}
         <div id="div-pic">
             <img alt="You" src={imageLink} />
-            {/* <PhotoUpload /> */}
+            <PhotoUpload />
         </div>
         <h1>High Horse</h1>
         <div id="matchesDiv">
