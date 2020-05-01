@@ -38,23 +38,33 @@ export default function PhotoUpload(props) {
 
     const handleUpload = () => {
 
-        console.log("uh hi")
-
-        console.log(acceptedFiles)
-
         var fd = new FormData()
 
-        console.log(acceptedFiles[0])
-        let it = 0
-        for(const file of acceptedFiles) {
-            console.log(file)
-            fd.append(`image${it}`, file, file.name)
-            console.log("crazy or excititing")
-            it++
-        }
-
+        
+        acceptedFiles.forEach((file) => {
+            const reader = new FileReader()
+            
+            reader.onabort = () => console.log('file reading was aborted')
+            reader.onerror = () => console.log('file reading has failed')
+            reader.onload = () => {
+                // Do whatever you want with the file contents
+                const binaryStr = reader.result
+                console.log(binaryStr)
+            }
+            reader.readAsArrayBuffer(file)
+        })
+        
         console.log(fd)
-
+        
+        // console.log(acceptedFiles[0])
+        // let it = 0
+        // for(const file of acceptedFiles) {
+        //     console.log(file)
+        //     fd.append(`image${it}`, file, file.name)
+        //     console.log("crazy or excititing")
+        //     it++
+        // }
+        
         uploadPhoto(sessionStorage.getItem("fb_ID"), fd)
             .then(data => console.log(data))
             .catch(err => console.log(err))
