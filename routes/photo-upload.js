@@ -33,13 +33,13 @@ module.exports = function (app) {
 
 
         console.log("we in err")
+        console.log(req.params)
         // if(err) console.log(err)
-        console.log(req.file.buffer)
-        console.log(req.data.field)
+        // console.log(req.file.buffer)
         console.log(req.body)
+        console.log(req.data)
         // console.log(`${req.file}`)
         // console.log(`${req.files}`)
-        console.log(req.params)
         res.send("ok")
     })
 }
