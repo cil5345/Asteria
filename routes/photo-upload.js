@@ -30,10 +30,10 @@ module.exports = function (app) {
         //     console.log(`${req.params.id}`)
         //     console.log(req.file)
         // })
-
+        for(let b of req.body) console.log(b)
 
         console.log("we in err")
-        console.log(req.contentType)
+        
         // if(err) console.log(err)
         // console.log(req.file.buffer)
         console.log("file")
