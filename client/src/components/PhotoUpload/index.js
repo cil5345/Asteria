@@ -56,6 +56,8 @@ export default function PhotoUpload(props) {
         console.log(fd)
 
         uploadPhoto(sessionStorage.getItem("fb_ID"), fd)
+            .then(data => console.log(data))
+            .catch(err => console.log(err))
     }
 
     const [ formData, setFormData ] = useState({})
