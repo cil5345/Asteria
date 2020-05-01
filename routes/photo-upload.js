@@ -30,7 +30,7 @@ module.exports = function (app) {
         //     console.log(`${req.params.id}`)
         //     console.log(req.file)
         // })
-        for(let b of req.params) console.log(b)
+        // for(let b of req.params) console.log(b)
 
         console.log("we in err")
         
