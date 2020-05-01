@@ -32,8 +32,8 @@ module.exports = function (app) {
         // })
 
 
-
-        if(err) console.log(err)
+        console.log("we in err")
+        // if(err) console.log(err)
         console.log(req.file.buffer)
         console.log(req.data.field)
         console.log(req.body)
