@@ -36,7 +36,7 @@ export default function PhotoUpload(props) {
     ));
 
 
-    const handleUpload = async () => {
+    const handleUpload = () => {
 
         console.log("uh hi")
 
