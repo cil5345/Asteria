@@ -52,7 +52,10 @@ export default function PhotoUpload(props) {
                 const binaryStr = reader.result
                 console.log(binaryStr)
                 fd.append(`image${it}`, binaryStr)
+                console.log(binaryStr)
                 fd.append(`name${it}`, file.name)
+                console.log(file.name)
+                console.log(file.type)
                 setImagesToShow([...imagesToShow], reader.result)
             }
             it++
