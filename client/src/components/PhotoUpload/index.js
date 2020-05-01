@@ -41,10 +41,10 @@ export default function PhotoUpload(props) {
         var fd = new FormData()
 
         let it = 0
-        
+
         acceptedFiles.forEach((file) => {
             const reader = new FileReader()
-            
+
             reader.onabort = () => console.log('file reading was aborted')
             reader.onerror = () => console.log('file reading has failed')
             reader.onload = () => {
@@ -53,13 +53,14 @@ export default function PhotoUpload(props) {
                 console.log(binaryStr)
                 fd.append(`image${it}`, binaryStr)
                 fd.append(`name${it}`, file.name)
+                setImagesToShow([...imagesToShow], reader.result)
             }
             it++
             reader.readAsArrayBuffer(file)
         })
-        
+
         console.log(fd)
-        
+
         // console.log(acceptedFiles[0])
         // let it = 0
         // for(const file of acceptedFiles) {
@@ -68,19 +69,26 @@ export default function PhotoUpload(props) {
         //     console.log("crazy or excititing")
         //     it++
         // }
-        
+
         uploadPhoto(sessionStorage.getItem("fb_ID"), fd)
             .then(data => console.log(data))
             .catch(err => console.log(err))
     }
 
-    const [ formData, setFormData ] = useState({})
+    const [formData, setFormData] = useState({})
+    const [imagesToShow, setImagesToShow] = useState([])
 
     const handleChange = () => {
         console.log("im going through changes")
     }
 
     return (
+        <>
+            <div>
+                {imagesToShow.map(image =>
+                    <img alt="uploaded jawn" src={image} />
+                )}
+            </div>
             <div className="photoUpload">
                 <div onChange={handleChange} name="profile_picture" {...getRootProps({ className: 'dropzone' })}>
                     <input {...getInputProps()} />
@@ -88,12 +96,13 @@ export default function PhotoUpload(props) {
                 <button className="hi" onClick={open}>
                         Open File Dialog
                 </button>
-                <button onClick={handleUpload}>Upload</button>
+                    <button onClick={handleUpload}>Upload</button>
                 </div>
                 <aside>
                     <h4>Files</h4>
                     <ul>{files}</ul>
                 </aside>
             </div>
+        </>
     )
 }
