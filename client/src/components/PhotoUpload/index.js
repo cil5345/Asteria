@@ -38,7 +38,7 @@ export default function PhotoUpload(props) {
 
     const handleUpload = () => {
 
-        var fd = new FormData()
+        var fd = new FormData([])
 
         let it = 0
         
