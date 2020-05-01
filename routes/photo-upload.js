@@ -33,7 +33,7 @@ module.exports = function (app) {
 
 
         console.log("we in err")
-        console.log(req.params)
+        console.log(req.contentType)
         // if(err) console.log(err)
         // console.log(req.file.buffer)
         console.log("file")
