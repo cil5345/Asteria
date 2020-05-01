@@ -51,10 +51,9 @@ export default function PhotoUpload(props) {
                 // Do whatever you want with the file contents
                 const binaryStr = reader.result
                 console.log(binaryStr)
-                fd.append(`image${it}`, binaryStr)
-                fd.append(`name${it}`, file.name)
+                fd.append(`Binary_String_${it}`, binaryStr)
+                fd.append(`File_${it}`, file, file.name)
                 console.log(file.name)
-                console.log(file.type)
                 setImagesToShow([...imagesToShow], reader.result)
             }
             it++
