@@ -54,22 +54,14 @@ export default function PhotoUpload(props) {
                 fd.append(`Binary_String_${it}`, binaryStr)
                 fd.append(`File_${it}`, file, file.name)
                 console.log(file.name)
-                setImagesToShow([...imagesToShow], reader.result)
+                setImagesToShow([...imagesToShow], reader.result)\
+                console.log(fd)
             }
             it++
             reader.readAsArrayBuffer(file)
         })
 
         console.log(fd)
-
-        // console.log(acceptedFiles[0])
-        // let it = 0
-        // for(const file of acceptedFiles) {
-        //     console.log(file)
-        //     fd.append(`image${it}`, file, file.name)
-        //     console.log("crazy or excititing")
-        //     it++
-        // }
 
         uploadPhoto(sessionStorage.getItem("fb_ID"), fd)
             .then(data => console.log(data))

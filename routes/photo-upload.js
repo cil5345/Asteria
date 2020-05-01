@@ -10,8 +10,6 @@ const storage = multer.diskStorage({
     }
 })
 
-
-
 const upload = multer({ storage: storage })//.single("photo")
 
 //dest: "../uploads/" })
@@ -31,9 +29,7 @@ module.exports = function (app) {
         //     console.log(req.file)
         // })
         // for(let b of req.params) console.log(b)
-
-        console.log("we in err")
-        
+        console.log("we in err")        
         // if(err) console.log(err)
         // console.log(req.file.buffer)
         console.log("file")
