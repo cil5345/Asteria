@@ -32,8 +32,7 @@ module.exports = function (app) {
 
 
         if(err) console.log(err)
-        // console.log(req)
-        console.log(next)
+        console.log(req.data)
         console.log(`${req.file}`)
         console.log(`${req.files}`)
         console.log(req.params)
