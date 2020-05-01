@@ -30,15 +30,13 @@ module.exports = function (app) {
         //     console.log(req.file)
         // })
 
+
         if(err) console.log(err)
-        console.log(req)
+        // console.log(req)
+        console.log(next)
         console.log(`${req.file}`)
         console.log(`${req.files}`)
-        // console.log(`${req.file.fieldname}`)
-        // console.log(`${req.file.path}`)
         console.log(req.params)
-        console.log(`${req.params.file}`)
-        console.log(`${JSON.stringify(req.params)}`)
         res.send("ok")
     })
 }
