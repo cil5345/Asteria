@@ -31,8 +31,9 @@ module.exports = function (app) {
         // })
 
 
+
         if(err) console.log(err)
-        console.log(req.data)
+        console.log(req.file.buffer)
         console.log(req.data.field)
         console.log(req.body)
         // console.log(`${req.file}`)

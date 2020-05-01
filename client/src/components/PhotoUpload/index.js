@@ -40,6 +40,7 @@ export default function PhotoUpload(props) {
 
         var fd = new FormData()
 
+        let it = 0
         
         acceptedFiles.forEach((file) => {
             const reader = new FileReader()
@@ -50,7 +51,9 @@ export default function PhotoUpload(props) {
                 // Do whatever you want with the file contents
                 const binaryStr = reader.result
                 console.log(binaryStr)
+                fd.append(`image${it}`, binaryStr)
             }
+            it++
             reader.readAsArrayBuffer(file)
         })
         
