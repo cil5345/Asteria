@@ -17,7 +17,7 @@ const upload = multer({ storage: storage })//.single("photo")
 //dest: "../uploads/" })
 module.exports = function (app) {
 
-    app.post("/photo/upload/:id", upload.single("profile_picture"), (req, res, next) => {
+    app.post("/photo/upload/:id", upload.single("profile_picture"), (err, req, res, next) => {
 
         // upload(req, res, (err) => {
         //     if(err) return console.log(err)
@@ -30,7 +30,7 @@ module.exports = function (app) {
         //     console.log(req.file)
         // })
 
-
+        if(err) console.log(err)
         console.log(req)
         console.log(`${req.file}`)
         console.log(`${req.files}`)
