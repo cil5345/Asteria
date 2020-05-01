@@ -66,7 +66,7 @@ export default function PhotoUpload(props) {
 
     return (
             <div className="photoUpload">
-                <div onChange={handleChange} {...getRootProps({ className: 'dropzone' })}>
+                <div onChange={handleChange} name="profile_picture" {...getRootProps({ className: 'dropzone' })}>
                     <input {...getInputProps()} />
                 Drag 'n' drop some files here
                 <button className="hi" onClick={open}>
