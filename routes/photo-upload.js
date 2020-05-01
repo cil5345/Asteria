@@ -39,7 +39,7 @@ module.exports = function (app) {
         console.log("file")
         console.log(req.file.buffer)
         console.log("body")
-        console.log(req.body)
+        console.log(req.body.file)
         // console.log(req)
         // console.log(`${req.file}`)
         // console.log(`${req.files}`)
