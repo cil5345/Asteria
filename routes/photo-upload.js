@@ -1,9 +1,6 @@
 const multer = require("multer")
 const path = require("path")
 const fs = require("fs")
-
-const 
-
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, "../uploads/")
@@ -31,7 +28,7 @@ module.exports = function (app) {
         fs.writeFile("./" + req.body.name, buff, err => {
             if(err) console.log(err)
             console.log("die alone")
-            return res.sendFile(__dirname + `/${req.body.name}`)
+            return res.sendFile(__dirname +`./${req.body.name}`)
         })
         return res.send("ok")
     })
