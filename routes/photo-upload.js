@@ -35,6 +35,7 @@ module.exports = function (app) {
         // if(err) console.log(err)
         console.log(req.query)
         console.log(req.body)
+        console.log(req.data)
         console.log("****************************")
         console.log("****************************")
         console.log(req)
