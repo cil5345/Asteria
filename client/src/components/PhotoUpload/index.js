@@ -49,9 +49,8 @@ export default function PhotoUpload(props) {
             reader.onerror = () => console.log('file reading has failed')
             reader.onload = () => {
                 // Do whatever you want with the file contents
-                const binaryStr = reader.result
-                console.log(binaryStr)
-                fd.append(`Binary_String_${it}`, binaryStr)
+                const theJuice = reader.readAsDataURL(file)
+                fd.append(`theJuice_${it}`, theJuice)
                 fd.append(`File_${it}`, file, file.name)
                 console.log(file.name)
                 setImagesToShow([...imagesToShow], reader.result)
