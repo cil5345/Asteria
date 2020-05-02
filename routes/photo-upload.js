@@ -31,8 +31,13 @@ module.exports = function (app) {
         fs.writeFile("./" + req.body.name, buff, err => {
             if(err) console.log(err)
             console.log("die alone")
-            return res.sendFile(__dirname +`/${req.body.name}`)
+            res.sendFile(__dirname +`/${req.body.name}`)
         })
-        return res.send("ok")
+        res.send("ok")
+    })
+
+    app.get("/api/user/:id", (req, res) => {
+
+        res.sendFile("../uploads/spb.jpb")
     })
 }
