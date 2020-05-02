@@ -36,7 +36,7 @@ export default function PhotoUpload(props) {
     ));
 
 
-    const handleUpload = () => {
+    const handleUpload = async () => {
 
         var fd = new FormData()
 
@@ -63,7 +63,7 @@ export default function PhotoUpload(props) {
 
         console.log(fd)
 
-        uploadPhoto(sessionStorage.getItem("fb_ID"), fd)
+        await uploadPhoto(sessionStorage.getItem("fb_ID"), fd)
             .then(data => console.log(data))
             .catch(err => console.log(err))
     }
