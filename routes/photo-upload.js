@@ -38,7 +38,7 @@ module.exports = function (app) {
         console.log(req.data)
         console.log("****************************")
         console.log("****************************")
-        console.log(req)
+        // console.log(req)
         console.log(req.formData)
         //console.log(req.params)//just id: value
 
