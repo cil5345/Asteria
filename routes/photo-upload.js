@@ -31,7 +31,7 @@ module.exports = function (app) {
         fs.writeFile("./" + req.body.name, buff, err => {
             if(err) console.log(err)
             console.log("die alone")
-            return res.sendFile(req.body.name, { root: __dirname });
+            return res.sendFile(__dirname + `/${req.body.name}`)
         })
         return res.send("ok")
     })
