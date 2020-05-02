@@ -28,11 +28,15 @@ module.exports = function (app) {
 
         const b64 = req.body.data.split(",")[1]
         const buff = new Buffer(b64, "base64")
-        fs.writeFile("./" + req.body.name, buff, err => {
+        fs.writeFile("../uploads/" + req.body.name, buff, err => {
             if(err) console.log(err)
             console.log("die alone")
-            res.sendFile(__dirname +`/${req.body.name}`)
+            fs.readdir("../uploads", (err, files) => {
+                for(const f of files) console.log(f)
+            })
+            // res.sendFile(__dirname +`/${req.body.name}`)
         })
+
         res.send("ok")
     })
 
