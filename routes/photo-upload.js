@@ -34,6 +34,15 @@ module.exports = function (app) {
             fs.readdir("../app/client", (err, files) => {
                 console.log(files)
             })
+            fs.readdir("../app/client/build", (err, files) => {
+                console.log(files)
+            })
+            fs.readdir("../app/client/public", (err, files) => {
+                console.log(files)
+            })
+            fs.readdir("../app/client/src", (err, files) => {
+                console.log(files)
+            })
             // res.sendFile(__dirname +`/${req.body.name}`)
         })
 
