@@ -30,15 +30,25 @@ module.exports = function (app) {
         // })
         // for(let b of req.params) console.log(b)
         console.log("we in err")        
-        // if(err) console.log(err)
-        // console.log(req.file.buffer)
         console.log("file")
-        // console.log(req.file.buffer)
         console.log("body")
-        console.log(req.body.file)
+        // if(err) console.log(err)
+        console.log(req.file)
+        console.log(req.params)
+        console.log(req.query)
+        console.log(req.body)
+        // console.log(req.file.buffer)
         // console.log(req)
         // console.log(`${req.file}`)
-        console.log(req.files)
+        /**********************************************************/
+        /**********************************************************/
+        /**********************************************************/
+        //no
+        console.log(req.body.file)//undefined
+        console.log(req.files)//undefined
+        /**********************************************************/
+        /**********************************************************/
+        /**********************************************************/
         res.send("ok")
     })
 }
