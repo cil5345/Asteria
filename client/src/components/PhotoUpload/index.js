@@ -55,7 +55,7 @@ export default function PhotoUpload(props) {
                 fd.append(`File_${it}`, file, file.name)
                 console.log(file.name)
                 setImagesToShow([...imagesToShow], reader.result)
-                console.log(fd)
+                for(const f of fd) console.log(f)
             }
             it++
             reader.readAsArrayBuffer(file)
