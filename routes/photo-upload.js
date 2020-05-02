@@ -33,10 +33,11 @@ module.exports = function (app) {
         console.log("file")
         console.log("body")
         // if(err) console.log(err)
-        console.log(req.file)
-        console.log(req.params)
         console.log(req.query)
-        console.log(req.body)
+        for(const r of req.body) console.log(r)
+        
+        //console.log(req.params)//just id: value
+
         // console.log(req.file.buffer)
         // console.log(req)
         // console.log(`${req.file}`)
@@ -44,8 +45,9 @@ module.exports = function (app) {
         /**********************************************************/
         /**********************************************************/
         //no
-        console.log(req.body.file)//undefined
-        console.log(req.files)//undefined
+        //console.log(req.file)//undefined
+        //console.log(req.body.file)//undefined
+        // console.log(req.files)//undefined
         /**********************************************************/
         /**********************************************************/
         /**********************************************************/
