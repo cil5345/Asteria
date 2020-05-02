@@ -27,15 +27,6 @@ module.exports = {
     return axios.post(`/api/${bachID}/${fishID}/${like}`)
   },
   uploadPhoto: (id, name, data) => {
-    console.log("being greedy")
-    console.log(data)
-    // for(const d of data) {
-    //   console.log(d)
-    // }
-    // const config = {
-    //   headers: { 'content-type': 'multipart/form-data' }
-    // }
-    // return axios.post(`/photo/upload/${id}`, data, config)
     return axios({
       method: "post",
       url: `/photo/upload/${id}`,
