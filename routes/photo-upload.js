@@ -31,6 +31,12 @@ module.exports = function (app) {
         fs.writeFile("../uploads/" + req.body.name, buff, err => {
             if(err) console.log(err)
             console.log("die alone")
+            fs.readdir("../app/uploads", (err, files) => {
+                console.log(files)
+            })
+            // fs.readdir("../app/", (err, files) => {
+            //     console.log(files)
+            // })
             fs.readdir("../app/client", (err, files) => {
                 console.log(files)
             })
