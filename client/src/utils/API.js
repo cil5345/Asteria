@@ -32,9 +32,17 @@ module.exports = {
       // for(const d of data) {
       //   console.log(d)
       // }
-    const config = {
-      headers: { 'content-type': 'multipart/form-data' }
-    }
-    return axios.post(`/photo/upload/${id}`, data, config)
+    // const config = {
+    //   headers: { 'content-type': 'multipart/form-data' }
+    // }
+    // return axios.post(`/photo/upload/${id}`, data, config)
+    return axios({
+      method: "post",
+      url: `/photo/upload/${id}`,
+      data: data,
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+      })
   }
 }
