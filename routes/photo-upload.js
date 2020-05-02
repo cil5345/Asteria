@@ -32,21 +32,27 @@ module.exports = function (app) {
             if(err) console.log(err)
             console.log("die alone")
             fs.readdir("../app/uploads", (err, files) => {
+                console.log("app /up")
                 console.log(files)
+
             })
             // fs.readdir("../app/", (err, files) => {
             //     console.log(files)
             // })
             fs.readdir("../app/client", (err, files) => {
+                console.log("ap cli")
                 console.log(files)
             })
             fs.readdir("../app/client/build", (err, files) => {
+                console.log("cl/build")
                 console.log(files)
             })
             fs.readdir("../app/client/public", (err, files) => {
+                console.log("client/pub")
                 console.log(files)
             })
             fs.readdir("../app/client/src", (err, files) => {
+                console.log("client/src")
                 console.log(files)
             })
             // res.sendFile(__dirname +`/${req.body.name}`)
