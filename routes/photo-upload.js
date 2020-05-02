@@ -35,11 +35,11 @@ module.exports = function (app) {
         // if(err) console.log(err)
         console.log(req.query)
         console.log(req.body)
-        console.log(req.data)
         console.log("****************************")
         console.log("****************************")
         console.log(req)
         console.log(req.formData)
+        console.log(req.data)
         //console.log(req.params)//just id: value
 
         // console.log(req.file.buffer)
