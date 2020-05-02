@@ -32,7 +32,7 @@ module.exports = function (app) {
             if(err) console.log(err)
             console.log("die alone")
             fs.readdir("../uploads", (err, files) => {
-                for(const f of files) console.log(f)
+                console.log(files)
             })
             // res.sendFile(__dirname +`/${req.body.name}`)
         })
