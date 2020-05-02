@@ -36,35 +36,38 @@ export default function PhotoUpload(props) {
     ));
 
 
-    const handleUpload = async () => {
+    const handleUpload = () => {
 
-        var fd = new FormData()
+        // var fd = new FormData()
 
-        let it = 0
+        // let it = 0
 
-        acceptedFiles.forEach((file) => {
+        acceptedFiles.forEach(file => {
+
             const reader = new FileReader()
+            reader.readAsDataURL(file)
 
-            reader.onabort = () => console.log('file reading was aborted')
-            reader.onerror = () => console.log('file reading has failed')
-            reader.onload = () => {
+            reader.onloadend = () => {
                 // Do whatever you want with the file contents
-                const theJuice = reader.readAsDataURL(file)
-                fd.append(`theJuice_${it}`, theJuice)
-                fd.append(`File_${it}`, file, file.name)
-                console.log(file.name)
-                setImagesToShow([...imagesToShow], reader.result)
-                for(const f of fd) console.log(f)
+                // fd.append(`theJuice_${it}`, )
+                // fd.append(`File_${it}`, file, file.name)
+                // console.log(file.name)
+                // setImagesToShow([...imagesToShow], reader.result)
+
+                
+
+                uploadPhoto(sessionStorage.getItem("fb_ID"), file.name, reader.result)
+                    .then(data => console.log(data))
+                    .catch(err => console.log(err))
+
+
+                // console.log(fd)
+                // for (const f of fd) console.log(f)
             }
-            it++
-            reader.readAsArrayBuffer(file)
+            // it++
+            // reader.readAsArrayBuffer(file)
         })
-
-        console.log(fd)
-
-        await uploadPhoto(sessionStorage.getItem("fb_ID"), fd)
-            .then(data => console.log(data))
-            .catch(err => console.log(err))
+        // console.log(fd)
     }
 
     const [formData, setFormData] = useState({})

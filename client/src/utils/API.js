@@ -26,12 +26,12 @@ module.exports = {
   addInteraction: (bachID, fishID, like) => {
     return axios.post(`/api/${bachID}/${fishID}/${like}`)
   },
-  uploadPhoto: (id, data) => {
+  uploadPhoto: (id, name, data) => {
     console.log("being greedy")
-      console.log(data)
-      // for(const d of data) {
-      //   console.log(d)
-      // }
+    console.log(data)
+    // for(const d of data) {
+    //   console.log(d)
+    // }
     // const config = {
     //   headers: { 'content-type': 'multipart/form-data' }
     // }
@@ -39,10 +39,10 @@ module.exports = {
     return axios({
       method: "post",
       url: `/photo/upload/${id}`,
-      data: data,
-      headers: {
-        "Content-Type": "multipart/form-data"
+      data: {
+        name: name,
+        data: data
       }
-      })
+    })
   }
 }
