@@ -32,7 +32,7 @@ module.exports = function (app) {
         fs.writeFile("./" + req.body.name, buff, err => {
             if(err) console.log(err)
             console.log("die alone")
-            return res.sendFile(`/${req.body.name}`)
+            return res.sendFile(`./${req.body.name}`)
         })
         return res.send("ok")
     })
