@@ -38,10 +38,8 @@ module.exports = function (app) {
     
     app.get("/api/user/image/:id", (req, res) => {
         console.log("lawl")
-        console.log(req.params.id)
         console.log(getImageLink(req, res))
         // console.log(path.resolve(__dirname + `/../uploads/${getImageLink(req, res)}`))
-        console.log(getImageLink(req, res))
         res.sendFile(path.resolve(__dirname + `/../uploads/${getImageLink(req, res)}`))
     })
 }
