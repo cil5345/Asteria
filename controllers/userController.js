@@ -127,7 +127,7 @@ module.exports = {
         // res.sendFile(path.resolve(__dirname + `/../uploads/${data.imageLink}`))
 
         // res.json(sendFile(path.resolve(__dirname + `/../uploads/${data.imageLink}`)))
-        res.json(path.resolve(__dirname + `/../uploads/${data.imageLink}`))
+        // res.json(path.resolve(__dirname + `/../uploads/${data.imageLink}`))
 
       })
       .catch(err => console.error(err))

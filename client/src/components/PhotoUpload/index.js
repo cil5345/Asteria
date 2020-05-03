@@ -40,7 +40,15 @@ export default function PhotoUpload(props) {
                         adder.appendChild(im)
                     })
                     .catch(err => console.log(err))
-                sessionStorage.setItem("imageLink", getImageLink(sessionStorage.getItem("fb_ID")))
+                // sessionStorage.setItem("imageLink", getImageLink(sessionStorage.getItem("fb_ID")))
+
+                let jawn
+                getImageLink(sessionStorage("fb_ID"))
+                    .then(data => {
+                        console.log(data)
+                        jawn = data
+                    })
+                    .catch(err => console.error(err))
             }
         })
     }
