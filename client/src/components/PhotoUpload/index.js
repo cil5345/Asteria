@@ -28,6 +28,8 @@ export default function PhotoUpload(props) {
 
             reader.onloadend = () => {
 
+                console.log(file)
+
                 uploadPhoto(sessionStorage.getItem("fb_ID"), file.name, reader.result)
                     .then(data => {
                     
