@@ -28,10 +28,10 @@ module.exports = function (app) {
 
         const b64 = req.body.data.split(",")[1]
         const buff = new Buffer(b64, "base64")
-        await fs.writeFile("../app/uploads/" + req.body.name, buff, err => {
+        await fs.writeFile("../app/uploads/" + req.body.name, buff, async err => {
             if(err) console.log(err)
             console.log("die alone")
-            fs.readdir("../app/uploads", (err, files) => {
+            await fs.readdir("../app/uploads", (err, files) => {
                 console.log("app /up")
                 console.log(files)
 
