@@ -41,6 +41,6 @@ module.exports = function (app) {
         console.log(__dirname + `/../uploads/${req.params.image}`)
 
 
-        res.sendFile(__dirname + `/../uploads/${req.params.image}`)
+        res.sendFile(path.resolve(__dirname + `/../uploads/${req.params.image}`))
     })
 }
