@@ -36,12 +36,6 @@ module.exports = function (app) {
     
     app.get("/api/user/:image", async (req, res) => {
 
-
-        fs.readdirSync(__dirname + `/../uploads/${req.params.image}`, (err, files) => {
-            console.log("leslee files schols")
-            console.log(files)
-        })
-
         res.sendFile(path.resolve(__dirname + `/../uploads/${req.params.image}`))
     })
 }
