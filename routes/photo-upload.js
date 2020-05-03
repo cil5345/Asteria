@@ -36,6 +36,7 @@ module.exports = function (app) {
                 console.log(files)
 
             })
+            console.log(__dirname + `../app/uploads/${req.body.name}`)
             res.sendFile(__dirname + `../app/uploads/${req.body.name}`)
         })
 
