@@ -121,7 +121,7 @@ module.exports = {
     db.User.findOne({ fb_ID: req.params.image })
       .then(data => {
         
-        console.log(__dirname + `/../uploads/${req.params.image}`)
+        console.log(__dirname + `/../uploads/${req.params.  image}`)
         // res.sendFile(path.resolve(__dirname + `/../uploads/${data.imageLink}`))
 
         res.sendFile(__dirname + `/../uploads/${req.params.image}`)

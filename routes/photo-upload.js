@@ -28,6 +28,9 @@ module.exports = function (app) {
                 console.log("app /up")
                 console.log(files)
             })
+            fs.readFile(__dirname + `/../uploads/${data.imageLink}`, (err ,data) => {
+                console.log(data)
+            })
         updateImageLink(req, res)
         })
         //add bs res if we get error for no res
