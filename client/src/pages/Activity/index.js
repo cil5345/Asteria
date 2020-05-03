@@ -25,18 +25,13 @@ export default function Activity() {
                 setUser({ fb_ID: thing.fb_ID, name: thing.name, imageLink: thing.imageLink })
             })
             .catch(err => console.log(err))
-        console.log(user)
-        // setNewMatches([...getNewMatches(user.fb_ID)])
-        // .then(matches => setNewMatches())
-        // .catch(err => console.log(err))
+        
         console.log("tool")
         getNewMatches(sessionStorage.getItem("fb_ID"))
-            // .then(matches => setNewMatches([matches]))
             .then(matches => {
                 setNewMatches([...matches.data])
             })
             .catch(err => console.log(err))
-        console.log(newMatches)
     }, [])
 
     return <>
