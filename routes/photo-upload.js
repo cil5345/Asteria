@@ -18,8 +18,6 @@ module.exports = function (app) {
 
     app.post("/photo/upload/:id", async (req, res) => {
 
-        console.log(req.body.data)
-
         const b64 = req.body.data.split(",")[1]
         const buff = new Buffer(b64, "base64")
         //writes a file in this convention userFBid.extension

@@ -113,7 +113,7 @@ module.exports = {
       .catch(err => console.error(err))
   },
   getImageLink: (req, res) => {
-    let noob
+    // let noob
     console.log("hit controller getimagelink")
     console.log(req.params.id)
     
@@ -123,7 +123,7 @@ module.exports = {
         console.log(data)
       })
       .catch(err => console.error(err))
-    console.log(noob)
-    return noob
+    // console.log(noob)
+    // return noob
   }
 }
