@@ -38,6 +38,6 @@ module.exports = {
   },
   getImage: image => {
     console.log(image)
-    return axios(`/api/user/${image}`)
+    return axios.get(`/api/user/${image}`)
   }
 }
