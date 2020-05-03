@@ -1,4 +1,4 @@
-import { updateImageLink, getImageLink } from "../controllers/userController"
+const { updateImageLink, getImageLink } = require("../controllers/userController")
 const multer = require("multer")
 const path = require("path")
 const fs = require("fs")
