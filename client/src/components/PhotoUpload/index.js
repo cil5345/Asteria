@@ -26,7 +26,7 @@ export default function PhotoUpload(props) {
             const reader = new FileReader()
             reader.readAsDataURL(file)
 
-            reader.onloadend = async () => {
+            reader.onloadend = () => {
 
                 const ext = file.name.substring(file.name.lastIndexOf(".") + 1 , file.name.length)
                 console.log(ext)
@@ -44,9 +44,11 @@ export default function PhotoUpload(props) {
 
                 const im = sessionStorage.getItem("imageLink")
 
-                console.log(await im.substring(im.lastIndexOf("/") + 1, im.length))
+                console.log(im)
 
-                const fds = await im.substring(im.lastIndexOf("/") + 1, im.length)
+                console.log(im.substring(im.lastIndexOf("/") + 1, im.length))
+
+                const fds = im.substring(im.lastIndexOf("/") + 1, im.length)
 
                 console.log(fds)
                 let jawn
