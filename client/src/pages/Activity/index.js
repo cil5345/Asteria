@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { getOneUser, getNewMatches } from "../../utils/API"
 import Header from "../../components/Header/Header"
 import PhotoUpload from "../../components/PhotoUpload"
+import { storeInSession } from "../../utils/sessionController"
 import "./style.css"
 
 export default function Activity() {
@@ -20,6 +21,7 @@ export default function Activity() {
         getOneUser(sessionStorage.getItem("fb_ID"))
             .then(u => {
                 console.log(u.data)
+                storeInSession(u.data)
                 console.log(u.data.fb_ID)
                 const thing = u.data
                 setUser({ fb_ID: thing.fb_ID, name: thing.name, imageLink: thing.imageLink })
