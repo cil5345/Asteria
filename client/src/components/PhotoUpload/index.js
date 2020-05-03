@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useDropzone } from 'react-dropzone';
 import "./style.css"
-import { uploadPhoto, getImageLink } from "../../utils/API"
+import { uploadPhoto, getImage } from "../../utils/API"
 
 export default function PhotoUpload(props) {
 
@@ -43,7 +43,7 @@ export default function PhotoUpload(props) {
                 // sessionStorage.setItem("imageLink", getImageLink(sessionStorage.getItem("fb_ID")))
 
                 let jawn
-                getImageLink(sessionStorage.getItem("fb_ID"))
+                getImage(sessionStorage.getItem("fb_ID"))
                     .then(data => {
                         console.log(data)
                         jawn = data
