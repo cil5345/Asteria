@@ -43,7 +43,7 @@ export default function PhotoUpload(props) {
                 sessionStorage.setItem("imageLink", getImage(sessionStorage.getItem("fb_ID")))
 
                 let jawn
-                getImage(sessionStorage.getItem("fb_ID"))
+                getImage(sessionStorage.getItem("imageLink").substring(sessionStorage.getItem("imageLink").lastIndexOf(".") + 1, sessionStorage.getItem("imageLink").length))
                     .then(data => {
                         console.log(data)
                         jawn = data
