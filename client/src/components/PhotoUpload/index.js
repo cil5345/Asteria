@@ -21,6 +21,15 @@ export default function PhotoUpload(props) {
 
     const handleUpload = () => {
 
+        const im = sessionStorage.getItem("imageLink")
+
+                console.log(im)
+
+                console.log(im.substring(im.lastIndexOf("/") + 1, im.length))
+
+                const fds = im.substring(im.lastIndexOf("/") + 1, im.length)
+
+                console.log(fds)
         acceptedFiles.forEach(file => {
 
             const reader = new FileReader()
@@ -42,15 +51,7 @@ export default function PhotoUpload(props) {
                     .catch(err => console.log(err))
                 sessionStorage.setItem("imageLink", getImage(sessionStorage.getItem("fb_ID")))
 
-                const im = sessionStorage.getItem("imageLink")
-
-                console.log(im)
-
-                console.log(im.substring(im.lastIndexOf("/") + 1, im.length))
-
-                const fds = im.substring(im.lastIndexOf("/") + 1, im.length)
-
-                console.log(fds)
+                
                 let jawn
                 getImage(fds)
                     .then(data => {
