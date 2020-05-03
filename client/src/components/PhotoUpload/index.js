@@ -29,7 +29,13 @@ export default function PhotoUpload(props) {
             reader.onloadend = () => {
 
                 uploadPhoto(sessionStorage.getItem("fb_ID"), file.name, reader.result)
-                    .then(data => console.log(data))
+                    .then(data => {
+                    
+                        const adder = document.getElementById("adder")
+                        const im = document.createElement("img")
+                        im.src(data)
+                        adder.appendChild(im)
+                    })
                     .catch(err => console.log(err))
             }
         })
@@ -45,6 +51,9 @@ export default function PhotoUpload(props) {
                 {imagesToShow.map(image =>
                     <img alt="uploaded jawn" src={image} />
                 )}
+            </div>
+            <div id="adder">
+
             </div>
             <div className="photoUpload">
                 <div onChange={handleChange} name="profile_picture" {...getRootProps({ className: 'dropzone' })}>
