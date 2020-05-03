@@ -34,9 +34,11 @@ module.exports = function (app) {
         res.send("ok")
     })
     
-    app.get("/api/user/image/:id", (req, res) => {
+    app.get("/api/user/image/:id", async (req, res) => {
         console.log("lawl")
-        console.log(getImageLink(req, res))
+        // console.log(getImageLink(req, res))
+        const jawn = await getImageLink(req, res)
+        console.log(jawn)
         // console.log(path.resolve(__dirname + `/../uploads/${getImageLink(req, res)}`))
         res.sendFile(path.resolve(__dirname + `/../uploads/${getImageLink(req, res)}`))
     })
