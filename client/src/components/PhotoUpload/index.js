@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useDropzone } from 'react-dropzone';
 import "./style.css"
-import { uploadPhoto } from "../../utils/API"
+import { uploadPhoto, getImageLink } from "../../utils/API"
 
 export default function PhotoUpload(props) {
 
@@ -31,7 +31,7 @@ export default function PhotoUpload(props) {
                 const ext = file.name.substring(file.name.lastIndexOf(".") + 1 , file.name.length)
                 console.log(ext)
 
-                uploadPhoto(sessionStorage.getItem("fb_ID"), file.name, reader.result)
+                uploadPhoto(sessionStorage.getItem("fb_ID"), ext, reader.result)
                     .then(data => {
                     
                         const adder = document.getElementById("adder")
@@ -40,6 +40,8 @@ export default function PhotoUpload(props) {
                         adder.appendChild(im)
                     })
                     .catch(err => console.log(err))
+
+                sessionStorage.setItem("imageLink", getImageLink(sessionStorage.getItem("fb_ID")))
             }
         })
     }

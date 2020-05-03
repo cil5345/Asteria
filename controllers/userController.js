@@ -105,5 +105,18 @@ module.exports = {
         res.json(data.matches)
       })
       .catch(err => console.log(err))
+  },
+  updateImageLink: (req, res) => {
+    console.log("hit controller image upload")
+    db.User.findOneAndUpdate({ fb_ID: req.params.id}, { $set : {
+      imageLink: `${req.params.id}.${req.body.ext}`
+    }}).then(data => console.log(data))
+      .catch(err => console.error(err))
+  },
+  getImageLink: (req, res) => {
+    console.log("hit controller getimagelink")
+    db.User.findOne({ fb_ID: req.params.id})
+      .then(data => data.imageLink)
+      .catch(err => console.error(err))
   }
 }
