@@ -116,7 +116,7 @@ module.exports = {
     let noob
     console.log("hit controller getimagelink")
     db.User.findOne({ fb_ID: req.params.id })
-      .then(data => noob = data.imageLink)
+      .then(data => noob = data)
       .catch(err => console.error(err))
       console.log(noob)
       return noob
