@@ -16,7 +16,7 @@ export default function Activity() {
 
     useEffect(() => {
         setImageLink(sessionStorage.getItem("imageLink"))
-
+        console.log("two brothers")
         getOneUser(sessionStorage.getItem("fb_ID"))
             .then(u => {
                 console.log(u.data)
