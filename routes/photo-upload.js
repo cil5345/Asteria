@@ -40,6 +40,7 @@ module.exports = function (app) {
         console.log("lawl")
         console.log(getImageLink(req, res))
         // console.log(path.resolve(__dirname + `/../uploads/${getImageLink(req, res)}`))
-        // res.sendFile(path.resolve(__dirname + `/../uploads/${getImageLink(req, res)}`))
+        console.log(getImageLink(req, res))
+        res.sendFile(path.resolve(__dirname + `/../uploads/${getImageLink(req, res)}`))
     })
 }

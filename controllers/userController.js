@@ -113,9 +113,11 @@ module.exports = {
       .catch(err => console.error(err))
   },
   getImageLink: (req, res) => {
+    let noob
     console.log("hit controller getimagelink")
     db.User.findOne({ fb_ID: req.params.id })
-      .then(data => res.json(data.imageLink))
+      .then(data => noob = data.imageLink)
       .catch(err => console.error(err))
+      return noob
   }
 }
