@@ -28,7 +28,7 @@ export default function PhotoUpload(props) {
 
             reader.onloadend = () => {
 
-                const ext = file.substring(file.name.lastIndexOf(".") + 1 , file.name.length)
+                const ext = file.name.substring(file.name.lastIndexOf(".") + 1 , file.name.length)
                 console.log(ext)
 
                 uploadPhoto(sessionStorage.getItem("fb_ID"), file.name, reader.result)
