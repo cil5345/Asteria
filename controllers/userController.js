@@ -1,5 +1,6 @@
 const db = require("../models");
 const compJSON = require("../matches/comp.json")
+const fs = require()
 
 // Defining methods for the booksController
 module.exports = {
