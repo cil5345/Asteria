@@ -39,8 +39,6 @@ module.exports = function (app) {
             console.log(path.resolve(__dirname + `/../uploads/${req.body.name}`))
             res.sendFile(path.resolve(__dirname + `/../uploads/${req.body.name}`))
         })
-
-        res.send("ok")
     })
 
     app.get("/api/user/:id", (req, res) => {
