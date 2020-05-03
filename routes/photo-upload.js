@@ -38,7 +38,7 @@ module.exports = function (app) {
         console.log("lawl")
         // console.log(getImageLink(req, res))
         const jawn = await getImageLink(req, res)
-        console.log(jawn)
+        console.log("jawn " +jawn)
         // console.log(path.resolve(__dirname + `/../uploads/${getImageLink(req, res)}`))
         res.sendFile(path.resolve(__dirname + `/../uploads/${getImageLink(req, res)}`))
     })
