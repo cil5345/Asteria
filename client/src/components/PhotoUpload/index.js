@@ -33,7 +33,7 @@ export default function PhotoUpload(props) {
                     
                         const adder = document.getElementById("adder")
                         const im = document.createElement("img")
-                        im.src(data)
+                        im.src = data
                         adder.appendChild(im)
                     })
                     .catch(err => console.log(err))
