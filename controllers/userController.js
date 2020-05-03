@@ -110,7 +110,7 @@ module.exports = {
   },
   updateImageLink: (req, res) => {
     console.log("hit controller image upload")
-    db.User.findOneAndUpdate({ fb_ID: req.params.id}, { imageLink: `${req.params.id}.${req.body.ext}`})
+    db.User.findOneAndUpdate({ fb_ID: req.params.id}, { imageLink: `/api/user/${req.params.id}.${req.body.ext}`})
       .then(data => res.status(200))
       .catch(err => console.error(err))
   },
@@ -119,13 +119,13 @@ module.exports = {
     console.log("hit controller getimagelink")
     console.log(req.params.id)
     
-    db.User.findOne({ fb_ID: req.params.id })
+    db.User.findOne({ fb_ID: req.params.image })
       .then(data => {
-        console.log("sick")
-        console.log("sweet dreams" + data.imageLink)
-        console.log(__dirname + `/../uploads/${data.imageLink}`)
+        
+        console.log(__dirname + `/../uploads/${image}`)
         // res.sendFile(path.resolve(__dirname + `/../uploads/${data.imageLink}`))
 
+        res.sendFile(__dirname + `/../uploads/${image}`)
         // res.json(sendFile(path.resolve(__dirname + `/../uploads/${data.imageLink}`)))
         // res.json(path.resolve(__dirname + `/../uploads/${data.imageLink}`))
 

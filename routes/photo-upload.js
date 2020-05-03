@@ -34,8 +34,7 @@ module.exports = function (app) {
         res.send("ok")
     })
     
-    app.get("/api/user/image/:id", async (req, res) => {
-        console.log("lawl")
+    app.get("/api/user/:image", async (req, res) => {
         getImageLink(req, res)
     })
 }

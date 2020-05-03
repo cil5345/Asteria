@@ -36,7 +36,7 @@ module.exports = {
       }
     })
   },
-  getImageLink: id => {
-    return axios(`/api/user/image/${id}`)
+  getImageLink: image => {
+    return axios(`/api/user/${image}`)
   }
 }
