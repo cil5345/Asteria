@@ -121,11 +121,8 @@ module.exports = {
       .then(data => {
         console.log("sick")
         console.log("sweet dreams" + data.imageLink)
-        return data.imageLink
+        res.sendFile(path.resolve(__dirname + `/../uploads/${data.imageLink}`))
       })
       .catch(err => console.error(err))
-    // console.log(noob)
-    // return noob
-    // return data.imageLink
   }
 }
