@@ -19,7 +19,7 @@ const upload = multer({ storage: storage })//.single("photo")
 module.exports = function (app) {
 
     // app.post("/photo/upload/:id", upload.single("profile_picture"), (err, req, res, next) => {
-    app.post("/photo/upload/:id", (req, res) => {
+    app.post("/photo/upload/:id", async (req, res) => {
 
         console.log("we in err")        
         console.log(req.body.data)
@@ -28,7 +28,7 @@ module.exports = function (app) {
 
         const b64 = req.body.data.split(",")[1]
         const buff = new Buffer(b64, "base64")
-        fs.writeFile("../app/uploads/" + req.body.name, buff, err => {
+        await fs.writeFile("../app/uploads/" + req.body.name, buff, err => {
             if(err) console.log(err)
             console.log("die alone")
             fs.readdir("../app/uploads", (err, files) => {
@@ -36,26 +36,7 @@ module.exports = function (app) {
                 console.log(files)
 
             })
-            // fs.readdir("../app/", (err, files) => {
-            //     console.log(files)
-            // })
-            fs.readdir("../app/client", (err, files) => {
-                console.log("ap cli")
-                console.log(files)
-            })
-            fs.readdir("../app/client/build", (err, files) => {
-                console.log("cl/build")
-                console.log(files)
-            })
-            fs.readdir("../app/client/public", (err, files) => {
-                console.log("client/pub")
-                console.log(files)
-            })
-            fs.readdir("../app/client/src", (err, files) => {
-                console.log("client/src")
-                console.log(files)
-            })
-            res.sendFile(`../app/uploads/${req.body.name}`)
+            res.sendFile(__dirname + `../app/uploads/${req.body.name}`)
         })
 
         res.send("ok")
