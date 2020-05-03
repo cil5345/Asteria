@@ -28,10 +28,6 @@ module.exports = function (app) {
                 console.log("app /up")
                 console.log(files)
             })
-            fs.readFile(__dirname + `/../uploads/${req.params.id}.${req.body.ext}`, (err ,data) => {
-                if(err) console.error(err)
-                console.log(data)
-            })
         updateImageLink(req, res)
         })
         //add bs res if we get error for no res
@@ -39,6 +35,12 @@ module.exports = function (app) {
     })
     
     app.get("/api/user/:image", async (req, res) => {
-        getImageLink(req, res)
+
+        // getImageLink(req, res)
+
+        console.log(__dirname + `/../uploads/${req.params.image}`)
+
+
+        res.sendFile(__dirname + `/../uploads/${req.params.image}`)
     })
 }

@@ -114,21 +114,21 @@ module.exports = {
       .then(data => res.status(200))
       .catch(err => console.error(err))
   },
-  getImageLink: (req, res) => {
-    // let noob
-    console.log("hit controller getimagelink")
+  // getImageLink: (req, res) => {
+  //   // let noob
+  //   console.log("hit controller getimagelink")
     
-    db.User.findOne({ fb_ID: req.params.image })
-      .then(data => {
-        
-        console.log(__dirname + `/../uploads/${req.params.  image}`)
-        // res.sendFile(path.resolve(__dirname + `/../uploads/${data.imageLink}`))
+  //   db.User.findOne({ fb_ID: req.params.image })
+  //     .then(data => {
+  //       console.log()
+  //       console.log(__dirname + `/../uploads/${req.params.image}`)
+  //       // res.sendFile(path.resolve(__dirname + `/../uploads/${data.imageLink}`))
 
-        res.sendFile(__dirname + `/../uploads/${req.params.image}`)
-        // res.json(sendFile(path.resolve(__dirname + `/../uploads/${data.imageLink}`)))
-        // res.json(path.resolve(__dirname + `/../uploads/${data.imageLink}`))
+  //       res.sendFile(__dirname + `/../uploads/${req.params.image}`)
+  //       // res.json(sendFile(path.resolve(__dirname + `/../uploads/${data.imageLink}`)))
+  //       // res.json(path.resolve(__dirname + `/../uploads/${data.imageLink}`))
 
-      })
-      .catch(err => console.error(err))
-  }
+  //     })
+  //     .catch(err => console.error(err))
+  // }
 }
