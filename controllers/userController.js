@@ -118,6 +118,7 @@ module.exports = {
     db.User.findOne({ fb_ID: req.params.id })
       .then(data => noob = data.imageLink)
       .catch(err => console.error(err))
+      console.log(noob)
       return noob
   }
 }
