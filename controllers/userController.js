@@ -117,15 +117,14 @@ module.exports = {
   getImageLink: (req, res) => {
     // let noob
     console.log("hit controller getimagelink")
-    console.log(req.params.id)
     
     db.User.findOne({ fb_ID: req.params.image })
       .then(data => {
         
-        console.log(__dirname + `/../uploads/${image}`)
+        console.log(__dirname + `/../uploads/${req.params.image}`)
         // res.sendFile(path.resolve(__dirname + `/../uploads/${data.imageLink}`))
 
-        res.sendFile(__dirname + `/../uploads/${image}`)
+        res.sendFile(__dirname + `/../uploads/${req.params.image}`)
         // res.json(sendFile(path.resolve(__dirname + `/../uploads/${data.imageLink}`)))
         // res.json(path.resolve(__dirname + `/../uploads/${data.imageLink}`))
 
