@@ -33,6 +33,7 @@ module.exports = function (app) {
         updateImageLink(req, res)
         })
         //add bs res if we get error for no res
+        res.send("ok")
     })
     
     app.get("/api/user/image/:id", (req, res) => {
