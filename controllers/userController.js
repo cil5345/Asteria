@@ -109,17 +109,18 @@ module.exports = {
   updateImageLink: (req, res) => {
     console.log("hit controller image upload")
     db.User.findOneAndUpdate({ fb_ID: req.params.id}, { imageLink: `${req.params.id}.${req.body.ext}`})
-      .then(data => console.log(data))
+      .then(data => res.status(200))
       .catch(err => console.error(err))
   },
   getImageLink: (req, res) => {
     let noob
     console.log("hit controller getimagelink")
     console.log(req.params.id)
+    console.log("sick")
     db.User.findOne({ fb_ID: req.params.id })
       .then(data => console.log(data))
       .catch(err => console.error(err))
-      console.log(noob)
-      return noob
+    console.log(noob)
+    return noob
   }
 }
