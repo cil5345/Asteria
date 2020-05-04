@@ -11,24 +11,18 @@ export default function Activity() {
     const [user, setUser] = useState({})
     const [newMatches, setNewMatches] = useState([])
 
-    function change() {
-        alert("fkalf")
-    }
-
     useEffect(() => {
+
         setImageLink(sessionStorage.getItem("imageLink"))
-        console.log("two brothers")
+        
         getOneUser(sessionStorage.getItem("fb_ID"))
             .then(u => {
-                console.log(u.data)
                 storeInSession(u.data)
-                console.log(u.data.fb_ID)
-                const thing = u.data
-                setUser({ fb_ID: thing.fb_ID, name: thing.name, imageLink: thing.imageLink })
+                const userData = u.data
+                setUser({ fb_ID: userData.fb_ID, name: userData.name, imageLink: userData.imageLink })
             })
             .catch(err => console.log(err))
         
-        console.log("tool")
         getNewMatches(sessionStorage.getItem("fb_ID"))
             .then(matches => {
                 setNewMatches([...matches.data])

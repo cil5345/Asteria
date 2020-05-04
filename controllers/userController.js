@@ -91,9 +91,7 @@ module.exports = {
                     .catch(err => console.log(err))
                 }
               }
-              //end of then
             })
-        //end of if
         }
       res.json(data)
       })
@@ -106,29 +104,12 @@ module.exports = {
         console.log(data.matches)
         res.json(data.matches)
       })
-      .catch(err => console.log(err))
+      .catch(err => console.error(err))
   },
   updateImageLink: (req, res) => {
     console.log("hit controller image upload")
     db.User.findOneAndUpdate({ fb_ID: req.params.id}, { imageLink: `/api/user/${req.params.id}.${req.body.ext}`})
       .then(data => res.status(200))
       .catch(err => console.error(err))
-  }//,
-  // getImageLink: (req, res) => {
-  //   // let noob
-  //   console.log("hit controller getimagelink")
-    
-  //   db.User.findOne({ fb_ID: req.params.image })
-  //     .then(data => {
-  //       console.log()
-  //       console.log(__dirname + `/../uploads/${req.params.image}`)
-  //       // res.sendFile(path.resolve(__dirname + `/../uploads/${data.imageLink}`))
-
-  //       res.sendFile(__dirname + `/../uploads/${req.params.image}`)
-  //       // res.json(sendFile(path.resolve(__dirname + `/../uploads/${data.imageLink}`)))
-  //       // res.json(path.resolve(__dirname + `/../uploads/${data.imageLink}`))
-
-  //     })
-  //     .catch(err => console.error(err))
-  // }
+  }
 }

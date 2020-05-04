@@ -21,15 +21,7 @@ export default function PhotoUpload(props) {
 
     const handleUpload = () => {
 
-        const im = sessionStorage.getItem("imageLink")
 
-                console.log(im)
-
-                console.log(im.substring(im.lastIndexOf("/") + 1, im.length))
-
-                const fds = im.substring(im.lastIndexOf("/") + 1, im.length)
-
-                console.log(fds)
         acceptedFiles.forEach(file => {
 
             const reader = new FileReader()
@@ -50,22 +42,23 @@ export default function PhotoUpload(props) {
                     })
                     .catch(err => console.log(err))
                 sessionStorage.setItem("imageLink", getImage(sessionStorage.getItem("fb_ID")))
-
                 
-                let jawn
+                const im = sessionStorage.getItem("imageLink")
+
+                const fds = im.substring(im.lastIndexOf("/") + 1, im.length)
+
                 getImage(fds)
                     .then(data => {
                         console.log(data)
-                        jawn = data
                     })
                     .catch(err => console.error(err))
             }
         })
     }
 
-    const handleChange = () => {
-        console.log("im going through changes")
-    }
+    // const handleChange = () => {
+    //     console.log("im going through changes")
+    // }
 
     return (
         <>
