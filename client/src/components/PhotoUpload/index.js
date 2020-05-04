@@ -27,21 +27,23 @@ export default function PhotoUpload(props) {
             const reader = new FileReader()
             reader.readAsDataURL(file)
 
-            reader.onloadend = () => {
+            reader.onloadend = async () => {
 
-                const ext = file.name.substring(file.name.lastIndexOf(".") + 1 , file.name.length)
-                console.log(ext)
+                const extension = file.name.substring(file.name.lastIndexOf(".") + 1 , file.name.length)
+                console.log(extension)
 
-                uploadPhoto(sessionStorage.getItem("fb_ID"), ext, reader.result)
+                uploadPhoto(sessionStorage.getItem("fb_ID"), extension, reader.result)
                     .then(data => {
                     
-                        const adder = document.getElementById("adder")
-                        const im = document.createElement("img")
-                        im.src = data
-                        adder.appendChild(im)
+                        // const adder = document.getElementById("adder")
+                        // const im = document.createElement("img")
+                        // im.src = data
+                        // im.style.border = "pink solid 40px"
+                        // adder.appendChild(im)
+                        console.log("donezo")
                     })
                     .catch(err => console.log(err))
-                sessionStorage.setItem("imageLink", getImage(sessionStorage.getItem("fb_ID")))
+                await sessionStorage.setItem("imageLink", getImage(sessionStorage.getItem("fb_ID")))
                 
                 const im = sessionStorage.getItem("imageLink")
 
