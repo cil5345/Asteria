@@ -26,7 +26,7 @@ export default function PhotoUpload(props) {
 
         console.log("setting current image or setimagestoshow")
         
-    }, [setImagesToShow, setCurrentImage])
+    }, [imagesToShow, currentImage])
 
     const handleUpload = () => {
         console.log("clicked")
