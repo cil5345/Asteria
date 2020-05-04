@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { getOneUser, getNewMatches } from "../../utils/API"
 import Header from "../../components/Header/Header"
 import PhotoUpload from "../../components/PhotoUpload"
+import MatchedUser from "../../components/MatchedUser"
 import { storeInSession } from "../../utils/sessionController"
 import "./style.css"
 
@@ -36,13 +37,9 @@ export default function Activity() {
             <PhotoUpload />
         </div>
         <div id="matchesDiv">
-            {newMatches.map(match => (
-                <div className="match">
-                    <img alt={match.symbol} src={`/api/image/${match.symbol.toLowerCase()}`} />
-                    <img alt={match.name} src={match.imageLink} />
-                    <p>{match.name}</p>
-                </div>
-            ))}
+        {newMatches.map(match => (
+            <MatchedUser name={match.name} imageLink={match.imageLink} symbol={match.symbol} />
+        ))}
         </div>
     </>
 }

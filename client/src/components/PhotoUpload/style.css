@@ -1,12 +1,12 @@
-
 #current-image {
-  border: solid 13px #5f91ff;
+  border: solid 11px #5f91ff;
   border-top-right-radius: 14%;
   border-top-left-radius: 40%;
   border-bottom-right-radius: 45%;
   border-bottom-left-radius: 14%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 7.5%;
 }
 
 .choosen-photo-div {
@@ -31,4 +31,15 @@ aside {
   margin-left: 5px;
   margin-right: 5px;
   padding: 4px;
+}
+
+.photoUpload {
+  background-color: #5f91ff;
+  border-radius: 5%;
+  border: white thin solid;
+}
+
+.photoUpload * {
+  margin-bottom: 14px;
+  text-align: center;
 }

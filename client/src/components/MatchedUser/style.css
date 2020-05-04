@@ -1,0 +1,23 @@
+.match {
+    display: flex;
+    flex-direction: row;
+}
+
+.match * {
+    text-align: center;
+}
+
+.match:first-child {
+    flex-grow: 1;
+    border: solid green thin;
+}
+
+.match:nth-last-child(2) {
+    flex-grow: 1;
+    border: solid red thin;
+}
+
+.match:last-child {
+    flex-grow: 2;
+    border: solid yellow thin;
+}

@@ -17,20 +17,20 @@ export default function PhotoUpload(props) {
 
     const files = acceptedFiles.map(file =>{
 
-        let source
-        const reader = new FileReader()
+        // let source
+        // const reader = new FileReader()
 
-        reader.readAsDataURL(file)
+        // reader.readAsDataURL(file)
 
-        reader.onloadend = e => {
-            console.log("yippi")
-            // console.log(e.target.result)
-            source = e.target.result
-        }
+        // reader.onloadend = e => {
+        //     console.log("yippi")
+        //     // console.log(e.target.result)
+        //     source = e.target.result
+        // }
         return (
             <div className="choosen-photo-div" key={file.path}>
                 {file.name}
-                <img alt="Choosen Image" src={URL.createObjectURL(file)}/>
+                <img alt="Selected Pic" src={URL.createObjectURL(file)}/>
             </div>
         )    
     }) 
@@ -91,8 +91,7 @@ export default function PhotoUpload(props) {
                 </div>
                 <aside>
 
-                    {files.length ? <div id="files-div">{files}</div> : <h6>No photo choosen</h6>
-                    }
+                    {files.length ? <div id="files-div">{files}</div> : <h6>No photo choosen</h6>}
 
                 </aside>
             </div>
