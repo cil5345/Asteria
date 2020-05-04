@@ -42,7 +42,7 @@ export default function PhotoUpload(props) {
                         //ie /api/user/*fileName.ext*
                         const uploadedPhotoName = imLink.substring(imLink.lastIndexOf("/") + 1, imLink.length)
 
-                        setImagesToShow(uploadedPhotoName)
+                        setImagesToShow([...imagesToShow], getImage(uploadedPhotoName))
                         
                         console.log("donezo")
                     })
