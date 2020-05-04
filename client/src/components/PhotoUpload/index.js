@@ -46,13 +46,13 @@ export default function PhotoUpload(props) {
                         const uploadedPhotoName = imLink.substring(imLink.lastIndexOf("/") + 1, imLink.length)
 
                         // setImagesToShow([...imagesToShow], getImage(uploadedPhotoName))
-                        getImage(uploadedPhotoName)
-                            .then(img => {
-                                console.log(img)
-                                setCurrentImage(img)
-                            })
-                            .catch(err => console.error(err))
-
+                        // getImage(uploadedPhotoName)
+                        //     .then(img => {
+                        //         console.log(img)
+                        //         setCurrentImage(img)
+                        //     })
+                        //     .catch(err => console.error(err))
+                        setCurrentImage(`/api/user/${uploadedPhotoName}`)
                         console.log("donezo")
                     })
                     .catch(err => console.log(err))
