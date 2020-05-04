@@ -38,7 +38,7 @@ export default function PhotoUpload(props) {
                     .then(data => {
                         console.log(data.data)
                         //update imageLink in session with new imageLink
-                        sessionStorage.setItem("imageLink", data)
+                        sessionStorage.setItem("imageLink", data.data)
                         //get imageLink set as imLink
                         const imLink = sessionStorage.getItem("imageLink")
                         //get the end of it, we just want the file name
