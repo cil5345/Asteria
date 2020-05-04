@@ -46,7 +46,10 @@ export default function PhotoUpload(props) {
                         const uploadedPhotoName = imLink.substring(imLink.lastIndexOf("/") + 1, imLink.length)
 
                         // setImagesToShow([...imagesToShow], getImage(uploadedPhotoName))
-                        setCurrentImage(getImage(uploadedPhotoName))
+                        getImage(uploadedPhotoName)
+                            .then(data => setCurrentImage(data))
+                            .catch(err => console.error(err))
+                            
                         console.log("donezo")
                     })
                     .catch(err => console.log(err))
