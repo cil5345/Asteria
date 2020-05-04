@@ -1,20 +1,31 @@
 .match {
     display: flex;
     flex-direction: row;
+    border-radius: 50%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    max-height: 40%;
+    min-height: 100px;
+    width: 90%;
+    border: black solid thick;
 }
 
 .match * {
     text-align: center;
+    height: inherit;
 }
 
 .match *:first-child {
     width: 25%;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
     border: solid green thin;
 }
 
-.match *:nth-last-child(2) {
+.match *:nth-child(2) {
     width: 25%;
     border: solid red thin;
+    border-radius: 50%;
 }
 
 .match *:last-child {
