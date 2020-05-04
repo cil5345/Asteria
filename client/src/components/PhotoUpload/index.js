@@ -47,9 +47,12 @@ export default function PhotoUpload(props) {
 
                         // setImagesToShow([...imagesToShow], getImage(uploadedPhotoName))
                         getImage(uploadedPhotoName)
-                            .then(data => setCurrentImage(data))
+                            .then(data => {
+                                console.log(data)
+                                setCurrentImage(data.data)
+                            } )
                             .catch(err => console.error(err))
-                            
+
                         console.log("donezo")
                     })
                     .catch(err => console.log(err))
