@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+        display: none;
+}
+
 .successButton {
     background-color: #5f91ff;
     border-radius: 30px;

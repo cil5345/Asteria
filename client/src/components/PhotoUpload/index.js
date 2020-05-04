@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useDropzone } from 'react-dropzone';
 import "./style.css"
 import { uploadPhoto, getImage } from "../../utils/API"
@@ -20,6 +20,11 @@ export default function PhotoUpload(props) {
             {file.path} - {file.size} bytes
         </li>
     ));
+
+
+    useEffect(() => {
+
+    }, [setImagesToShow, setCurrentImage])
 
     const handleUpload = () => {
         console.log("clicked")
@@ -46,13 +51,6 @@ export default function PhotoUpload(props) {
                         //ie /api/user/*fileName.ext*
                         const uploadedPhotoName = imLink.substring(imLink.lastIndexOf("/") + 1, imLink.length)
 
-                        // setImagesToShow([...imagesToShow], getImage(uploadedPhotoName))
-                        // getImage(uploadedPhotoName)
-                        //     .then(img => {
-                        //         console.log(img)
-                        //         setCurrentImage(img)
-                        //     })
-                        //     .catch(err => console.error(err))
                         setCurrentImage(`/api/user/${uploadedPhotoName}`)
                         console.log("donezo")
                     })
@@ -60,6 +58,8 @@ export default function PhotoUpload(props) {
             }
         })
     }
+
+    
 
     const handleChange = () => {
         console.log("im going through changes")
