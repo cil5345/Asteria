@@ -47,13 +47,8 @@ export default function PhotoUpload(props) {
                         console.log(data.data)
                         //update imageLink in session with new imageLink
                         sessionStorage.setItem("imageLink", data.data)
-                        //get imageLink set as imLink
-                        const imLink = sessionStorage.getItem("imageLink")
-                        //get the end of it, we just want the file name
-                        //ie /api/user/*fileName.ext*
-                        const uploadedPhotoName = imLink.substring(imLink.lastIndexOf("/") + 1, imLink.length)
 
-                        setCurrentImage(`/api/user/${uploadedPhotoName}`)
+                        setCurrentImage(sessionStorage.getItem("imageLink"))
                         console.log("donezo")
                     })
                     .catch(err => console.log(err))
