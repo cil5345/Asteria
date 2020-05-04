@@ -7,17 +7,18 @@
     text-align: center;
 }
 
-.match:first-child {
+.match *:first-child {
     width: 25%;
     border: solid green thin;
 }
 
-.match:nth-last-child(2) {
+.match *:nth-last-child(2) {
     width: 25%;
     border: solid red thin;
 }
 
-.match:last-child {
+.match *:last-child {
     width: 50%;
+    vertical-align: middle;
     border: solid yellow thin;
 }
