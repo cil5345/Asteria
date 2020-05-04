@@ -5,9 +5,7 @@ import { uploadPhoto, getImage } from "../../utils/API"
 
 export default function PhotoUpload(props) {
 
-    const [imagesToShow, setImagesToShow] = useState([])
-
-    const [currentImage, setCurrentImage] = useState(sessionStorage.getItem("imageLink"))
+    const [currentImage, setCurrentImage] = useState(() => sessionStorage.getItem("imageLink"))
 
     const { getRootProps, getInputProps, open, acceptedFiles } = useDropzone({
         // Disable click and keydown behavior
@@ -17,16 +15,6 @@ export default function PhotoUpload(props) {
 
     const files = acceptedFiles.map(file =>{
 
-        // let source
-        // const reader = new FileReader()
-
-        // reader.readAsDataURL(file)
-
-        // reader.onloadend = e => {
-        //     console.log("yippi")
-        //     // console.log(e.target.result)
-        //     source = e.target.result
-        // }
         return (
             <div className="choosen-photo-div" key={file.path}>
                 {file.name}
@@ -68,8 +56,6 @@ export default function PhotoUpload(props) {
             }
         })
     }
-
-    
 
     const handleChange = () => {
         console.log("im going through changes")

@@ -32,7 +32,7 @@ export default function Activity() {
     }, [setUser])
 
     return <>
-        <Header />
+    <Header />
         <div id="div-pic">
             <PhotoUpload />
         </div>
