@@ -7,7 +7,7 @@ export default function PhotoUpload(props) {
 
     const [imagesToShow, setImagesToShow] = useState([])
 
-    const [ currentImage, setCurrentImage ] = useState(sessionStorage.getItem("imageLink"))
+    const [currentImage, setCurrentImage] = useState(sessionStorage.getItem("imageLink"))
 
     const { getRootProps, getInputProps, open, acceptedFiles } = useDropzone({
         // Disable click and keydown behavior
@@ -22,6 +22,7 @@ export default function PhotoUpload(props) {
     ));
 
     const handleUpload = () => {
+        console.log("clicked")
         //take files
         acceptedFiles.forEach(file => {
             //init reader then read the file

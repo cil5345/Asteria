@@ -28,7 +28,7 @@ export default function Activity() {
                 setNewMatches([...matches.data])
             })
             .catch(err => console.log(err))
-    }, [])
+    }, [setUser])
 
     return <>
         <Header />
