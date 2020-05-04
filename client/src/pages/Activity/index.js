@@ -37,9 +37,9 @@ export default function Activity() {
             <PhotoUpload />
         </div>
         <div id="matchesDiv">
-        {newMatches.map(match => (
+        {newMatches.length ? newMatches.map(match => (
             <MatchedUser name={match.name} imageLink={match.imageLink} symbol={match.symbol} />
-        ))}
+        )) : <h3>Sorry no new matches currently</h3>}
         </div>
     </>
 }
