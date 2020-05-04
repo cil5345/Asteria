@@ -13,6 +13,7 @@ export default function Activity() {
 
     useEffect(() => {
 
+        console.log(sessionStorage.getItem("imageLink"))
         setImageLink(sessionStorage.getItem("imageLink"))
         
         getOneUser(sessionStorage.getItem("fb_ID"))
@@ -28,7 +29,7 @@ export default function Activity() {
                 setNewMatches([...matches.data])
             })
             .catch(err => console.log(err))
-    }, [])
+    }, [user])
 
     return <>
         <Header />
