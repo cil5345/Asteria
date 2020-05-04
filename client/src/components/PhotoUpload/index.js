@@ -20,18 +20,18 @@ export default function PhotoUpload(props) {
     ));
 
     const handleUpload = () => {
-
-
+        //take files
         acceptedFiles.forEach(file => {
-
+            //init reader then read the file
             const reader = new FileReader()
+            //read out as base64
             reader.readAsDataURL(file)
-
+            //on the end of load
             reader.onloadend = async () => {
-
+                //get extension
                 const extension = file.name.substring(file.name.lastIndexOf(".") + 1 , file.name.length)
-                console.log(extension)
-
+                //send user id, file extension, and base64 encoding of image
+                //in order to write the file and change imageLink field
                 uploadPhoto(sessionStorage.getItem("fb_ID"), extension, reader.result)
                     .then(data => {
                     
