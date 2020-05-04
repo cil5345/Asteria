@@ -25,7 +25,7 @@ export default function PhotoUpload(props) {
     useEffect(() => {
 
         console.log("setting current image or setimagestoshow")
-
+        
     }, [setImagesToShow, setCurrentImage])
 
     const handleUpload = () => {
