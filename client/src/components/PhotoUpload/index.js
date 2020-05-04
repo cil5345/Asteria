@@ -29,31 +29,25 @@ export default function PhotoUpload(props) {
             //on the end of load
             reader.onloadend = async () => {
                 //get extension
-                const extension = file.name.substring(file.name.lastIndexOf(".") + 1 , file.name.length)
+                const extension = file.name.substring(file.name.lastIndexOf(".") + 1, file.name.length)
                 //send user id, file extension, and base64 encoding of image
                 //in order to write the file and change imageLink field
                 uploadPhoto(sessionStorage.getItem("fb_ID"), extension, reader.result)
                     .then(data => {
-                    
-                        // const adder = document.getElementById("adder")
-                        // const im = document.createElement("img")
-                        // im.src = data
-                        // im.style.border = "pink solid 40px"
-                        // adder.appendChild(im)
+                        //update imageLink in session with new imageLink
+                        sessionStorage.setItem("imageLink", data)
+                        //get imageLink set as imLink
+                        const imLink = sessionStorage.getItem("imageLink")
+                        //get the end of it, we just want the file name
+                        //ie /api/user/*fileName.ext*
+                        const uploadedPhotoName = imLink.substring(imLink.lastIndexOf("/") + 1, imLink.length)
+
+                        setImagesToShow(uploadedPhotoName)
+                        
                         console.log("donezo")
                     })
                     .catch(err => console.log(err))
-                await sessionStorage.setItem("imageLink", getImage(sessionStorage.getItem("fb_ID")))
-                
-                const im = sessionStorage.getItem("imageLink")
 
-                const fds = im.substring(im.lastIndexOf("/") + 1, im.length)
-
-                getImage(fds)
-                    .then(data => {
-                        console.log(data)
-                    })
-                    .catch(err => console.error(err))
             }
         })
     }

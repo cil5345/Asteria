@@ -37,6 +37,7 @@ module.exports = {
     })
   },
   getImage: image => {
+    console.log(sessionStorage.getItem("imageLink"))
     return axios.get(`/api/user/${image}`)
   }
 }
