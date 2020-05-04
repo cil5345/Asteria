@@ -98,12 +98,8 @@ module.exports = {
       .catch(err => console.log(err))
   },
   getNewMatches: (req, res) => {
-    console.log("hit user controller get new matches")
     db.User.findOne({ fb_ID: req.params.id })
-      .then(data => {
-        console.log(data.matches)
-        res.json(data.matches)
-      })
+      .then(data => res.json(data.matches))
       .catch(err => console.error(err))
   },
   updateImageLink: (req, res) => {

@@ -18,6 +18,7 @@ module.exports = function (app) {
     
     app.get("/api/user/:image", async (req, res) => {
 
+        console.log("oh boy here i go debugging again")
         res.sendFile(path.resolve(__dirname + `/../uploads/${req.params.image}`))
     })
 }
