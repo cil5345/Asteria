@@ -6,8 +6,7 @@ const MatchedUser = props => (
             <img alt={props.name} src={props.imageLink} />
             <div className="match-details-div">
                 <span>{props.name}</span>
-                <span>{props.gender}</span>
-                <span>{props.prefrence}</span>
+                <span>{props.symbol}</span>
             </div>
             <img alt={props.symbol} src={`/api/image/${props.symbol.toLowerCase()}`} />
     </div>
