@@ -16,10 +16,10 @@ export default function Activity() {
         setImageLink(sessionStorage.getItem("imageLink"))
         
         getOneUser(sessionStorage.getItem("fb_ID"))
-            .then(u => {
-                storeInSession(u.data)
+            .then(async u => {
+                await storeInSession(u.data)
                 const userData = u.data
-                setUser({ fb_ID: userData.fb_ID, name: userData.name, imageLink: userData.imageLink })
+                await setUser({ fb_ID: userData.fb_ID, name: userData.name, imageLink: userData.imageLink })
             })
             .catch(err => console.log(err))
         
