@@ -1,6 +1,10 @@
 
 #current-image {
-  border: solid 20px #5f91ff;
+  border: solid 13px #5f91ff;
+  border-top-right-radius: 14%;
+  border-top-left-radius: 40%;
+  border-bottom-right-radius: 45%;
+  border-bottom-left-radius: 14%;
   margin-left: auto;
   margin-right: auto;
 }
