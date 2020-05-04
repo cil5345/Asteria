@@ -56,9 +56,9 @@ export default function PhotoUpload(props) {
         })
     }
 
-    // const handleChange = () => {
-    //     console.log("im going through changes")
-    // }
+    const handleChange = () => {
+        console.log("im going through changes")
+    }
 
     return (
         <>
