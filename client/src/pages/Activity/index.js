@@ -32,15 +32,13 @@ export default function Activity() {
 
     return <>
         <Header />
-        {/* need a way to get details to matches */}
         <div id="div-pic">
             <PhotoUpload />
         </div>
-        <h1>High Horse</h1>
         <div id="matchesDiv">
             {newMatches.map(match => (
                 <div className="match">
-                    <p>{match.symbol}</p>
+                    <img alt={match.symbol} src={`/api/image/${match.symbol.toLowerCase()}`} />
                     <img alt={match.name} src={match.imageLink} />
                     <p>{match.name}</p>
                 </div>

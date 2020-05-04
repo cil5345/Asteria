@@ -1,15 +1,13 @@
 .photoUpload {
-    border: green solid thick;
+    background-color: #5f91ff;
+    border-radius: 5%;
+    border: white thin solid;
 }
 
 .dropzone {
     display: flex;
     flex-direction: column;
     text-align: center;
-}
-
-.hi {
-    border: green solid thin;
 }
 
 .photoUpload * {

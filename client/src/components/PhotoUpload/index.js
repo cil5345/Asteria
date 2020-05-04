@@ -15,12 +15,25 @@ export default function PhotoUpload(props) {
         noKeyboard: true
     });
 
-    const files = acceptedFiles.map(file => (
-        <li key={file.path}>
-            {file.path} - {file.size} bytes
-        </li>
-    ));
+    const files = acceptedFiles.map(file =>{
 
+        let source
+        const reader = new FileReader()
+
+        reader.readAsDataURL(file)
+
+        reader.onloadend = e => {
+            console.log("yippi")
+            // console.log(e.target.result)
+            source = e.target.result
+        }
+        return (
+            <div className="choosen-photo-div" key={file.path}>
+                {file.name}
+                <img alt="Choosen Image" src={URL.createObjectURL(file)}/>
+            </div>
+        )    
+    }) 
 
     useEffect(() => {
 
@@ -64,24 +77,23 @@ export default function PhotoUpload(props) {
 
     return (
         <>
-            <img alt="You" src={currentImage} />
-            <div>
-                {imagesToShow.map(image =>
-                    <img alt="uploaded jawn" src={image} />
-                )}
-            </div>
+            <img alt="You" id="current-image" src={currentImage} />
             <div className="photoUpload">
-                <div onChange={handleChange} name="profile_picture" {...getRootProps({ className: 'dropzone' })}>
+                <div className="derp" onChange={handleChange} {...getRootProps({ className: 'dropzone' })}>
                     <input {...getInputProps()} />
-                Drag 'n' drop some files here
+                <span>Drag 'n' drop some files here</span>
+                <div id="btn-div">
                 <button className="hi" onClick={open}>
-                        Open File Dialog
+                        Choose Image
                 </button>
-                    <button onClick={handleUpload}>Upload</button>
+                    <button onClick={handleUpload}>Upload Image</button>
+                </div>
                 </div>
                 <aside>
-                    <h4>Files</h4>
-                    <ul>{files}</ul>
+
+                    {files.length ? <div id="files-div">{files}</div> : <h6>No photo choosen</h6>
+                    }
+
                 </aside>
             </div>
         </>

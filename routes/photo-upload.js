@@ -26,4 +26,9 @@ module.exports = function (app) {
         console.log("oh boy here i go debugging again")
         res.sendFile(path.resolve(__dirname + `/../uploads/${req.params.image}`))
     })
+
+    app.get("/api/image/:sign", (req, res) => {
+
+        res.sendFile(path.resolve(__dirname + `/../sign-images/${req.params.sign}.png`))
+    })
 }
