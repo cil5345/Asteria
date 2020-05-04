@@ -16,10 +16,10 @@ export default function Activity() {
         setImageLink(sessionStorage.getItem("imageLink"))
         
         getOneUser(sessionStorage.getItem("fb_ID"))
-            .then(async u => {
-                await storeInSession(u.data)
+            .then(u => {
+                storeInSession(u.data)
                 const userData = u.data
-                await setUser({ fb_ID: userData.fb_ID, name: userData.name, imageLink: userData.imageLink })
+                setUser({ fb_ID: userData.fb_ID, name: userData.name, imageLink: userData.imageLink })
             })
             .catch(err => console.log(err))
         
@@ -34,7 +34,6 @@ export default function Activity() {
         <Header />
         {/* need a way to get details to matches */}
         <div id="div-pic">
-            <img alt="You" src={imageLink} />
             <PhotoUpload />
         </div>
         <h1>High Horse</h1>

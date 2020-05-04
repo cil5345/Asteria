@@ -7,6 +7,8 @@ export default function PhotoUpload(props) {
 
     const [imagesToShow, setImagesToShow] = useState([])
 
+    const [ currentImage, setCurrentImage ] = useState(sessionStorage.getItem("imageLink"))
+
     const { getRootProps, getInputProps, open, acceptedFiles } = useDropzone({
         // Disable click and keydown behavior
         noClick: true,
@@ -34,6 +36,7 @@ export default function PhotoUpload(props) {
                 //in order to write the file and change imageLink field
                 uploadPhoto(sessionStorage.getItem("fb_ID"), extension, reader.result)
                     .then(data => {
+                        console.log(data)
                         //update imageLink in session with new imageLink
                         sessionStorage.setItem("imageLink", data)
                         //get imageLink set as imLink
@@ -47,7 +50,6 @@ export default function PhotoUpload(props) {
                         console.log("donezo")
                     })
                     .catch(err => console.log(err))
-
             }
         })
     }
@@ -58,13 +60,11 @@ export default function PhotoUpload(props) {
 
     return (
         <>
+            <img alt="You" src={currentImage} />
             <div>
                 {imagesToShow.map(image =>
                     <img alt="uploaded jawn" src={image} />
                 )}
-            </div>
-            <div id="adder">
-
             </div>
             <div className="photoUpload">
                 <div onChange={handleChange} name="profile_picture" {...getRootProps({ className: 'dropzone' })}>

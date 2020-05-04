@@ -8,6 +8,7 @@ module.exports = {
         if(user.prefrence) sessionStorage.setItem("prefrence", user.prefrence)
         if(user.symbol) sessionStorage.setItem("symbol", user.symbol)
 
+        console.log(user)
         // if(user.fb_ID) console.log(sessionStorage.getItem("fb_ID"))
         // if(user.name) console.log(sessionStorage.getItem("name"))
         // if(user.imageLink) console.log(sessionStorage.getItem("imageLink"))
