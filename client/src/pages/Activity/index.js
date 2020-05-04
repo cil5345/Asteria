@@ -13,7 +13,6 @@ export default function Activity() {
 
     useEffect(() => {
 
-
         getOneUser(sessionStorage.getItem("fb_ID"))
             .then(u => {
                 storeInSession(u.data)
