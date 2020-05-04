@@ -36,7 +36,7 @@ export default function PhotoUpload(props) {
                 //in order to write the file and change imageLink field
                 uploadPhoto(sessionStorage.getItem("fb_ID"), extension, reader.result)
                     .then(data => {
-                        console.log(data)
+                        console.log(data.data)
                         //update imageLink in session with new imageLink
                         sessionStorage.setItem("imageLink", data)
                         //get imageLink set as imLink
