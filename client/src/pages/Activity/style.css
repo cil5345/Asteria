@@ -4,6 +4,10 @@
     border: white thin solid;
 }
 
+#div-pic {
+    text-align: center;
+}
+
 .dropzone {
     display: flex;
     flex-direction: column;
