@@ -18,18 +18,15 @@
 .match *:first-child {
     width: 25%;
     border-radius: 50%;
-    border: solid green thin;
     overflow: hidden;
 }
 
 .match *:nth-child(2) {
     width: 50%;
     vertical-align: middle;
-    border: solid yellow thin;
 }
 
 .match *:last-child {
     width: 25%;
-    border: solid red thin;
     border-radius: 50%;
 }
