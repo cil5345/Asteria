@@ -8,16 +8,16 @@
 }
 
 .match:first-child {
-    flex-grow: 1;
+    width: 25%;
     border: solid green thin;
 }
 
 .match:nth-last-child(2) {
-    flex-grow: 1;
+    width: 25%;
     border: solid red thin;
 }
 
 .match:last-child {
-    flex-grow: 2;
+    width: 50%;
     border: solid yellow thin;
 }

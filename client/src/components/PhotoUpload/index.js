@@ -79,16 +79,16 @@ export default function PhotoUpload(props) {
         <>
             <img alt="You" id="current-image" src={currentImage} />
             <div className="photoUpload">
-                <div className="derp" onChange={handleChange} {...getRootProps({ className: 'dropzone' })}>
+            <div className="derp" onChange={handleChange} {...getRootProps({ className: 'dropzone' })}>
                     <input {...getInputProps()} />
                 <span>Drag 'n' drop some files here</span>
                 <div id="btn-div">
-                <button className="hi" onClick={open}>
+                    <button className="hi" onClick={open}>
                         Choose Image
-                </button>
+                    </button>
                     <button onClick={handleUpload}>Upload Image</button>
                 </div>
-                </div>
+            </div>
                 <aside>
 
                     {files.length ? <div id="files-div">{files}</div> : <h6>No photo choosen</h6>}
