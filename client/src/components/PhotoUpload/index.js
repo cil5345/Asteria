@@ -24,7 +24,6 @@ export default function PhotoUpload(props) {
     }) 
 
     useEffect(() => {
-
         console.log("setting current image or setimagestoshow")
         setCurrentImage(sessionStorage.getItem("imageLink"))
     }, [currentImage])
@@ -45,13 +44,10 @@ export default function PhotoUpload(props) {
                 //in order to write the file and change imageLink field
                 uploadPhoto(sessionStorage.getItem("fb_ID"), extension, reader.result)
                     .then(data => {
-                        console.log(data.data)
                         //update imageLink in session with new imageLink
                         sessionStorage.setItem("imageLink", data.data)
-                        console.log("need to focus on my brand")
-                        console.log(sessionStorage.getItem("imageLink"))
+                        //update image to newly uploaded image
                         setCurrentImage(sessionStorage.getItem("imageLink"))
-                        console.log("donezo")
                     })
                     .catch(err => console.log(err))
             }
@@ -66,16 +62,16 @@ export default function PhotoUpload(props) {
         <>
             <img alt="You" id="current-image" src={currentImage} />
             <div className="photoUpload">
-            <div className="derp" onChange={handleChange} {...getRootProps({ className: 'dropzone' })}>
-                    <input {...getInputProps()} />
-                <span>Drag 'n' drop some files here</span>
-                <div id="btn-div">
-                    <button className="hi" onClick={open}>
-                        Choose Image
-                    </button>
-                    <button onClick={handleUpload}>Upload Image</button>
+                <div className="drop-area" onChange={handleChange} {...getRootProps({ className: 'dropzone' })}>
+                        <input {...getInputProps()} />
+                    <span>Drag 'n' drop some files here</span>
+                    <div id="btn-div">
+                        <button className="hi" onClick={open}>
+                            Choose Image
+                        </button>
+                        <button onClick={handleUpload}>Upload Image</button>
+                    </div>
                 </div>
-            </div>
                 <aside>
 
                     {files.length ? <div id="files-div">{files}</div> : <h6>No photo choosen</h6>}

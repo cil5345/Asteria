@@ -27,7 +27,6 @@ module.exports = {
     return axios.post(`/api/${bachID}/${fishID}/${like}`)
   },
   uploadPhoto: (id, ext, data) => {
-    console.log("no i do not want to see your pog collection")
     return axios({
       method: "post",
       url: `/photo/upload/${id}`,
@@ -38,7 +37,6 @@ module.exports = {
     })
   },
   getImage: image => {
-    console.log(sessionStorage.getItem("imageLink"))
     return axios.get(`/api/user/${image}`)
   }
 }
