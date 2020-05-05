@@ -5,7 +5,7 @@ import { uploadPhoto, getImage } from "../../utils/API"
 
 export default function PhotoUpload(props) {
 
-    const [currentImage, setCurrentImage] = useState(() => sessionStorage.getItem("imageLink"))
+    const [currentImage, setCurrentImage] = useState(props.imageLink)
 
     const { getRootProps, getInputProps, open, acceptedFiles } = useDropzone({
         // Disable click and keydown behavior
@@ -27,7 +27,7 @@ export default function PhotoUpload(props) {
 
         console.log("setting current image or setimagestoshow")
         
-    }, [currentImage, setCurrentImage])
+    }, [currentImage])
 
     const handleUpload = () => {
         console.log("clicked")
@@ -48,9 +48,10 @@ export default function PhotoUpload(props) {
                         console.log(data.data)
                         //update imageLink in session with new imageLink
                         sessionStorage.setItem("imageLink", data.data)
+                            .then(() => setCurrentImage(sessionStorage.getItem("imageLink")))
                         console.log("need to focus on my brand")
                     })
-                    .then(data => {
+                    .then(()=> {
                         setCurrentImage(sessionStorage.getItem("imageLink"))
                         console.log("donezo")
                     })

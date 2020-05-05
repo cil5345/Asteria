@@ -34,7 +34,7 @@ export default function Activity() {
     return <>
     <Header />
         <div id="div-pic">
-            <PhotoUpload />
+            <PhotoUpload imageLink={sessionStorage.getItem("imageLink")}/>
         </div>
         <div id="matchesDiv">
         {newMatches.length ? newMatches.map(match => (
