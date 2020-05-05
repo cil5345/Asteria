@@ -38,7 +38,7 @@ export default function PhotoUpload(props) {
             //read out as base64
             reader.readAsDataURL(file)
             //on the end of load
-            reader.onloadend = async () => {
+            reader.onloadend = () => {
                 //get extension
                 const extension = file.name.substring(file.name.lastIndexOf(".") + 1, file.name.length)
                 //send user id, file extension, and base64 encoding of image
@@ -48,7 +48,9 @@ export default function PhotoUpload(props) {
                         console.log(data.data)
                         //update imageLink in session with new imageLink
                         sessionStorage.setItem("imageLink", data.data)
-
+                        console.log("need to focus on my brand")
+                    })
+                    .then(data => {
                         setCurrentImage(sessionStorage.getItem("imageLink"))
                         console.log("donezo")
                     })
