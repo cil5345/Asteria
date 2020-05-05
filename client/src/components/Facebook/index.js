@@ -37,9 +37,9 @@ class LoginFacebook extends Component {
         !user ? await createUser(this.state.fbDetails)
             .then(res => console.log(res))
             .catch(err => console.log(err)) : storeInSession(user)
-        //if the user we got back has a gender we can assume they have set their profile previously, we will direct them to the dashboard/leedle
+        //if the user we got back has a gender we can assume they have set their profile previously, we will direct them to the Activity
         if(user) {
-            !user.gender ? this.setState({redirect: "/Profile"}) : this.setState({redirect: "/leedle"})
+            !user.gender ? this.setState({redirect: "/Profile"}) : this.setState({redirect: "/Activity"})
         }
         //set auth to true and proceed to re-render
         this.setState({ auth: true })

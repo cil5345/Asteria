@@ -1,0 +1,53 @@
+#current-image {
+  border: solid 11px #5f91ff;
+  border-top-right-radius: 14%;
+  border-top-left-radius: 40%;
+  border-bottom-right-radius: 45%;
+  border-bottom-left-radius: 14%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 7.5%;
+}
+
+.choosen-photo-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#btn-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+aside {
+  border-top: white solid thin;
+}
+
+#btn-div * {
+  border: solid thin white;
+  padding: 4px;
+}
+
+.photoUpload {
+  background-color: #5f91ff;
+  border-radius: 5%;
+  border: white thin solid;
+}
+
+.photoUpload * {
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.match-details-div {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropzone {
+  min-height: 125px;
+}

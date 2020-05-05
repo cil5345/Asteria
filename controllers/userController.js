@@ -1,5 +1,7 @@
 const db = require("../models");
 const compJSON = require("../matches/comp.json")
+const fs = require("fs")
+const path = require("path")
 
 // Defining methods for the booksController
 module.exports = {
@@ -47,7 +49,7 @@ module.exports = {
   //fill details for a user - gender symbol prefrence
   updateProf: (req, res) => {
     db.User.findOneAndUpdate({ fb_ID: req.params.id }, { symbol: req.params.symbol, gender: req.params.gender, prefrence: req.params.prefrence })
-      .then(data => console.log(data))
+      .then(data => res.json(data))
       .catch(err => console.log(err))
   },
   //add interaction, a user said yes or no to another user
@@ -89,35 +91,24 @@ module.exports = {
                     .catch(err => console.log(err))
                 }
               }
-              //end of then
             })
-        //end of if
         }
+      res.json(data)
       })
       .catch(err => console.log(err))
   },
   getNewMatches: (req, res) => {
-    console.log("hit user controller get new matches")
     db.User.findOne({ fb_ID: req.params.id })
+      .then(data => res.json(data.matches))
+      .catch(err => console.error(err))
+  },
+  updateImageLink: (req, res) => {
+    console.log("hit controller image upload")
+    db.User.findOneAndUpdate({ fb_ID: req.params.id}, { imageLink: `/api/user/${req.params.id}.${req.body.ext}`})
       .then(data => {
-        console.log(data.matches)
-        res.json(data.matches)
+        console.log(data)
+        res.json(`/api/user/${req.params.id}.${req.body.ext}`)
       })
-      .catch(err => console.log(err))
+      .catch(err => console.error(err))
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

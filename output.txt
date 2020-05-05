@@ -1,0 +1,102 @@
+2020-05-03T16:15:45.623442+00:00 app[web.1]: _id: 5ea36e53b2d7eb002a5eeee1,
+2020-05-03T16:15:45.623443+00:00 app[web.1]: fb_ID: '1337',
+2020-05-03T16:15:45.623443+00:00 app[web.1]: name: 'Fake Person',
+2020-05-03T16:15:45.623444+00:00 app[web.1]: imageLink: 'https://pbs.twimg.com/profile_images/1245453231070818308/13LhKvV4_400x400.jpg',
+2020-05-03T16:15:45.623444+00:00 app[web.1]: symbol: 'Gemini'
+2020-05-03T16:15:45.623444+00:00 app[web.1]: },
+2020-05-03T16:15:45.623445+00:00 app[web.1]: {
+2020-05-03T16:15:45.623445+00:00 app[web.1]: fresh: true,
+2020-05-03T16:15:45.623445+00:00 app[web.1]: _id: 5ea36e6cb2d7eb002a5eeeeb,
+2020-05-03T16:15:45.623446+00:00 app[web.1]: fb_ID: '1337',
+2020-05-03T16:15:45.623446+00:00 app[web.1]: name: 'Fake Person',
+2020-05-03T16:15:45.623453+00:00 app[web.1]: imageLink: 'https://pbs.twimg.com/profile_images/1245453231070818308/13LhKvV4_400x400.jpg',
+2020-05-03T16:15:45.623454+00:00 app[web.1]: symbol: 'Gemini'
+2020-05-03T16:15:45.623454+00:00 app[web.1]: }
+2020-05-03T16:15:45.623455+00:00 app[web.1]: ],
+2020-05-03T16:15:45.623455+00:00 app[web.1]: __v: 0,
+2020-05-03T16:15:45.623455+00:00 app[web.1]: gender: 'M',
+2020-05-03T16:15:45.623456+00:00 app[web.1]: prefrence: 'FM',
+2020-05-03T16:15:45.623456+00:00 app[web.1]: symbol: 'Libra'
+2020-05-03T16:15:45.623456+00:00 app[web.1]: }
+2020-05-03T16:15:45.644041+00:00 app[web.1]: {
+2020-05-03T16:15:45.644044+00:00 app[web.1]: _id: 5ea1ac4ffac67b002af9ac06,
+2020-05-03T16:15:45.644045+00:00 app[web.1]: fb_ID: '10158279544377148',
+2020-05-03T16:15:45.644045+00:00 app[web.1]: name: 'Antonio Alvarado',
+2020-05-03T16:15:45.644045+00:00 app[web.1]: imageLink: '10158279544377148.jfif',
+2020-05-03T16:15:45.644046+00:00 app[web.1]: interactions: [
+2020-05-03T16:15:45.644047+00:00 app[web.1]: { _id: 5ea1ac70fac67b002af9ac07, fb_ID: '556', like: true },
+2020-05-03T16:15:45.644047+00:00 app[web.1]: { _id: 5ea1ac71fac67b002af9ac08, fb_ID: '443', like: true },
+2020-05-03T16:15:45.644047+00:00 app[web.1]: { _id: 5ea1ac72fac67b002af9ac09, fb_ID: '89', like: true },
+2020-05-03T16:15:45.644048+00:00 app[web.1]: { _id: 5ea1ac73fac67b002af9ac0a, fb_ID: '30', like: true },
+2020-05-03T16:15:45.644048+00:00 app[web.1]: { _id: 5ea1ac7bfac67b002af9ac0b, fb_ID: '849', like: true },
+2020-05-03T16:15:45.644049+00:00 app[web.1]: { _id: 5ea1ac8cfac67b002af9ac0c, fb_ID: '963', like: true },
+2020-05-03T16:15:45.644049+00:00 app[web.1]: { _id: 5ea1ac8efac67b002af9ac0d, fb_ID: '477', like: true },
+2020-05-03T16:15:45.644049+00:00 app[web.1]: { _id: 5ea1ac8ffac67b002af9ac0e, fb_ID: '114', like: true },
+2020-05-03T16:15:45.644053+00:00 app[web.1]: { _id: 5ea1ac90fac67b002af9ac0f, fb_ID: '613', like: true },
+2020-05-03T16:15:45.644054+00:00 app[web.1]: { _id: 5ea1ac91fac67b002af9ac10, fb_ID: '66', like: true },
+2020-05-03T16:15:45.644054+00:00 app[web.1]: { _id: 5ea1ac99fac67b002af9ac11, fb_ID: '773', like: true },
+2020-05-03T16:15:45.644054+00:00 app[web.1]: { _id: 5ea1acaafac67b002af9ac12, fb_ID: '307', like: true },
+2020-05-03T16:15:45.644055+00:00 app[web.1]: { _id: 5ea1acacfac67b002af9ac13, fb_ID: '1337', like: true },
+2020-05-03T16:15:45.644055+00:00 app[web.1]: { _id: 5ea1aef9238b09002ac75ba5, fb_ID: '448', like: true },
+2020-05-03T16:15:45.644056+00:00 app[web.1]: { _id: 5ea1aefa238b09002ac75ba6, fb_ID: '547', like: true },
+2020-05-03T16:15:45.644056+00:00 app[web.1]: { _id: 5ea1aefb238b09002ac75ba7, fb_ID: '448', like: true },
+2020-05-03T16:15:45.644056+00:00 app[web.1]: { _id: 5ea1aefc238b09002ac75ba8, fb_ID: '547', like: true },
+2020-05-03T16:15:45.644057+00:00 app[web.1]: { _id: 5ea1aefd238b09002ac75ba9, fb_ID: '448', like: true },
+2020-05-03T16:15:45.644057+00:00 app[web.1]: { _id: 5ea1aefe238b09002ac75baa, fb_ID: '547', like: true },
+2020-05-03T16:15:45.644058+00:00 app[web.1]: { _id: 5ea1af1b238b09002ac75bab, fb_ID: '580', like: true },
+2020-05-03T16:15:45.644058+00:00 app[web.1]: { _id: 5ea1af1c238b09002ac75bac, fb_ID: '559', like: true },
+2020-05-03T16:15:45.644058+00:00 app[web.1]: { _id: 5ea1af1e238b09002ac75bad, fb_ID: '114', like: true },
+2020-05-03T16:15:45.644059+00:00 app[web.1]: { _id: 5ea1af1f238b09002ac75bae, fb_ID: '613', like: true },
+2020-05-03T16:15:45.644059+00:00 app[web.1]: { _id: 5ea1af20238b09002ac75baf, fb_ID: '307', like: true },
+2020-05-03T16:15:45.644060+00:00 app[web.1]: { _id: 5ea1af21238b09002ac75bb0, fb_ID: '1337', like: true },
+2020-05-03T16:15:45.644060+00:00 app[web.1]: { _id: 5ea1af22238b09002ac75bb3, fb_ID: '353', like: true },
+2020-05-03T16:15:45.644061+00:00 app[web.1]: { _id: 5ea1af23238b09002ac75bb4, fb_ID: '556', like: true },
+2020-05-03T16:15:45.644061+00:00 app[web.1]: { _id: 5ea1af24238b09002ac75bb5, fb_ID: '580', like: true },
+2020-05-03T16:15:45.644062+00:00 app[web.1]: { _id: 5ea1af26238b09002ac75bb6, fb_ID: '559', like: true },
+2020-05-03T16:15:45.644062+00:00 app[web.1]: { _id: 5ea1af27238b09002ac75bb7, fb_ID: '114', like: true },
+2020-05-03T16:15:45.644062+00:00 app[web.1]: { _id: 5ea1af28238b09002ac75bb8, fb_ID: '613', like: true },
+2020-05-03T16:15:45.644063+00:00 app[web.1]: { _id: 5ea1af2a238b09002ac75bb9, fb_ID: '307', like: true },
+2020-05-03T16:15:45.644063+00:00 app[web.1]: { _id: 5ea1af2b238b09002ac75bba, fb_ID: '1337', like: true },
+2020-05-03T16:15:45.644063+00:00 app[web.1]: { _id: 5ea36e4bb2d7eb002a5eeed9, fb_ID: '353', like: true },
+2020-05-03T16:15:45.644064+00:00 app[web.1]: { _id: 5ea36e4cb2d7eb002a5eeeda, fb_ID: '556', like: true },
+2020-05-03T16:15:45.644067+00:00 app[web.1]: { _id: 5ea36e4db2d7eb002a5eeedb, fb_ID: '580', like: true },
+2020-05-03T16:15:45.644067+00:00 app[web.1]: { _id: 5ea36e4eb2d7eb002a5eeedc, fb_ID: '559', like: true },
+2020-05-03T16:15:45.644067+00:00 app[web.1]: { _id: 5ea36e4fb2d7eb002a5eeedd, fb_ID: '114', like: true },
+2020-05-03T16:15:45.644068+00:00 app[web.1]: { _id: 5ea36e50b2d7eb002a5eeede, fb_ID: '613', like: true },
+2020-05-03T16:15:45.644068+00:00 app[web.1]: { _id: 5ea36e51b2d7eb002a5eeedf, fb_ID: '307', like: true },
+2020-05-03T16:15:45.644069+00:00 app[web.1]: { _id: 5ea36e53b2d7eb002a5eeee0, fb_ID: '1337', like: true },
+2020-05-03T16:15:45.644069+00:00 app[web.1]: { _id: 5ea36e65b2d7eb002a5eeee3, fb_ID: '353', like: true },
+2020-05-03T16:15:45.644069+00:00 app[web.1]: { _id: 5ea36e66b2d7eb002a5eeee4, fb_ID: '556', like: true },
+2020-05-03T16:15:45.644070+00:00 app[web.1]: { _id: 5ea36e67b2d7eb002a5eeee5, fb_ID: '580', like: true },
+2020-05-03T16:15:45.644070+00:00 app[web.1]: { _id: 5ea36e68b2d7eb002a5eeee6, fb_ID: '559', like: true },
+2020-05-03T16:15:45.644070+00:00 app[web.1]: { _id: 5ea36e69b2d7eb002a5eeee7, fb_ID: '114', like: true },
+2020-05-03T16:15:45.644071+00:00 app[web.1]: { _id: 5ea36e6ab2d7eb002a5eeee8, fb_ID: '613', like: true },
+2020-05-03T16:15:45.644071+00:00 app[web.1]: { _id: 5ea36e6bb2d7eb002a5eeee9, fb_ID: '307', like: true },
+2020-05-03T16:15:45.644071+00:00 app[web.1]: { _id: 5ea36e6cb2d7eb002a5eeeea, fb_ID: '1337', like: true }
+2020-05-03T16:15:45.644072+00:00 app[web.1]: ],
+2020-05-03T16:15:45.644072+00:00 app[web.1]: matches: [
+2020-05-03T16:15:45.644073+00:00 app[web.1]: {
+2020-05-03T16:15:45.644073+00:00 app[web.1]: fresh: true,
+2020-05-03T16:15:45.644073+00:00 app[web.1]: _id: 5ea36e53b2d7eb002a5eeee1,
+2020-05-03T16:15:45.644074+00:00 app[web.1]: fb_ID: '1337',
+2020-05-03T16:15:45.644074+00:00 app[web.1]: name: 'Fake Person',
+2020-05-03T16:15:45.644075+00:00 app[web.1]: imageLink: 'https://pbs.twimg.com/profile_images/1245453231070818308/13LhKvV4_400x400.jpg',
+2020-05-03T16:15:45.644075+00:00 app[web.1]: symbol: 'Gemini'
+2020-05-03T16:15:45.644075+00:00 app[web.1]: },
+2020-05-03T16:15:45.644076+00:00 app[web.1]: {
+2020-05-03T16:15:45.644076+00:00 app[web.1]: fresh: true,
+2020-05-03T16:15:45.644076+00:00 app[web.1]: _id: 5ea36e6cb2d7eb002a5eeeeb,
+2020-05-03T16:15:45.644077+00:00 app[web.1]: fb_ID: '1337',
+2020-05-03T16:15:45.644077+00:00 app[web.1]: name: 'Fake Person',
+2020-05-03T16:15:45.644078+00:00 app[web.1]: imageLink: 'https://pbs.twimg.com/profile_images/1245453231070818308/13LhKvV4_400x400.jpg',
+2020-05-03T16:15:45.644078+00:00 app[web.1]: symbol: 'Gemini'
+2020-05-03T16:15:45.644078+00:00 app[web.1]: }
+2020-05-03T16:15:45.644079+00:00 app[web.1]: ],
+2020-05-03T16:15:45.644079+00:00 app[web.1]: __v: 0,
+2020-05-03T16:15:45.644080+00:00 app[web.1]: gender: 'M',
+2020-05-03T16:15:45.644080+00:00 app[web.1]: prefrence: 'FM',
+2020-05-03T16:15:45.644080+00:00 app[web.1]: symbol: 'Libra'
+2020-05-03T16:15:45.644081+00:00 app[web.1]: }
+2020-05-03T16:15:45.574590+00:00 heroku[router]: at=info method=GET path="/[object%20Object]" host=asteria-app.herokuapp.com request_id=ffc3da44-9dc2-40ee-91a8-933ec921bc30 fwd="108.16.92.181" dyno=web.1 connect=7ms service=6ms status=404 bytes=400 protocol=https
+2020-05-03T16:17:04.000000+00:00 app[api]: Build started by user ant.36alv@gmail.com
+Terminate batch job (Y/N)? 

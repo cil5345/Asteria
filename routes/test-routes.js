@@ -1,7 +1,6 @@
 const userController = require("../controllers/userController")
-// const compController = require("../controllers/compContoller")
 
-module.exports = function(app)  {
+module.exports = function (app) {
     // get a user by their id
     app.get("/api/users/:id", (req, res) => {
 
