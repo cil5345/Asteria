@@ -5,7 +5,7 @@ import { uploadPhoto, getImage } from "../../utils/API"
 
 export default function PhotoUpload(props) {
 
-    const [currentImage, setCurrentImage] = useState(props.imageLink)
+    const [currentImage, setCurrentImage] = useState("")
 
     const { getRootProps, getInputProps, open, acceptedFiles } = useDropzone({
         // Disable click and keydown behavior
@@ -26,7 +26,7 @@ export default function PhotoUpload(props) {
     useEffect(() => {
 
         console.log("setting current image or setimagestoshow")
-        
+        setCurrentImage(sessionStorage.getItem("imageLink"))
     }, [currentImage])
 
     const handleUpload = () => {
