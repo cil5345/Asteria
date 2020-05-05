@@ -106,7 +106,7 @@ module.exports = {
     console.log("hit controller image upload")
     db.User.findOneAndUpdate({ fb_ID: req.params.id}, { imageLink: `/api/user/${req.params.id}.${req.body.ext}`})
       .then(data => {
-
+        console.log(data)
         res.json(`/api/user/${req.params.id}.${req.body.ext}`)
       })
       .catch(err => console.error(err))
