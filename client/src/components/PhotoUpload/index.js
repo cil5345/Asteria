@@ -49,6 +49,7 @@ export default function PhotoUpload(props) {
                         //update imageLink in session with new imageLink
                         sessionStorage.setItem("imageLink", data.data)
                         console.log("need to focus on my brand")
+                        console.log(sessionStorage.getItem("imageLink"))
                         setCurrentImage(sessionStorage.getItem("imageLink"))
                         console.log("donezo")
                     })
