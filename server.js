@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 3001
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.use(bodyParser.urlencoded({ limit: "100mb" }))
-app.use(bodyParser.json({ limit: "100mb" }))
+app.use(bodyParser.urlencoded({ limit: "1000mb" }))
+app.use(bodyParser.json({ limit: "1000mb" }))
 
 if(process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"))
