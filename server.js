@@ -22,7 +22,7 @@ require("./routes/test-routes")(app)
 require("./routes/photo-upload")(app)
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/asteriaDB", { useNewUrlParser: true });
+mongoose.connect(process.env.DB_URI || "mongodb://localhost/asteriaDB", { useNewUrlParser: true });
 
 io.on('connection', function(socket){
     console.log('user is connected');
