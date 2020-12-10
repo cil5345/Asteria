@@ -16,9 +16,9 @@
 
 Asteria is a full stack dating application that matches  users to other users based on zodiac signs. The user gets authorization to Asteria using Facebook, which creates the users Name and Profile picture. *(Facebook account is required)* Once the user gets access, they are refrenced to the profile page, where they input their sex, sexual preference, and most importantly their zodiac symbol. The main algorithm lies within the "Get your matches" button, which goes through the database and selects other users based on sexual preference and zodiac compatiability *i.e Libras are compatible with Gemini, Leo, Sagittarius, and Aquarius*. From there the user plays a swipe left or right game with their matches and will have the ability to chat. 
 
-![Screenshot1](./screenshot.png)
-![Screenshot2](./screenshot2.png)
-![Screenshot3](./screenshot3.png)
+![Screenshot1](./screenshots/screenshot.png)
+![Screenshot2](./screenshots/screenshot2.png)
+![Screenshot3](./screenshots/screenshot3.png)
 
 
 ## Installation
