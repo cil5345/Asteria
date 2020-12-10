@@ -20,44 +20,44 @@ function Swipe() {
         await getCompatible(symbol, prefrence).then(data => comp = data.data)
                                  .catch(err => console.log(err))
         
-        antonio()
+        loadCompatibleImage()
     }
 
     getComps()
 
     return (
-        <div class="cardcontainer list"
+        <div className="cardcontainer list"
             style={{
                 textAlign: "center",
             }}
         >
-            <ul class="cardlist">
-                <li class="card current"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
+            <ul className="cardlist">
+                <li className="card current"></li>
+                <li className="card"></li>
+                <li className="card"></li>
+                <li className="card"></li>
+                <li className="card"></li>
+                <li className="card"></li>
+                <li className="card"></li>
+                <li className="card"></li>
+                <li className="card"></li>
+                <li className="card"></li>
+                <li className="card"></li>
+                <li className="card"></li>
+                <li className="card"></li>
+                <li className="card"></li>
+                <li className="card"></li>
+                <li className="card"></li>
+                <li className="card"></li>
+                <li className="card"></li>
             </ul>
-            <button class="but-nope">X</button>
-            <button class="but-yay">✔</button>
+            <button className="but-nope">X</button>
+            <button className="but-yay">✔</button>
         </div>
     )
 }
 
-function antonio() {
+function loadCompatibleImage() {
     if(it === comp.length) it = 0
 
     let card = document.querySelector(".card")
@@ -153,7 +153,7 @@ function antonio() {
                         card: null
                     });
                 } else {
-                    antonio()
+                    loadCompatibleImage()
                     origin.querySelector('.card').
                     classList.add('current');
                 }
