@@ -17,8 +17,7 @@ if(process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"))
 }
 
-require("./routes/mongo-routes")(app)
-require("./routes/test-routes")(app)
+require("./routes/user-routes")(app)
 require("./routes/photo-upload")(app)
 
 // Connect to the Mongo DB
