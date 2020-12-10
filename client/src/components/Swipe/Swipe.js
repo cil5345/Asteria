@@ -31,7 +31,7 @@ function Swipe() {
                 textAlign: "center",
             }}
         >
-            <ul className="cardlist">
+            <ul className="cardlist" style={{margin: 0}}>
                 <li className="card current"></li>
                 <li className="card"></li>
                 <li className="card"></li>
