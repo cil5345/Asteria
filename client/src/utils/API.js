@@ -1,13 +1,11 @@
 const axios = require("axios")
 
-const dk = "DEBUG_KEY"
-
 module.exports = {
   //GET ROUTES
   getAllUsers: () => {
     return axios.get("/api/users")
   },
-  getOneUser: id => {
+  getCurrentUser: id => {
     return axios.get(`/api/users/${id}`)
   },
   getCompatible: (sign, prefrence) => {

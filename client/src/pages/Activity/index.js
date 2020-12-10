@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { getOneUser, getNewMatches } from "../../utils/API"
+import { getCurrentUser, getNewMatches } from "../../utils/API"
 import Header from "../../components/Header/Header"
 import PhotoUpload from "../../components/PhotoUpload"
 import MatchedUser from "../../components/MatchedUser"
@@ -14,7 +14,7 @@ export default function Activity() {
 
     useEffect(() => {
 
-        getOneUser(sessionStorage.getItem("fb_ID"))
+        getCurrentUser(sessionStorage.getItem("fb_ID"))
             .then(u => {
                 storeInSession(u.data)
                 console.log(sessionStorage.getItem("imageLink"))

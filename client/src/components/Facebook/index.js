@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import { Redirect } from "react-router-dom"
 import FacebookLoginBtn from "react-facebook-login"
 import "./style.css"
-import { getOneUser, createUser } from "../../utils/API"
+import { getCurrentUser, createUser } from "../../utils/API"
 import { storeInSession } from "../../utils/sessionController"
 
 class LoginFacebook extends Component {
@@ -46,7 +46,7 @@ class LoginFacebook extends Component {
         console.log(this.state.auth)
     }
 
-    getThisUser = async () => await getOneUser(this.state.fbDetails.fb_ID)
+    getThisUser = async () => await getCurrentUser(this.state.fbDetails.fb_ID)
                                         .then(data => data.data)
                                         .catch(err => console.log(err))
 
