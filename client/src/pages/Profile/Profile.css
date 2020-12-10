@@ -22,6 +22,11 @@ button {
     width: 400px;
     background-color: aquamarine;
 }
+
+.zodiacInput, .genderInput, .prefInput {
+    text-align: center;
+}
+
 .zodiacInput {
     margin-left: 5px;
     width: 350px;
