@@ -31,6 +31,9 @@ function Swipe() {
                 textAlign: "center",
             }}
         >
+            <div>
+                <p id="compatible-name-p">{}</p>
+            </div>
             <ul className="cardlist" style={{margin: 0}}>
                 <li className="card current"></li>
                 <li className="card"></li>
@@ -61,9 +64,11 @@ function loadCompatibleImage() {
     if(it === comp.length) it = 0
 
     let card = document.querySelector(".card")
+    let nameDiv = document.getElementById("compatible-name-p")
+    nameDiv.textContent = comp[it].name
     
     card.style.backgroundImage = `url('${comp[it].imageLink}')`
-    card.textContent = `${comp[it].symbol} ${comp[it].gender} ID:${comp[it].fb_ID}`
+    // card.textContent = `${comp[it].symbol} ${comp[it].gender} ID:${comp[it].fb_ID}`
     fishID = comp[it].fb_ID
     it++
 }

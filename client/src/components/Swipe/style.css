@@ -17,6 +17,18 @@
 
   }
 
+#compatible-name-p {
+  font-size: xx-large;
+  margin-bottom: 10px;
+}
+
+/* .gender-symbol-image { */
+  /* border-radius: 50%; */
+  /* position: absolute; */
+  /* left: -19; */
+  /* top: 20; */
+/* } */
+
 
   @keyframes yay {
     from {
