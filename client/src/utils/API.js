@@ -33,8 +33,5 @@ module.exports = {
         data: data
       }
     })
-  },
-  getImage: image => {
-    return axios.get(`/api/user/${image}`)
   }
 }
