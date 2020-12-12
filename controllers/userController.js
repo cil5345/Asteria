@@ -1,9 +1,8 @@
 const db = require("../models");
 const compJSON = require("../matches/comp.json")
 const fs = require("fs")
-const path = require("path")
 
-// Defining methods for the booksController
+// Defining methods for the userController
 module.exports = {
   //find all users
   findAll: function (req, res) {
@@ -102,12 +101,13 @@ module.exports = {
       .then(data => res.json(data.matches))
       .catch(err => console.error(err))
   },
-  updateImageLink: (req, res) => {
+  updateUserImageLink: (req, res) => {
     console.log("hit controller image upload")
-    db.User.findOneAndUpdate({ fb_ID: req.params.id}, { imageLink: `/api/user/${req.params.id}.${req.body.ext}`})
+    const newUserPhoto = req.body.s3ImageLocation;
+    db.User.findOneAndUpdate({ fb_ID: req.params.id}, { imageLink: newUserPhoto })
       .then(data => {
-        console.log(data)
-        res.json(`/api/user/${req.params.id}.${req.body.ext}`)
+
+        res.json(newUserPhoto)
       })
       .catch(err => console.error(err))
   }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useDropzone } from 'react-dropzone';
 import "./style.css"
-import { uploadPhoto, getImage } from "../../utils/API"
+import { uploadPhoto } from "../../utils/API"
 
 export default function PhotoUpload(props) {
 

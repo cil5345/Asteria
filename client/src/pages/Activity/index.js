@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { getOneUser, getNewMatches } from "../../utils/API"
+import { getCurrentUser, getNewMatches } from "../../utils/API"
 import Header from "../../components/Header/Header"
+import LoginBG from "../../components/LoginBG/LoginBG"
 import PhotoUpload from "../../components/PhotoUpload"
 import MatchedUser from "../../components/MatchedUser"
 import { storeInSession } from "../../utils/sessionController"
@@ -8,17 +9,15 @@ import "./style.css"
 
 export default function Activity() {
 
-    const [imageLink, setImageLink] = useState("")
     const [user, setUser] = useState({})
     const [newMatches, setNewMatches] = useState([])
 
     useEffect(() => {
 
-        getOneUser(sessionStorage.getItem("fb_ID"))
+        getCurrentUser(sessionStorage.getItem("fb_ID"))
             .then(u => {
                 storeInSession(u.data)
                 console.log(sessionStorage.getItem("imageLink"))
-                setImageLink(sessionStorage.getItem("imageLink"))
                 const userData = u.data
                 setUser({ fb_ID: userData.fb_ID, name: userData.name, imageLink: userData.imageLink })
             })
@@ -33,12 +32,13 @@ export default function Activity() {
 
     return <>
     <Header />
+    <LoginBG />
         <div id="div-pic">
             <PhotoUpload />
         </div>
         <div id="matchesDiv">
         {newMatches.length ? newMatches.map(match => (
-            <MatchedUser name={match.name} imageLink={match.imageLink} symbol={match.symbol} />
+            <MatchedUser key={match.imageLink} name={match.name} imageLink={sessionStorage.getItem("imageLink")} symbol={match.symbol} />
         )) : <h3>Sorry no new matches currently</h3>}
         </div>
     </>
