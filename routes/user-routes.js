@@ -6,6 +6,12 @@ module.exports = function (app) {
 
         userController.findById(req, res)
     })
+    // create a user
+    app.post("/api/users", (req, res) => {
+        
+        console.log("creating user")
+        userController.create(req, res)
+    })
     // get all users
     app.get("/api/users", (req, res) => {
 
@@ -16,7 +22,7 @@ module.exports = function (app) {
 
         userController.findComp(req, res)
     })
-    // get new matches
+    // get users matched with
     app.get("/api/users/:id/matches", (req, res) => {
 
         userController.getNewMatches(req, res)

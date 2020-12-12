@@ -7,6 +7,7 @@ module.exports = {
         if(user.gender) sessionStorage.setItem("gender", user.gender)
         if(user.prefrence) sessionStorage.setItem("prefrence", user.prefrence)
         if(user.symbol) sessionStorage.setItem("symbol", user.symbol)
+        if(user.redirect) sessionStorage.setItem("redirect", user.redirect)
 
         console.log(user.imageLink)
     }
