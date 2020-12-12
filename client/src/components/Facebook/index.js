@@ -11,39 +11,47 @@ class LoginFacebook extends Component {
     state = {
         auth: false,
         fbDetails: {},
-        clicked: false,
-        redirect: null
+        clicked: false
     }
-    
+
     componentClicked = async () => {
+        // yeah, we're doing this....
+        // this facebook login component triggers on load
         this.setState({clicked: true})
-        console.log("clicked")
     }
     
-    responseFacebook = async response => {
+    responseFacebook = async facebookResponse => {
 
         console.log("facebook is always watching")
-
+        // set necessary user data details retrieved from facebook
+        // into state
         this.setState({ fbDetails: {
-            fb_ID: response.id,
-            name: response.name,
-            imageLink: response.picture.data.url
+            fb_ID: facebookResponse.id,
+            name: facebookResponse.name,
+            imageLink: facebookResponse.picture.data.url
         }})
-        //get the user from our DB
+        // query and get the user from our DB
+        // function uses state fb details  that was set earlier
         const user = await this.getThisUser()
-        console.log(user)
-        //if we do not find a user with that id we will create a user
-        //for testing puposes we should make a bs id in order to see if it creates a new user
-        !user ? await createUser(this.state.fbDetails)
-            .then(res => console.log(res))
-            .catch(err => console.log(err)) : storeInSession(user)
-        //if the user we got back has a gender we can assume they have set their profile previously, we will direct them to the Activity
-        if(user) {
-            !user.gender ? this.setState({redirect: "/Profile"}) : this.setState({redirect: "/Activity"})
+        // if we did not find a user within our db, by using the fb id, then we will create one
+        if(!user) {
+            await createUser(this.state.fbDetails)
+                .then(response => {
+                    const createdUser = response.data
+                    createdUser.redirect = "/Profile"
+                    storeInSession(createdUser)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        } else {
+        // we did find the user, set user's redirect field to /Activity
+        // and store into session
+            user.redirect = "/Activity"
+            storeInSession(user)
         }
         //set auth to true and proceed to re-render
         this.setState({ auth: true })
-        console.log(this.state.auth)
     }
 
     getThisUser = async () => await getCurrentUser(this.state.fbDetails.fb_ID)
@@ -52,19 +60,18 @@ class LoginFacebook extends Component {
 
     render = () => {
         if (this.state.auth && this.state.fbDetails.fb_ID && this.state.clicked) {
-                return <Redirect to={this.state.redirect}/>
+                return <Redirect to={sessionStorage.getItem("redirect")}/>
         } else if(this.state.auth && !this.state.fbDetails.fb_ID) {
                 const user = this.getThisUser()
-                console.log("54")
                 storeInSession(user)
         }
 
-        let facebookData
+        let facebookData;
 
         facebookData = <>
         <FacebookLoginBtn
         appId="519631592082573"
-        autoLoad={true}
+        autoLoad={false}
         fields="name,email,picture"
         onClick={this.componentClicked}
         callback={this.responseFacebook} />
