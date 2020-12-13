@@ -38,7 +38,7 @@ export default function Activity() {
         </div>
         <div id="matchesDiv">
         {newMatches.length ? newMatches.map(match => (
-            <MatchedUser key={match.imageLink} name={match.name} imageLink={sessionStorage.getItem("imageLink")} symbol={match.symbol} />
+            <MatchedUser key={match.imageLink} name={match.name} imageLink={match.imageLink} symbol={match.symbol} />
         )) : <h3>Sorry no new matches currently</h3>}
         </div>
     </>
