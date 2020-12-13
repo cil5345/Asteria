@@ -19,10 +19,14 @@
     "socket.io": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_ENV=production node index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "client": "react-scripts start",
+    "server": "nodemon server",
+    "eject": "react-scripts eject",
+    "dev": "NODE_ENV=dev concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
