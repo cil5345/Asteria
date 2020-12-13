@@ -1,7 +1,9 @@
 const { updateUserImageLink, getImageLink } = require("../controllers/userController")
 const path = require("path")
 const fs = require("fs")
-require("dotenv").config()
+if(process.env.NODE_ENV !== "production") {
+  require("dotenv").config()
+}
 
 const AWS = require("aws-sdk");
 // configuring credentials and region
