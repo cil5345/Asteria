@@ -1,12 +1,14 @@
 const { updateUserImageLink, getImageLink } = require("../controllers/userController")
 const path = require("path")
 const fs = require("fs")
-require("dotenv").config()
+// if(process.env.NODE_ENV !== "production") {
+//   require("dotenv").config()
+// }
 
 const AWS = require("aws-sdk");
 // configuring credentials and region
-AWS.config.credentials.accessKeyId = process.env.aws_access_key_id
-AWS.config.credentials.secretAccessKey = process.env.aws_secret_access_key
+// AWS.config.credentials.accessKeyId = process.env.aws_access_key_id
+// AWS.config.credentials.secretAccessKey = process.env.aws_secret_access_key
 AWS.config.update({ region: "us-east-1" })
 
 const s3 = new AWS.S3({ apiVersion: "2006-03-01" })

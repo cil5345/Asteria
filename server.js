@@ -3,7 +3,6 @@ const mongoose = require("mongoose")
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-// const bodyParser =  require("body-parser")
 require("dotenv").config()
 
 const PORT = process.env.PORT || 3001
@@ -11,11 +10,11 @@ const PORT = process.env.PORT || 3001
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json({ limit: "50mb" }))
 
-// app.use(bodyParser.urlencoded({ limit: "50mb" }))
-// app.use(bodyParser.json({ limit: "50mb" }))
-
 if(process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"))
+    // app.get("*", (req, res) => {
+        // res.sendFile(path.resolve(__dirname,  "build", "index.html"));
+    // });
 }
 
 require("./routes/user-routes")(app)
